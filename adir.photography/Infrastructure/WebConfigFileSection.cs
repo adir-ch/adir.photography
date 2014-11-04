@@ -144,8 +144,8 @@ namespace adir.photography.Infrastructure
 
     public class PhotoCycle : ConfigurationElement
     {
-        [ConfigurationProperty("delay", DefaultValue = "10", IsRequired = true)]
-        [IntegerValidator(ExcludeRange = false, MaxValue = 3600, MinValue = 10)]
+        [ConfigurationProperty("delay", DefaultValue = "1000", IsRequired = true)]
+        [IntegerValidator(ExcludeRange = false, MaxValue = 36000, MinValue = 1000)]
         public int Delay
         {
             get

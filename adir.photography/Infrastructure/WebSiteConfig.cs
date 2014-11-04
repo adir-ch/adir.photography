@@ -9,10 +9,9 @@ namespace adir.photography.Infrastructure
     public class WebSiteConfig
     {
         private static WebSiteConfig instance = null; 
-
         private IConfiguration _config; 
 
-        public WebSiteConfig Instance()
+        public static WebSiteConfig Instance()
         {
             if (instance == null)
             {
