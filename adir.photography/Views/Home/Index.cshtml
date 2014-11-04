@@ -1,0 +1,78 @@
+﻿@model adir.photography.Models.HomeGalleryModel
+
+@{
+    ViewBag.Title = "adir.photography";
+}
+
+<link rel="stylesheet" href="~/Content/main_gallery.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="~/Scripts/jQuery.maximage/css/jquery.maximage.css?v=1.2" type="text/css" media="screen" />
+<link rel="stylesheet" href="~/Scripts/jQuery.maximage/css/screen.css?v=1.2" type="text/css" media="screen" />
+
+<a href="" id="arrow_left"><img src="~/Content/images//arrow_left.png" alt="Slide Left" /></a>
+@*<a href="" id="arrow_right"><img src="~/Content/images/arrow_right.png" alt="Slide Right" /></a>*@
+
+    <img id="cycle-loader" src="~/Content/images/ajax-loader.gif" />
+
+<div id="maximage">
+    @*<div>
+        <img src="~/Content/images/@Model.OpeningImage.FileName" alt="" />
+        <img id="gradient" src="~/Content/images/gradient.png" alt="" />
+
+        <div class="in-slide-content" style="display:none;">
+            @*<p>Remember, you are not limited to image elements.  You can display other HTML too.</p>
+    <p><a href="http://blog.aaronvanderzwan.com/2011/11/maximage-2-0-beta1-release/" target="_blank" style="font-weight:bold">More info >></a></p>
+        </div>
+    </div>*@
+
+
+    <img src="~/Content/images/@Model.OpeningImage.FileName" alt="Coalesse" data-href="http://www.google.com/" />
+    
+    @foreach (var image in Model.MainGalleryImages)
+    {
+        <img src="~/Content/images/@image.FileName" alt="" />    
+    }
+
+</div>
+<script src="~/Scripts/jquery-ui-1.8.24.min.js"></script>
+@*<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js'></script>*@
+<script src="~/Scripts/jQuery.cycle/jquery.cycle.all.js" type="text/javascript" charset="utf-8"></script>
+<script src="~/Scripts/jQuery.maximage/js/jquery.maximage.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript" charset="utf-8">
+    $(function () {
+        $('#maximage').maximage({
+            cycleOptions: {
+                fx: 'fade',
+                speed: 1000, // Has to match the speed for CSS transitions in jQuery.maximage.css (lines 30 - 33)
+                timeout: 0,
+                prev: '#arrow_left',
+                next: '#maximage',
+                pause: 1,
+
+                //before: function (last, current) {
+                //    if (!$.browser.msie) {
+                //        // Start HTML5 video when you arrive
+                //        if ($(current).find('video').length > 0) $(current).find('video')[0].play();
+                //    }
+                //},
+                //after: function (last, current) {
+                //    if (!$.browser.msie) {
+                //        // Pauses HTML5 video when you leave it
+                //        if ($(last).find('video').length > 0) $(last).find('video')[0].pause();
+                //    }
+                //}
+            },
+            onFirstImageLoaded: function () {
+                jQuery('#cycle-loader').hide();
+                jQuery('#maximage').fadeIn('fast');
+            }
+        });
+
+        // Helper function to Fill and Center the HTML5 Video
+        jQuery('video,object').maximage('maxcover');
+
+        // To show it is dynamic html text
+        jQuery('.in-slide-content').delay(1200).fadeIn();
+    });
+</script>
+

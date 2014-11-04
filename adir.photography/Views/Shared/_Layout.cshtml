@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="SHORTCUT ICON" href="~/Content/Images/camera.png">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    
+
+</head>
+<body>
+
+    @RenderSection("scripts", required: false)
+    
+
+    @RenderBody()
+
+    
+</body>
+</html>
