@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<root>
+  <galleries>
+  
+    <gallery>
+      <name>Main</name>
+      <openingPhoto>XXX</openingPhoto>
+      <tag>main</tag>
+    </gallery>
+
+    <gallery>
+      <name>nature</name>
+      <openingPhoto>YYY</openingPhoto>
+      <tag>nature</tag>
+    </gallery>
+  
+  </galleries>
+
+  <photos>
+
+    <photo>
+      <filename>DSC_0193.jpg</filename>
+      <tag>???</tag>
+    </photo>
+
+    <photo>
+      <filename>DSC_1657-Edit.jpg</filename>
+      <tag>???</tag>
+    </photo>
+
+    <photo>
+      <filename>DSC_1707_HDR.jpg</filename>
+      <tag>???</tag>
+    </photo>
+
+    <photo>
+      <filename>DSC_5690.jpg</filename>
+      <tag>???</tag>
+    </photo>
+    
+  </photos>
+
+</root>

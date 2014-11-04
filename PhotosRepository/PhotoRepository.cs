@@ -8,7 +8,7 @@ namespace PhotosRepository
     public class PhotoRepository
     {
         private readonly string _path = "~/Content/images/";
-        private List<Photo> _db; 
+        private IPhotoRepositoryDB _db; 
 
         public PhotoRepository()
         {

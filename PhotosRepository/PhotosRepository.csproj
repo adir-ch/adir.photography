@@ -42,10 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IPhotoRepositoryDB.cs" />
     <Compile Include="Photo.cs" />
     <Compile Include="PhotoRepository.cs" />
     <Compile Include="PhotoTag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XMLPhotoRepositoryDB.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
