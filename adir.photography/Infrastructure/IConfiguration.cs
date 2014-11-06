@@ -5,11 +5,11 @@ using System.Text;
 
 namespace adir.photography.Infrastructure
 {
-    public interface IConfiguration
+    interface IConfiguration
     {
-        string GetDefaultPageFontName();
-        string GetDefaultPageFontSize();
-        int GetGalleryDefaultCycleInterval();
-        bool IsAutoCycled(); 
+        public string ImageLocation { get; set; }
+        public bool IsAutoDelayEnabled { get; set; }
+        public int DelayInMiliSeconds { get; set; }
+
     }
 }

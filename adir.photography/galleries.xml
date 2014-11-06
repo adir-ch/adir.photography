@@ -5,38 +5,42 @@
   
     <gallery>
       <name>Main</name>
-      <openingPhoto>XXX</openingPhoto>
+      <openingPhoto>DSC_0193.jpg</openingPhoto>
       <tag>main</tag>
     </gallery>
-
-    <gallery>
-      <name>nature</name>
-      <openingPhoto>YYY</openingPhoto>
-      <tag>nature</tag>
-    </gallery>
-  
+   
   </galleries>
 
   <photos>
 
     <photo>
       <filename>DSC_0193.jpg</filename>
-      <tag>???</tag>
+      <caption>Annapurna circle</caption>
+      <tags>
+        <tag>main</tag>
+        <tag>nature</tag>  
+      </tags>
     </photo>
 
     <photo>
       <filename>DSC_1657-Edit.jpg</filename>
-      <tag>???</tag>
+      <tags>
+        <tag>main</tag>  
+      </tags>
     </photo>
 
     <photo>
       <filename>DSC_1707_HDR.jpg</filename>
-      <tag>???</tag>
+      <tags>
+        <tag>main</tag>
+      </tags>
     </photo>
 
     <photo>
       <filename>DSC_5690.jpg</filename>
-      <tag>???</tag>
+      <tags>
+        <tag>main</tag>
+      </tags>
     </photo>
     
   </photos>

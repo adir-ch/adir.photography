@@ -8,58 +8,76 @@ namespace adir.photography.Infrastructure
 {
     public class WebConfigFileSection : ConfigurationSection, IConfiguration
     {
-        public string GetDefaultPageFontName()
+
+        public string ImageLocation
         {
-            throw new NotImplementedException();
+            get
+            {
+                return Location.Path; 
+            }
+            set
+            {
+                Location.Path = value; 
+            }
         }
 
-        public string GetDefaultPageFontSize()
+        public bool IsAutoDelayEnabled
         {
-            throw new NotImplementedException();
+            get
+            {
+                return Cycle.AutoCycle;
+            }
+            set
+            {
+                Cycle.AutoCycle = value;
+            }
         }
 
-        public int GetGalleryDefaultCycleInterval()
+        public int DelayInMiliSeconds
         {
-            return Cycle.Delay;
+            get
+            {
+                return Cycle.Delay;
+            }
+            set
+            {
+                Cycle.Delay = value; 
+            }
         }
 
-        public bool IsAutoCycled()
-        {
-            return Cycle.AutoCycle;
-        }
-
-        #region Section elemnts 
+        #region Section elemnts
 
         // Create a "font" element.
         [ConfigurationProperty("font")]
-        private FontElement Font
+        public FontElement Font
         {
             get
-            { 
-                return (FontElement)this["font"]; }
+            {
+                return (FontElement)this["font"];
+            }
             set
-            { 
-                this["font"] = value; 
+            {
+                this["font"] = value;
             }
         }
 
         // Create a "color element."
         [ConfigurationProperty("color")]
-        private ColorElement Color
+        public ColorElement Color
         {
             get
             {
                 return (ColorElement)this["color"];
             }
             set
-            { 
-                this["color"] = value; 
+            {
+                this["color"] = value;
             }
         }
 
-        // Create a "color element."
+        // Create a "Cycle element"
         [ConfigurationProperty("PhotoCycle")]
-        private PhotoCycle Cycle
+        public PhotoCycle Cycle
         {
             get
             {
@@ -67,11 +85,25 @@ namespace adir.photography.Infrastructure
             }
             set
             {
-                this["PhotoCycle"] = value; 
+                this["PhotoCycle"] = value;
             }
         }
 
-        #endregion 
+        // Create a "Path element"
+        [ConfigurationProperty("ImageLocation")]
+        public ImageLocation Location
+        {
+            get
+            {
+                return (ImageLocation)this["ImageLocation"];
+            }
+            set
+            {
+                this["ImageLocation"] = value;
+            }
+        }
+
+        #endregion
     }
 
     #region Elements implementation 
@@ -169,6 +201,22 @@ namespace adir.photography.Infrastructure
             set
             {
                 this["AutoCycle"] = value;
+            }
+        }
+    }
+
+    public class ImageLocation : ConfigurationElement
+    {
+        [ConfigurationProperty("path", DefaultValue = "~/Content/images/", IsRequired = true)]
+        public string Path
+        {
+            get
+            {
+                return (string)this["path"];
+            }
+            set
+            {
+                this["path"] = value;
             }
         }
     }
