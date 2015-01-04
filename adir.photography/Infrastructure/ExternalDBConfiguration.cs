@@ -32,7 +32,7 @@ namespace adir.photography.Infrastructure
             }
         }
 
-        public int DelayInMiliSeconds
+        public int TimeOut
         {
             get
             {

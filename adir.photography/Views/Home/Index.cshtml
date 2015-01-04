@@ -16,7 +16,7 @@
 <div id="maximage">
 
 
-    <img src="~/Content/images/@Model.OpeningImage" alt="Coalesse" data-href="http://www.google.com/" />
+    <img src="~/Content/images/@Model.OpeningImage" alt="" data-href="http://www.google.com/" />
 
     @foreach (var image in Model.MainGalleryImages)
     {
@@ -33,11 +33,11 @@
         $('#maximage').maximage({
             cycleOptions: {
                 fx: 'fade',
-                speed: @(WebSiteConfig.Instance().Config.DelayInMiliSeconds),
-                timeout: 0,
+                speed: 1000,
+                timeout: @(WebSiteConfig.Instance().Config.TimeOut),  // time to wait between changes
                 prev: '#arrow_left',
                 next: '#maximage',
-                pause: 1,
+                pause: 1,  // pause when mouse hover on image 
                 
             },
             onFirstImageLoaded: function () {

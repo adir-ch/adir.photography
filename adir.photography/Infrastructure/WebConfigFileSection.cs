@@ -33,15 +33,15 @@ namespace adir.photography.Infrastructure
             }
         }
 
-        public int DelayInMiliSeconds
+        public int TimeOut
         {
             get
             {
-                return Cycle.Delay;
+                return Cycle.TimeOut;
             }
             set
             {
-                Cycle.Delay = value; 
+                Cycle.TimeOut = value; 
             }
         }
 
@@ -176,17 +176,17 @@ namespace adir.photography.Infrastructure
 
     public class PhotoCycle : ConfigurationElement
     {
-        [ConfigurationProperty("delay", DefaultValue = "1000", IsRequired = true)]
-        [IntegerValidator(ExcludeRange = false, MaxValue = 36000, MinValue = 1000)]
-        public int Delay
+        [ConfigurationProperty("timeout", DefaultValue = "10", IsRequired = true)]
+        [IntegerValidator(ExcludeRange = false, MaxValue = 600, MinValue = 5)]
+        public int TimeOut
         {
             get
             {
-                return (int)this["delay"];
+                return (int)this["timeout"];
             }
             set
             {
-                this["delay"] = value;
+                this["timeout"] = value;
             }
         }
 

@@ -9,6 +9,6 @@ namespace adir.photography.Infrastructure
     {
         string ImageLocation { get; set; }
         bool IsAutoDelayEnabled { get; set; }
-        int DelayInMiliSeconds { get; set; }
+        int TimeOut { get; set; }
     }
 }
