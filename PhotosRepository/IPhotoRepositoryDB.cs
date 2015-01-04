@@ -7,7 +7,7 @@ namespace PhotosRepository
 {
     public interface IPhotoRepositoryDB
     {
-        void initDB(); 
+        void initDB(string serverRunningPath);
 
         string GetGalleryOpeningPhoto(string galleryName);
         IEnumerable<string> GetGalleryPhotos(string galleryName); 

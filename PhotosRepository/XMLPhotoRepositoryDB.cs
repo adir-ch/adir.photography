@@ -3,45 +3,55 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml; 
+using System.Xml.Linq;
 
 namespace PhotosRepository
 {
     class XMLPhotoRepositoryDB : IPhotoRepositoryDB
     {
         List<Photo> _photos;
-        XmlDocument _db; 
+        XElement _db;
 
-        public void initDB()
+        public XMLPhotoRepositoryDB()
         {
-            _db = new XmlDocument();
-            _db.Load("~/galleries.xml");
+            // currently do nothing!
+        }
 
-            // Temporary repository 
+        public void initDB(string serverRunningPath)
+        {
+            _db = XDocument.Load(serverRunningPath + "/galleries.xml").Element("root");
+            _photos = new List<Photo>(); 
 
-            _db = new List<Photo> { new Photo { FileName = "DSC_0193.jpg" },
-                                    new Photo { FileName = "DSC_1657-Edit.jpg" }, 
-                                    new Photo { FileName = "DSC_1707_HDR.jpg" }, 
-                                    new Photo { FileName = "DSC_5690.jpg" }};
+            Photo currentPhoto;
+            
+            var photos = _db.Element("photos").Descendants().Where(tag => tag.Name == "photo");
+            foreach (var photo in photos)
+            {
+                var captions = photo.Descendants().Where(tag => tag.Name == "caption"); 
+                currentPhoto = new Photo() 
+                { 
+                    FileName = photo.Descendants().Where(tag => tag.Name == "filename").FirstOrDefault().Value, 
+                    Caption = (captions.Count() > 0 ? captions.FirstOrDefault().Value : "N/A")
+                };
 
-            _db[0].SetTag(PhotoTag.MainGalleryOpening);
+                var tags = photo.Element("tags").Descendants();
+                foreach (var tag in tags)
+                    currentPhoto.SetTag(tag.Value);
 
-            var photos = _db.Where(p => p.GetTags().Contains(PhotoTag.MainGalleryOpening) == false);
-            foreach (var p in photos)
-                p.SetTag(PhotoTag.MainGallery);
-
+                _photos.Add(currentPhoto); 
+            }
         }
 
         public string GetGalleryOpeningPhoto(string galleryName)
         {
-            // do something here! 
-            throw new NotImplementedException();
-            
-            return _db.Where(p => p.GetTags().Contains(PhotoTag.MainGalleryOpening)).FirstOrDefault(); 
+            var gallery = _db.Element("galleries").Descendants().Where(g => g.Element("name").Value == "Main").FirstOrDefault();
+            return gallery.Element("openingPhoto").Value; 
         }
 
         public IEnumerable<string> GetGalleryPhotos(string galleryName)
         {
-            return _db.Where(p => p.GetTags().Contains(PhotoTag.MainGallery));
+            string openingPhoto = GetGalleryOpeningPhoto(galleryName); 
+            return _photos.Where(p => p.GetTags().Contains("main") && p.FileName != openingPhoto).Select(f => f.FileName);
         }
     }
 }

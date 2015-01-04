@@ -14,7 +14,7 @@ namespace adir.photography.Controllers
 
         public ActionResult Index()
         {
-            HomeGalleryModel model = new HomeGalleryModel();
+            HomeGalleryModel model = new HomeGalleryModel(Server.MapPath("~"));
             return View(model);
         }
 

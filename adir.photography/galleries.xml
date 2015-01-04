@@ -5,7 +5,7 @@
   
     <gallery>
       <name>Main</name>
-      <openingPhoto>DSC_0193.jpg</openingPhoto>
+      <openingPhoto>annapurna_circle_5.jpg</openingPhoto>
       <tag>main</tag>
     </gallery>
    
@@ -14,8 +14,16 @@
   <photos>
 
     <photo>
-      <filename>DSC_0193.jpg</filename>
+      <filename>annapurna_circle_5.jpg</filename>
       <caption>Annapurna circle</caption>
+      <tags>
+        <tag>main</tag>
+        <tag>nature</tag>
+      </tags>
+    </photo>
+    
+    <photo>
+      <filename>DSC_0193.jpg</filename>
       <tags>
         <tag>main</tag>
         <tag>nature</tag>  

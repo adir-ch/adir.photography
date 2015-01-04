@@ -7,12 +7,13 @@ namespace PhotosRepository
 {
     public class PhotoRepository
     {
-        private readonly string _path = "~/Content/images/";
         private IPhotoRepositoryDB _db; 
 
-        public PhotoRepository()
+        public PhotoRepository(string serverRunningPath)
         {
-           // inject the repo DB here! 
+            // inject the repo DB here! 
+            _db = new XMLPhotoRepositoryDB();
+            _db.initDB(serverRunningPath); 
         }
 
         public IEnumerable<string> GetMainGalleryPhotos(string galleryName)

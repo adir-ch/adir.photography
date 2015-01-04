@@ -5,11 +5,10 @@ using System.Text;
 
 namespace adir.photography.Infrastructure
 {
-    interface IConfiguration
+    public interface IConfiguration
     {
-        public string ImageLocation { get; set; }
-        public bool IsAutoDelayEnabled { get; set; }
-        public int DelayInMiliSeconds { get; set; }
-
+        string ImageLocation { get; set; }
+        bool IsAutoDelayEnabled { get; set; }
+        int DelayInMiliSeconds { get; set; }
     }
 }

@@ -7,24 +7,41 @@ namespace adir.photography.Infrastructure
 {
     public class ExternalDBConfiguration : IConfiguration
     {
-        public string GetDefaultPageFontName()
+
+        public string ImageLocation
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public string GetDefaultPageFontSize()
+        public bool IsAutoDelayEnabled
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public int GetGalleryDefaultCycleInterval()
+        public int DelayInMiliSeconds
         {
-            throw new NotImplementedException();
-        }
-
-        public bool IsAutoCycled()
-        {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
         }
     }
 }
