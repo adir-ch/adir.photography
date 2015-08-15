@@ -1,23 +1,56 @@
 ﻿<!DOCTYPE html>
-<html>
+<html data-ng-app="AppMain" data-ng-controller="AppMainViewModel">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <title>Loading...</title>
     <link rel="SHORTCUT ICON" href="~/Content/Images/camera.png">
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
-    
-
 </head>
 <body>
 
-    @RenderSection("scripts", required: false)
-    
+    <script type="text/javascript" language="javascript">
 
+        $(document).ready(function() {
+            document.title = "@ViewBag.Title";
+        }); 
+
+    </script>
+    
     @RenderBody()
 
-    
+    <!-- Folding button menu -->
+    <div data-ng-controller="mfbMenuViewModel as ctrl">
+        <nav mfb-menu position="{{ctrl.chosen.position}}" effect="{{ctrl.chosen.effect}}"
+             active-icon="ion-chevron-down" resting-icon="ion-chevron-up"
+             ng-mouseenter="hovered()" ng-mouseleave="hovered()"
+             toggling-method="{{ctrl.chosen.method}}" menu-state="ctrl.menuState" main-action="ctrl.mainAction()">
+            <button mfb-button icon="{{button.icon}}" ng-click="ctrl.loc(button.href)"
+                    label="{{button.label}}" ng-repeat="button in ctrl.buttons"></button>
+        </nav>
+    </div>
+
+    <script type="text/javascript">
+        window.MyApp = {};
+    </script>
+
+    @*<script src="~/App/Validator.js"></script>*@
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/mfb-menu")
+    <script src="~/App/AppMain.js"></script>
+
+    @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+        MyApp.rootPath = '@Url.Content("~")';
+        @RenderSection("jsCode", required: false)
+    </script>
+
 </body>
 </html>
+
+
+

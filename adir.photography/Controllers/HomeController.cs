@@ -15,8 +15,8 @@ namespace adir.photography.Controllers
         public ActionResult Index()
         {
             HomeGalleryModel model = new HomeGalleryModel(Server.MapPath("~"));
+            ViewBag.Title = "adir.ph";
             return View(model);
         }
-
     }
 }

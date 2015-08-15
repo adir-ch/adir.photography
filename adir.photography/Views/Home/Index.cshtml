@@ -1,32 +1,21 @@
 ﻿@model adir.photography.Models.HomeGalleryModel
 
-@{
-    ViewBag.Title = "adir.photography";
-}
+@Styles.Render("~/Content/maximage");
 
-<link rel="stylesheet" href="~/Content/main_gallery.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="~/Scripts/jQuery.maximage/css/jquery.maximage.css?v=1.2" type="text/css" media="screen" />
-<link rel="stylesheet" href="~/Scripts/jQuery.maximage/css/screen.css?v=1.2" type="text/css" media="screen" />
 
-<a href="" id="arrow_left"><img src="~/Content/images//arrow_left.png" alt="Slide Left" /></a>
-@*<a href="" id="arrow_right"><img src="~/Content/images/arrow_right.png" alt="Slide Right" /></a>*@
-
+<a href="" id="arrow_left"><img id="arrow_left_img" src="~/Content/images/Arrows Left circular.png" alt="Slide Left" /></a>
+<a href="" id="arrow_right"><img id="arrow_right_img" src="~/Content/images/Arrows right circular.png" alt="Slide Right" /></a>
 <img id="cycle-loader" src="~/Content/images/ajax-loader.gif" />
 
 <div id="maximage">
-
-
-    <img src="~/Content/images/@Model.OpeningImage" alt="" data-href="http://www.google.com/" />
-
+    <img src="~/Content/images/@Model.OpeningImage"/>
     @foreach (var image in Model.MainGalleryImages)
     {
         <img src="~/Content/images/@image" alt="" />
     }
-
 </div>
-<script src="~/Scripts/jquery-ui-1.8.24.min.js"></script>
-<script src="~/Scripts/jQuery.cycle/jquery.cycle.all.js" type="text/javascript" charset="utf-8"></script>
-<script src="~/Scripts/jQuery.maximage/js/jquery.maximage.js" type="text/javascript" charset="utf-8"></script>
+
+@Scripts.Render("~/bundels/maximage");
 
 <script type="text/javascript" charset="utf-8">
     $(function () {
@@ -36,9 +25,9 @@
                 speed: 1000,
                 timeout: @(WebSiteConfig.Instance().Config.TimeOut),  // time to wait between changes
                 prev: '#arrow_left',
-                next: '#maximage',
-                pause: 1,  // pause when mouse hover on image 
-                
+                next: '#arrow_right',
+                pause: 1,  // pause when mouse hover on image
+
             },
             onFirstImageLoaded: function () {
                 jQuery('#cycle-loader').hide();
@@ -53,6 +42,3 @@
         jQuery('.in-slide-content').delay(1200).fadeIn();
     });
 </script>
-
-
-s
