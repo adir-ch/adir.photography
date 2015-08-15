@@ -1,0 +1,94 @@
+﻿
+/* I wanted to center my loader */
+#cycle-loader {
+	height:32px;
+	left:50%;
+	margin:-8px 0 0 -8px;
+	position:absolute;
+	top:50%;
+	width:32px;
+	z-index:999;
+}
+
+/*I want to avoid jumpiness as the JS loads, so I initially hide my cycle*/
+#maximage {
+	display:none;/* Only use this if you fade it in again after the images load */
+	position:fixed !important;
+}
+
+/*Set my gradient above all images*/
+#gradient {
+	left:0;
+	height:100%;
+	position:absolute;
+	top:0;
+	width:100%;
+	z-index:999;
+}
+
+/*Set my logo in bottom left*/
+#logo {
+	bottom:30px;
+	height:auto;
+	left:30px;
+	position:absolute;
+	width:34%;
+	z-index:1000;
+}
+#logo img {
+	width:100%;
+}
+
+#arrow_left, #arrow_right {
+	height:67px;
+	position:absolute;
+	right:30px;
+	width:36px;
+	z-index:1000;
+	bottom: 3%;
+}
+
+#arrow_left {
+	left:3%;
+}
+
+#arrow_right {
+	left:7%;
+}
+
+#arrow_left_img, #arrow_right_img {
+	width: 50px;
+    height: 50px;
+}
+
+#arrow_left:hover, #arrow_right:hover {
+}
+#arrow_left:active, #arrow_right:active {
+}
+
+a {color:#666;text-decoration:none;}
+a:hover {text-decoration:underline;}
+
+.in-slide-content {
+	color:#333;
+	float:right;
+	font-family:'Helvetica Neue', helvetica;
+	font-size:60px;
+	font-weight:bold;
+	right:0;
+	margin:40px;
+	padding:20px;
+	position:absolute;
+	top:0;
+	width:700px;
+	z-index:9999; /* Show above .gradient */
+	text-shadow: 0 1px 0 #fff;
+	-webkit-font-smoothing:antialiased;
+}
+.light-text {color:#ddd;text-shadow: 0 1px 0 #666;}
+.smaller-text {font-size:30px;}
+.youtube-video, video {
+	left:0;
+	position:absolute;
+	top:0;
+}
