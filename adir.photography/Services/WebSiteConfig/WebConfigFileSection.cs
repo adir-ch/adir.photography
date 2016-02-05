@@ -4,47 +4,10 @@ using System.Configuration;
 using System.Linq;
 using System.Web;
 
-namespace adir.photography.Infrastructure
+namespace adir.photography.Services.WebSiteConfig
 {
-    public class WebConfigFileSection : ConfigurationSection, IConfiguration
+    public class WebConfigFileSection : ConfigurationSection
     {
-
-        public string ImageLocation
-        {
-            get
-            {
-                return Location.Path; 
-            }
-            set
-            {
-                Location.Path = value; 
-            }
-        }
-
-        public bool IsAutoDelayEnabled
-        {
-            get
-            {
-                return Cycle.AutoCycle;
-            }
-            set
-            {
-                Cycle.AutoCycle = value;
-            }
-        }
-
-        public int TimeOut
-        {
-            get
-            {
-                return Cycle.TimeOut;
-            }
-            set
-            {
-                Cycle.TimeOut = value; 
-            }
-        }
-
         #region Section elemnts
 
         // Create a "font" element.
@@ -72,20 +35,6 @@ namespace adir.photography.Infrastructure
             set
             {
                 this["color"] = value;
-            }
-        }
-
-        // Create a "Cycle element"
-        [ConfigurationProperty("PhotoCycle")]
-        public PhotoCycle Cycle
-        {
-            get
-            {
-                return (PhotoCycle)this["PhotoCycle"];
-            }
-            set
-            {
-                this["PhotoCycle"] = value;
             }
         }
 
@@ -170,37 +119,6 @@ namespace adir.photography.Infrastructure
             set
             {
                 this["foreground"] = value;
-            }
-        }
-    }
-
-    public class PhotoCycle : ConfigurationElement
-    {
-        [ConfigurationProperty("timeout", DefaultValue = "10", IsRequired = true)]
-        [IntegerValidator(ExcludeRange = false, MaxValue = 600, MinValue = 5)]
-        public int TimeOut
-        {
-            get
-            {
-                return (int)this["timeout"];
-            }
-            set
-            {
-                this["timeout"] = value;
-            }
-        }
-
-        [ConfigurationProperty("AutoCycle", DefaultValue = true, IsRequired = true)]
-        // TODO: add regex validator
-        public bool AutoCycle
-        {
-            get
-            {
-                return bool.Parse(this["AutoCycle"] as string);
-            }
-            set
-            {
-                this["AutoCycle"] = value;
             }
         }
     }

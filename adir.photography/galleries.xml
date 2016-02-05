@@ -2,13 +2,14 @@
 
 <root>
   <galleries>
-  
     <gallery>
+      <config>
+        <PhotoCycle Timeout="10" AutoCycle="true"></PhotoCycle>
+      </config>
       <name>Main</name>
       <openingPhoto>annapurna_circle_5.jpg</openingPhoto>
-      <tag>main</tag>
+      <tag>Main</tag>
     </gallery>
-   
   </galleries>
 
   <photos>
@@ -48,6 +49,13 @@
       <filename>DSC_5690.jpg</filename>
       <tags>
         <tag>main</tag>
+      </tags>
+    </photo>
+
+    <photo>
+      <filename>DSC_9999.jpg</filename>
+      <tags>
+        <tag>SouthAmerica</tag>
       </tags>
     </photo>
     

@@ -7,19 +7,21 @@ using System.Xml.Linq;
 
 namespace PhotosRepository
 {
-    class XMLPhotoRepositoryDB : IPhotoRepositoryDB
+    public class XMLPhotoRepositoryDB : IPhotosRepository
     {
         List<Photo> _photos;
         XElement _db;
+        string _serverRunningPath; 
 
         public XMLPhotoRepositoryDB()
         {
-            // currently do nothing!
+            _serverRunningPath = System.Web.Hosting.HostingEnvironment.MapPath("~");
+            initDB(); 
         }
 
-        public void initDB(string serverRunningPath)
+        private void initDB()
         {
-            _db = XDocument.Load(serverRunningPath + "/galleries.xml").Element("root");
+            _db = XDocument.Load(_serverRunningPath + "/galleries.xml").Element("root");
             _photos = new List<Photo>(); 
 
             Photo currentPhoto;
@@ -42,16 +44,33 @@ namespace PhotosRepository
             }
         }
 
+        private XElement GetGalleryEntry(string galleryName)
+        {
+            return _db.Element("galleries").Descendants().Where(g => String.Equals(g.Element("name").Value, galleryName, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
+        }
+
         public string GetGalleryOpeningPhoto(string galleryName)
         {
-            var gallery = _db.Element("galleries").Descendants().Where(g => g.Element("name").Value == "Main").FirstOrDefault();
-            return gallery.Element("openingPhoto").Value; 
+            return GetGalleryEntry(galleryName).Element("openingPhoto").Value; 
         }
 
         public IEnumerable<string> GetGalleryPhotos(string galleryName)
         {
-            string openingPhoto = GetGalleryOpeningPhoto(galleryName); 
-            return _photos.Where(p => p.GetTags().Contains("main") && p.FileName != openingPhoto).Select(f => f.FileName);
+            string openingPhoto = GetGalleryOpeningPhoto(galleryName);
+            string galleryIdentifyingTag = GetGalleryEntry(galleryName).Element("tag").Value; 
+            return _photos.Where(p => p.GetTags().Where(t => t.IndexOf(galleryIdentifyingTag, StringComparison.OrdinalIgnoreCase) >= 0).Any() &&
+                                        ! String.Equals(p.FileName, openingPhoto, StringComparison.CurrentCultureIgnoreCase)).Select(f => f.FileName);
+        }
+
+
+        public GalleryConfig GetGalleryConfig(string galleryName)
+        {
+            return new GalleryConfig
+            {
+                TimeOut = Int32.Parse(GetGalleryEntry(galleryName).Element("config").Element("PhotoCycle").Attribute("Timeout").Value),
+                AutoCycle = Boolean.Parse(GetGalleryEntry(galleryName).Element("config").Element("PhotoCycle").Attribute("AutoCycle").Value),
+                ImageLocation = "/Content/images/"
+            };
         }
     }
 }

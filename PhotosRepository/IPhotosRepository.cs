@@ -5,11 +5,10 @@ using System.Text;
 
 namespace PhotosRepository
 {
-    public interface IPhotoRepositoryDB
+    public interface IPhotosRepository
     {
-        void initDB(string serverRunningPath);
-
+        IEnumerable<string> GetGalleryPhotos(string galleryName);
         string GetGalleryOpeningPhoto(string galleryName);
-        IEnumerable<string> GetGalleryPhotos(string galleryName); 
+        GalleryConfig GetGalleryConfig(string galleryName);
     }
 }

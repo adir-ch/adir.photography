@@ -8,15 +8,10 @@ namespace adir.photography.Models
 {
     public class HomeGalleryModel
     {
-        public string OpeningImage { get; set; }
-        public IEnumerable<string> MainGalleryImages { get; set; }
-
-        public HomeGalleryModel(string serverRunningPath)
-        {
-
-            PhotoRepository repo = new PhotoRepository(serverRunningPath); 
-            OpeningImage = repo.GetMainGalleryOpeningPhotos("main");
-            MainGalleryImages = repo.GetMainGalleryPhotos("main"); 
-        }
+        public string OpeningPhoto { get; set; }
+        public IEnumerable<string> GalleryPhotos { get; set; }
+        public int Timeout { get; set; }
+        public bool AutoCycle { get; set; }
+        public string ImagesLocation { get; set; }
     }
 }
