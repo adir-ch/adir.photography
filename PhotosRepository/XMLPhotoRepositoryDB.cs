@@ -69,7 +69,7 @@ namespace PhotosRepository
             {
                 TimeOut = Int32.Parse(GetGalleryEntry(galleryName).Element("config").Element("PhotoCycle").Attribute("Timeout").Value),
                 AutoCycle = Boolean.Parse(GetGalleryEntry(galleryName).Element("config").Element("PhotoCycle").Attribute("AutoCycle").Value),
-                ImageLocation = "/Content/images/"
+                PhotosLocation = "/Content/images/"
             };
         }
     }

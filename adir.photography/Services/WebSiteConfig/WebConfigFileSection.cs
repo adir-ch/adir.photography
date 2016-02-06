@@ -38,17 +38,17 @@ namespace adir.photography.Services.WebSiteConfig
             }
         }
 
-        // Create a "Path element"
-        [ConfigurationProperty("ImageLocation")]
-        public ImageLocation Location
+        // Create a "PhotosLocation element"
+        [ConfigurationProperty("PhotosLocation")]
+        public PhotosLocation Location
         {
             get
             {
-                return (ImageLocation)this["ImageLocation"];
+                return (PhotosLocation)this["PhotosLocation"];
             }
             set
             {
-                this["ImageLocation"] = value;
+                this["PhotosLocation"] = value;
             }
         }
 
@@ -123,14 +123,14 @@ namespace adir.photography.Services.WebSiteConfig
         }
     }
 
-    public class ImageLocation : ConfigurationElement
+    public class PhotosLocation : ConfigurationElement
     {
-        [ConfigurationProperty("path", DefaultValue = "~/Content/images/", IsRequired = true)]
-        public string Path
+        [ConfigurationProperty("path", DefaultValue = "~/Content/Photos/", IsRequired = true)]
+        public String Path
         {
             get
             {
-                return (string)this["path"];
+                return (String)this["path"];
             }
             set
             {

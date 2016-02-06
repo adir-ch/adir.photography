@@ -2,7 +2,7 @@
 
   'use strict';
 
-  var mfb = angular.module('ng-mfb', []);
+  var mfb = angular.module('ng-mfb-directives', []);
 
   mfb.run(['$templateCache', function($templateCache) {
     $templateCache.put('ng-mfb-menu-default.tpl.html',

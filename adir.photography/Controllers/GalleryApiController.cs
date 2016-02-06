@@ -71,7 +71,7 @@ namespace adir.photography.Controllers
             galleryModel.GalleryPhotos = _galleryDataService.GetGalleryPhotos(galleryName);
             galleryModel.Timeout = _galleryDataService.GetGalleryConfig(galleryName).TimeOut;
             galleryModel.AutoCycle = _galleryDataService.GetGalleryConfig(galleryName).AutoCycle;
-            galleryModel.ImagesLocation = _galleryDataService.GetGalleryConfig(galleryName).ImageLocation;
+            galleryModel.ImagesLocation = _galleryDataService.GetGalleryConfig(galleryName).PhotosLocation;
             return galleryModel;
         }
 

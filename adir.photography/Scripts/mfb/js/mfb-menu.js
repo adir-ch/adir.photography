@@ -54,7 +54,7 @@ mfbButtonMenu.value('defaultValues', {
   }]
 });
 
-var mfbMenu = angular.module('mfb-menu', ['ng-mfb']);
+var mfbMenu = angular.module('mfb-menu', ['ng-mfb-directives']);
 
 mfbMenu.controller('mfbMenuViewModel', Ctrl);
 
@@ -81,7 +81,7 @@ function Ctrl(defaultValues, $window) {
   vm.buttons = [{
     label: 'Home',
     icon: 'ion-ios-home',
-    href: '#index'
+    href: '/'
   },{
     label: 'Portfolio',
     icon: 'ion-images',

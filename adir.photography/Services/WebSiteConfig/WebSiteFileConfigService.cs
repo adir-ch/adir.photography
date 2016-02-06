@@ -28,11 +28,11 @@ namespace adir.photography.Services.WebSiteConfig
             _config = configuration; 
         }
 
-        public string ImageLocation
+        public string PhotosLocation
         {
             get
             {
-                throw new NotImplementedException();
+                return _config.Location.Path;
             }
             set
             {

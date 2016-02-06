@@ -19,7 +19,7 @@
     </script>
 
     <!-- Folding button menu -->
-    @*<div data-ng-controller="mfbMenuViewModel as ctrl">
+    <div data-ng-controller="mfbMenuViewModel as ctrl">
         <nav mfb-menu position="{{ctrl.chosen.position}}" effect="{{ctrl.chosen.effect}}"
              active-icon="ion-chevron-down" resting-icon="ion-chevron-up"
              ng-mouseenter="hovered()" ng-mouseleave="hovered()"
@@ -27,7 +27,7 @@
             <button mfb-button icon="{{button.icon}}" ng-click="ctrl.loc(button.href)"
                     label="{{button.label}}" ng-repeat="button in ctrl.buttons"></button>
         </nav>
-    </div>*@
+    </div>
 
     <div class="body-content">
         @RenderBody()
@@ -41,7 +41,7 @@
 
     @*@Scripts.Render("~/bundles/modernizr")*@
     @Scripts.Render("~/bundles/angular")
-    @*@Scripts.Render("~/bundles/mfb-menu")*@
+    @Scripts.Render("~/bundles/mfb-menu")
     <script src="~/App/App.js"></script>
     <script src="~/App/AppMainViewModel.js"></script>
     @RenderSection("scripts", required: false)

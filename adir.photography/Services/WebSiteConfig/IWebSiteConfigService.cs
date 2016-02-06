@@ -7,6 +7,6 @@ namespace adir.photography.Services.WebSiteConfig
 {
     public interface IWebSiteConfigService
     {
-        string ImageLocation { get; set; }
+        string PhotosLocation { get; set; }
     }
 }

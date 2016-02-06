@@ -1,5 +1,5 @@
 ﻿
-var appMainModule = angular.module('AppMain', []); 
+var appMainModule = angular.module('AppMain', ['mfb-button-menu']); 
     
 
 appMainModule.controller("AppMainModel", function ($scope) {

@@ -9,6 +9,6 @@ namespace PhotosRepository
     {
         public int TimeOut { get; set; }
         public bool AutoCycle { get; set; }
-        public string ImageLocation { get; set; }
+        public string PhotosLocation { get; set; }
     }
 }
