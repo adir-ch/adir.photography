@@ -2,19 +2,25 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>c:\adir\dropbox\development\projects\adir.photography\source\aspangularintegration_main\adir.photography\controllers\galleryapicontroller.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>C:\Adir\Dropbox\Development\Projects\adir.photography\Source\AspAngularIntegration_main\adir.photography\App\Gallery\Views\GalleryView.html</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>C:\Adir\Dropbox\Development\Projects\adir.photography\Source\AspAngularIntegration_main\adir.photography\App\Gallery\ViewModels\GalleryViewModel.js</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>C:\Adir\Dropbox\Development\Projects\adir.photography\Source\AspAngularIntegration_main\adir.photography\App\Gallery\GalleryApp.js</string>
-    </ArrayOfString>
-    <ArrayOfString>
       <string>C:\Adir\Dropbox\Development\Projects\adir.photography\Source\AspAngularIntegration_main\adir.photography\Views\Home\Index.cshtml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Adir\Dropbox\Development\Projects\adir.photography\Source\AspAngularIntegration_main\adir.photography\Views\Home\Gallery.cshtml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Adir\Dropbox\Development\Projects\adir.photography\Source\AspAngularIntegration_main\adir.photography\Views\Shared\_Layout.cshtml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Adir\Dropbox\Development\Projects\adir.photography\Source\AspAngularIntegration_main\adir.photography\Controllers\HomeController.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Adir\Dropbox\Development\Projects\adir.photography\Source\AspAngularIntegration_main\adir.photography\App_Start\BundleConfig.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Adir\Dropbox\Development\Projects\adir.photography\Source\AspAngularIntegration_main\adir.photography\Controllers\GalleryApiController.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Adir\Dropbox\Development\Projects\adir.photography\Source\AspAngularIntegration_main\adir.photography\Views\_ViewStart.cshtml</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>
