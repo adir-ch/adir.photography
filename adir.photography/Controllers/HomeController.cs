@@ -15,7 +15,12 @@ namespace adir.photography.Controllers
         public ActionResult Index(string id)
         {
             // TODO: check the logged in user, and get his gallery
-            //HomeGalleryModel model = new HomeGalleryModel(Server.MapPath("~"), id);
+            return RedirectToAction("Gallery");
+        }
+
+        public ActionResult Gallery(string id)
+        {
+            // TODO: check the logged in user, and get his gallery
             ViewBag.Title = "adir.photography";
             return View();
         }

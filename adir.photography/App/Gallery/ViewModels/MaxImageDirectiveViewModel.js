@@ -1,6 +1,6 @@
-(function() {
+//(function() {
 
-    var MaxImageFunction = function() {
+    var MaxImageFunction = function($timeout) {
         return {
             restrict: 'AE',
             scope: false,
@@ -13,13 +13,7 @@
             templateUrl: 'App/Gallery/Views/MaxImageDirectiveView.html',
 
             // link: function($scope, $element, $attributes) {
-
             //     console.log("link function");
-
-            //     $scope.$watch($element, function() {
-            //         console.log("Elelment changed");
-            //         console.log($element);
-            //     });
             // },
 
             // compile: function($element, $attributes) {
@@ -35,10 +29,11 @@
             // },
 
             controller: function($scope, $timeout, $http) {
-                console.log("--------- Starting maximage dispaly ----------");
-                console.log("Gallery name: " + $scope.galleryName);
-                console.log("User name: " + $scope.userName);
-                console.log($scope.galleryData);
+                console.log("--------- Starting maximage directive ----------");
+                console.debug("Gallery name: " + $scope.galleryName);
+                console.debug("User name: " + $scope.userName);
+                console.debug($scope.galleryData);
+                console.log("Waiting for DOM to load, scope id: ", $scope.$id);
                 //$scope.$emit('maxImageLoaded'); // sending event to the GalleryViewModel
 
                 $scope.initMaxImage = function() {
@@ -67,12 +62,27 @@
                     console.log("maximage end");
                 }
 
-                 $timeout(function () { // You might need this timeout to be sure its run after DOM render.
-                    $scope.initMaxImage();
-                 }, 0, false);
+                var timer = $timeout(function() {
+                    console.log("DOM finished loading, scope id: ", $scope.$id);
+                }, 0, false);
+
+                timer.then(
+                    function() {
+                        console.log("timer resolved calling MaxImageFunction");
+                        $scope.initMaxImage();
+                    },
+                    function() {
+                        console.log("timer rejected!", Date.now());
+                    }
+                );
+
+                $scope.$on("$destroy", function( event ) {
+                    $timeout.cancel(timer);
+                    console.log("timer removed");
+                });
             }
         };
     }
 
     angular.module('gallery').directive('apMaxImage', MaxImageFunction);
-}());
+//}());

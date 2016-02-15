@@ -1,28 +1,11 @@
-﻿@{
-    ViewBag.title = "Gallery"; @* TODO: set to user gallery name *@
+﻿
+@{
+    ViewBag.title = "Index page"; @* TODO: set to user gallery name *@
 }
 
 @section scripts {
-    <script src="~/Scripts/jQuery.maximage/js/jquery.cycle.all.js"></script>
-    <script src="~/Scripts/jQuery.maximage/js/jquery.maximage.js"></script>
-    <script src="~/App/Gallery/GalleryApp.js"></script>
-    <script src="~/App/Gallery/ViewModels/GalleryViewModel.js"></script>
-    <script src="~/App/Gallery/ViewModels/AlbumsViewModel.js"></script>
-    <script src="~/App/Gallery/ViewModels/MaxImageDirectiveViewModel.js"></script>
+
 }
 
-@section jsCode {
-    angular.bootstrap(document.getElementById("gallery"), ['gallery']);
-}
 
-<div data-ng-app="gallery" id="gallery">
-    <h3>
-        <a href="/gallery">gallery</a>
-        <a href="/gallery2">gallery1</a>
-        <a href="/albums">Albums</a>
-        <a href="/album/12">Album12</a>
-    </h3>
-    <div style="display: block">
-        <div data-ng-view=""></div>
-    </div>
-</div>
+<h2>Index page</h2>

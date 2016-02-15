@@ -1,5 +1,5 @@
 ﻿
-appMainModule.controller("AppMainViewModel", function ($scope, $log) {
+angular.module('AppMain').controller("AppMainViewModel", function ($scope, $log) {
 
     console.log("AppMainView");
 });

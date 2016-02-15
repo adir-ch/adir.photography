@@ -1,12 +1,8 @@
 ﻿
-angular.module('gallery').controller("AlbumsViewModel", function ($scope, $http) {
-
-    $scope.where = "This is from the Albums controller";
+angular.module('gallery').controller("AlbumsViewModel", function ($scope, $http, $route, $log) {
     console.log("Albums ViewModel");
-    var self = this;
-
     var initialize = function () {
-
+    	$scope.where = "This is from the Albums controller";
     }
 
     initialize();

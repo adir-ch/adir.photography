@@ -1,15 +1,15 @@
 ﻿
-angular.module('gallery').controller("GalleryViewModel", function ($scope, $http, $routeParams) {
+angular.module('gallery').controller("GalleryViewModel", function ($scope, $http, $routeParams, $route, $log) {
 
     console.log("Gallery ViewModel");
     $scope.galleryData = [];
     $scope.galleryDataReady = false;
-    $scope.galleryName = "main";
+    $scope.galleryName = "Main";
     $scope.userName = "default";
 
-    if ($routeParams.galleryTag) {
-        console.log("setting gallery name from route to: " + $scope.galleryName);
-        $scope.galleryName = $routeParams.galleryTag;
+    if ($routeParams.galleryId) {
+        console.log("setting gallery name from route to: " + $routeParams.galleryId);
+        $scope.galleryName = $routeParams.galleryId;
     }
 
     $scope.initialize = function () {
@@ -31,5 +31,6 @@ angular.module('gallery').controller("GalleryViewModel", function ($scope, $http
             );
     }
 
+    console.log("Gallery scope: id:", $scope.$id);
     $scope.initialize();
 });

@@ -81,15 +81,15 @@ function Ctrl(defaultValues, $window) {
   vm.buttons = [{
     label: 'Home',
     icon: 'ion-ios-home',
-    href: '/'
+    href: '/gallery'
   },{
-    label: 'Portfolio',
+    label: 'Albums',
     icon: 'ion-images',
-    href: '#portfolio-albums'
+    href: '/gallery/albums'
   },{
     label: 'About & Contact',
     icon: 'ion-android-mail',
-    href: '#contact'
+    href: '/gallery/show/main'
   },{
     label: 'Register | Login',
     icon: 'ion-person',

@@ -52,8 +52,8 @@ namespace adir.photography
             //            "~/Content/themes/base/jquery.ui.theme.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
-                      "~/Scripts/angular.js",
-                      "~/Scripts/angular-route.js"));
+                      "~/Scripts/Angular/angular.js",
+                      "~/Scripts/Angular/angular-route.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                         "~/Scripts/bootstrap.js",
@@ -61,7 +61,8 @@ namespace adir.photography
 
             bundles.Add(new ScriptBundle("~/bundles/mfb-menu").Include(
                         "~/Scripts/mfb/js/mfb-directive.js",
-                        "~/Scripts/mfb/js/mfb-menu.js"));
+                        "~/Scripts/mfb/js/mfb-menu.js",
+                        "~/App/Common/ViewModels/MaxImageDirectiveViewModel.js"));
 
             bundles.Add(new ScriptBundle("~/bundels/maximage").Include(
                         "~/Scripts/jQuery.cycle/jquery.cycle.all.js",

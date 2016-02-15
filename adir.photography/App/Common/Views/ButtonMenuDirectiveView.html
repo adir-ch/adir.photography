@@ -1,0 +1,11 @@
+﻿
+<!-- <h2>mfb-button</h2> -->
+<div>
+    <nav mfb-menu position="{{ctrl.chosen.position}}" effect="{{ctrl.chosen.effect}}"
+         active-icon="ion-chevron-down" resting-icon="ion-chevron-up"
+         ng-mouseenter="hovered()" ng-mouseleave="hovered()"
+         toggling-method="{{ctrl.chosen.method}}" menu-state="ctrl.menuState" main-action="ctrl.mainAction()">
+        <button mfb-button icon="{{button.icon}}" ng-click="ctrl.loc(button.href)"
+                label="{{button.label}}" ng-repeat="button in ctrl.buttons"></button>
+    </nav>
+<div>

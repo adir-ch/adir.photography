@@ -14,9 +14,10 @@ namespace adir.photography
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-               name: "Gallery",
+               name: "gallery",
                url: "gallery/{*catchall}",
-               defaults: new { controller = "Home", action = "Index" });
+               defaults: new { controller = "Home", action = "Gallery" }
+            );
 
             routes.MapRoute(
                 name: "Default",
