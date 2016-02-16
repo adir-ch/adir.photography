@@ -157,7 +157,6 @@
     <Content Include="App\Gallery\ViewModels\GalleryViewModel.js" />
     <Content Include="App\Gallery\ViewModels\MaxImageDirectiveViewModel.js" />
     <Content Include="App\Gallery\Views\AlbumsView.html" />
-    <Content Include="App\Gallery\Views\GalleryHomeView.html" />
     <Content Include="App\Gallery\Views\GalleryView.html" />
     <Content Include="App\Gallery\Views\MaxImageDirectiveView.html" />
     <Content Include="App\Member\MemberApp.js" />
