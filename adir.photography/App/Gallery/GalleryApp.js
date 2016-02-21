@@ -1,4 +1,4 @@
-﻿//(function () {
+﻿(function () {
     'use strict';
 
     angular.module('gallery', ['ngRoute'])
@@ -50,4 +50,4 @@
     });
 
 
-//}());
+}());

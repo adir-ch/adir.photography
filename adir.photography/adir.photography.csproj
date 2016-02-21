@@ -149,9 +149,11 @@
     <Compile Include="Services\WebSiteConfig\WebSiteFileConfigService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App\App.js" />
+    <Content Include="App\AppMain.js" />
     <Content Include="App\AppMainViewModel.js" />
-    <Content Include="App\Common\Views\ButtonMenuDirectiveView.html" />
+    <Content Include="App\Common\Directives\AppCommonDirectives.js" />
+    <Content Include="App\Common\Directives\ButtonMenuDirectiveView.html" />
+    <Content Include="App\Common\Directives\ButtonMenuDirectiveViewModel.js" />
     <Content Include="App\Gallery\GalleryApp.js" />
     <Content Include="App\Gallery\ViewModels\AlbumsViewModel.js" />
     <Content Include="App\Gallery\ViewModels\GalleryViewModel.js" />
@@ -367,7 +369,7 @@
     <Content Include="Views\Home\Gallery.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\Common\ViewModels\" />
+    <Folder Include="App\Common\Services\" />
     <Folder Include="App\Management\" />
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\Angular\i18n\" />

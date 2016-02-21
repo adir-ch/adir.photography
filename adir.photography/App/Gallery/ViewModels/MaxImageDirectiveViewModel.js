@@ -12,22 +12,6 @@
 
             templateUrl: 'App/Gallery/Views/MaxImageDirectiveView.html',
 
-            // link: function($scope, $element, $attributes) {
-            //     console.log("link function");
-            // },
-
-            // compile: function($element, $attributes) {
-            //     return {
-            //         pre: function($scope, $element, $attributes, $controller, $transcludeFn){
-            //          // console.log("pre compile");
-            //         },
-
-            //         post: function($scope, $element, $attributes, $controller, $transcludeFn){
-            //          console.log("post compile");
-            //         }
-            //     }
-            // },
-
             controller: function($scope, $timeout, $http) {
                 console.log("--------- Starting maximage directive ----------");
                 console.debug("Gallery name: " + $scope.galleryName);

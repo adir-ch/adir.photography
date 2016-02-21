@@ -1,18 +1,21 @@
-﻿@{
-    ViewBag.title = "Gallery"; @* TODO: set to user gallery name *@
-}
-
+﻿
 @section scripts {
-    <script src="~/Scripts/jQuery.maximage/js/jquery.cycle.all.js"></script>
+    @*<script src="~/Scripts/jQuery.maximage/js/jquery.cycle.all.js"></script>
     <script src="~/Scripts/jQuery.maximage/js/jquery.maximage.js"></script>
     <script src="~/App/Gallery/GalleryApp.js"></script>
     <script src="~/App/Gallery/ViewModels/GalleryViewModel.js"></script>
     <script src="~/App/Gallery/ViewModels/AlbumsViewModel.js"></script>
-    <script src="~/App/Gallery/ViewModels/MaxImageDirectiveViewModel.js"></script>
+    <script src="~/App/Gallery/ViewModels/MaxImageDirectiveViewModel.js"></script>*@
+    @Scripts.Render("~/bundles/maximage")
+    @Scripts.Render("~/bundles/gallery")
 }
 
 @section jsCode {
     angular.bootstrap(document.getElementById("gallery"), ['gallery']);
+}
+
+@{
+    ViewBag.title = "Gallery"; @* TODO: set to user gallery name *@
 }
 
 <h3>

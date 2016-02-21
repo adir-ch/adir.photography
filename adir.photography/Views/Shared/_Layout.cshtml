@@ -12,19 +12,21 @@
 </head>
 
 <body data-ng-app="AppMain" data-ng-controller="AppMainViewModel">
-    <h3>Layout</h3>
-    <script type="text/javascript" language="javascript">
-        $(document).ready(function() {
-            document.title = "@ViewBag.Title";
-        }); 
-    </script>
 
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+            document.title = "@ViewBag.Title";
+        });
+    </script>
 
     <div class="body-content">
         @RenderBody()
     </div>
 
-    <ap-button-menu></ap-button-menu>
+    <footer>
+        <ap-button-menu></ap-button-menu>
+    </footer>
+
 
     <script type="text/javascript">
         window.WebApp = {};
@@ -32,19 +34,17 @@
 
     @*<script src="~/App/Validator.js"></script>*@
 
-    @*@Scripts.Render("~/bundles/modernizr")*@
+    @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/angular")
     @Scripts.Render("~/bundles/mfb-menu")
-    <script src="~/App/App.js"></script>
-    <script src="~/App/AppMainViewModel.js"></script>
+    @Scripts.Render("~/bundles/ap-app")
+   
     @RenderSection("scripts", required: false)
 
     <script type="text/javascript">
         WebApp.rootPath = '@Url.Content("~")';
         @RenderSection("jsCode", required: false);
     </script>
-
-
 
 </body>
 </html>
