@@ -14,7 +14,7 @@ namespace adir.photography
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-2.1.4.js"));
+                        "~/Scripts/jQuery/jquery-2.1.4.js"));
             
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Scripts/mfb/css/angular-material.min.css",
@@ -23,10 +23,6 @@ namespace adir.photography
                       "~/Content/ionicons.css",
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
-
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                        "~/Scripts/bootstrap.js",
-                        "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                         "~/Scripts/Angular/angular.js",
