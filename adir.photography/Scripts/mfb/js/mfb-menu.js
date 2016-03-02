@@ -85,15 +85,15 @@ function Ctrl(defaultValues, $window) {
   },{
     label: 'Albums',
     icon: 'ion-images',
-    href: '/gallery/albums'
+    href: '/gallery'
   },{
     label: 'About & Contact',
     icon: 'ion-android-mail',
-    href: '/gallery/show/main'
+    href: '/contact'
   },{
     label: 'Register | Login',
     icon: 'ion-person',
-    href: '#login'
+    href: '/login'
   }];
 
   function loc(href) {
