@@ -28,7 +28,7 @@
                             speed: 1000,
                             timeout: $scope.galleryData.Timeout, // time to wait between changes
                                 prev: '#arrow_left',
-                                next: '#arrow_right',
+                                next: '#maximage',
                                 pause: 1,  // pause when mouse hover on image
 
                         },

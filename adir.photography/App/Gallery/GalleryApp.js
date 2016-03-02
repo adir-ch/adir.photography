@@ -4,7 +4,7 @@
     angular.module('gallery', ['ngRoute'])
 
         .config(function ($routeProvider, $locationProvider) {
-            $routeProvider.when('/gallery', {
+            $routeProvider.when('/', {
                 templateUrl: '/App/Gallery/Views/GalleryView.html',
                 controller: 'GalleryViewModel'
             });
@@ -19,7 +19,7 @@
                 controller: 'GalleryViewModel'
             });
 
-            $routeProvider.otherwise({ redirectTo: '/gallery' });
+            $routeProvider.otherwise({ redirectTo: '/' });
 
             $locationProvider.html5Mode(true);
         })

@@ -4,7 +4,7 @@
   <galleries>
     <gallery>
       <config>
-        <PhotoCycle Timeout="10" AutoCycle="true"></PhotoCycle>
+        <PhotoCycle Timeout="50" AutoCycle="true"></PhotoCycle>
       </config>
       <name>Main</name>
       <openingPhoto>annapurna_circle_5.jpg</openingPhoto>
@@ -22,19 +22,19 @@
         <tag>nature</tag>
       </tags>
     </photo>
-    
+
     <photo>
       <filename>DSC_0193.jpg</filename>
       <tags>
         <tag>main</tag>
-        <tag>nature</tag>  
+        <tag>nature</tag>
       </tags>
     </photo>
 
     <photo>
       <filename>DSC_1657-Edit.jpg</filename>
       <tags>
-        <tag>main</tag>  
+        <tag>main</tag>
       </tags>
     </photo>
 
@@ -58,7 +58,7 @@
         <tag>SouthAmerica</tag>
       </tags>
     </photo>
-    
+
   </photos>
 
 </root>

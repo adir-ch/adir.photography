@@ -184,3 +184,4 @@ FakesAssemblies/
 
 # ADIR's
 *.tss
+sftp-config.json
