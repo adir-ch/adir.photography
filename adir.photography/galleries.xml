@@ -7,7 +7,7 @@
         <PhotoCycle Timeout="10" AutoCycle="true"></PhotoCycle>
       </config>
       <name>Main</name>
-      <openingPhoto>ncr1.jpg</openingPhoto>
+      <openingPhoto>annapurna_circle_5.jpg</openingPhoto>
       <tag>Main</tag>
     </gallery>
   </galleries>
@@ -15,16 +15,16 @@
   <photos>
 
     <photo>
-      <filename>ncr1.jpg</filename>
-      <caption>NCR 1 wall</caption>
+      <filename>annapurna_circle_5.jpg</filename>
+      <caption>Annapurna circle</caption>
       <tags>
         <tag>main</tag>
-        <tag>work</tag>
+        <tag>nature</tag>
       </tags>
     </photo>
     
     <photo>
-      <filename>ncr2.jpg</filename>
+      <filename>DSC_0193.jpg</filename>
       <tags>
         <tag>main</tag>
         <tag>nature</tag>  
@@ -32,13 +32,13 @@
     </photo>
 
     <photo>
-      <filename>ncr3.jpg</filename>
+      <filename>DSC_1657-Edit.jpg</filename>
       <tags>
         <tag>main</tag>  
       </tags>
     </photo>
 
-    <!--<photo>
+    <photo>
       <filename>DSC_1707_HDR.jpg</filename>
       <tags>
         <tag>main</tag>
@@ -57,7 +57,7 @@
       <tags>
         <tag>SouthAmerica</tag>
       </tags>
-    </photo>-->
+    </photo>
     
   </photos>
 
