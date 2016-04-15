@@ -154,7 +154,10 @@
     <Content Include="App\Common\Directives\AppCommonDirectives.js" />
     <Content Include="App\Common\Directives\ButtonMenuDirectiveView.html" />
     <Content Include="App\Common\Directives\ButtonMenuDirectiveViewModel.js" />
+    <Content Include="App\Common\Services\AppCommonServices.js" />
+    <Content Include="App\Common\Services\WebApiService.js" />
     <Content Include="App\Gallery\GalleryApp.js" />
+    <Content Include="App\Gallery\Services\GalleryServices.js" />
     <Content Include="App\Gallery\ViewModels\AlbumsViewModel.js" />
     <Content Include="App\Gallery\ViewModels\GalleryViewModel.js" />
     <Content Include="App\Gallery\ViewModels\MaxImageDirectiveViewModel.js" />
@@ -196,6 +199,7 @@
     <Content Include="Content\ionicons\_ionicons-icons.less" />
     <Content Include="Content\ionicons\_ionicons-font.less" />
     <None Include="Properties\PublishProfiles\Dev publish.pubxml" />
+    <Content Include="LoggerConfig.xml" />
     <Content Include="Scripts\Angular\angular-animate.js" />
     <Content Include="Scripts\Angular\angular-animate.min.js" />
     <Content Include="Scripts\Angular\angular-aria.js" />
@@ -301,7 +305,6 @@
     <Content Include="Views\Home\Gallery.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\Common\Services\" />
     <Folder Include="App\Management\" />
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\Angular\i18n\" />

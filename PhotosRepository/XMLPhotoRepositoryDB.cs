@@ -1,8 +1,9 @@
-﻿using System;
+﻿using log4net;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Xml; 
+using System.Xml;
 using System.Xml.Linq;
 
 namespace PhotosRepository
@@ -11,7 +12,8 @@ namespace PhotosRepository
     {
         List<Photo> _photos;
         XElement _db;
-        string _serverRunningPath; 
+        string _serverRunningPath;
+        private static readonly ILog _log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType); 
 
         public XMLPhotoRepositoryDB()
         {
@@ -21,12 +23,26 @@ namespace PhotosRepository
 
         private void initDB()
         {
-            _db = XDocument.Load(_serverRunningPath + "/galleries.xml").Element("root");
+            try
+            {
+                _db = XDocument.Load(_serverRunningPath + "/galleries.xml").Element("root");
+            }
+            catch (Exception e)
+            {
+                _log.ErrorFormat("Unable to load XML repo: {0}", e.Message); 
+            }
+            
+            
             _photos = new List<Photo>(); 
+            var photos = _db.Element("photos").Descendants().Where(tag => tag.Name == "photo");
+            
+            if (photos.Count() == 0)
+            {
+                _log.Error("No photos were found in XML repo");
+                return; 
+            }
 
             Photo currentPhoto;
-            
-            var photos = _db.Element("photos").Descendants().Where(tag => tag.Name == "photo");
             foreach (var photo in photos)
             {
                 var captions = photo.Descendants().Where(tag => tag.Name == "caption"); 
@@ -46,6 +62,7 @@ namespace PhotosRepository
 
         private XElement GetGalleryEntry(string galleryName)
         {
+            throw new Exception(String.Format("Cannot find Gallery {0}", galleryName)); 
             return _db.Element("galleries").Descendants().Where(g => String.Equals(g.Element("name").Value, galleryName, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
         }
 

@@ -1,13 +1,7 @@
 ﻿
 @section scripts {
-    <script src="~/Scripts/jQuery.maximage/js/jquery.cycle.all.js"></script>
-    <script src="~/Scripts/jQuery.maximage/js/jquery.maximage.js"></script>
-    <script src="~/App/Gallery/GalleryApp.js"></script>
-    <script src="~/App/Gallery/ViewModels/GalleryViewModel.js"></script>
-    <script src="~/App/Gallery/ViewModels/AlbumsViewModel.js"></script>
-    <script src="~/App/Gallery/ViewModels/MaxImageDirectiveViewModel.js"></script>
-    @*@Scripts.Render("~/bundles/maximage")
-    @Scripts.Render("~/bundles/gallery")*@
+    @Scripts.Render("~/bundles/maximage")
+    @Scripts.Render("~/bundles/gallery")
 }
 
 @section jsCode {
@@ -17,12 +11,6 @@
 @{
     ViewBag.title = "Gallery"; @* TODO: set to user gallery name *@
 }
-
-@*<h3>
-    <a href="/gallery">gallery</a>
-    <a href="/gallery/albums">Albums</a>
-    <a href="/gallery/show/main">gallery-main</a>
-</h3>*@
 
 <div data-ng-app="gallery" id="gallery">
     <div data-ng-view=""></div>

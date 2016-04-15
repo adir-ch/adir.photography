@@ -1,9 +1,9 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('gallery', ['ngRoute'])
+    angular.module('gallery', ['ngRoute', 'AppCommonServices'])
 
-        .config(function ($routeProvider, $locationProvider) {
+        .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
             $routeProvider.when('/', {
                 templateUrl: '/App/Gallery/Views/GalleryView.html',
                 controller: 'GalleryViewModel'
@@ -22,9 +22,9 @@
             $routeProvider.otherwise({ redirectTo: '/' });
 
             $locationProvider.html5Mode(true);
-        })
+        }])
 
-        .run(function($log, $route, $rootScope) {
+        .run(['$log', '$route', '$rootScope', function($log, $route, $rootScope) {
             $log.log("Gallery App loaing...");
 
 
@@ -47,7 +47,7 @@
 
             });
 
-    });
+    }]);
 
 
 }());

@@ -35,17 +35,10 @@
     @*<script src="~/App/Validator.js"></script>*@
 
     @Scripts.Render("~/bundles/modernizr")
-    @*@Scripts.Render("~/bundles/angular")*@
-    <script src="~/Scripts/Angular/angular.js"></script>
-    <script src="~/Scripts/Angular/angular-route.js"></script>
+    @Scripts.Render("~/bundles/angular")
     @Scripts.Render("~/bundles/mfb-menu")
-    @*@Scripts.Render("~/bundles/ap-app")*@
+    @Scripts.Render("~/bundles/ap-app")
 
-    <script src="~/App/AppMain.js"></script>
-    <script src="~/App/AppMainViewModel.js"></script>
-    <script src="~/App/Common/Directives/AppCommonDirectives.js"></script>
-    <script src="~/App/Common/Directives/ButtonMenuDirectiveViewModel.js"></script>
-            
     @RenderSection("scripts", required: false)
 
     <script type="text/javascript">

@@ -40,13 +40,16 @@ namespace adir.photography
                         "~/App/AppMain.js",
                         "~/App/AppMainViewModel.js",
                         "~/App/Common/Directives/AppCommonDirectives.js",
+                        "~/App/Common/Services/AppCommonServices.js",
                         "~/App/Common/Directives/ButtonMenuDirectiveViewModel.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/gallery").Include(
+                        "~/App/Common/Services/WebApiService.js",
                         "~/App/Gallery/GalleryApp.js",
                         "~/App/Gallery/ViewModels/GalleryViewModel.js",
                         "~/App/Gallery/ViewModels/AlbumsViewModel.js",
-                        "~/App/Gallery/ViewModels/MaxImageDirectiveViewModel.js"));
+                        "~/App/Gallery/ViewModels/MaxImageDirectiveViewModel.js",
+                        "~/App/Gallery/Services/GalleryServices.js"));
         }
     }
 }
