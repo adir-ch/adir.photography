@@ -12,7 +12,7 @@
 
 		var _deffered;
 
-		var _onFailure = function(reponse, success, always) {
+		var _onSuccess = function(response, success, always) {
 			success(response);
 
 			if (always != null) {

@@ -62,7 +62,7 @@ namespace PhotosRepository
 
         private XElement GetGalleryEntry(string galleryName)
         {
-            //throw new Exception(String.Format("Cannot find Gallery {0}", galleryName));  --- for testing
+            //throw new Exception(String.Format("Cannot find Gallery {0}", galleryName));  //--- for testing
             return _db.Element("galleries").Descendants().Where(g => String.Equals(g.Element("name").Value, galleryName, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
         }
 
