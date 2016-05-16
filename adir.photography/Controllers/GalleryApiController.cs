@@ -16,16 +16,14 @@ namespace adir.photography.Controllers
     public class GalleryApiController : ApiController
     {
         private static readonly ILog _log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        IWebSiteConfigService _config;
-        GalleryDataService _galleryDataService;
+        IGalleryDataService _galleryDataService;
 
-        public GalleryApiController()
+        public GalleryApiController(IGalleryDataService galleryDataService)
         {
-            _config = WebSiteFileConfigService.Instance(); // TODO: inject
-            _galleryDataService = new GalleryDataService(); // TODO: inject
+            _galleryDataService = galleryDataService; 
 
             // setting logger for current user name
-            if (String.IsNullOrEmpty(System.Web.HttpContext.Current.User.Identity.Name) == false)
+            if (System.Web.HttpContext.Current != null && String.IsNullOrEmpty(System.Web.HttpContext.Current.User.Identity.Name) == false)
             {
                 log4net.ThreadContext.Properties["UserId"] = System.Web.HttpContext.Current.User.Identity.Name;
             }
@@ -36,16 +34,10 @@ namespace adir.photography.Controllers
 
         }
 
-        // ---- TODO: convert all API's to web api 2 - similar to the below example. 
-        //[HttpGet]
-        //[Route("gallery")]
-        //public HttpResponseMessage GetGalleryPhotos(HttpRequestMessage request)
-        //{
-        //    HomeGalleryModel gallery = new HomeGalleryModel();
-        //    gallery.OpeningImage = _repo.GetMainGalleryOpeningPhotos("main");
-        //    gallery.MainGalleryImages = _repo.GetMainGalleryPhotos("main");
-        //    return request.CreateResponse<HomeGalleryModel>(HttpStatusCode.OK, gallery);
-        //}
+        public GalleryApiController() : this (new GalleryDataService())
+        {
+
+        }
 
         // GET api/galleryapi - changed to WebApi 2 style 
         public IHttpActionResult Get()
@@ -61,19 +53,6 @@ namespace adir.photography.Controllers
             }
 
         }
-
-        //public HttpResponseMessage Get() - can also be done with: 
-        //{
-        //    try
-        //    {
-        //        var model = BuildGalleryModel("Main");
-        //        return Request.CreateResponse(HttpStatusCode.OK, model);
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e.Message);
-        //    }
-        //}
 
         // GET api/galleryapi/<gallery name> 
         public IHttpActionResult Get(string name)

@@ -5,10 +5,21 @@ using adir.photography.Services.WebSiteConfig;
 
 namespace adir.photography.Services.Gallery
 {
-    public class GalleryDataService
+    public class GalleryDataService : IGalleryDataService
     {
-        private IPhotosRepository _repo = new XMLPhotoRepositoryDB(); // TODO: inject as singleton
-        private IWebSiteConfigService _siteConfig = WebSiteFileConfigService.Instance(); // TODO: inject as singleton
+        private IPhotosRepository _repo; // TODO: inject as singleton
+        private IWebSiteConfigService _siteConfig; // TODO: inject as singleton
+
+        public GalleryDataService() : this(new XMLPhotoRepositoryDB(), WebSiteFileConfigService.Instance())
+        {
+
+        }
+
+        public GalleryDataService(IPhotosRepository repo, IWebSiteConfigService siteConfig)
+        {
+            _repo = repo; 
+            _siteConfig = siteConfig; 
+        }
 
         public IEnumerable<string> GetGalleryPhotos(string galleryName)
         {

@@ -144,6 +144,7 @@
     <Compile Include="Models\HomeGalleryModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Gallery\GalleryDataService.cs" />
+    <Compile Include="Services\Gallery\IGalleryDataService.cs" />
     <Compile Include="Services\WebSiteConfig\IWebSiteConfigService.cs" />
     <Compile Include="Services\WebSiteConfig\WebConfigFileSection.cs" />
     <Compile Include="Services\WebSiteConfig\WebSiteFileConfigService.cs" />

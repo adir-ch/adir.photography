@@ -10,29 +10,45 @@ namespace PhotosRepository
 {
     public class XMLPhotoRepositoryDB : IPhotosRepository
     {
-        List<Photo> _photos;
-        XElement _db;
-        string _serverRunningPath;
+        private List<Photo> _photos;
+        private XElement _db;
+        private string _serverRunningPath;
         private static readonly ILog _log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-        public XMLPhotoRepositoryDB()
+        public XMLPhotoRepositoryDB(XElement root = null)
         {
             _serverRunningPath = System.Web.Hosting.HostingEnvironment.MapPath("~");
-            initDB();
+            InitDB(root);
         }
 
-        private void initDB()
+        private XElement LoadDocumentRoot()
         {
-            try
+            return XDocument.Load(_serverRunningPath + "/galleries.xml").Element("root");
+        }
+
+        private void InitDB(XElement root = null)
+        {
+            if (root == null)
             {
-                _db = XDocument.Load(_serverRunningPath + "/galleries.xml").Element("root");
+                try
+                {
+                    _db = LoadDocumentRoot(); 
+                }
+                catch (Exception e)
+                {
+                    _log.ErrorFormat("Unable to load XML repo: {0}", e.Message);
+                }
             }
-            catch (Exception e)
+            else
             {
-                _log.ErrorFormat("Unable to load XML repo: {0}", e.Message);
+                _db = root; 
             }
 
+            ParseXMLData();
+        }
 
+        private void ParseXMLData()
+        {
             _photos = new List<Photo>();
             var photos = _db.Element("photos").Descendants().Where(tag => tag.Name == "photo");
 
@@ -76,9 +92,8 @@ namespace PhotosRepository
             string openingPhoto = GetGalleryOpeningPhoto(galleryName);
             string galleryIdentifyingTag = GetGalleryEntry(galleryName).Element("tag").Value;
             return _photos.Where(p => p.GetTags().Where(t => t.IndexOf(galleryIdentifyingTag, StringComparison.OrdinalIgnoreCase) >= 0).Any() &&
-                                        ! String.Equals(p.FileName, openingPhoto, StringComparison.CurrentCultureIgnoreCase)).Select(f => f.FileName);
+                                        !String.Equals(p.FileName, openingPhoto, StringComparison.CurrentCultureIgnoreCase)).Select(f => f.FileName).ToList<string>();
         }
-
 
         public GalleryConfig GetGalleryConfig(string galleryName)
         {
@@ -86,7 +101,7 @@ namespace PhotosRepository
             {
                 TimeOut = Int32.Parse(GetGalleryEntry(galleryName).Element("config").Element("PhotoCycle").Attribute("Timeout").Value),
                 AutoCycle = Boolean.Parse(GetGalleryEntry(galleryName).Element("config").Element("PhotoCycle").Attribute("AutoCycle").Value),
-                PhotosLocation = "/Content/images/"
+                PhotosLocation = "/Content/images/" // just default
             };
         }
     }
