@@ -59,13 +59,13 @@
     <Compile Include="XMLPhotoRepositoryDBShould.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\PhotosRepository\PhotosRepository.csproj">
       <Project>{6a9303c2-ad70-4caf-989f-26cecce9ea28}</Project>
       <Name>PhotosRepository</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

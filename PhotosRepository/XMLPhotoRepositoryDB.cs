@@ -91,7 +91,7 @@ namespace PhotosRepository
         {
             string openingPhoto = GetGalleryOpeningPhoto(galleryName);
             string galleryIdentifyingTag = GetGalleryEntry(galleryName).Element("tag").Value;
-            return _photos.Where(p => p.GetTags().Where(t => t.IndexOf(galleryIdentifyingTag, StringComparison.OrdinalIgnoreCase) >= 0).Any() &&
+            return _photos.Where(p => p.GetTags().Where(t => t.Equals(galleryIdentifyingTag, StringComparison.OrdinalIgnoreCase)).Any() &&
                                         !String.Equals(p.FileName, openingPhoto, StringComparison.CurrentCultureIgnoreCase)).Select(f => f.FileName).ToList<string>();
         }
 
