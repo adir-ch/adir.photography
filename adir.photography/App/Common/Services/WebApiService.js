@@ -2,60 +2,43 @@
 (function () {
     "use strict";
 
+    var _result;
+
     angular.module("AppCommonServices").constant("WebApiServerSettings", {
 		ServerPath: "http://localhost:61001"
     });
 
-	angular.module("AppCommonServices").factory("WebApiService", ['$http', '$q', 'WebApiServerSettings', WebApiService]);
+	angular.module("AppCommonServices").factory("WebApiService", ['$http', '$q', '$exceptionHandler', 'WebApiServerSettings', WebApiService]);
 
-	function WebApiService($http, $q) {
+	function WebApiService($http, $q, $exceptionHandler) {
 
-		var _deffered;
-
-		var _onSuccess = function(response, success, always) {
-			success(response);
-
-			if (always != null) {
-				always(response);
-			}
-
-            _deffered.resolve(response);
+		var _onSuccess = function(response) {
+			console.log("Got new data from server");
 		}
 
-		var _onFailure = function(response, failure, always) {
-			if (failure != null) {
-				failure(response);
-			}
-
-			if (always != null) {
-				always(response);
-			}
-
-			_deffered.reject(response.data.ExceptionMessage);
+		var _onFailure = function(response) {
+			console.log("Could not get new data from server: ", response);
+			//throw response.data.ExceptionMessage;
 		}
 
-		var _apiGet = function(uri, success, failure, always) {
+		var _apiGet = function(uri) {
 
-            _deffered = $q.defer();
-
-			$http.get(uri)
+			return $http.get(uri)
                 .then(function(response) {
-                    _onSuccess(response, success, always);
+					_onSuccess(response);
+					return response.data; // resolve the promise of whever called me with the data
                 }, function(response) {
-					_onFailure(response, failure, always);
+					console.info("Server error, calling failur");
+					_onFailure(response);
+					throw response;
                 })
                 .catch(function(response) {
-                    _onFailure(response, failure, always);
+                    throw "Got exception while connecting server";
                 });
-
-            return _deffered.promise;
         }
 
         return {
-            apiGet: _apiGet
+            apiGet: _apiGet,
         };
-
 	}
-
-
 }());

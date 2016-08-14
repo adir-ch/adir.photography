@@ -87,6 +87,15 @@
       <Name>PhotosRepository</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="ClientTests\Common\WebApiServiceShould.js" />
+    <Content Include="ClientTests\Gallery\GalleryServiceShould.js" />
+    <Content Include="ClientTests\Gallery\GalleryViewModelShould.js" />
+    <Content Include="css\jasmine.css" />
+    <Content Include="Scripts\jasmine-html.js" />
+    <Content Include="Scripts\jasmine.js" />
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

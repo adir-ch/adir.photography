@@ -1,6 +1,6 @@
 
 <div ng-if="galleryDataReady">
-    <ap-max-image user-name="userName" gallery-name="galleryName" gallery-data="galleryData"></ap-max-image>
+    <ap-max-image user-name="userName" gallery-name="galleryName" gallery-data="galleryData()"></ap-max-image>
 </div>
 
 <div ng-if="serverError">
@@ -8,7 +8,7 @@
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="alert alert-danger ap-gallery-error-message" role="alert">
-                    Gallery error: {{serverErrorMessage}} 
+                    Gallery error: {{serverErrorMessage}}
                     <span class="glyphicon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
                 </div>
 			</div>
