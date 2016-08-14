@@ -89,11 +89,11 @@ function Ctrl(defaultValues, $window) {
   },{
     label: 'About & Contact',
     icon: 'ion-android-mail',
-    href: '/contact'
+    href: '/home/about'
   },{
     label: 'Register | Login',
     icon: 'ion-person',
-    href: '/login'
+    href: '/home/login'
   }];
 
   function loc(href) {

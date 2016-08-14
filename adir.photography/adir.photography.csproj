@@ -142,8 +142,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ContactFormModel.cs" />
     <Compile Include="Models\HomeGalleryModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\EmailSender\EmailSendingService.cs" />
+    <Compile Include="Services\EmailSender\IEmailSendingService.cs" />
     <Compile Include="Services\Gallery\GalleryDataService.cs" />
     <Compile Include="Services\Gallery\IGalleryDataService.cs" />
     <Compile Include="Services\WebSiteConfig\IWebSiteConfigService.cs" />
@@ -305,6 +308,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Gallery.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App\Management\" />

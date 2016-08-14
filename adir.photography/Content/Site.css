@@ -65,3 +65,19 @@ textarea {
     margin-top: 20px;
     font-size: medium;
 }
+
+#contact_success_message {
+    display: none;
+}
+
+#about-jumbotron {
+    background: url(images/about-bg.jpg) center center no-repeat;
+    background-size: contain;
+    width: 100%; // or a % in responsive layout
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+}
