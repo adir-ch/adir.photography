@@ -1,4 +1,5 @@
-﻿using System;
+﻿using adir.photography.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace adir.photography.Services.EmailSender
 {
     public interface IEmailSendingService
     {
-        bool SendEmail(string from, string to, string messageSubject, string messageBody);
+        bool SendEmail(ContactFormModel contactFormInputData);
     }
 }

@@ -345,9 +345,21 @@ ViewBag.title = "About Me!"; @* TODO: set to user gallery name *@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Success message -->
-                            @if(ViewBag.emailWasSentSuccessfuly != null && ViewBag.emailWasSentSuccessfuly == true) {
-                                <div class="alert alert-success" role="alert">Success <i class="glyphicon glyphicon-thumbs-up"></i> Form submitted successfuly</div>
+
+                            <!-- Success / Fail message -->
+                            @if (ViewBag.newContactForm != null && ViewBag.newContactForm == false)
+                            {
+                                if (ViewBag.emailWasSentSuccessfuly != null)
+                                {
+                                    if (ViewBag.emailWasSentSuccessfuly == true)
+                                    {
+                                        <div class="alert alert-success" role="alert">Success <i class="glyphicon glyphicon-thumbs-up"></i> Form submitted successfuly</div>
+                                    }
+                                    else
+                                    {
+                                        <div class="alert alert-warning" role="alert">Failed! <i class="glyphicon glyphicon-thumbs-down"></i> Form submition failed</div>
+                                    }
+                                }
                             }
 
                             <!-- Button -->

@@ -14,7 +14,7 @@ namespace adir.photography.Controllers
     {
         private static readonly ILog _log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         IEmailSendingService _emailSendingService;
-
+            
         public HomeController() : this(new EmailSendingService()) // for testing - replace with DI
         {
  
@@ -55,30 +55,16 @@ namespace adir.photography.Controllers
         {
             // About page
             ViewBag.Title = "adir.photography";
-            ViewBag.emailWasSentSuccessfuly = false; 
+            ViewBag.newContactForm = true;
+            
             return View();
         }
         
         [HttpPost]
-        public ActionResult About(ContactFormModel contactFormData)
-        { 
-            string messageSubject = "New message from adir.photography"; 
-            var messageBody = string.Format("Comment From: {1} {2}{0}Email:{3}{0}Location: {4}, {5}{0}Comment:{6}",
-            Environment.NewLine,
-            contactFormData.FirstName,
-            contactFormData.LastName,
-            contactFormData.EmailAddress,
-            contactFormData.City,
-            contactFormData.Country,
-            contactFormData.Message);
-            
-            if (_emailSendingService.SendEmail( "info@adir.photography", 
-                                                "info@adir.photography", 
-                                                messageSubject,                      
-                                                messageBody))
-            {
-                ViewBag.emailWasSentSuccessfuly = true;
-            }
+        public ActionResult About(ContactFormModel contactFormInputData)
+        {
+            ViewBag.emailWasSentSuccessfuly = _emailSendingService.SendEmail(contactFormInputData);
+            ViewBag.newContactForm = false;
             return View();
         }
 
