@@ -6,7 +6,7 @@
 	    console.log("starting button menu directive");
 	    return {
 	        restrict: 'E',
-	        templateUrl: 'App/Common/Directives/ButtonMenuDirectiveView.html',
+	        templateUrl: 'App/Common/Directives/MfbButtonMenu/ButtonMenuDirectiveView.html',
 	        controller: 'mfbMenuViewModel',
 	        controllerAs: 'ctrl'
 	    };

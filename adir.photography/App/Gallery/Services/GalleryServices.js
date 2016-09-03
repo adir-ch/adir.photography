@@ -2,7 +2,7 @@
     "use strict";
 
     angular.module("gallery").factory("GalleryResources", ['WebApiService', GalleryResources]).run(function(){
-        console.log("starting gallery service");
+        console.log("starting gallery resources service");
     });
 
     function GalleryResources(WebApiService) {

@@ -1,4 +1,4 @@
-//(function() {
+(function() {
 
     var MaxImageFunction = function($timeout) {
         return {
@@ -69,4 +69,4 @@
     }
 
     angular.module('gallery').directive('apMaxImage', MaxImageFunction);
-//}());
+}());

@@ -93,7 +93,7 @@ function Ctrl(defaultValues, $window) {
   },{
     label: 'Register | Login',
     icon: 'ion-person',
-    href: '/home/login'
+    href: '/member'
   }];
 
   function loc(href) {

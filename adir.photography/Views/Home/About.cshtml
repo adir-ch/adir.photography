@@ -2,6 +2,8 @@
 ViewBag.title = "About Me!"; @* TODO: set to user gallery name *@
 }
 @section scripts {
+    bootstrap.min.js
+    <script src="~/Scripts/bootstrap.js"></script>
 }
 
 <div class="container-fluid">
@@ -365,8 +367,9 @@ ViewBag.title = "About Me!"; @* TODO: set to user gallery name *@
                             <!-- Button -->
                             <div class="form-group">
                                 <label class="col-md-4 control-label"></label>
+                                <div class="col-md-2"></div>
                                 <div class="col-md-4">
-                                    <button type="submit" class="btn btn-default" >Send <span class="glyphicon glyphicon-send"></span></button>
+                                    <button type="submit" class="btn btn-block btn-default" >Send <span class="glyphicon glyphicon-send"></span></button>
                                 </div>
                             </div>
                         </fieldset>

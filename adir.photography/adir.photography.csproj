@@ -157,8 +157,10 @@
     <Content Include="App\AppMain.js" />
     <Content Include="App\AppMainViewModel.js" />
     <Content Include="App\Common\Directives\AppCommonDirectives.js" />
-    <Content Include="App\Common\Directives\ButtonMenuDirectiveView.html" />
-    <Content Include="App\Common\Directives\ButtonMenuDirectiveViewModel.js" />
+    <Content Include="App\Common\Directives\LoginDialog\LoginDialogDirectiveView.html" />
+    <Content Include="App\Common\Directives\LoginDialog\LoginDialogDirectiveViewModel.js" />
+    <Content Include="App\Common\Directives\MfbButtonMenu\ButtonMenuDirectiveView.html" />
+    <Content Include="App\Common\Directives\MfbButtonMenu\ButtonMenuDirectiveViewModel.js" />
     <Content Include="App\Common\Services\AppCommonServices.js" />
     <Content Include="App\Common\Services\WebApiService.js" />
     <Content Include="App\Gallery\GalleryApp.js" />
@@ -170,8 +172,9 @@
     <Content Include="App\Gallery\Views\GalleryView.html" />
     <Content Include="App\Gallery\Views\MaxImageDirectiveView.html" />
     <Content Include="App\Member\MemberApp.js" />
-    <Content Include="App\Member\ViewModels\AboutViewModel.js" />
-    <Content Include="App\Member\Views\AboutView.html" />
+    <Content Include="App\Member\Services\MemberServices.js" />
+    <Content Include="App\Member\ViewModels\ProfileViewModel.js" />
+    <Content Include="App\Member\Views\ProfileView.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -309,7 +312,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Gallery.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Member.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App\Management\" />

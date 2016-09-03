@@ -1,0 +1,16 @@
+﻿
+@section scripts {
+    @Scripts.Render("~/bundles/member")
+}
+
+@section jsCode {
+    angular.bootstrap(document.getElementById("member"), ['member']);
+}
+
+@{
+    ViewBag.title = "Member area"; @* TODO: set to user gallery name *@
+}
+
+<div data-ng-app="member" id="member">
+    <div data-ng-view=""></div>
+</div>

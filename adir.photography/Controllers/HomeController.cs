@@ -68,7 +68,7 @@ namespace adir.photography.Controllers
             return View();
         }
 
-        public ActionResult Login(string id)
+        public ActionResult Member(string id)
         {
             ViewBag.Title = "adir.photography";
             return View();

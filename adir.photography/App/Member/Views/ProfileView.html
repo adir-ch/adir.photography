@@ -1,0 +1,9 @@
+
+<div ng-show="currentMemeberAuthenticated">
+	<h1>Profile View</h1>
+	<h2 >Member data: {{memberData}}</h2>
+</div>
+
+<div ng-if="currentMemeberAuthenticated == false">
+	<ap-login-dialog></ap-login-dialog>
+</div>

@@ -39,17 +39,23 @@ namespace adir.photography
             bundles.Add(new ScriptBundle("~/bundles/ap-app").Include(
                         "~/App/AppMain.js",
                         "~/App/AppMainViewModel.js",
-                        "~/App/Common/Directives/AppCommonDirectives.js",
                         "~/App/Common/Services/AppCommonServices.js",
-                        "~/App/Common/Directives/ButtonMenuDirectiveViewModel.js"));
+                        "~/App/Common/Services/WebApiService.js",
+                        "~/App/Common/Directives/AppCommonDirectives.js",
+                        "~/App/Common/Directives/LoginDialog/LoginDialogDirectiveViewModel.js",
+                        "~/App/Common/Directives/MfbButtonMenu/ButtonMenuDirectiveViewModel.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/gallery").Include(
-                        "~/App/Common/Services/WebApiService.js",
                         "~/App/Gallery/GalleryApp.js",
                         "~/App/Gallery/ViewModels/GalleryViewModel.js",
                         "~/App/Gallery/ViewModels/AlbumsViewModel.js",
                         "~/App/Gallery/ViewModels/MaxImageDirectiveViewModel.js",
                         "~/App/Gallery/Services/GalleryServices.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/member").Include(
+                        "~/App/Member/MemberApp.js",
+                        "~/App/Member/ViewModels/ProfileViewModel.js",
+                        "~/App/Member/Services/MemberServices.js"));
         }
     }
 }
