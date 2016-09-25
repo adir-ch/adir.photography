@@ -1,3 +1,47 @@
-<div>
-	<h3>Login dialog for: {{vm.user}}</h3>
-</div>
+<link rel="stylesheet" href="../../../Content/ngDialog-theme-default.css">
+<link rel="stylesheet" href="../../../Content/ngDialog.css">
+
+<script type="text/ng-template" id="loginDialogPopupId">
+	<div class="ngdialog-message">
+		<!-- <h3>ngDialog template</h3>
+		<p ng-show="userName">Test content for <code>{{userName}}</code></p>
+		<p ng-show="ngDialogId">Dialog Id: <code>{{ngDialogId}}</code></p>
+		<p class="data-passed-through" ng-show="ngDialogData.foo">Data passed through: <code>{{ngDialogData.foo}}</code></p>
+		<p ng-show="dialogModel.message">Scope passed through: <code>{{dialogModel.message}}</code></p>
+		<p>Close this dialog: <button class="inline close-this-dialog" ng-click="closeThisDialog()">Close</button></p> -->
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<form class="well form-horizontal" id="LoginForm">
+                        <fieldset>
+                            <!-- Form Name -->
+                            <legend>Login</legend>
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <div class="col-md-8 inputGroupContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <input type="email" name="user" placeholder="email address" class="form-control" ng-model="loginFormInput.userEmail">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <div class="col-md-8 inputGroupContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                                        <input type="password" name="password" placeholder="Password" class="form-control" ng-model="loginFormInput.password">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+					<div class="ngdialog-buttons">
+						<button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click=closeThisDialog("Cancel")>Cancel</button>
+						<button type="button" class="ngdialog-button ngdialog-button-primary" ng-click=confirm("OK")>OK</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</script>

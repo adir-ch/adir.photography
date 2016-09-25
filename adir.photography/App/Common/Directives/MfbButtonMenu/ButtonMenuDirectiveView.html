@@ -3,13 +3,19 @@
 <!-- <link href="../../../Scripts/mfb/css/angular-material.min.css" rel="stylesheet" /> -->
 <link href="../../../../Scripts/mfb/css/mfb-menu.css" rel="stylesheet" />
 <link href="../../../../Scripts/mfb/css/mfb.css" rel="stylesheet" />
+<link rel="stylesheet" href="../../../Content/ngDialog-theme-default.css">
+<link rel="stylesheet" href="../../../Content/ngDialog.css">
 
 <div>
     <nav mfb-menu position="{{ctrl.chosen.position}}" effect="{{ctrl.chosen.effect}}"
          active-icon="ion-chevron-down" resting-icon="ion-chevron-up"
          ng-mouseenter="hovered()" ng-mouseleave="hovered()"
          toggling-method="{{ctrl.chosen.method}}" menu-state="ctrl.menuState" main-action="ctrl.mainAction()">
-        <button mfb-button icon="{{button.icon}}" ng-click="ctrl.loc(button.href)"
+        <button mfb-button icon="{{button.icon}}" ng-click="ctrl.menuButtonClicked(button.href)"
                 label="{{button.label}}" ng-repeat="button in ctrl.buttons"></button>
     </nav>
+
+    <div ng-if="ctrl.showLoginDialog == true">
+        <ap-login-dialog></ap-login-dialog>
+    </div>
 <div>

@@ -23,6 +23,8 @@
 
 		var _apiGet = function(uri) {
 
+			// TODO: Implement HTTP GET Cache
+
 			return $http.get(uri)
                 .then(function(response) {
 					_onSuccess(response);

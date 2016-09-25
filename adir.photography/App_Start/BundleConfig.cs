@@ -15,7 +15,7 @@ namespace adir.photography
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jQuery/jquery-2.1.4.js"));
-            
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Scripts/mfb/css/angular-material.min.css",
                       "~/Scripts/mfb/css/mfb-menu",
@@ -32,17 +32,20 @@ namespace adir.photography
                         "~/Scripts/jQuery.cycle/jquery.cycle.all.js",
                         "~/Scripts/jQuery.maximage/js/jquery.maximage.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/mfb-menu").Include(
+            bundles.Add(new ScriptBundle("~/bundles/angular-libs").Include(
                         "~/Scripts/mfb/js/mfb-directive.js",
-                        "~/Scripts/mfb/js/mfb-menu.js"));
+                        "~/Scripts/ngDialog.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/ap-app").Include(
                         "~/App/AppMain.js",
                         "~/App/AppMainViewModel.js",
                         "~/App/Common/Services/AppCommonServices.js",
                         "~/App/Common/Services/WebApiService.js",
+                        "~/App/Common/Services/GlobalConfigurationService.js",
                         "~/App/Common/Directives/AppCommonDirectives.js",
                         "~/App/Common/Directives/LoginDialog/LoginDialogDirectiveViewModel.js",
+                        "~/App/Common/Directives/LoginDialog/LoginDialogFormViewModel.js",
+                        "~/App/Common/Directives/MfbButtonMenu/MfbButtonMenuViewModel.js",
                         "~/App/Common/Directives/MfbButtonMenu/ButtonMenuDirectiveViewModel.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/gallery").Include(

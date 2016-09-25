@@ -1,3 +1,7 @@
+
+// This file is not used anymore - kept for ref
+// MOVED TO A DEDICATED DIRECTIVE under COMMON DIRECTIVES
+
 var mfbButtonMenu = angular.module('mfb-button-menu', ['mfb-menu']);
 
 mfbButtonMenu.value('defaultValues', {
@@ -67,7 +71,7 @@ function Ctrl(defaultValues, $window) {
   vm.actions = defaultValues.actions;
 
   vm.menuState = 'closed';
-  vm.loc = loc;
+  vm.menuButtonClicked = menuButtonClicked;
   vm.setMainAction = setMainAction;
   vm.mainAction = mainAction;
 
@@ -93,11 +97,15 @@ function Ctrl(defaultValues, $window) {
   },{
     label: 'Register | Login',
     icon: 'ion-person',
-    href: '/member'
+    href: 'login-directive'
   }];
 
-  function loc(href) {
-    $window.location.href = href;
+  function menuButtonClicked(href) {
+    if (href == "login-directive") {
+      console.log("calling login dialog");
+    } else {
+      $window.location.href = href;
+    }
   }
 
   function mainAction() {

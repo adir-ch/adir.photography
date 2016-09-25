@@ -1,4 +1,4 @@
 ﻿
 (function () {
-    angular.module('AppCommonDirectives', ['mfb-button-menu']);
+    angular.module('AppCommonDirectives', ['AppCommonServices', ,'MfbButtonMenu', 'ngDialog']);
 }());

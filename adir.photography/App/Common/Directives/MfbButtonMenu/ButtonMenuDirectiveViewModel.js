@@ -7,7 +7,7 @@
 	    return {
 	        restrict: 'E',
 	        templateUrl: 'App/Common/Directives/MfbButtonMenu/ButtonMenuDirectiveView.html',
-	        controller: 'mfbMenuViewModel',
+	        controller: 'MfbButtonMenuViewModel',
 	        controllerAs: 'ctrl'
 	    };
 	};

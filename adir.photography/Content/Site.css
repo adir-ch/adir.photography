@@ -81,3 +81,8 @@ textarea {
     background-size: cover;
     color: white;
 }
+
+.ngdialog.ngdialog-theme-default.custom-width .ngdialog-content {
+    width: 75%;
+    height: 42%;
+}

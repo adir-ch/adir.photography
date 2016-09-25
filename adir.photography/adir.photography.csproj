@@ -189,6 +189,9 @@
     <Content Include="Content\Images\camera.png" />
     <Content Include="Content\Images\gradient.png" />
     <Content Include="Content\maximage-gallery.css" />
+    <Content Include="Content\ngDialog-theme-default.css" />
+    <Content Include="Content\ngDialog.css" />
+    <Content Include="Content\ngDialog.min.css" />
     <Content Include="Fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Fonts\glyphicons-halflings-regular.ttf" />
@@ -296,6 +299,8 @@
     <Content Include="Scripts\mfb\js\mfb.js" />
     <Content Include="Scripts\mfb\js\mfb.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\ngDialog.js" />
+    <Content Include="Scripts\ngDialog.min.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\Angular\_references.js" />
     <Content Include="Web.config" />
