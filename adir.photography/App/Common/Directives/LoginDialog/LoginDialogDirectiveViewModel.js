@@ -1,14 +1,14 @@
 
 (function () {
 
-	angular.module('AppCommonDirectives').controller('LoginDialogViewModel',
-			["$scope", "$location", "ngDialog", "WebApiService", "GlobalConfigurationService", LoginDialogViewModel]);
+	angular.module('AppCommonDirectives').controller('LoginDialogDirectiveViewModel',
+			["$scope", "$location", "ngDialog", "WebApiService", "GlobalConfigurationService", LoginDialogDirectiveViewModel]);
 
-	function LoginDialogViewModel($scope, $location, ngDialog, WebApiService, GlobalConfigurationService) {
+	function LoginDialogDirectiveViewModel($scope, $location, ngDialog, WebApiService, GlobalConfigurationService) {
 		console.log("Login dialog directive - start");
 
 		$scope.userName = ""; // take data from login form
-		$scope.loginFormInput = { userEmail: "you@domain", password: ""};
+		$scope.loginFormInput = { userEmail: "", password: ""};
 		$scope.authenticated = false;
 
 		var CheckIfUserIsAuthenticated = function(userName) {
@@ -30,9 +30,9 @@
 
 		function OpenLoginDialog() {
 			ngDialog.openConfirm({
-			 		className: 'ngdialog-theme-default custom-width',
-			 		template: 'loginDialogPopupId',
-			 		scope: $scope,
+					className: 'ngdialog-theme-default custom-width',
+					template: 'loginDialogPopupId',
+					scope: $scope,
 			}).then(
 				function (inputData) {
 					console.log("Form input data status: ", inputData, " data: ", $scope.loginFormInput);
@@ -42,7 +42,7 @@
 					console.log("Login form:", status);
 				}
 			).finally(function() {
-				$scope.$emit('loginPopupDialogEnable', "");
+				$scope.$emit('loginPopupDialogFinished', "");
 			});
 		}
 
@@ -50,7 +50,7 @@
 			if ($scope.userName != "" && CheckIfUserIsAuthenticated($scope.userName) == true) {
 				console.log("User ", $scope.userName, " is authenticated, redirecting to user profile page");
 				console.log("sending login event");
-				$scope.$emit('loginPopupDialogEnable', "");
+				$scope.$emit('loginPopupDialogFinished', "");
 				// $location.path("/home/member/", $scope.userName); --------------> wait with that for now
 				// can also redirect to the user gallery
 			} else {
@@ -68,7 +68,7 @@
 	    return {
 	        restrict: 'E',
 	        templateUrl: '/App/Common/Directives/LoginDialog/LoginDialogDirectiveView.html',
-	        controller: 'LoginDialogViewModel',
+	        controller: 'LoginDialogDirectiveViewModel',
 	        // controllerAs: 'vm'
 	        // bindToController: true // if the scope is isolated
 

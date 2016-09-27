@@ -119,7 +119,7 @@ function Ctrl($scope, defaultValues, $window) {
         }
     }
 
-    $scope.$on("loginPopupDialogEnable", function(event, args) {
+    $scope.$on("loginPopupDialogFinished", function(event, args) {
         console.log("reset login dialog status");
         vm.showLoginDialog = false;
     });
@@ -135,7 +135,6 @@ Ctrl.prototype.toggle = function () {
 
 Ctrl.prototype.closeMenu = function () {
     this.menuState = 'closed';
-    //this.showLoginDialog = false;
 };
 
 Ctrl.$inject = ['$scope', 'defaultValues', '$window'];
