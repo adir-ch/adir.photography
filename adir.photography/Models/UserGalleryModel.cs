@@ -6,8 +6,9 @@ using PhotosRepository;
 
 namespace adir.photography.Models
 {
-    public class HomeGalleryModel
+    public class UserGalleryModel
     {
+        public string Name { get; set; }
         public string OpeningPhoto { get; set; }
         public IEnumerable<string> GalleryPhotos { get; set; }
         public int Timeout { get; set; }

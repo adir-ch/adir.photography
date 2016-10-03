@@ -11,7 +11,8 @@
 	function GlobalConfigurationService(GlobalSettings) {
 
 		var _WebApiUrls = {
-			gallery: "/api/gallery",
+			gallery: "/api/galleryapi/",
+			galleries: "/api/galleriesapi/",
 			member: "/api/member",
 			idmLogin: "/api/idm/login",
 			idmAuthenticate: "/api/idm/login"

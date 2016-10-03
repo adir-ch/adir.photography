@@ -12,7 +12,7 @@ using log4net;
 
 namespace adir.photography.Controllers
 {
-    [RoutePrefix("api")]
+    [RoutePrefix("api/galleryapi")]
     public class GalleryApiController : ApiController
     {
         private static readonly ILog _log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -40,11 +40,13 @@ namespace adir.photography.Controllers
         }
 
         // GET api/galleryapi - changed to WebApi 2 style 
+        [Route("")]
+        [HttpGet]
         public IHttpActionResult Get()
         {
             try
             {
-                var model = BuildGalleryModel("Main");
+                var model = _galleryDataService.GetGalleryData("Main");
                 return Ok(model);
             }
             catch (Exception e)
@@ -55,11 +57,13 @@ namespace adir.photography.Controllers
         }
 
         // GET api/galleryapi/<gallery name> 
+        [Route("{name}")]
+        [HttpGet]
         public IHttpActionResult Get(string name)
         {
             try
             {
-                var model = BuildGalleryModel(name);
+                var model = _galleryDataService.GetGalleryData(name);
                 return Ok(model);
             }
             catch (Exception e)
@@ -82,18 +86,5 @@ namespace adir.photography.Controllers
         public void Delete(int id)
         {
         }
-
-        private HomeGalleryModel BuildGalleryModel(string galleryName)
-        {
-            HomeGalleryModel galleryModel = new HomeGalleryModel();
-
-            galleryModel.OpeningPhoto = _galleryDataService.GetGalleryOpeningPhoto(galleryName);
-            galleryModel.GalleryPhotos = _galleryDataService.GetGalleryPhotos(galleryName);
-            galleryModel.Timeout = _galleryDataService.GetGalleryConfig(galleryName).TimeOut;
-            galleryModel.AutoCycle = _galleryDataService.GetGalleryConfig(galleryName).AutoCycle;
-            galleryModel.ImagesLocation = _galleryDataService.GetGalleryConfig(galleryName).PhotosLocation;
-            return galleryModel;
-        }
-
     }
 }

@@ -85,7 +85,7 @@ function Ctrl($scope, defaultValues, $window) {
     }, {
         label: 'Albums',
         icon: 'ion-images',
-        href: '/gallery'
+        href: '/gallery/albums'
     }, {
         label: 'About & Contact',
         icon: 'ion-android-mail',

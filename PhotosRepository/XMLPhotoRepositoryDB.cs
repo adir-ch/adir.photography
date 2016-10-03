@@ -10,9 +10,11 @@ namespace PhotosRepository
 {
     public class XMLPhotoRepositoryDB : IPhotosRepository
     {
-        private List<Photo> _photos;
+        
         private XElement _db;
         private string _serverRunningPath;
+        private List<Photo> _photos;
+        
         private static readonly ILog _log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         public XMLPhotoRepositoryDB(XElement root = null)
@@ -49,6 +51,11 @@ namespace PhotosRepository
 
         private void ParseXMLData()
         {
+            ParsePhotoData();
+        }
+
+        private void ParsePhotoData()
+        {
             _photos = new List<Photo>();
             var photos = _db.Element("photos").Descendants().Where(tag => tag.Name == "photo");
 
@@ -78,8 +85,20 @@ namespace PhotosRepository
 
         private XElement GetGalleryEntry(string galleryName)
         {
+            XElement galleryEntry; 
             //throw new Exception(String.Format("Cannot find Gallery {0}", galleryName));  //--- for testing
-            return _db.Element("galleries").Descendants().Where(g => String.Equals(g.Element("name").Value, galleryName, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
+            try
+            {
+                galleryEntry = _db.Element("galleries").Descendants("name").Where(g => 
+                    String.Equals(g.Value, galleryName, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+            
+            return galleryEntry.Parent; 
         }
 
         public string GetGalleryOpeningPhoto(string galleryName)
@@ -99,10 +118,22 @@ namespace PhotosRepository
         {
             return new GalleryConfig
             {
+                Name = galleryName,
                 TimeOut = Int32.Parse(GetGalleryEntry(galleryName).Element("config").Element("PhotoCycle").Attribute("Timeout").Value),
                 AutoCycle = Boolean.Parse(GetGalleryEntry(galleryName).Element("config").Element("PhotoCycle").Attribute("AutoCycle").Value),
                 PhotosLocation = "/Content/images/" // just default
             };
+        }
+
+        public IEnumerable<GalleryConfig> GetAllGalleries()
+        {
+            List<GalleryConfig> galleries = new List<GalleryConfig>(); 
+            foreach(var gallery in _db.Element("galleries").Descendants().Where(g => g.Name == "name"))
+            {
+                galleries.Add(GetGalleryConfig(gallery.Value)); 
+            }
+
+            return galleries; 
         }
     }
 }

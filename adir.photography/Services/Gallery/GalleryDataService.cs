@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using PhotosRepository;
 using adir.photography.Services.WebSiteConfig;
+using adir.photography.Models;
 
 namespace adir.photography.Services.Gallery
 {
@@ -21,19 +22,49 @@ namespace adir.photography.Services.Gallery
             _siteConfig = siteConfig; 
         }
 
-        public IEnumerable<string> GetGalleryPhotos(string galleryName)
+        public UserGalleryModel GetGalleryData(string galleryName)
+        {
+            UserGalleryModel galleryModel = new UserGalleryModel();
+
+            galleryModel.Name = galleryName; 
+            galleryModel.OpeningPhoto = GetGalleryOpeningPhoto(galleryName);
+            galleryModel.GalleryPhotos = GetGalleryPhotos(galleryName);
+            galleryModel.Timeout = GetGalleryConfig(galleryName).TimeOut;
+            galleryModel.AutoCycle = GetGalleryConfig(galleryName).AutoCycle;
+            galleryModel.ImagesLocation = GetGalleryConfig(galleryName).PhotosLocation;
+            return galleryModel;
+        }
+
+        public IEnumerable<UserGalleryModel> GetAllGalleries()
+        {
+            List<UserGalleryModel> allGalleries = new List<UserGalleryModel>(); 
+            var galleries = _repo.GetAllGalleries(); 
+            foreach(var gallery in galleries)
+            {
+                allGalleries.Add(new UserGalleryModel
+                {
+                    Name = gallery.Name, 
+                    OpeningPhoto = GetGalleryOpeningPhoto(gallery.Name), 
+                    ImagesLocation = GetGalleryConfig(gallery.Name).PhotosLocation
+                });
+            }
+
+            return allGalleries; 
+        }
+
+        private IEnumerable<string> GetGalleryPhotos(string galleryName)
         {
             return _repo.GetGalleryPhotos(galleryName);
         }
 
-        public string GetGalleryOpeningPhoto(string galleryName)
+        private string GetGalleryOpeningPhoto(string galleryName)
         {
             return _repo.GetGalleryOpeningPhoto(galleryName);
         }
 
-        public GalleryConfig GetGalleryConfig(string galleryName)
+        private GalleryConfig GetGalleryConfig(string galleryName)
         {
-            GalleryConfig config = _repo.GetGalleryConfig(galleryName); 
+            GalleryConfig config = _repo.GetGalleryConfig(galleryName);
             config.PhotosLocation = _siteConfig.PhotosLocation;
             return config;
         }

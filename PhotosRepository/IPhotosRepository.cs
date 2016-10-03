@@ -7,6 +7,7 @@ namespace PhotosRepository
 {
     public interface IPhotosRepository
     {
+        IEnumerable<GalleryConfig> GetAllGalleries();
         IEnumerable<string> GetGalleryPhotos(string galleryName);
         string GetGalleryOpeningPhoto(string galleryName);
         GalleryConfig GetGalleryConfig(string galleryName);

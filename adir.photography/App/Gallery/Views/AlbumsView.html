@@ -1,2 +1,29 @@
 ﻿
-<h4>Albums view page{{ where }}</h4>
+<link rel=stylesheet href="../../../Content/albums.css">
+
+<h4>Albums view page</h4>
+
+<div ng-if="galleryDataReady">
+	<div class="container-fluid" id="album-main">
+		<div class="row" ng-repeat="gallery in galleriesData()">
+			<div class="col-md-12">
+				<a ng-href="{{GenerateAlbumLink(gallery.Name)}}"><img class="responsive-image" ng-style="SetAlbumPhoto(gallery)" src="../../../Content/images/ratio-conserver.png"></a>
+			</div>
+		</div> 
+	</div> 
+
+</div>
+
+<div ng-if="serverError">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="alert alert-danger ap-gallery-error-message" role="alert">
+                    Albums page error: {{serverErrorMessage}}
+                    <span class="glyphicon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                </div>
+			</div>
+		</div>
+	</div>
+
+</div>

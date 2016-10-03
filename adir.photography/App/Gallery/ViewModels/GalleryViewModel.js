@@ -14,13 +14,12 @@
             return GalleryResources.galleryData();
         };
 
-
         if ($routeParams.galleryId) {
             console.log("setting gallery name from route to: " + $routeParams.galleryId);
             $scope.galleryName = $routeParams.galleryId;
         }
 
-        $scope.initialize = function () {
+        Initialize = function () {
 
             // get all the images + opening image.
             console.log("calling Gallery API");
@@ -41,9 +40,8 @@
                 ).catch(function(exception) {
                     console.log("Exception while asking for gallery data: ", exception);
                 });
-
         }
 
-        $scope.initialize();
+        Initialize();
     }]);
 }());

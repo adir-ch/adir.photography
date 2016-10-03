@@ -9,6 +9,16 @@
       <openingPhoto>girona.jpg</openingPhoto>
       <tag>Main</tag>
     </gallery>
+
+    <gallery>
+      <config>
+        <PhotoCycle AutoCycle="true" Timeout="50"/>
+      </config>
+      <name>Album1</name>
+      <openingPhoto>fe2.jpg</openingPhoto>
+      <tag>Album1</tag>
+    </gallery>
+
   </galleries>
   <photos>
     <photo>
@@ -27,6 +37,7 @@
       <filename>fe2.jpg</filename>
       <tags>
         <tag>main</tag>
+        <tag>album1</tag>
       </tags>
     </photo>
     <photo>
@@ -51,6 +62,7 @@
       <filename>il1.jpg</filename>
       <tags>
         <tag>main</tag>
+        <tag>album1</tag>
       </tags>
     </photo>
     <photo>
@@ -63,6 +75,7 @@
       <filename>ph1.jpg</filename>
       <tags>
         <tag>main</tag>
+        <tag>album1</tag>
       </tags>
     </photo>
     <photo>
@@ -87,6 +100,7 @@
       <filename>sa11.jpg</filename>
       <tags>
         <tag>main</tag>
+        <tag>album1</tag>
       </tags>
     </photo>
     <photo>
@@ -105,6 +119,7 @@
       <filename>sa4.jpg</filename>
       <tags>
         <tag>main</tag>
+        <tag>album1</tag>
       </tags>
     </photo>
     <photo>
@@ -129,6 +144,7 @@
       <filename>sa8.jpg</filename>
       <tags>
         <tag>main</tag>
+        <tag>album1</tag>
       </tags>
     </photo>
     <photo>

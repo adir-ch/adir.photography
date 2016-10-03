@@ -1,58 +1,68 @@
 (function () {
     "use strict";
 
-    angular.module("gallery").factory("GalleryResources", ['WebApiService', GalleryResources]).run(function(){
+    angular.module("gallery").factory("GalleryResources", ['GlobalConfigurationService', 'WebApiService', GalleryResources]).run(function(){
         console.log("starting gallery resources service");
     });
 
-    function GalleryResources(WebApiService) {
+    function GalleryResources(GlobalConfigurationService, WebApiService) {
 
 		var _galleryData = [];
-	    var _galleryDataReady = false;
+        var _galleriesData = [];
+	    var _serverDataReady = false;
         var _errorMessage = "";
 
-        var _onSuccess = function(response) {
+        var _onGallerySuccess = function(response) {
             angular.copy(response, _galleryData);
-            _galleryDataReady = true;
+        }
+
+        var _onGalleriesSuccess = function(response) {
+            angular.copy(response, _galleriesData);
         }
 
         var _onFailure = function (response) {
-            console.log("Failed to find gallery");
-            _errorMessage = response.data.ExceptionMessage;
+            _serverDataReady = false;
+            _errorMessage = response;
+            console.log("Failed to find galleries: ", _errorMessage);
         }
 
-        // Gallery service gets a promise obj from the WebApiService and set a handle
-        // (callback anon function) that will be called when the promise is resolved.
-        // The WebApiService when resolved will call to the anon func with the resolved
-        // data, and the Gallery service will resolve the promise of whoever called it.
-        var _getGalleryData = function(galleryName) {
-            return WebApiService.apiGet('/api/galleryapi')
+        function GetServerData(apiUrl, success) {
+            console.log("calling api with: ", apiUrl);
+            return WebApiService.apiGet(apiUrl)
                 .then(function(response) {
-                    _onSuccess(response);
                     console.log("WebApi call success");
-                    return _galleryDataReady;
+                    success(response);
+                    _serverDataReady = true;
+                    return _serverDataReady;
                 },
                 function(response) {
                     console.log("WebApi call failed");
                     _onFailure(response);
-                    return _errorMessage;
+                    throw _errorMessage;
                 }
             ).catch(function(response) {
                 console.log("Exception while calling WebApi service");
+                throw response;
             });
+        }
 
+        var _getGalleryData = function(galleryName) {
+            var url = GlobalConfigurationService.url("gallery") + "/" + galleryName;
+            return GetServerData(url, _onGallerySuccess);
+        }
+
+        var _getGalleriesData = function() {
+            var url = GlobalConfigurationService.url("galleries");
+            return GetServerData(url, _onGalleriesSuccess);
         }
 
         return {
             galleryData: function() { return _galleryData; },
-
+            galleriesData: function() { return _galleriesData; },
             errorMessage: function() { return _errorMessage; },
-
             dataReadyStatus: function() { return _galleryDataReady; },
-
             getGalleryData: _getGalleryData,
+            getGalleriesData: _getGalleriesData,
         };
-
     }
-
 }());

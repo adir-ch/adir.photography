@@ -1,0 +1,15 @@
+
+#album-main {
+	text-align: center;
+}
+
+img {
+	filter: opacity(80%) brightness(60%);
+}
+
+.responsive-image {
+	width: 100%;
+	margin: 10px auto;
+	background-repeat: no-repeat cover;
+	background-size: 100% 100%;
+}

@@ -25,7 +25,7 @@ namespace adir.photography.Test
         private readonly string _galleryName = "Main"; 
         private readonly string _photolocation = "/content/photos";
         private GalleryApiController _controller; 
-        private Mock<IGalleryDataService> _mockGalleryDataService; 
+        private Mock<IGalleryDataService> _galleryDataServiceMock; 
 
         public GalleryApiControllerShould()
         {
@@ -39,21 +39,20 @@ namespace adir.photography.Test
         [TestInitialize()]
         public void TestInitialize() 
         {
-            _mockGalleryDataService = new Mock<IGalleryDataService>();
-            _controller = new GalleryApiController(_mockGalleryDataService.Object);
+            _galleryDataServiceMock = new Mock<IGalleryDataService>();
+            _controller = new GalleryApiController(_galleryDataServiceMock.Object);
             _controller.Request = new HttpRequestMessage();
             _controller.Configuration = new HttpConfiguration();
 
-            _mockGalleryDataService.Setup(g => g.GetGalleryConfig(_galleryName)).Returns(new GalleryConfig
+            _galleryDataServiceMock.Setup(g => g.GetGalleryData(_galleryName)).Returns(new UserGalleryModel
             {
-                TimeOut = 10,
+                Name = _galleryName, 
+                OpeningPhoto = "opening.jpg",
+                GalleryPhotos = new List<string> {"p1.jpg", "p2.jpg"},
+                Timeout = 10,
                 AutoCycle = true,
-                PhotosLocation = _photolocation
+                ImagesLocation = _photolocation
             });
-
-            _mockGalleryDataService.Setup(g => g.GetGalleryOpeningPhoto(_galleryName)).Returns("opening.jpg");
-            _mockGalleryDataService.Setup(g => g.GetGalleryPhotos(_galleryName)).Returns(new List<string> {"p1.jpg", "p2.jpg"}); 
-
         }
 
         [TestMethod]
@@ -62,10 +61,10 @@ namespace adir.photography.Test
             int timeout = 10;
             
 
-            var result = _controller.Get(_galleryName) as OkNegotiatedContentResult<HomeGalleryModel>;
+            var result = _controller.Get(_galleryName) as OkNegotiatedContentResult<UserGalleryModel>;
             var model = result.Content;
             Assert.IsNotNull(model);
-            Assert.IsInstanceOfType(model, typeof(HomeGalleryModel));
+            Assert.IsInstanceOfType(model, typeof(UserGalleryModel));
             Assert.AreEqual(model.Timeout, timeout);
             Assert.AreEqual(model.AutoCycle, true);
             Assert.AreEqual(model.ImagesLocation, _photolocation); 
@@ -75,11 +74,11 @@ namespace adir.photography.Test
         public void GetGalleryOpeningPhotos()
         {
             IHttpActionResult response = _controller.Get(_galleryName); 
-            var result =  response as OkNegotiatedContentResult<HomeGalleryModel>;
+            var result =  response as OkNegotiatedContentResult<UserGalleryModel>;
             Assert.IsNotNull(result);
             var model = result.Content;
             Assert.IsNotNull(model);
-            Assert.IsInstanceOfType(model, typeof(HomeGalleryModel));
+            Assert.IsInstanceOfType(model, typeof(UserGalleryModel));
             Assert.AreEqual(model.OpeningPhoto, "opening.jpg");
         }
 
@@ -87,11 +86,11 @@ namespace adir.photography.Test
         public void GetGalleryPhotos()
         {
             IHttpActionResult response = _controller.Get(_galleryName);
-            var result = response as OkNegotiatedContentResult<HomeGalleryModel>;
+            var result = response as OkNegotiatedContentResult<UserGalleryModel>;
             Assert.IsNotNull(result);
             var model = result.Content;
             Assert.IsNotNull(model);
-            Assert.IsInstanceOfType(model, typeof(HomeGalleryModel));
+            Assert.IsInstanceOfType(model, typeof(UserGalleryModel));
             
             List<string> galleryPhotos = model.GalleryPhotos as List<string>;
             Assert.AreEqual(galleryPhotos.Count, 2);
@@ -102,6 +101,7 @@ namespace adir.photography.Test
         [TestMethod]
         public void ReturnAnInternalServerExceptionIfGalleryNotFound()
         {
+            _galleryDataServiceMock.Setup(m => m.GetGalleryData(It.IsAny<string>())).Throws(new Exception("exception")); 
             IHttpActionResult response = _controller.Get("not-existing-gallery");
             Assert.IsInstanceOfType(response, typeof(ExceptionResult));
         }
