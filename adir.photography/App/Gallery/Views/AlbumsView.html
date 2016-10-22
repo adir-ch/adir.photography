@@ -1,16 +1,14 @@
 ﻿
 <link rel=stylesheet href="../../../Content/albums.css">
 
-<h4>Albums view page</h4>
-
 <div ng-if="galleryDataReady">
 	<div class="container-fluid" id="album-main">
 		<div class="row" ng-repeat="gallery in galleriesData()">
 			<div class="col-md-12">
 				<a ng-href="{{GenerateAlbumLink(gallery.Name)}}"><img class="responsive-image" ng-style="SetAlbumPhoto(gallery)" src="../../../Content/images/ratio-conserver.png"></a>
 			</div>
-		</div> 
-	</div> 
+		</div>
+	</div>
 
 </div>
 

@@ -32,6 +32,10 @@ namespace adir.photography
                         "~/Scripts/jQuery.cycle/jquery.cycle.all.js",
                         "~/Scripts/jQuery.maximage/js/jquery.maximage.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/photoswipe").Include(
+                        "~/Scripts/Photoswipe/photoswipe.js",
+                        "~/Scripts/Photoswipe/photoswipe-ui-default.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/angular-libs").Include(
                         "~/Scripts/mfb/js/mfb-directive.js",
                         "~/Scripts/ngDialog.js"));
@@ -52,7 +56,9 @@ namespace adir.photography
                         "~/App/Gallery/GalleryApp.js",
                         "~/App/Gallery/ViewModels/GalleryViewModel.js",
                         "~/App/Gallery/ViewModels/AlbumsViewModel.js",
-                        "~/App/Gallery/ViewModels/MaxImageDirectiveViewModel.js",
+                        "~/App/Gallery/ViewModels/AlbumViewModel.js",
+                        "~/App/Gallery/Directives/MaxImage/MaxImageDirectiveViewModel.js",
+                        "~/App/Gallery/Directives/PhotoSwipe/PhotoswipeDirectiveViewModel.js",
                         "~/App/Gallery/Services/GalleryServices.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/member").Include(

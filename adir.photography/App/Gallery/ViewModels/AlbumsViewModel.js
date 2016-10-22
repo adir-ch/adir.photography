@@ -28,8 +28,8 @@
         }
 
         $scope.GenerateAlbumLink = function(albumName) {
-            console.log("setting album link to: /gallery/show/" + albumName);
-            return "/gallery/show/" + albumName;
+            console.log("setting album link to: /gallery/album/" + albumName);
+            return "/gallery/album/" + albumName;
         }
 
         var GenerateCssBackgroundImage = function (gallery) {

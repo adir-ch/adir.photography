@@ -1,0 +1,33 @@
+
+<link rel=stylesheet href="../../../Content/albums.css">
+
+<!-- <div ng-if="albumDataReady">
+    <ap-photoswipe user-name="userName" gallery-name="albumName" gallery-data="albumData()"></ap-photoswipe>
+</div> -->
+
+<div ng-if="albumDataReady">
+	<ul id="rig">
+	    <li ng-repeat="photo in albumData().GalleryPhotos">
+	        <a class="rig-cell" href="{{GenerateAlbumDisplayDirectiveLink(photo, $index)}}">
+	            <img class="rig-img" ng-src="{{albumData().ImagesLocation}}/{{photo}}">
+	            <span class="rig-overlay"></span>
+	            <span class="rig-text">Here comes caption</span>
+	        </a>
+	    </li>
+	</ul>
+
+	<ap-photoswipe user-name="userName" gallery-name="albumName" gallery-data="albumData()"></ap-photoswipe>
+</div>
+
+<div ng-if="serverError">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="alert alert-danger ap-gallery-error-message" role="alert">
+                    Album error: {{serverErrorMessage}}
+                    <span class="glyphicon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

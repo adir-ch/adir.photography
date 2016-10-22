@@ -42,7 +42,7 @@ namespace adir.photography.Controllers
         // GET api/galleryapi - changed to WebApi 2 style 
         [Route("")]
         [HttpGet]
-        public IHttpActionResult Get()
+        public IHttpActionResult GetGalleryData()
         {
             try
             {
@@ -59,7 +59,7 @@ namespace adir.photography.Controllers
         // GET api/galleryapi/<gallery name> 
         [Route("{name}")]
         [HttpGet]
-        public IHttpActionResult Get(string name)
+        public IHttpActionResult GetGalleryDataByName(string name)
         {
             try
             {
@@ -70,6 +70,23 @@ namespace adir.photography.Controllers
             {
                 return InternalServerError(e);
             }
+        }
+
+        // GET api/galleryapi/<gallery name> 
+        [Route("all")]
+        [HttpGet]
+        public IHttpActionResult GetAllGaleries()
+        {
+            try
+            {
+                var model = _galleryDataService.GetAllGalleries();
+                return Ok(model);
+            }
+            catch (Exception e)
+            {
+                return InternalServerError(e);
+            }
+
         }
 
         // POST api/galleryapi

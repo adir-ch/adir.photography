@@ -61,7 +61,7 @@ namespace adir.photography.Test
             int timeout = 10;
             
 
-            var result = _controller.Get(_galleryName) as OkNegotiatedContentResult<UserGalleryModel>;
+            var result = _controller.GetGalleryDataByName(_galleryName) as OkNegotiatedContentResult<UserGalleryModel>;
             var model = result.Content;
             Assert.IsNotNull(model);
             Assert.IsInstanceOfType(model, typeof(UserGalleryModel));
@@ -73,7 +73,7 @@ namespace adir.photography.Test
         [TestMethod]
         public void GetGalleryOpeningPhotos()
         {
-            IHttpActionResult response = _controller.Get(_galleryName); 
+            IHttpActionResult response = _controller.GetGalleryDataByName(_galleryName); 
             var result =  response as OkNegotiatedContentResult<UserGalleryModel>;
             Assert.IsNotNull(result);
             var model = result.Content;
@@ -85,7 +85,7 @@ namespace adir.photography.Test
         [TestMethod]
         public void GetGalleryPhotos()
         {
-            IHttpActionResult response = _controller.Get(_galleryName);
+            IHttpActionResult response = _controller.GetGalleryDataByName(_galleryName);
             var result = response as OkNegotiatedContentResult<UserGalleryModel>;
             Assert.IsNotNull(result);
             var model = result.Content;
@@ -101,8 +101,8 @@ namespace adir.photography.Test
         [TestMethod]
         public void ReturnAnInternalServerExceptionIfGalleryNotFound()
         {
-            _galleryDataServiceMock.Setup(m => m.GetGalleryData(It.IsAny<string>())).Throws(new Exception("exception")); 
-            IHttpActionResult response = _controller.Get("not-existing-gallery");
+            _galleryDataServiceMock.Setup(m => m.GetGalleryData(It.IsAny<string>())).Throws(new Exception("exception"));
+            IHttpActionResult response = _controller.GetGalleryDataByName("not-existing-gallery");
             Assert.IsInstanceOfType(response, typeof(ExceptionResult));
         }
     }

@@ -10,7 +10,7 @@
                 galleryData: '='
             },
 
-            templateUrl: 'App/Gallery/Views/MaxImageDirectiveView.html',
+            templateUrl: 'App/Gallery/Directives/MaxImage/MaxImageDirectiveView.html',
 
             controller: function($scope, $timeout, $http) {
                 console.log("--------- Starting maximage directive ----------");

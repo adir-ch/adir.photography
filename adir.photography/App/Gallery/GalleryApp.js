@@ -9,14 +9,19 @@
                 controller: 'GalleryViewModel'
             });
 
+            $routeProvider.when('/gallery/show/:galleryId', {
+                templateUrl: '/App/Gallery/Views/GalleryView.html',
+                controller: 'GalleryViewModel'
+            });
+
             $routeProvider.when('/gallery/albums', {
                 templateUrl: '/App/Gallery/Views/AlbumsView.html',
                 controller: 'AlbumsViewModel'
             });
 
-            $routeProvider.when('/gallery/show/:galleryId', {
-                templateUrl: '/App/Gallery/Views/GalleryView.html',
-                controller: 'GalleryViewModel'
+            $routeProvider.when('/gallery/album/:albumId', {
+                templateUrl: '/App/Gallery/Views/AlbumView.html',
+                controller: 'AlbumViewModel'
             });
 
             $routeProvider.otherwise({ redirectTo: '/' });

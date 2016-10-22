@@ -12,7 +12,7 @@
 
 		var _WebApiUrls = {
 			gallery: "/api/galleryapi/",
-			galleries: "/api/galleriesapi/",
+			galleries: "/api/galleryapi/all",
 			member: "/api/member",
 			idmLogin: "/api/idm/login",
 			idmAuthenticate: "/api/idm/login"
