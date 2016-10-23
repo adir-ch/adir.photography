@@ -21,11 +21,6 @@
             console.log("no album ID found on route, using default: " + $routeParams.albumId);
         }
 
-        $scope.GenerateAlbumDisplayDirectiveLink = function(photoName, arrayIndex) {
-        	console.log("Generating display directive link for photo[" + arrayIndex + "]: " + photoName);
-        	return "#";
-        }
-
         Initialize = function () {
 
             // get all the images + opening image.

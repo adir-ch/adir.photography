@@ -7,6 +7,16 @@
      - preloader.gif (for browsers that do not support CSS animations) -->
 <link rel="stylesheet" href="../../Scripts/Photoswipe/default-skin/default-skin.css">
 
+<ul id="rig">
+    <li ng-repeat="photo in vm.galleryData.GalleryPhotos" ng-click="vm.photoClicked($index)">
+        <div class="rig-cell">
+            <img class="rig-img" ng-src="{{vm.galleryData.ImagesLocation}}/{{photo}}" >
+            <span class="rig-overlay"></span>
+            <span class="rig-text">Here comes caption</span>
+        </div>
+    </li>
+</ul>
+
 <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 

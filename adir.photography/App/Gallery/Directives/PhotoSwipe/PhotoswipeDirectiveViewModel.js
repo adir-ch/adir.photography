@@ -1,74 +1,73 @@
 (function() {
 
-    var PhotoswipeFunction = function($timeout) {
-        return {
-            restrict: 'AE',
-            scope: false,
+    angular
+        .module('gallery')
+        .directive('apPhotoswipe', PhotoswipeFunction);
+
+    function PhotoswipeFunction() {
+        var directive = {
+            restrict: 'EA',
+            templateUrl: 'App/Gallery/Directives/Photoswipe/PhotoswipeDirectiveView.html',
+            //link: linkFunc,
+            controller: PhotoswipeController,
+            controllerAs: 'vm',
+            bindToController: true,
+
             scope: {
                 userName : '=',
                 galleryName: '=',
                 galleryData: '='
-            },
-
-            templateUrl: 'App/Gallery/Directives/Photoswipe/PhotoswipeDirectiveView.html',
-
-            controller: function($scope, $timeout, $http) {
-                console.log("--------- Starting photoswipe directive ----------");
-                console.debug("Gallery name: " + $scope.galleryName);
-                console.debug("User name: " + $scope.userName);
-                console.debug($scope.galleryData);
-                console.log("Waiting for DOM to load, scope id: ", $scope.$id);
-                //$scope.$emit('maxImageLoaded'); // sending event to the GalleryViewModel
-
-                $scope.initPhotoswipe = function() {
-                    console.log("Photoswipe start");
-                    var pswpElement = document.querySelectorAll('.pswp')[0];
-
-                    // build items array
-                    var items = [{
-                        src: 'http://localhost:61001/Content/Photos/sa7.jpg',
-                        w: 600,
-                        h: 400
-                    }, {
-                        src: 'http://localhost:61001/Content/Photos/us1.jpg',
-                        w: 1200,
-                        h: 900
-                    }];
-
-                    // define options (if needed)
-                    var options = {
-                        // optionName: 'option value'
-                        // for example:
-                        index: 0 // start at first slide
-                    };
-
-                    // Initializes and opens PhotoSwipe
-                    console.log("lunching PS gallery")
-                    var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
-                    gallery.init();
-                }
-
-                var timer = $timeout(function() {
-                    console.log("DOM finished loading, scope id: ", $scope.$id);
-                }, 0, false);
-
-                timer.then(
-                    function() {
-                        console.log("timer resolved calling PhotoswipeFunction");
-                        $scope.initPhotoswipe();
-                    },
-                    function() {
-                        console.log("timer rejected!", Date.now());
-                    }
-                );
-
-                $scope.$on("$destroy", function( event ) {
-                    $timeout.cancel(timer);
-                    console.log("timer removed");
-                });
             }
         };
+
+        return directive;
     }
 
-    angular.module('gallery').directive('apPhotoswipe', PhotoswipeFunction);
+    PhotoswipeController.$inject = ["$scope"];
+
+    function PhotoswipeController($scope) {
+        var vm = this;
+        vm.photoSwipeArray = [];
+
+        console.log("--------- Starting photoswipe directive ----------");
+        console.log("Album: " + vm.galleryName);
+        buildPhotoSwipeArray(vm.galleryData, vm.photoSwipeArray);
+
+        vm.photoClicked = function(arrayIndex) {
+            console.log("Photo clicked: " + vm.galleryData.GalleryPhotos[arrayIndex]);
+            initPhotoswipe(vm.photoSwipeArray, arrayIndex);
+        }
+    }
+
+    function linkFunc($scope, element, attrs) {
+
+    }
+
+    function buildPhotoSwipeArray(dataArray, photoSwipeArray) {
+        angular.forEach(dataArray.GalleryPhotos, function(value) {
+            photoSwipeArray.push({
+                src: (dataArray.ImagesLocation + "/" + value),
+                w: 600,
+                h: 400
+            });
+        });
+    }
+
+    function initPhotoswipe(photoArray, startFromIndex) {
+        console.log("Photoswipe start");
+        var pswpElement = document.querySelectorAll('.pswp')[0];
+
+        // define options (if needed)
+        var options = {
+            // optionName: 'option value'
+            // for example:
+            index: startFromIndex // start at first slide
+        };
+
+        // Initializes and opens PhotoSwipe
+        console.log("lunching PS gallery")
+        var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, photoArray, options);
+        gallery.init();
+    }
+
 }());
