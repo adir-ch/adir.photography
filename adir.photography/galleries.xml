@@ -23,6 +23,11 @@
   <photos>
     <photo>
       <filename>br1.jpg</filename>
+      <metadata>
+        <width></width>
+        <height></height>
+
+      </metadata>
       <tags>
         <tag>main</tag>
       </tags>

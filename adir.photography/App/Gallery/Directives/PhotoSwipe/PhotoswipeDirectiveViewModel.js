@@ -59,8 +59,7 @@
 
         // define options (if needed)
         var options = {
-            // optionName: 'option value'
-            // for example:
+            history: false, // avoid route problems
             index: startFromIndex // start at first slide
         };
 
