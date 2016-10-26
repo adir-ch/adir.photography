@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using PhotosRepository;
 using adir.photography.Services.WebSiteConfig;
 using adir.photography.Models;
+using PhotosRepository.DataAccess;
+using PhotosRepository.DataAcess.XML;
 
 namespace adir.photography.Services.Gallery
 {
@@ -11,14 +13,15 @@ namespace adir.photography.Services.Gallery
         private IPhotosRepository _repo; // TODO: inject as singleton
         private IWebSiteConfigService _siteConfig; // TODO: inject as singleton
 
-        public GalleryDataService() : this(new XMLPhotoRepositoryDB(), WebSiteFileConfigService.Instance())
+        public GalleryDataService() : this(XMLPhotoRepositoryDB.GetInstance(), WebSiteFileConfigService.Instance())
         {
 
         }
 
         public GalleryDataService(IPhotosRepository repo, IWebSiteConfigService siteConfig)
         {
-            _repo = repo; 
+            _repo = repo;
+            _repo.Init(); 
             _siteConfig = siteConfig; 
         }
 
@@ -52,7 +55,7 @@ namespace adir.photography.Services.Gallery
             return allGalleries; 
         }
 
-        private IEnumerable<string> GetGalleryPhotos(string galleryName)
+        private IEnumerable<IPhoto> GetGalleryPhotos(string galleryName)
         {
             return _repo.GetGalleryPhotos(galleryName);
         }

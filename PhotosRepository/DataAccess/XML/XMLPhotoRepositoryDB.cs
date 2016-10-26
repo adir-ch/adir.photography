@@ -1,26 +1,46 @@
-﻿using log4net;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml;
 using System.Xml.Linq;
+using log4net;
+using PhotosRepository;
+using PhotosRepository.DataAccess;
 
-namespace PhotosRepository
+namespace PhotosRepository.DataAcess.XML
 {
     public class XMLPhotoRepositoryDB : IPhotosRepository
     {
-        
+        private static XMLPhotoRepositoryDB _instance = null; 
+
         private XElement _db;
         private string _serverRunningPath;
-        private List<Photo> _photos;
+        private List<IPhoto> _photos;
+        private string _photosLocalLocation = "Content\\Photos\\";
         
-        private static readonly ILog _log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog _log = LogManager.GetLogger("PhotoReprository"); //System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-        public XMLPhotoRepositoryDB(XElement root = null)
+        public static XMLPhotoRepositoryDB GetInstance()
+        {
+            if(_instance == null) 
+                _instance = new XMLPhotoRepositoryDB();
+            return _instance;
+        }
+
+        protected XMLPhotoRepositoryDB()
+        {
+        }
+
+        public void Init()
+        {
+            InitXmlRepository(); 
+        }
+
+        public void InitXmlRepository(XElement root = null)
         {
             _serverRunningPath = System.Web.Hosting.HostingEnvironment.MapPath("~");
-            InitDB(root);
+            InitXmlRepositoryDB(root);    
         }
 
         private XElement LoadDocumentRoot()
@@ -28,7 +48,7 @@ namespace PhotosRepository
             return XDocument.Load(_serverRunningPath + "/galleries.xml").Element("root");
         }
 
-        private void InitDB(XElement root = null)
+        private void InitXmlRepositoryDB(XElement root = null)
         {
             if (root == null)
             {
@@ -56,7 +76,7 @@ namespace PhotosRepository
 
         private void ParsePhotoData()
         {
-            _photos = new List<Photo>();
+            _photos = new List<IPhoto>();
             var photos = _db.Element("photos").Descendants().Where(tag => tag.Name == "photo");
 
             if (photos.Count() == 0)
@@ -69,15 +89,16 @@ namespace PhotosRepository
             foreach (var photo in photos)
             {
                 var captions = photo.Descendants().Where(tag => tag.Name == "caption");
-                currentPhoto = new Photo()
+                var fileName = photo.Descendants().Where(tag => tag.Name == "filename").FirstOrDefault().Value;
+                string fullPhotoPath = _serverRunningPath + _photosLocalLocation;
+                currentPhoto = new Photo(fullPhotoPath, fileName) 
                 {
-                    FileName = photo.Descendants().Where(tag => tag.Name == "filename").FirstOrDefault().Value,
                     Caption = (captions.Count() > 0 ? captions.FirstOrDefault().Value : "N/A")
                 };
 
                 var tags = photo.Element("tags").Descendants();
                 foreach (var tag in tags)
-                    currentPhoto.SetTag(tag.Value);
+                    currentPhoto.AddTag(tag.Value);
 
                 _photos.Add(currentPhoto);
             }
@@ -94,7 +115,6 @@ namespace PhotosRepository
             }
             catch (Exception)
             {
-                
                 throw;
             }
             
@@ -106,12 +126,12 @@ namespace PhotosRepository
             return GetGalleryEntry(galleryName).Element("openingPhoto").Value;
         }
 
-        public IEnumerable<string> GetGalleryPhotos(string galleryName)
+        public IEnumerable<IPhoto> GetGalleryPhotos(string galleryName)
         {
-            string openingPhoto = GetGalleryOpeningPhoto(galleryName);
+            string openingPhotoName = GetGalleryOpeningPhoto(galleryName);
             string galleryIdentifyingTag = GetGalleryEntry(galleryName).Element("tag").Value;
-            return _photos.Where(p => p.GetTags().Where(t => t.Equals(galleryIdentifyingTag, StringComparison.OrdinalIgnoreCase)).Any() &&
-                                        !String.Equals(p.FileName, openingPhoto, StringComparison.CurrentCultureIgnoreCase)).Select(f => f.FileName).ToList<string>();
+            return _photos.Where(p => p.Tags.Where(t => t.Equals(galleryIdentifyingTag, StringComparison.OrdinalIgnoreCase)).Any() &&
+                                        !String.Equals(p.FileName, openingPhotoName, StringComparison.CurrentCultureIgnoreCase)).ToList<IPhoto>();
         }
 
         public GalleryConfig GetGalleryConfig(string galleryName)
@@ -121,7 +141,7 @@ namespace PhotosRepository
                 Name = galleryName,
                 TimeOut = Int32.Parse(GetGalleryEntry(galleryName).Element("config").Element("PhotoCycle").Attribute("Timeout").Value),
                 AutoCycle = Boolean.Parse(GetGalleryEntry(galleryName).Element("config").Element("PhotoCycle").Attribute("AutoCycle").Value),
-                PhotosLocation = "/Content/images/" // just default
+                PhotosLocation = "" // will be set later on according to global site configuration
             };
         }
 

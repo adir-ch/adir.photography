@@ -48,11 +48,20 @@ namespace adir.photography.Test
             {
                 Name = _galleryName, 
                 OpeningPhoto = "opening.jpg",
-                GalleryPhotos = new List<string> {"p1.jpg", "p2.jpg"},
+                GalleryPhotos = SetFakePhotos(),
                 Timeout = 10,
                 AutoCycle = true,
                 ImagesLocation = _photolocation
             });
+        }
+
+        private IEnumerable<IPhoto> SetFakePhotos()
+        {
+            List<Photo> photos = new List<Photo>();
+            photos.Add(new Photo(".", "p1.jpg"));
+            photos.Add(new Photo(".", "p2.jpg"));
+
+            return photos;
         }
 
         [TestMethod]
@@ -92,10 +101,10 @@ namespace adir.photography.Test
             Assert.IsNotNull(model);
             Assert.IsInstanceOfType(model, typeof(UserGalleryModel));
             
-            List<string> galleryPhotos = model.GalleryPhotos as List<string>;
-            Assert.AreEqual(galleryPhotos.Count, 2);
-            Assert.AreEqual(galleryPhotos.Where(p => p.Equals("p1.jpg") == true).Count(), 1);
-            Assert.AreEqual(galleryPhotos.Where(p => p.Equals("p2.jpg") == true).Count(), 1); 
+            IEnumerable<IPhoto> galleryPhotos = model.GalleryPhotos;
+            Assert.AreEqual(galleryPhotos.ToList().Count, 2);
+            Assert.AreEqual(galleryPhotos.Where(p => p.FileName.Equals("p1.jpg") == true).Count(), 1);
+            Assert.AreEqual(galleryPhotos.Where(p => p.FileName.Equals("p2.jpg") == true).Count(), 1); 
         }
 
         [TestMethod]

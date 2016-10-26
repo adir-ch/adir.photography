@@ -2,29 +2,37 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using log4net; 
+using log4net;
+using System.Runtime.Serialization; 
 
 namespace PhotosRepository
 {
-    public class Photo
+    public class Photo : IPhoto
     {
-        private readonly ILog _log = LogManager.GetLogger("repository"); 
-        private List<string> _Tags = new List<string>();
-        
+        private readonly ILog _log = LogManager.GetLogger("PhotoReprository");
         public string FileName { get; set; }
         public string Caption { get; set; }
-
-        public IEnumerable<string> GetTags()
+        public IPhotoMetadata Metadata { get; set; }
+        public List<string> Tags { get; set; }
+        
+        public Photo()
         {
-            return _Tags; 
+            Metadata = new PhotoMetadata();
+            Tags = new List<string>(); 
         }
 
-        public void SetTag(string iTag)
+        public Photo(string filePath, string fileName) : this()
+        {
+            FileName = fileName; 
+            Metadata.TryParseMetadataFromFile(filePath, fileName); 
+        }
+        
+        public void AddTag(string iTag)
         {
             //_log.DebugFormat("Adding tag to {0}: {1}", FileName, iTag); 
 
-            if (_Tags.Contains(iTag) == false)
-                _Tags.Add(iTag); 
+            if (Tags.Contains(iTag) == false)
+                Tags.Add(iTag); 
         }
     }
 }

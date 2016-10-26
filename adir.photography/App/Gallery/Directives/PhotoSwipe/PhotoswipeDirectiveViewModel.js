@@ -34,7 +34,7 @@
         buildPhotoSwipeArray(vm.galleryData, vm.photoSwipeArray);
 
         vm.photoClicked = function(arrayIndex) {
-            console.log("Photo clicked: " + vm.galleryData.GalleryPhotos[arrayIndex]);
+            console.log("Photo clicked: " + vm.galleryData.GalleryPhotos[arrayIndex].FileName);
             initPhotoswipe(vm.photoSwipeArray, arrayIndex);
         }
     }
@@ -46,9 +46,9 @@
     function buildPhotoSwipeArray(dataArray, photoSwipeArray) {
         angular.forEach(dataArray.GalleryPhotos, function(value) {
             photoSwipeArray.push({
-                src: (dataArray.ImagesLocation + "/" + value),
-                w: 600,
-                h: 400
+                src: (dataArray.ImagesLocation + "/" + value.FileName),
+                w: value.Metadata.Width,
+                h: value.Metadata.Height
             });
         });
     }

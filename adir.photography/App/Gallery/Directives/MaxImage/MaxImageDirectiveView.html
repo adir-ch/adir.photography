@@ -12,5 +12,5 @@
 
 <div id="maximage">
     <img ng-src="{{ galleryData.ImagesLocation}}/{{galleryData.OpeningPhoto}}" />
-    <img ng-repeat="photo in galleryData.GalleryPhotos" ng-src="{{galleryData.ImagesLocation}}/{{photo}}" alt="" />
+    <img ng-repeat="photo in galleryData.GalleryPhotos" ng-src="{{galleryData.ImagesLocation}}/{{photo.FileName}}" alt="" />
 </div>

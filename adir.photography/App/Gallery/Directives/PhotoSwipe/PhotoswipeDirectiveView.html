@@ -10,7 +10,7 @@
 <ul id="rig">
     <li ng-repeat="photo in vm.galleryData.GalleryPhotos" ng-click="vm.photoClicked($index)">
         <div class="rig-cell">
-            <img class="rig-img" ng-src="{{vm.galleryData.ImagesLocation}}/{{photo}}" >
+            <img class="rig-img" ng-src="{{vm.galleryData.ImagesLocation}}/{{photo.FileName}}" >
             <span class="rig-overlay"></span>
             <span class="rig-text">Here comes caption</span>
         </div>

@@ -26,7 +26,6 @@
       <metadata>
         <width></width>
         <height></height>
-
       </metadata>
       <tags>
         <tag>main</tag>
@@ -34,12 +33,20 @@
     </photo>
     <photo>
       <filename>fe1.jpg</filename>
+      <metadata>
+        <width></width>
+        <height></height>
+      </metadata>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>fe2.jpg</filename>
+      <metadata>
+        <width></width>
+        <height></height>
+      </metadata>
       <tags>
         <tag>main</tag>
         <tag>album1</tag>
@@ -47,24 +54,40 @@
     </photo>
     <photo>
       <filename>fe3.jpg</filename>
+      <metadata>
+        <width></width>
+        <height></height>
+      </metadata>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>fe4.jpg</filename>
+      <metadata>
+        <width></width>
+        <height></height>
+      </metadata>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>girona.jpg</filename>
+      <metadata>
+        <width></width>
+        <height></height>
+      </metadata>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>il1.jpg</filename>
+      <metadata>
+        <width></width>
+        <height></height>
+      </metadata>
       <tags>
         <tag>main</tag>
         <tag>album1</tag>
@@ -72,12 +95,20 @@
     </photo>
     <photo>
       <filename>ml1.jpg</filename>
+      <metadata>
+        <width></width>
+        <height></height>
+      </metadata>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>ph1.jpg</filename>
+      <metadata>
+        <width></width>
+        <height></height>
+      </metadata>
       <tags>
         <tag>main</tag>
         <tag>album1</tag>
@@ -85,24 +116,40 @@
     </photo>
     <photo>
       <filename>prag1.jpg</filename>
+      <metadata>
+        <width></width>
+        <height></height>
+      </metadata>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>sa1.jpg</filename>
+      <metadata>
+        <width></width>
+        <height></height>
+      </metadata>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>sa10.jpg</filename>
+      <metadata>
+        <width></width>
+        <height></height>
+      </metadata>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>sa11.jpg</filename>
+      <metadata>
+        <width></width>
+        <height></height>
+      </metadata>
       <tags>
         <tag>main</tag>
         <tag>album1</tag>
@@ -110,18 +157,30 @@
     </photo>
     <photo>
       <filename>sa2.jpg</filename>
+      <metadata>
+        <width></width>
+        <height></height>
+      </metadata>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>sa3.jpg</filename>
+      <metadata>
+        <width></width>
+        <height></height>
+      </metadata>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>sa4.jpg</filename>
+      <metadata>
+        <width></width>
+        <height></height>
+      </metadata>
       <tags>
         <tag>main</tag>
         <tag>album1</tag>
@@ -129,24 +188,40 @@
     </photo>
     <photo>
       <filename>sa5.jpg</filename>
+      <metadata>
+        <width></width>
+        <height></height>
+      </metadata>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>sa6.jpg</filename>
+      <metadata>
+        <width></width>
+        <height></height>
+      </metadata>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>sa7.jpg</filename>
+      <metadata>
+        <width></width>
+        <height></height>
+      </metadata>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>sa8.jpg</filename>
+      <metadata>
+        <width></width>
+        <height></height>
+      </metadata>
       <tags>
         <tag>main</tag>
         <tag>album1</tag>
@@ -154,24 +229,40 @@
     </photo>
     <photo>
       <filename>sa9.jpg</filename>
+      <metadata>
+        <width></width>
+        <height></height>
+      </metadata>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>th1.jpg</filename>
+      <metadata>
+        <width></width>
+        <height></height>
+      </metadata>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>th2.jpg</filename>
+      <metadata>
+        <width></width>
+        <height></height>
+      </metadata>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>us1.jpg</filename>
+      <metadata>
+        <width></width>
+        <height></height>
+      </metadata>
       <tags>
         <tag>main</tag>
       </tags>

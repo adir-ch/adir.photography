@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Linq;
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PhotosRepository;
 using System.Xml.Linq;
+using PhotosRepository.DataAcess.XML;
 
 namespace PhotoRepository.Test
 {
@@ -86,9 +88,10 @@ namespace PhotoRepository.Test
                           </tags>
                         </photo>
                       </photos>
-                    </root>"; 
+                    </root>";
 
-            _repo = new XMLPhotoRepositoryDB(XDocument.Parse(repoData).Element("root")); 
+            _repo = XMLPhotoRepositoryDB.GetInstance(); 
+            _repo.InitXmlRepository(XDocument.Parse(repoData).Element("root")); 
         }
         
         // Use TestCleanup to run code after each test has run
@@ -104,9 +107,9 @@ namespace PhotoRepository.Test
         [TestMethod]
         public void ReturnAllGalleryPhotosExceptOpeningPhoto()
         {
-            List<string> galleryPhotos = new List<string> { "br1.jpg", "fe1.jpg" };
-            List<string> repoGalleryPhotos = _repo.GetGalleryPhotos(_galleryName) as List<string>;
-            CollectionAssert.AreEqual(galleryPhotos.ToArray(), repoGalleryPhotos.ToArray());
+            IEnumerable<IPhoto> repoGalleryPhotos = _repo.GetGalleryPhotos(_galleryName);
+            Assert.AreEqual(repoGalleryPhotos.Where(p => p.FileName.Equals("br1.jpg") == true).Count(), 1);
+            Assert.AreEqual(repoGalleryPhotos.Where(p => p.FileName.Equals("fe1.jpg") == true).Count(), 1); 
         }
     }
 }

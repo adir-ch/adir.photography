@@ -35,6 +35,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,13 +45,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GalleryConfig.cs" />
-    <Compile Include="IPhotosRepository.cs" />
+    <Compile Include="IPhoto.cs" />
+    <Compile Include="DataAccess\IPhotosRepository.cs" />
+    <Compile Include="IPhotoMetadata.cs" />
     <Compile Include="Photo.cs" />
+    <Compile Include="PhotoMetadata.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="XMLPhotoRepositoryDB.cs" />
+    <Compile Include="DataAccess\XML\XMLPhotoRepositoryDB.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataAccess\SqlServer\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
