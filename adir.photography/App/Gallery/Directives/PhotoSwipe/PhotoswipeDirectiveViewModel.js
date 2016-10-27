@@ -60,7 +60,8 @@
         // define options (if needed)
         var options = {
             history: false, // avoid route problems
-            index: startFromIndex // start at first slide
+            index: startFromIndex, // start at first slide
+            showAnimationDuration: 300
         };
 
         // Initializes and opens PhotoSwipe

@@ -93,7 +93,7 @@ namespace PhotosRepository.DataAcess.XML
                 string fullPhotoPath = _serverRunningPath + _photosLocalLocation;
                 currentPhoto = new Photo(fullPhotoPath, fileName) 
                 {
-                    Caption = (captions.Count() > 0 ? captions.FirstOrDefault().Value : "N/A")
+                    Caption = (captions.Count() > 0 ? captions.FirstOrDefault().Value : fileName)
                 };
 
                 var tags = photo.Element("tags").Descendants();
@@ -130,8 +130,8 @@ namespace PhotosRepository.DataAcess.XML
         {
             string openingPhotoName = GetGalleryOpeningPhoto(galleryName);
             string galleryIdentifyingTag = GetGalleryEntry(galleryName).Element("tag").Value;
-            return _photos.Where(p => p.Tags.Where(t => t.Equals(galleryIdentifyingTag, StringComparison.OrdinalIgnoreCase)).Any() &&
-                                        !String.Equals(p.FileName, openingPhotoName, StringComparison.CurrentCultureIgnoreCase)).ToList<IPhoto>();
+            return _photos.Where(p => p.Tags.Where(t => t.Equals(galleryIdentifyingTag, StringComparison.OrdinalIgnoreCase)).Any());// &&
+                                        //!String.Equals(p.FileName, openingPhotoName, StringComparison.CurrentCultureIgnoreCase)).ToList<IPhoto>();
         }
 
         public GalleryConfig GetGalleryConfig(string galleryName)

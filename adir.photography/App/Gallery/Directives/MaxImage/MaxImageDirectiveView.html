@@ -4,13 +4,10 @@
 <link href="../../../Content/maximage-gallery.css" rel="stylesheet" />
 
 <a href="" id="arrow_left"><img id="arrow_left_img" src="../../../Content/Images/arrow_left.png" alt="Slide Left" /></a>
-<!-- <a href="" id="arrow_right"><img id="arrow_right_img" src="../../../Content/Images/Arrows right circular.png" alt="Slide Right" /></a> -->
-<img id="cycle-loader" src="../../../Content/Images/ajax-loader.gif" />
 
-<!-- <script src="../../../Scripts/jQuery.cycle/jquery.cycle.all.js"></script> -->
-<!-- <script src="../../../Scripts/jQuery.maximage/js/jquery.maximage.js"></script> -->
+<img id="cycle-loader" src="../../../Content/Images/ajax-loader.gif" />
 
 <div id="maximage">
     <img ng-src="{{ galleryData.ImagesLocation}}/{{galleryData.OpeningPhoto}}" />
-    <img ng-repeat="photo in galleryData.GalleryPhotos" ng-src="{{galleryData.ImagesLocation}}/{{photo.FileName}}" alt="" />
+	<img ng-repeat="photo in nonOpeningPhotosArray" ng-src="{{galleryData.ImagesLocation}}/{{photo}}" alt="" />
 </div>

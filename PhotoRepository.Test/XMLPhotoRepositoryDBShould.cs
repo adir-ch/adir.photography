@@ -70,6 +70,12 @@ namespace PhotoRepository.Test
                       </galleries>
                       <photos>
                         <photo>
+                          <filename>girona.jpg</filename>
+                          <tags>
+                            <tag>main</tag>
+                          </tags>
+                        </photo>
+                        <photo>
                           <filename>br1.jpg</filename>
                           <tags>
                             <tag>main</tag>
@@ -105,11 +111,14 @@ namespace PhotoRepository.Test
         }
 
         [TestMethod]
-        public void ReturnAllGalleryPhotosExceptOpeningPhoto()
+        public void ReturnAllGalleryPhotos()
         {
             IEnumerable<IPhoto> repoGalleryPhotos = _repo.GetGalleryPhotos(_galleryName);
+            Assert.AreEqual(repoGalleryPhotos.Count(), 3);
+            Assert.AreEqual(repoGalleryPhotos.Where(p => p.FileName.Equals("girona.jpg") == true).Count(), 1);
             Assert.AreEqual(repoGalleryPhotos.Where(p => p.FileName.Equals("br1.jpg") == true).Count(), 1);
-            Assert.AreEqual(repoGalleryPhotos.Where(p => p.FileName.Equals("fe1.jpg") == true).Count(), 1); 
+            Assert.AreEqual(repoGalleryPhotos.Where(p => p.FileName.Equals("fe1.jpg") == true).Count(), 1);
+            Assert.IsTrue(repoGalleryPhotos.Where(p => p.FileName.Equals("fe2.jpg") == true).Count() == 0); 
         }
     }
 }

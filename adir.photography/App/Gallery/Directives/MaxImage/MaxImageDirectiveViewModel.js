@@ -20,6 +20,19 @@
                 console.log("Waiting for DOM to load, scope id: ", $scope.$id);
                 //$scope.$emit('maxImageLoaded'); // sending event to the GalleryViewModel
 
+                $scope.nonOpeningPhotosArray = [];
+
+                function buildMaxImageGalleryPhotos() {
+                    angular.forEach($scope.galleryData.GalleryPhotos, function(photoObject) {
+                        if(photoObject.FileName != $scope.galleryData.OpeningPhoto)
+                        {
+                            $scope.nonOpeningPhotosArray.push(photoObject.FileName);
+                        }
+                    });
+                }
+
+                buildMaxImageGalleryPhotos();
+
                 $scope.initMaxImage = function() {
                     console.log("maximage start");
                     jQuery('#maximage').maximage({
