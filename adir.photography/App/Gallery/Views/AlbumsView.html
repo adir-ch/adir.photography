@@ -3,9 +3,11 @@
 
 <div ng-if="galleryDataReady">
 	<div class="container-fluid" id="album-main">
-		<div class="row" ng-repeat="gallery in galleriesData()">
+		<div class="row" ng-repeat="album in albumsData()">
 			<div class="col-md-12">
-				<a ng-href="{{GenerateAlbumLink(gallery.Name)}}"><img class="responsive-image" ng-style="SetAlbumPhoto(gallery)" src="../../../Content/images/ratio-conserver.png"></a>
+				<!-- <a ng-href="{{GenerateAlbumLink(gallery.Name)}}"><img class="responsive-image" ng-style="SetAlbumPhoto(gallery)" src="../../../Content/images/ratio-conserver.png"></a> -->
+				<a ng-href="{{GenerateAlbumLink(album.Name)}}"><img class="responsive-image" ng-style="SetAlbumPhotoStyle(album)" ng-src="{{GenerateAlbumBackgroundImage(album)}}"><h1 class="album-name">{{ album.Name }}</h1></a>
+
 			</div>
 		</div>
 	</div>

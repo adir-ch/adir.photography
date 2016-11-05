@@ -9,8 +9,8 @@
         $scope.serverError = false;
         $scope.serverErrorMessage = "";
 
-        $scope.galleriesData = function() {
-            console.log("read galleries data");
+        $scope.albumsData = function() {
+            console.log("read album data");
             return GalleryResources.galleriesData();
         };
 
@@ -19,12 +19,20 @@
             $scope.galleryName = $routeParams.galleryId;
         }
 
-        $scope.SetAlbumPhoto = function(gallery) {
-        	var css = {
-        				'background-image': 'url(\'' + GenerateCssBackgroundImage(gallery) + '\')',
-        			};
-        	console.log(css);
-        	return css;
+        // $scope.SetAlbumPhoto = function(album) { // not used!!!
+        // 	var css = {
+        // 				'background-image': 'url(\'' + GenerateCssBackgroundImage(album) + '\')',
+        // 			};
+        // 	console.log(css);
+        // 	return css;
+        // }
+
+        $scope.SetAlbumPhotoStyle = function(album) {
+            var css = {
+                        //'background-image': 'url(\'' + GenerateCssBackgroundImage(album) + '\')',
+                        "background-image": "cover"
+                    };
+            return css;
         }
 
         $scope.GenerateAlbumLink = function(albumName) {
@@ -32,8 +40,13 @@
             return "/gallery/album/" + albumName;
         }
 
-        var GenerateCssBackgroundImage = function (gallery) {
-        	return gallery.ImagesLocation + "/" + gallery.OpeningPhoto;
+        // var GenerateCssBackgroundImage = function (album) { // not used
+        // 	return album.ImagesLocation + "/" + album.OpeningPhoto;
+        // }
+
+        $scope.GenerateAlbumBackgroundImage = function (album) {
+            console.log(album.ImagesLocation + "/" + album.OpeningPhoto);
+            return album.ImagesLocation + "/" + album.OpeningPhoto;
         }
 
         var Initialize = function () {

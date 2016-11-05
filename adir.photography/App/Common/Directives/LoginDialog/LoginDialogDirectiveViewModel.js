@@ -30,13 +30,14 @@
 
 		function OpenLoginDialog() {
 			ngDialog.openConfirm({
-					className: 'ngdialog-theme-default custom-width',
+					className: 'ngdialog-theme-default',
 					template: 'loginDialogPopupId',
 					scope: $scope,
 			}).then(
 				function (inputData) {
 					console.log("Form input data status: ", inputData, " data: ", $scope.loginFormInput);
-					DoUserLogin($scope.loginFormInput.userEmail, $scope.loginFormInput.password);
+					//DoUserLogin($scope.loginFormInput.userEmail, $scope.loginFormInput.password);
+					showThankYouDialog($scope.loginFormInput.userEmail);
 				},
 				function(status) {
 					console.log("Login form:", status);
@@ -44,6 +45,23 @@
 			).finally(function() {
 				$scope.$emit('loginPopupDialogFinished', "");
 			});
+		}
+
+		function showThankYouDialog(email) {
+			var template = '<div class="login-dialog-thankyou-text">';
+			if (email == "" || email === undefined) {
+				template = template + "Try again, this time with an email address :)";
+			} else {
+				template = template + "Thank You"
+			}
+
+			template = template + "</div>";
+
+			ngDialog.open({
+                template: template,
+                plain: true,
+                closeByEscape: false,
+            });
 		}
 
 		function Init() {

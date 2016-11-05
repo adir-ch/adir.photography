@@ -28,42 +28,32 @@
 
 /*Set my logo in bottom left*/
 #logo {
-	bottom:30px;
-	height:auto;
+	bottom:50px !important;
+	font-size: 50px !important;
 	left:30px;
-	position:absolute;
 	width:34%;
-	z-index:1000;
 }
+
 #logo img {
 	width:100%;
 }
 
 #arrow_left, #arrow_right {
-	height:67px;
+	height:10%;
 	position:absolute;
 	right:30px;
 	width:36px;
 	z-index:1000;
 	bottom: 3%;
+
 }
 
 #arrow_left {
-	left:3%;
+	left: 3%;
 }
 
 #arrow_right {
-	left:7%;
-}
-
-#arrow_left_img, #arrow_right_img {
-	width: 50px;
-    height: 50px;
-}
-
-#arrow_left:hover, #arrow_right:hover {
-}
-#arrow_left:active, #arrow_right:active {
+	left: 7%;
 }
 
 a {color:#666;text-decoration:none;}

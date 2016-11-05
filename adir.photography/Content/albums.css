@@ -7,15 +7,27 @@ body {
 }
 
 img {
-	filter: opacity(80%) brightness(80%);
+	//filter: opacity(80%) brightness(80%); // removed since it affects photoswipe
 	//border-radius: 10px;
 }
 
 .responsive-image {
-	width: 100%;
+	min-height: 100%;
+	min-width: 100%;
 	margin: 5px auto;
-	background-repeat: no-repeat cover;
-	background-size: 100% 100%;
+	//background-repeat: no-repeat;
+	//background-size: 100% 100%;
+}
+
+.album-name {
+	text-transform: uppercase;
+	color: white;
+	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+	font-size: 1300%;
+	position: absolute;
+	bottom: 10%;
+   	left: 10%;
+	z-index:1000;
 }
 
 #rig {
