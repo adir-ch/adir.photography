@@ -29,12 +29,12 @@
         var vm = this;
         vm.photoSwipeArray = [];
 
-        console.log("--------- Starting photoswipe directive ----------");
-        console.log("Album: " + vm.galleryName);
+        //console.log("--------- Starting photoswipe directive ----------");
+        //console.log("Album: " + vm.galleryName);
         buildPhotoSwipeArray(vm.galleryData, vm.photoSwipeArray);
 
         vm.photoClicked = function(arrayIndex) {
-            console.log("Photo clicked: " + vm.galleryData.GalleryPhotos[arrayIndex].FileName);
+            //console.log("Photo clicked: " + vm.galleryData.GalleryPhotos[arrayIndex].FileName);
             initPhotoswipe(vm.photoSwipeArray, arrayIndex);
         }
     }
@@ -54,7 +54,7 @@
     }
 
     function initPhotoswipe(photoArray, startFromIndex) {
-        console.log("Photoswipe start");
+        //console.log("Photoswipe start");
         var pswpElement = document.querySelectorAll('.pswp')[0];
 
         // define options (if needed)
@@ -65,7 +65,7 @@
         };
 
         // Initializes and opens PhotoSwipe
-        console.log("lunching PS gallery")
+        //console.log("lunching PS gallery")
         var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, photoArray, options);
         gallery.init();
     }

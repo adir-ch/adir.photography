@@ -521,7 +521,7 @@
 						arr = new Array(),
 						temp = '';
 
-					console.log("adir - building slider start");
+					//console.log("adir - building slider start");
 
 					$self.children().each(function(i){
 
@@ -567,8 +567,8 @@
 					if(config.debug) {
 						debug(' - Slide Object - ');debug(arr);
 					}
-					console.log("adir - images array");
-					console.log(arr);
+					//console.log("adir - images array");
+					//console.log(arr);
 					return arr;
 				},
 				msie: function(){

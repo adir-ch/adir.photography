@@ -13,17 +13,17 @@
 	function WebApiService($http, $q, $exceptionHandler) {
 
 		var _onGetSuccess = function(response) {
-			console.log("Got new data from server");
+			//console.log("Got new data from server");
 		}
 
 		var _onPostSuccess = function(response) {
-			console.log("Posted new data to server");
+			//console.log("Posted new data to server");
 		}
 
 		var _onFailure = function(response) {
-			console.log("Error while requesting data from server: ", response);
+			//console.log("Error while requesting data from server: ", response);
 			if(response.data.ExceptionMessage) {
-                console.log("stack trace: ", response.data.StackTrace);
+                //console.log("stack trace: ", response.data.StackTrace);
 				_result = response.data.ExceptionMessage;
             } else if(response.data.Message) {
 				_result = response.data.Message;
@@ -44,7 +44,7 @@
 					throw _result;
                 })
                 .catch(function(response) {
-                	console.info("Server exception: ", response);
+                	console.error("Server exception: ", response);
                 	throw response;
                 });
         }
@@ -59,7 +59,7 @@
 					throw _result;
                 })
                 .catch(function(response) {
-                	console.info("Server exception: ", response);
+                	console.error("Server exception: ", response);
                 	throw response;
                 });
         }

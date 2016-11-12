@@ -30,7 +30,7 @@ namespace PhotosRepository
                 image = new Bitmap(path + fileName, true);
                 Width = image.Width;
                 Height = image.Height;
-                _log.DebugFormat("Photo metadata retrived successfully: {0}", GetMetadataAsString());
+                //_log.DebugFormat("Photo metadata retrived successfully: {0}", GetMetadataAsString());
                 status = true; 
 	        }
 	        catch (Exception e)

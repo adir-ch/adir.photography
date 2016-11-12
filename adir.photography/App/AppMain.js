@@ -1,7 +1,5 @@
 ﻿
 (function() {
     angular.module('AppMain', ['AppCommonDirectives', 'AppCommonServices']);
-	console.log("Starting Main App");
-
-
+	//console.log("Starting Main App");
 }());

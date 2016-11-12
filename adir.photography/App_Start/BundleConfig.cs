@@ -48,7 +48,6 @@ namespace adir.photography
                         "~/App/Common/Services/GlobalConfigurationService.js",
                         "~/App/Common/Directives/AppCommonDirectives.js",
                         "~/App/Common/Directives/LoginDialog/LoginDialogDirectiveViewModel.js",
-                        "~/App/Common/Directives/LoginDialog/LoginDialogFormViewModel.js",
                         "~/App/Common/Directives/MfbButtonMenu/MfbButtonMenuViewModel.js",
                         "~/App/Common/Directives/MfbButtonMenu/ButtonMenuDirectiveViewModel.js"));
 

@@ -5,34 +5,34 @@
 			["$scope", "$location", "ngDialog", "WebApiService", "GlobalConfigurationService", LoginDialogDirectiveViewModel]);
 
 	function LoginDialogDirectiveViewModel($scope, $location, ngDialog, WebApiService, GlobalConfigurationService) {
-		console.log("Login dialog directive - start");
+		//console.log("Login dialog directive - start");
 
 		$scope.userName = ""; // take data from login form
 		$scope.loginFormInput = { userEmail: "", password: ""};
 		$scope.authenticated = false;
 
 		var CheckIfUserIsAuthenticated = function(userName) {
-			console.log("Calling API to check authentication for userName: ", userName);
+			//console.log("Calling API to check authentication for userName: ", userName);
 			var url = GlobalConfigurationService.url("idmAuthenticate");
-			console.log("Calling API url: ", url);
+			//console.log("Calling API url: ", url);
 			//var authenticated = WebApiService.apiGet("/idm/authenticateUser/userName");
 			return false;
 		}
 
 		var DoUserLogin = function(username, password) {
-			console.log("Login: user=", username, " pass=", password);
+			//console.log("Login: user=", username, " pass=", password);
 			var url = GlobalConfigurationService.url("idmLogin");
-			console.log("Calling API url: ", url);
+			//console.log("Calling API url: ", url);
 			//var authenticated = WebApiService.apiGet("/idm/authenticateUser/userName");
 			$scope.userName = "Adir";
 			$scope.authenticated = true;
 		}
 
 		function PostDataToServer(apiUrl, data) {
-            console.log("calling api with: ", apiUrl);
+            //console.log("calling api with: ", apiUrl);
             WebApiService.apiPost(apiUrl, data)
                 .then(function(response) {
-                    console.log("WebApi call success");
+                    //console.log("WebApi call success");
                     showThankYouDialog("Thank You, " + $scope.loginFormInput.userEmail);
                 },
                 function(response) {
@@ -47,7 +47,7 @@
 
 		function DoSubscriberAdd(emailAddress) {
 			if (emailAddress === undefined || emailAddress === "") {
-				showThankYouDialog("Please supply a valid email address", warning);
+				showThankYouDialog("Please supply a valid email address");
 				return;
 			}
 
@@ -68,20 +68,20 @@
 					scope: $scope,
 			}).then(
 				function (inputData) {
-					console.log("Form input data status: ", inputData, " data: ", $scope.loginFormInput);
+					//console.log("Form input data status: ", inputData, " data: ", $scope.loginFormInput);
 					//DoUserLogin($scope.loginFormInput.userEmail, $scope.loginFormInput.password);
 					DoSubscriberAdd($scope.loginFormInput.userEmail);
 				},
 				function(status) {
-					console.log("Login form:", status);
+					//console.log("Login form:", status);
 				}
 			).finally(function() {
 				$scope.$emit('loginPopupDialogFinished', "");
 			});
 		}
 
-		function showThankYouDialog(message, style) {
-			var template = '<div class="login-dialog-thankyou-text ' + style + '">' + message + '</div>';
+		function showThankYouDialog(message) {
+			var template = '<div class="login-dialog-thankyou-text">' + message + '</div>';
 
 			ngDialog.open({
                 template: template,
@@ -92,13 +92,13 @@
 
 		function Init() {
 			if ($scope.userName != "" && CheckIfUserIsAuthenticated($scope.userName) == true) {
-				console.log("User ", $scope.userName, " is authenticated, redirecting to user profile page");
-				console.log("sending login event");
+				//console.log("User ", $scope.userName, " is authenticated, redirecting to user profile page");
+				//console.log("sending login event");
 				$scope.$emit('loginPopupDialogFinished', "");
 				// $location.path("/home/member/", $scope.userName); --------------> wait with that for now
 				// can also redirect to the user gallery
 			} else {
-				console.log("Show login dialog - user is not authenticated");
+				//console.log("Show login dialog - user is not authenticated");
 				OpenLoginDialog();
 			}
 		}
@@ -117,7 +117,7 @@
 	  		// link: function ($scope, element, attrs) {
 
 			// 	      $scope.$on('loginEvent', function(event, data) {
-			// 	         console.log("got login event in link");
+			// 	         //console.log("got login event in link");
 			// 	      });
 			// },
 		}

@@ -47,7 +47,6 @@ namespace adir.photography.Controllers
         {
             // TODO: check the logged in user, and get his gallery
             ViewBag.Title = "adir.photography";
-            _log.ErrorFormat("Logger test {0}", "ADIR");
             return View();
         }
 

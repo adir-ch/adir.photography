@@ -58,7 +58,7 @@ mfbMenu.controller('MfbButtonMenuViewModel', Ctrl);
 
 function Ctrl($scope, defaultValues, $window) {
     var vm = this;
-    // console.log(this);
+    // //console.log(this);
 
     vm.showLoginDialog = false;
     vm.positions = defaultValues.positions;
@@ -98,7 +98,7 @@ function Ctrl($scope, defaultValues, $window) {
 
     function menuButtonClicked(href) {
         if (href == "login-directive") {
-            console.log("calling login dialog");
+            //console.log("calling login dialog");
             vm.showLoginDialog = true;
             this.closeMenu();
 
@@ -108,7 +108,7 @@ function Ctrl($scope, defaultValues, $window) {
     }
 
     function mainAction() {
-        //console.log('Firing Main Action!');
+        ////console.log('Firing Main Action!');
     }
 
     function setMainAction() {
@@ -120,7 +120,7 @@ function Ctrl($scope, defaultValues, $window) {
     }
 
     $scope.$on("loginPopupDialogFinished", function(event, args) {
-        console.log("reset login dialog status");
+        //console.log("reset login dialog status");
         vm.showLoginDialog = false;
     });
 }

@@ -2,7 +2,7 @@
     "use strict";
 
     angular.module("gallery").factory("GalleryResources", ['GlobalConfigurationService', 'WebApiService', GalleryResources]).run(function(){
-        console.log("starting gallery resources service");
+        //console.log("starting gallery resources service");
     });
 
     function GalleryResources(GlobalConfigurationService, WebApiService) {
@@ -23,25 +23,25 @@
         var _onFailure = function (response) {
             _serverDataReady = false;
             _errorMessage = response;
-            console.log("Failed to find galleries: ", _errorMessage);
+            console.error("Failed to find galleries: ", _errorMessage);
         }
 
         function GetServerData(apiUrl, success) {
-            console.log("calling api with: ", apiUrl);
+            //console.log("calling api with: ", apiUrl);
             return WebApiService.apiGet(apiUrl)
                 .then(function(response) {
-                    console.log("WebApi call success");
+                    //console.log("WebApi call success");
                     success(response);
                     _serverDataReady = true;
                     return _serverDataReady;
                 },
                 function(response) {
-                    console.log("WebApi call failed");
+                    console.error("WebApi call failed");
                     _onFailure(response);
                     throw _errorMessage;
                 }
             ).catch(function(response) {
-                console.log("Exception while calling WebApi service");
+                console.error("Exception while calling WebApi service");
                 throw response;
             });
         }
