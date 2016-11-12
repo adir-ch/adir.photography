@@ -46,6 +46,11 @@
         }
 
 		function DoSubscriberAdd(emailAddress) {
+			if (emailAddress === undefined || emailAddress === "") {
+				showThankYouDialog("Please supply a valid email address", warning);
+				return;
+			}
+
 			var data = {
 				Name: '',
 				Email: emailAddress,
@@ -75,8 +80,8 @@
 			});
 		}
 
-		function showThankYouDialog(message) {
-			var template = '<div class="login-dialog-thankyou-text">' + message + '</div>';
+		function showThankYouDialog(message, style) {
+			var template = '<div class="login-dialog-thankyou-text ' + style + '">' + message + '</div>';
 
 			ngDialog.open({
                 template: template,
