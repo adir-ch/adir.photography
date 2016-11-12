@@ -141,16 +141,20 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\GalleryApiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RegisterApiController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ContactFormModel.cs" />
+    <Compile Include="Models\RegisterInfoModel.cs" />
     <Compile Include="Models\UserGalleryModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\EmailSender\EmailSendingService.cs" />
     <Compile Include="Services\EmailSender\IEmailSendingService.cs" />
     <Compile Include="Services\Gallery\GalleryDataService.cs" />
     <Compile Include="Services\Gallery\IGalleryDataService.cs" />
+    <Compile Include="Services\Register\IRegisterDataService.cs" />
+    <Compile Include="Services\Register\RegisterDataService.cs" />
     <Compile Include="Services\WebSiteConfig\IWebSiteConfigService.cs" />
     <Compile Include="Services\WebSiteConfig\WebConfigFileSection.cs" />
     <Compile Include="Services\WebSiteConfig\WebSiteFileConfigService.cs" />

@@ -38,14 +38,22 @@
 	width:100%;
 }
 
-#arrow_left, #arrow_right {
+.maximage_arrow {
 	height:10%;
 	position:absolute;
 	right:30px;
 	width:36px;
 	z-index:1000;
 	bottom: 3%;
+	opacity: 0.1;
+}
 
+#maximage-gallery-content .maximage_arrow:hover {
+	opacity: 1;
+}
+
+#maximage-gallery-content:hover .maximage_arrow {
+	opacity: 0.5;
 }
 
 #arrow_left {

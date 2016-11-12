@@ -2,11 +2,20 @@
 (function () {
     "use strict";
 
-    angular.module("AppCommonServices").constant("GlobalSettings", {
+	var GlobalSettings = {
 		ServerPath: "http://localhost:61001"
-    });
+	};
 
-	angular.module("AppCommonServices").factory("GlobalConfigurationService", ['GlobalSettings', GlobalConfigurationService]);
+    angular
+		.module("AppCommonServices")
+		.constant("GlobalSettings",GlobalSettings);
+
+
+	angular
+		.module("AppCommonServices")
+		.factory("GlobalConfigurationService", GlobalConfigurationService);
+
+	GlobalConfigurationService.$inject = ['GlobalSettings'];
 
 	function GlobalConfigurationService(GlobalSettings) {
 
@@ -15,7 +24,8 @@
 			galleries: "/api/galleryapi/all",
 			member: "/api/member",
 			idmLogin: "/api/idm/login",
-			idmAuthenticate: "/api/idm/login"
+			idmAuthenticate: "/api/idm/login",
+			addNewInfoSubscriber: "api/registerapi/updates"
 		};
 
         return {

@@ -28,6 +28,34 @@
 			$scope.authenticated = true;
 		}
 
+		function PostDataToServer(apiUrl, data) {
+            console.log("calling api with: ", apiUrl);
+            WebApiService.apiPost(apiUrl, data)
+                .then(function(response) {
+                    console.log("WebApi call success");
+                    showThankYouDialog("Thank You, " + $scope.loginFormInput.userEmail);
+                },
+                function(response) {
+                    console.log("WebApi call failed");
+                  	showThankYouDialog("Failed, try again later...");
+                }
+            ).catch(function(response) {
+                console.log("Exception while calling WebApi service");
+                throw response;
+            });
+        }
+
+		function DoSubscriberAdd(emailAddress) {
+			var data = {
+				Name: '',
+				Email: emailAddress,
+				Location: ''
+			};
+
+			var url = GlobalConfigurationService.url("addNewInfoSubscriber");
+			PostDataToServer(url, data);
+		}
+
 		function OpenLoginDialog() {
 			ngDialog.openConfirm({
 					className: 'ngdialog-theme-default',
@@ -37,7 +65,7 @@
 				function (inputData) {
 					console.log("Form input data status: ", inputData, " data: ", $scope.loginFormInput);
 					//DoUserLogin($scope.loginFormInput.userEmail, $scope.loginFormInput.password);
-					showThankYouDialog($scope.loginFormInput.userEmail);
+					DoSubscriberAdd($scope.loginFormInput.userEmail);
 				},
 				function(status) {
 					console.log("Login form:", status);
@@ -47,15 +75,8 @@
 			});
 		}
 
-		function showThankYouDialog(email) {
-			var template = '<div class="login-dialog-thankyou-text">';
-			if (email == "" || email === undefined) {
-				template = template + "Try again, this time with an email address :)";
-			} else {
-				template = template + "Thank You"
-			}
-
-			template = template + "</div>";
+		function showThankYouDialog(message) {
+			var template = '<div class="login-dialog-thankyou-text">' + message + '</div>';
 
 			ngDialog.open({
                 template: template,
@@ -78,8 +99,6 @@
 		}
 
 		Init();
-
-
 	}
 
 	var LoginDialogDirectiveFunction = function () {
