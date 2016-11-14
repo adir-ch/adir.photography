@@ -11,6 +11,7 @@ namespace PhotosRepository
     {
         private readonly ILog _log = LogManager.GetLogger("PhotoReprository");
         public string FileName { get; set; }
+        //public string FilePath { get; set; }
         public string Caption { get; set; }
         public IPhotoMetadata Metadata { get; set; }
         public List<string> Tags { get; set; }
@@ -23,10 +24,24 @@ namespace PhotosRepository
 
         public Photo(string filePath, string fileName) : this()
         {
-            FileName = fileName; 
-            Metadata.TryParseMetadataFromFile(filePath, fileName); 
+            FileName = fileName;
+            //FilePath = filePath; 
         }
         
+        public bool Init(string filePath)
+        {
+            return Metadata.TryParseMetadataFromImage(filePath, FileName);
+        }
+
+        public bool Init(string filePath, string width, string height)
+        {
+            if (Metadata.TryParseMetadataFromData(width, height) == true)
+            {
+                return true; 
+            }
+
+            return Metadata.TryParseMetadataFromImage(filePath, FileName);
+        }
         public void AddTag(string iTag)
         {
             //_log.DebugFormat("Adding tag to {0}: {1}", FileName, iTag); 

@@ -91,10 +91,22 @@ namespace PhotosRepository.DataAcess.XML
                 var captions = photo.Descendants().Where(tag => tag.Name == "caption");
                 var fileName = photo.Descendants().Where(tag => tag.Name == "filename").FirstOrDefault().Value;
                 string fullPhotoPath = _serverRunningPath + _photosLocalLocation;
+                string width = photo.Element("metadata").Element("width").Value;
+                string height = photo.Element("metadata").Element("height").Value;
+
                 currentPhoto = new Photo(fullPhotoPath, fileName) 
                 {
                     Caption = (captions.Count() > 0 ? captions.FirstOrDefault().Value : fileName)
                 };
+                if (String.IsNullOrEmpty(width) == true || String.IsNullOrEmpty(height) == true)
+                {
+                    currentPhoto.Init(fullPhotoPath); 
+                    UpdateDBPhotoInfo(currentPhoto); 
+                }  
+                else 
+                {
+                    currentPhoto.Init(fullPhotoPath, width, height); 
+                }
 
                 var tags = photo.Element("tags").Descendants();
                 foreach (var tag in tags)
@@ -155,5 +167,18 @@ namespace PhotosRepository.DataAcess.XML
 
             return galleries; 
         }
+        private bool UpdateDBPhotoInfo(IPhoto photo)
+        {
+            bool status = false;
+            var dbPhotoEntry = _db.Element("photos").Descendants("photo").Where(g =>
+                        String.Equals(g.Element("filename").Value, photo.FileName, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
+
+            dbPhotoEntry.Element("metadata").Element("width").Value = Convert.ToString(photo.Metadata.Width);
+            dbPhotoEntry.Element("metadata").Element("height").Value = Convert.ToString(photo.Metadata.Height);
+            _db.Save(_serverRunningPath + "/galleries.xml");
+
+            _log.DebugFormat("Photo: {0} was updated with new metadata: {1}", photo.FileName, photo.Metadata.GetMetadataAsString());
+            return status; 
+        } 
     }
 }

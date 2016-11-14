@@ -1,31 +1,29 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <galleries>
     <gallery>
       <config>
-        <PhotoCycle AutoCycle="true" Timeout="50"/>
+        <PhotoCycle AutoCycle="true" Timeout="50" />
       </config>
       <name>Main</name>
       <openingPhoto>girona.jpg</openingPhoto>
       <tag>Main</tag>
     </gallery>
-
     <gallery>
       <config>
-        <PhotoCycle AutoCycle="true" Timeout="50"/>
+        <PhotoCycle AutoCycle="true" Timeout="50" />
       </config>
       <name>Album1</name>
       <openingPhoto>fe2.jpg</openingPhoto>
       <tag>Album1</tag>
     </gallery>
-
   </galleries>
   <photos>
     <photo>
       <filename>br1.jpg</filename>
       <metadata>
-        <width></width>
-        <height></height>
+        <width>1626</width>
+        <height>1080</height>
       </metadata>
       <tags>
         <tag>main</tag>
@@ -34,8 +32,8 @@
     <photo>
       <filename>fe1.jpg</filename>
       <metadata>
-        <width></width>
-        <height></height>
+        <width>1920</width>
+        <height>940</height>
       </metadata>
       <tags>
         <tag>main</tag>
@@ -44,8 +42,8 @@
     <photo>
       <filename>fe2.jpg</filename>
       <metadata>
-        <width></width>
-        <height></height>
+        <width>1437</width>
+        <height>1080</height>
       </metadata>
       <tags>
         <tag>main</tag>
@@ -55,8 +53,8 @@
     <photo>
       <filename>fe3.jpg</filename>
       <metadata>
-        <width></width>
-        <height></height>
+        <width>1459</width>
+        <height>1080</height>
       </metadata>
       <tags>
         <tag>main</tag>
@@ -65,8 +63,8 @@
     <photo>
       <filename>fe4.jpg</filename>
       <metadata>
-        <width></width>
-        <height></height>
+        <width>1440</width>
+        <height>1080</height>
       </metadata>
       <tags>
         <tag>main</tag>
@@ -75,8 +73,8 @@
     <photo>
       <filename>girona.jpg</filename>
       <metadata>
-        <width></width>
-        <height></height>
+        <width>1440</width>
+        <height>1080</height>
       </metadata>
       <tags>
         <tag>main</tag>
@@ -85,8 +83,8 @@
     <photo>
       <filename>il1.jpg</filename>
       <metadata>
-        <width></width>
-        <height></height>
+        <width>1626</width>
+        <height>1080</height>
       </metadata>
       <tags>
         <tag>main</tag>
@@ -96,8 +94,8 @@
     <photo>
       <filename>ml1.jpg</filename>
       <metadata>
-        <width></width>
-        <height></height>
+        <width>1626</width>
+        <height>1080</height>
       </metadata>
       <tags>
         <tag>main</tag>
@@ -106,8 +104,8 @@
     <photo>
       <filename>ph1.jpg</filename>
       <metadata>
-        <width></width>
-        <height></height>
+        <width>1626</width>
+        <height>1080</height>
       </metadata>
       <tags>
         <tag>main</tag>
@@ -117,8 +115,8 @@
     <photo>
       <filename>prag1.jpg</filename>
       <metadata>
-        <width></width>
-        <height></height>
+        <width>1626</width>
+        <height>1080</height>
       </metadata>
       <tags>
         <tag>main</tag>
@@ -127,8 +125,8 @@
     <photo>
       <filename>sa1.jpg</filename>
       <metadata>
-        <width></width>
-        <height></height>
+        <width>1920</width>
+        <height>985</height>
       </metadata>
       <tags>
         <tag>main</tag>
@@ -137,8 +135,8 @@
     <photo>
       <filename>sa10.jpg</filename>
       <metadata>
-        <width></width>
-        <height></height>
+        <width>1626</width>
+        <height>1080</height>
       </metadata>
       <tags>
         <tag>main</tag>
@@ -147,8 +145,8 @@
     <photo>
       <filename>sa11.jpg</filename>
       <metadata>
-        <width></width>
-        <height></height>
+        <width>1733</width>
+        <height>1080</height>
       </metadata>
       <tags>
         <tag>main</tag>
@@ -158,8 +156,8 @@
     <photo>
       <filename>sa2.jpg</filename>
       <metadata>
-        <width></width>
-        <height></height>
+        <width>1920</width>
+        <height>881</height>
       </metadata>
       <tags>
         <tag>main</tag>
@@ -168,8 +166,8 @@
     <photo>
       <filename>sa3.jpg</filename>
       <metadata>
-        <width></width>
-        <height></height>
+        <width>1920</width>
+        <height>990</height>
       </metadata>
       <tags>
         <tag>main</tag>
@@ -178,8 +176,8 @@
     <photo>
       <filename>sa4.jpg</filename>
       <metadata>
-        <width></width>
-        <height></height>
+        <width>1626</width>
+        <height>1080</height>
       </metadata>
       <tags>
         <tag>main</tag>
@@ -189,8 +187,8 @@
     <photo>
       <filename>sa5.jpg</filename>
       <metadata>
-        <width></width>
-        <height></height>
+        <width>1626</width>
+        <height>1080</height>
       </metadata>
       <tags>
         <tag>main</tag>
@@ -199,8 +197,8 @@
     <photo>
       <filename>sa6.jpg</filename>
       <metadata>
-        <width></width>
-        <height></height>
+        <width>1920</width>
+        <height>666</height>
       </metadata>
       <tags>
         <tag>main</tag>
@@ -209,8 +207,8 @@
     <photo>
       <filename>sa7.jpg</filename>
       <metadata>
-        <width></width>
-        <height></height>
+        <width>1626</width>
+        <height>1080</height>
       </metadata>
       <tags>
         <tag>main</tag>
@@ -219,8 +217,8 @@
     <photo>
       <filename>sa8.jpg</filename>
       <metadata>
-        <width></width>
-        <height></height>
+        <width>1920</width>
+        <height>962</height>
       </metadata>
       <tags>
         <tag>main</tag>
@@ -230,8 +228,8 @@
     <photo>
       <filename>sa9.jpg</filename>
       <metadata>
-        <width></width>
-        <height></height>
+        <width>1626</width>
+        <height>1080</height>
       </metadata>
       <tags>
         <tag>main</tag>
@@ -240,8 +238,8 @@
     <photo>
       <filename>th1.jpg</filename>
       <metadata>
-        <width></width>
-        <height></height>
+        <width>1898</width>
+        <height>1080</height>
       </metadata>
       <tags>
         <tag>main</tag>
@@ -250,8 +248,8 @@
     <photo>
       <filename>th2.jpg</filename>
       <metadata>
-        <width></width>
-        <height></height>
+        <width>1626</width>
+        <height>1080</height>
       </metadata>
       <tags>
         <tag>main</tag>
@@ -260,8 +258,8 @@
     <photo>
       <filename>us1.jpg</filename>
       <metadata>
-        <width></width>
-        <height></height>
+        <width>1631</width>
+        <height>1080</height>
       </metadata>
       <tags>
         <tag>main</tag>

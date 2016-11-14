@@ -5,9 +5,9 @@
   </configSections>
 
   <log4net>
-  
+
     <!--Loggers-->
-    
+
     <!-- Set root logger level to DEBUG and its only appender to Console -->
     <root>
       <level value="DEBUG" />
@@ -16,12 +16,12 @@
     </root>
 
     <!--Photo repository log-->
-    <logger name="PhotoReprository" additivity="true">
+    <logger name="PhotoReprository" additivity="false">
       <level value="DEBUG" />
       <appender-ref ref="RollingFileAppender"/>
     </logger>
-  
-  
+
+
     <!--Appenders-->
     <appender name="EventLogAppender" type="log4net.Appender.EventLogAppender">
       <param name="ApplicationName" value="AdirApp" />

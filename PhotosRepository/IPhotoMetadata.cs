@@ -9,7 +9,8 @@ namespace PhotosRepository
     {
         int Width { get; set; }
         int Height { get; set; }
-        bool TryParseMetadataFromFile(string path, string fileName);
+        bool TryParseMetadataFromImage(string path, string fileName);
+        bool TryParseMetadataFromData(string width, string height);
         string GetMetadataAsString();
     }
 }
