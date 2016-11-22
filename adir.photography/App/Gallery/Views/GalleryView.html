@@ -1,18 +1,20 @@
+<link rel=stylesheet href="../../../Content/albums.css">
 
 <div ng-if="galleryDataReady">
-    <ap-max-image user-name="userName" gallery-name="galleryName" gallery-data="galleryData()"></ap-max-image>
+    <div ng-if="isLandscapeView == false">
+        <ap-albums-display data="galleryData()"></ap-albums-display>
+    </div>
+    <div ng-if="isLandscapeView == true">
+        <ap-max-image gallery-data="galleryData()" gallery-name="galleryName" user-name="userName"></ap-max-image>
+    </div>
 </div>
-
 <div ng-if="serverError">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-xs-12">
-				<div class="alert alert-danger ap-gallery-error-message" role="alert">
-                    Gallery error: {{serverErrorMessage}}
-                    <span class="glyphicon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-                </div>
-			</div>
-		</div>
-	</div>
-
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="alert alert-danger ap-gallery-error-message" role="alert">Gallery error: {{serverErrorMessage}}
+                    <span aria-hidden="true" class="glyphicon glyphicon glyphicon-info-sign"></span></div>
+            </div>
+        </div>
+    </div>
 </div>

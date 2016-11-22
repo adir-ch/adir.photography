@@ -1,5 +1,5 @@
 ﻿(function() {
-    angular.module('gallery').controller("GalleryViewModel", [ '$scope', '$routeParams', 'GalleryResources', function ($scope, $routeParams, GalleryResources) {
+    angular.module('gallery').controller("GalleryViewModel", ['$scope', '$routeParams', '$window', '$location', 'GalleryResources', function($scope, $routeParams, $window, $location, GalleryResources) {
 
         //console.log("Gallery ViewModel");
 
@@ -8,6 +8,9 @@
         $scope.userName = "default";
         $scope.serverError = false;
         $scope.serverErrorMessage = "";
+        //$scope.isMobile = false;
+        $scope.isMobileView = false;
+        $scope.isLandscapeView = false;
 
         $scope.galleryData = function() {
             //console.log("read gallery data");
@@ -19,7 +22,36 @@
             $scope.galleryName = $routeParams.galleryId;
         }
 
-        Initialize = function () {
+        function adjustGalleryViewSettings() {
+            if ($window.innerWidth > $window.innerHeight) { // landscape
+                $scope.isLandscapeView = true;
+                if ($window.innerWidth < 961) {
+                    $scope.isMobileView = true;
+                }
+            } else { // portrate 
+                $scope.isLandscapeView = false;
+                console.log("portrait");
+                if ($window.innerHeight < 961) {
+                    $scope.isMobileView = true;
+                }
+            }
+        }
+
+        // function subscribeToWindowResizeEvent() {
+        //     angular.element($window).bind('resize', function() {
+        //         console.log("windows size changed: " + $window.innerWidth);
+        //     })
+        // }
+
+        Initialize = function() {
+
+            //subscribeToWindowResizeEvent();
+            adjustGalleryViewSettings();
+
+            // if ($scope.isLandscapeView == false) {
+            //     $location.path("/gallery/albums");
+            //     return; 
+            // }
 
             // get all the images + opening image.
             //console.log("calling Gallery API");
@@ -29,7 +61,7 @@
             GalleryResources.getGalleryData($scope.galleryName)
                 .then(
                     function(status) { // success
-                        //console.log("Gallery data ready");
+                        console.log("Gallery data ready");
                         $scope.galleryDataReady = status;
                     },
                     function(reason) { // error

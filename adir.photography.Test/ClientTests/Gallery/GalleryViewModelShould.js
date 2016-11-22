@@ -47,7 +47,7 @@ describe("GalleryViewModelShould->", function () {
 	        },
 
 	        GalleryResourcesMock.getGalleryData = function(galleryName) {
-	        	console.log("Fake service called (getGalleryData) !!!!!!!!!!!!!!!!!!!!!!!")
+	        	//console.log("Fake service called (getGalleryData) !!!!!!!!!!!!!!!!!!!!!!!")
 	            var deffered = $q.defer();
 	            deffered.resolve(true);
 	            return deffered.promise;

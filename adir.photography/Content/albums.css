@@ -1,137 +1,164 @@
-
 body {
-	background-color: #484747;
-}
-#album-main {
-	text-align: center;
+    background-color: #484747;
 }
 
-img {
-	//filter: opacity(80%) brightness(80%); // removed since it affects photoswipe
-	//border-radius: 10px;
+#album-main {
+    text-align: center;
 }
+
+
+/*img {
+	filter: opacity(80%) brightness(80%); // removed since it affects photoswipe
+	border-radius: 10px;
+}*/
 
 .responsive-image {
     width: 100%;
-	min-height: 100%;
-	min-width: 100%;
-	margin: 5px auto;
-	//background-repeat: no-repeat;
-	//background-size: 100% 100%;
+    min-height: 100%;
+    min-width: 100%;
+    margin: 5px auto;
+    //background-repeat: no-repeat;
+    //background-size: 100% 100%;
 }
 
 .album-name {
-	text-transform: uppercase;
-	color: white;
-	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
-	font-size: 1300%;
-	position: absolute;
-	bottom: 10%;
-   	left: 10%;
-	z-index:1000;
+    text-transform: uppercase;
+    color: white;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 1300%;
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    z-index: 1000;
     opacity: 0.5;
 }
 
 #rig {
-    max-width:100%;
-    margin:0 auto; /*center aligned*/
-    padding:0;
-    font-size:0; /* Remember to change it back to normal font size if have captions */
-    list-style:none;
-    background-color:#000;
-}
-#rig li {
-    display: inline-block;
-    *display:inline;/*for IE6 - IE7*/
-    width:25%;
-    vertical-align:middle;
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+    max-width: 100%;
+    margin: 0 auto;
+    /*center aligned*/
+    padding: 0;
+    font-size: 0;
+    /* Remember to change it back to normal font size if have captions */
+    list-style: none;
+    background-color: #000;
 }
 
+#rig li {
+    display: inline-block;
+    *display: inline;
+    /*for IE6 - IE7*/
+    width: 25%;
+    vertical-align: middle;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
 /* The wrapper for each item */
+
 .rig-cell {
     /*margin:12px;
     box-shadow:0 0 6px rgba(0,0,0,0.3);*/
-    display:block;
+    display: block;
     position: relative;
-    overflow:hidden;
+    overflow: hidden;
 }
 
+
 /* If have the image layer */
+
 .rig-img {
-    display:block;
+    display: block;
     width: 100%;
     height: auto;
-    border:none;
-    transform:scale(1);
-    transition:all 1s;
+    border: none;
+    transform: scale(1);
+    transition: all 1s;
 }
 
 #rig li:hover .rig-img {
-    transform:scale(1.05);
+    transform: scale(1.05);
 }
 
+
 /* If have the overlay layer */
+
 .rig-overlay {
     position: absolute;
-    display:block;
+    display: block;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     margin: auto;
     background: #3DC0F1 url(img/link.png) no-repeat center 20%;
-    background-size:50px 50px;
-    opacity:0;
-    filter:alpha(opacity=0);/*For IE6 - IE8*/
-    transition:all 0.6s;
+    background-size: 50px 50px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    /*For IE6 - IE8*/
+    transition: all 0.6s;
 }
+
 #rig li:hover .rig-overlay {
-    opacity:0.8;
+    opacity: 0.8;
 }
+
 
 /* If have captions */
+
 .rig-text {
-    display:block;
-    padding:0 30px;
-    box-sizing:border-box;
-    position:absolute;
-    left:0;
-    width:100%;
-    text-align:center;
-    text-transform:capitalize;
-    font-size:18px;
-    font-weight:bold;
+    display: block;
+    padding: 0 30px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: bold;
     font-family: 'Oswald', sans-serif;
-    font-weight:normal!important;
-    top:40%;
-    color:white;
-    opacity:0;
-    filter:alpha(opacity=0);/*For older IE*/
-    transform:translateY(-20px);
-    transition:all .3s;
-}
-#rig li:hover .rig-text {
-    transform:translateY(0px);
-    opacity:0.9;
+    font-weight: normal!important;
+    top: 40%;
+    color: white;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    /*For older IE*/
+    transform: translateY(-20px);
+    transition: all .3s;
 }
 
-@media (max-width: 9000px) {
+#rig li:hover .rig-text {
+    transform: translateY(0px);
+    opacity: 0.9;
+}
+
+@media (max-width: 900px) {
+    .album-name {
+        font-size: 700%;
+    }
     #rig li {
-        width:25%;
+        width: 25%;
     }
 }
 
 @media (max-width: 700px) {
+    .album-name {
+        font-size: 500%;
+    }
     #rig li {
-        width:33.33%;
+        width: 33.33%;
     }
 }
 
 @media (max-width: 550px) {
+    .album-name {
+        font-size: 300%;
+    }
+
     #rig li {
-        width:50%;
+        width: 50%;
     }
 }

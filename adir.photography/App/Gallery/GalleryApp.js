@@ -1,55 +1,64 @@
-﻿(function () {
+﻿(function() {
     'use strict';
 
     angular.module('gallery', ['ngRoute', 'AppCommonServices'])
 
-        .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
-            $routeProvider.when('/', {
-                templateUrl: '/App/Gallery/Views/GalleryView.html',
-                controller: 'GalleryViewModel'
-            });
+    .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+        $routeProvider.when('/', {
+            templateUrl: '/App/Gallery/Views/GalleryView.html',
+            controller: 'GalleryViewModel'
+        });
 
-            $routeProvider.when('/gallery/show/:galleryId', {
-                templateUrl: '/App/Gallery/Views/GalleryView.html',
-                controller: 'GalleryViewModel'
-            });
+        $routeProvider.when('/gallery/show/:galleryId', {
+            templateUrl: '/App/Gallery/Views/GalleryView.html',
+            controller: 'GalleryViewModel'
+        });
 
-            $routeProvider.when('/gallery/albums', {
-                templateUrl: '/App/Gallery/Views/AlbumsView.html',
-                controller: 'AlbumsViewModel'
-            });
+        $routeProvider.when('/gallery/albums', {
+            templateUrl: '/App/Gallery/Views/AlbumsView.html',
+            controller: 'AlbumsViewModel'
+        });
 
-            $routeProvider.when('/gallery/album/:albumId', {
-                templateUrl: '/App/Gallery/Views/AlbumView.html',
-                controller: 'AlbumViewModel'
-            });
+        $routeProvider.when('/gallery/album/:albumId', {
+            templateUrl: '/App/Gallery/Views/AlbumView.html',
+            controller: 'AlbumViewModel'
+        });
 
-            $routeProvider.otherwise({ redirectTo: '/' });
+        $routeProvider.otherwise({ redirectTo: '/' });
 
-            $locationProvider.html5Mode(true);
-        }]);
+        $locationProvider.html5Mode(true);
+    }])
 
-        // .run(['$log', '$route', '$rootScope', function($log, $route, $rootScope) {
-        //     $log.log("Gallery App loaing...");
+    .run(['$log', '$route', '$rootScope', '$location', '$window', function($log, $route, $rootScope, $location, $window) {
 
+        var portrait = false;
+        var mobile = false;
 
-        //     $rootScope.$on('$routeChangeError', function(event, current, previous, rejection) {
-        //         $log.debug("route change error");
-        //         $log.debug(event);
-        //         $log.debug($route.routes);
-        //         $log.debug($route.current);
-        //         $log.debug(rejection);
-        //     });
+        function adjustGalleryViewSettings() {
+            if ($window.innerWidth < $window.innerHeight) { // portrait
+                portrait = true;
+                if ($window.innerWidth < 961) {
+                    mobile = true;
+                }
+            } else { // landscape 
+                portrait = false;
+                if ($window.innerHeight < 961) {
+                    mobile = true;
+                }
+            }
+        }
 
-        //     $rootScope.$on('$routeChangeSuccess', function(event, current, previous) {
-        //         $log.debug("route change success");
-        //         $log.debug($route.current);
-        //     });
+        //$log.debug("Gallery App loaing...");
 
-        //     $rootScope.$on('$routeChangeStart', function(event, current, previous) {
-        //         $log.debug("route change start");
-        //         $log.debug(event);
-
-        //     });
-        // }]);
+        // supported events: $routeChangeError, $routeChangeSuccess
+        $rootScope.$on('$routeChangeStart', function(event, current, previous) {
+            //$log.debug("route change start");
+            //$log.debug(event);
+            adjustGalleryViewSettings();
+            if (portrait == true) { // portrait - show albums
+                console.log("portrait");
+                $location.path("/gallery/albums");
+            }
+        });
+    }]);
 }());
