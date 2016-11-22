@@ -22,21 +22,6 @@
             $scope.galleryName = $routeParams.galleryId;
         }
 
-        function adjustGalleryViewSettings() {
-            if ($window.innerWidth > $window.innerHeight) { // landscape
-                $scope.isLandscapeView = true;
-                if ($window.innerWidth < 961) {
-                    $scope.isMobileView = true;
-                }
-            } else { // portrate 
-                $scope.isLandscapeView = false;
-                console.log("portrait");
-                if ($window.innerHeight < 961) {
-                    $scope.isMobileView = true;
-                }
-            }
-        }
-
         // function subscribeToWindowResizeEvent() {
         //     angular.element($window).bind('resize', function() {
         //         console.log("windows size changed: " + $window.innerWidth);
@@ -46,12 +31,6 @@
         Initialize = function() {
 
             //subscribeToWindowResizeEvent();
-            adjustGalleryViewSettings();
-
-            // if ($scope.isLandscapeView == false) {
-            //     $location.path("/gallery/albums");
-            //     return; 
-            // }
 
             // get all the images + opening image.
             //console.log("calling Gallery API");

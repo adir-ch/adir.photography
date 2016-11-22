@@ -30,7 +30,7 @@
 
     function AlbumsDisplayController($attrs) {
         var vm = this;
-        console.log(vm.albumsData);
+        //console.debug(vm.albumsData);
 
         // $scope.SetAlbumPhoto = function(album) { // not used!!!
         // 	var css = {

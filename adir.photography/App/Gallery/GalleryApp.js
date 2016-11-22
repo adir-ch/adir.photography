@@ -9,10 +9,10 @@
             controller: 'GalleryViewModel'
         });
 
-        $routeProvider.when('/gallery/show/:galleryId', {
-            templateUrl: '/App/Gallery/Views/GalleryView.html',
-            controller: 'GalleryViewModel'
-        });
+        // $routeProvider.when('/gallery/show/:galleryId', {
+        //     templateUrl: '/App/Gallery/Views/GalleryView.html',
+        //     controller: 'GalleryViewModel'
+        // });
 
         $routeProvider.when('/gallery/albums', {
             templateUrl: '/App/Gallery/Views/AlbumsView.html',
@@ -31,6 +31,8 @@
 
     .run(['$log', '$route', '$rootScope', '$location', '$window', function($log, $route, $rootScope, $location, $window) {
 
+        //$log.debug("Gallery App loaing...");
+
         var portrait = false;
         var mobile = false;
 
@@ -48,16 +50,26 @@
             }
         }
 
-        //$log.debug("Gallery App loaing...");
+        function isMainPageRoute() {
+
+        }
 
         // supported events: $routeChangeError, $routeChangeSuccess
         $rootScope.$on('$routeChangeStart', function(event, current, previous) {
-            //$log.debug("route change start");
-            //$log.debug(event);
-            adjustGalleryViewSettings();
-            if (portrait == true) { // portrait - show albums
-                console.log("portrait");
-                $location.path("/gallery/albums");
+            $log.debug("route change start: ", $location.path(), " current: ", current.originalPath);
+
+            var route = $location.path();
+            if (current.originalPath !== undefined) {
+                route = current.originalPath;
+            }
+
+            if (route.indexOf("/gallery/album/:albumId") === -1) { // not going to album page  
+                //$log.debug("event: ", event);
+                adjustGalleryViewSettings();
+                if (portrait == true) { // portrait - show albums
+                    console.log("portrait");
+                    $location.path("/gallery/albums");
+                }
             }
         });
     }]);

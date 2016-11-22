@@ -1,12 +1,7 @@
 <link rel=stylesheet href="../../../Content/albums.css">
 
 <div ng-if="galleryDataReady">
-    <div ng-if="isLandscapeView == false">
-        <ap-albums-display data="galleryData()"></ap-albums-display>
-    </div>
-    <div ng-if="isLandscapeView == true">
-        <ap-max-image gallery-data="galleryData()" gallery-name="galleryName" user-name="userName"></ap-max-image>
-    </div>
+    <ap-max-image gallery-data="galleryData()" gallery-name="galleryName" user-name="userName"></ap-max-image>
 </div>
 <div ng-if="serverError">
     <div class="container-fluid">
