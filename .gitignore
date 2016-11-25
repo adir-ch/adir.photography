@@ -182,7 +182,7 @@ UpgradeLog*.htm
 # Microsoft Fakes
 FakesAssemblies/
 
-# ADIR's
+# ADIR's ignores
 *.tss
 sftp-config.json
 adir.photography/Content/Photos/
