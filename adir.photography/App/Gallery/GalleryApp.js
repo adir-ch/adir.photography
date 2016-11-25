@@ -50,24 +50,24 @@
             }
         }
 
-        function isMainPageRoute() {
-
+        function isMainPageRoute(route) {
+            return (route.indexOf("/gallery/album/:albumId") === -1);
         }
 
         // supported events: $routeChangeError, $routeChangeSuccess
         $rootScope.$on('$routeChangeStart', function(event, current, previous) {
-            $log.debug("route change start: ", $location.path(), " current: ", current.originalPath);
+            //$log.debug("route change start: ", $location.path(), " current: ", current.originalPath);
 
             var route = $location.path();
             if (current.originalPath !== undefined) {
                 route = current.originalPath;
             }
 
-            if (route.indexOf("/gallery/album/:albumId") === -1) { // not going to album page  
-                //$log.debug("event: ", event);
+            if (isMainPageRoute(route) == true) { // not going to album page  
+                //$log.debug("going to main page");
                 adjustGalleryViewSettings();
                 if (portrait == true) { // portrait - show albums
-                    console.log("portrait");
+                    //console.log("portrait");
                     $location.path("/gallery/albums");
                 }
             }
