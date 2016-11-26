@@ -40,7 +40,7 @@
             GalleryResources.getGalleryData($scope.galleryName)
                 .then(
                     function(status) { // success
-                        console.log("Gallery data ready");
+                        //console.log("Gallery data ready");
                         $scope.galleryDataReady = status;
                     },
                     function(reason) { // error
