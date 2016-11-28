@@ -2,14 +2,14 @@
 <link rel="stylesheet" href="../../../Content/ngDialog.css">
 
 <script type="text/ng-template" id="loginDialogPopupId">
-	<div class="ngdialog-message">
+    <div class="ngdialog-message">
 
         <form id="LoginForm">
             <fieldset>
                 <!-- Form Name -->
                 <div class="login-dialog-text">
                     <legend>Register for updates</legend>
-                    <span>Currently login not supported, but will be happy to have you on my list for future announcements, and photo updates :)</span>
+                    <span>Register to receive news or updates about new photos</span>
                 </div>
                 <!-- Text input-->
                 <div class="form-group">
@@ -31,9 +31,9 @@
                 </div> -->
             </fieldset>
         </form>
-    	<div class="ngdialog-buttons">
-    		<button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click=closeThisDialog("Cancel")>Cancel</button>
-    		<button type="button" class="ngdialog-button ngdialog-button-primary" ng-click=confirm("OK")>OK</button>
-    	</div>
-	</div>
+        <div class="ngdialog-buttons">
+            <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click=closeThisDialog( "Cancel")>Cancel</button>
+            <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click=confirm( "OK")>OK</button>
+        </div>
+    </div>
 </script>

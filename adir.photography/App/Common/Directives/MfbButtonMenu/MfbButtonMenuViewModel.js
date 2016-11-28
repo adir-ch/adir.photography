@@ -41,8 +41,7 @@ mfbMenu.value('defaultValues', {
     }, {
         value: 'hover',
         name: 'Hover'
-    }
-    ],
+    }],
     actions: [{
         name: 'Fire Main Action?'
     }, {
@@ -91,7 +90,7 @@ function Ctrl($scope, defaultValues, $window) {
         icon: 'ion-android-mail',
         href: '/home/about'
     }, {
-        label: 'Register | Login',
+        label: 'Register for updates',
         icon: 'ion-person',
         href: 'login-directive'
     }];
@@ -125,15 +124,15 @@ function Ctrl($scope, defaultValues, $window) {
     });
 }
 
-Ctrl.prototype.hovered = function () {
+Ctrl.prototype.hovered = function() {
     // toggle something on hover.
 };
 
-Ctrl.prototype.toggle = function () {
+Ctrl.prototype.toggle = function() {
     this.menuState = this.menuState === 'closed' ? 'open' : 'closed';
 };
 
-Ctrl.prototype.closeMenu = function () {
+Ctrl.prototype.closeMenu = function() {
     this.menuState = 'closed';
 };
 
