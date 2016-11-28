@@ -6,31 +6,30 @@ body {
     text-align: center;
 }
 
+.ap-album-image {
+    position: relative;
+}
 
-/*img {
-	filter: opacity(80%) brightness(80%); // removed since it affects photoswipe
-	border-radius: 10px;
-}*/
-
-.responsive-image {
+.ap-responsive-image {
     width: 100%;
     min-height: 100%;
     min-width: 100%;
     margin: 5px auto;
-    //background-repeat: no-repeat;
-    //background-size: 100% 100%;
+    filter: opacity(80%) brightness(80%);
+    /*background-repeat: no-repeat;
+    background-size: 100% 100%;*/
 }
 
-.album-name {
+.ap-album-name {
     text-transform: uppercase;
     color: white;
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
     font-size: 1300%;
     position: absolute;
-    bottom: 10%;
+    top: 30%;
     left: 10%;
     z-index: 1000;
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
 #rig {
@@ -136,7 +135,7 @@ body {
 }
 
 @media (max-width: 900px) {
-    .album-name {
+    .ap-album-name {
         font-size: 700%;
     }
     #rig li {
@@ -145,7 +144,7 @@ body {
 }
 
 @media (max-width: 700px) {
-    .album-name {
+    .ap-album-name {
         font-size: 500%;
     }
     #rig li {
@@ -154,10 +153,11 @@ body {
 }
 
 @media (max-width: 550px) {
-    .album-name {
+    .ap-album-name {
         font-size: 300%;
+        top: 50%;
+        left: 50%;
     }
-
     #rig li {
         width: 50%;
     }
