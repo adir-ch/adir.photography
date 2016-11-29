@@ -10,9 +10,9 @@
 <ul id="rig">
     <li ng-repeat="photo in vm.galleryData.GalleryPhotos" ng-click="vm.photoClicked($index)">
         <div class="rig-cell">
-            <img class="rig-img" ng-src="{{vm.galleryData.ImagesLocation}}/{{photo.FileName}}" >
+            <img class="rig-img" ng-src="{{vm.galleryData.ImagesLocation}}/{{photo.FileName}}">
             <span class="rig-overlay"></span>
-            <span class="rig-text">{{ photo.Caption }} <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span></span>
+            <span class="rig-text">{{ photo.Name }} <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span></span>
         </div>
     </li>
 </ul>
@@ -56,9 +56,9 @@
                 <!-- element will get class pswp__preloader--active when preloader is running -->
                 <div class="pswp__preloader">
                     <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -77,8 +77,8 @@
                 <div class="pswp__caption__center"></div>
             </div>
 
-          </div>
-
         </div>
+
+    </div>
 
 </div>

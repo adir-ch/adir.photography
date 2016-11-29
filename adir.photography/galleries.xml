@@ -21,30 +21,36 @@
   <photos>
     <photo>
       <filename>br1.jpg</filename>
+      <name>br1</name>
       <metadata>
         <width>1626</width>
         <height>1080</height>
       </metadata>
+      <caption>br1</caption>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>fe1.jpg</filename>
+      <name>fe1</name>
       <metadata>
         <width>1920</width>
         <height>940</height>
       </metadata>
+      <caption>fe1</caption>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>fe2.jpg</filename>
+      <name>fe2</name>
       <metadata>
         <width>1437</width>
         <height>1080</height>
       </metadata>
+      <caption>fe2</caption>
       <tags>
         <tag>main</tag>
         <tag>album1</tag>
@@ -52,40 +58,48 @@
     </photo>
     <photo>
       <filename>fe3.jpg</filename>
+      <name>fe3</name>
       <metadata>
         <width>1459</width>
         <height>1080</height>
       </metadata>
+      <caption>fe3</caption>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>fe4.jpg</filename>
+      <name>fe4</name>
       <metadata>
         <width>1440</width>
         <height>1080</height>
       </metadata>
+      <caption>fe4</caption>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>girona.jpg</filename>
+      <name>girona</name>
       <metadata>
         <width>1440</width>
         <height>1080</height>
       </metadata>
+      <caption>girona</caption>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>il1.jpg</filename>
+      <name>il1</name>
       <metadata>
         <width>1626</width>
         <height>1080</height>
       </metadata>
+      <caption>il1</caption>
       <tags>
         <tag>main</tag>
         <tag>album1</tag>
@@ -93,20 +107,24 @@
     </photo>
     <photo>
       <filename>ml1.jpg</filename>
+      <name>ml1</name>
       <metadata>
         <width>1626</width>
         <height>1080</height>
       </metadata>
+      <caption>ml1</caption>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>ph1.jpg</filename>
+      <name>ph1</name>
       <metadata>
         <width>1626</width>
         <height>1080</height>
       </metadata>
+      <caption>ph1</caption>
       <tags>
         <tag>main</tag>
         <tag>album1</tag>
@@ -114,40 +132,48 @@
     </photo>
     <photo>
       <filename>prag1.jpg</filename>
+      <name>prag1</name>
       <metadata>
         <width>1626</width>
         <height>1080</height>
       </metadata>
+      <caption>prag1</caption>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>sa1.jpg</filename>
+      <name>sa1</name>
       <metadata>
         <width>1920</width>
         <height>985</height>
       </metadata>
+      <caption>sa1</caption>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>sa10.jpg</filename>
+      <name>sa10</name>
       <metadata>
         <width>1626</width>
         <height>1080</height>
       </metadata>
+      <caption>sa10</caption>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>sa11.jpg</filename>
+      <name>sa11</name>
       <metadata>
         <width>1733</width>
         <height>1080</height>
       </metadata>
+      <caption>sa11</caption>
       <tags>
         <tag>main</tag>
         <tag>album1</tag>
@@ -155,30 +181,36 @@
     </photo>
     <photo>
       <filename>sa2.jpg</filename>
+      <name>sa2</name>
       <metadata>
         <width>1920</width>
         <height>881</height>
       </metadata>
+      <caption>sa2</caption>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>sa3.jpg</filename>
+      <name>sa3</name>
       <metadata>
         <width>1920</width>
         <height>990</height>
       </metadata>
+      <caption>sa3</caption>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>sa4.jpg</filename>
+      <name>sa4</name>
       <metadata>
         <width>1626</width>
         <height>1080</height>
       </metadata>
+      <caption>sa4</caption>
       <tags>
         <tag>main</tag>
         <tag>album1</tag>
@@ -186,40 +218,48 @@
     </photo>
     <photo>
       <filename>sa5.jpg</filename>
+      <name>sa5</name>
       <metadata>
         <width>1626</width>
         <height>1080</height>
       </metadata>
+      <caption>sa5</caption>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>sa6.jpg</filename>
+      <name>sa6</name>
       <metadata>
         <width>1920</width>
         <height>666</height>
       </metadata>
+      <caption>sa6</caption>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>sa7.jpg</filename>
+      <name>sa7</name>
       <metadata>
         <width>1626</width>
         <height>1080</height>
       </metadata>
+      <caption>sa7</caption>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>sa8.jpg</filename>
+      <name>sa8</name>
       <metadata>
         <width>1920</width>
         <height>962</height>
       </metadata>
+      <caption>sa8</caption>
       <tags>
         <tag>main</tag>
         <tag>album1</tag>
@@ -227,40 +267,48 @@
     </photo>
     <photo>
       <filename>sa9.jpg</filename>
+      <name>sa9</name>
       <metadata>
         <width>1626</width>
         <height>1080</height>
       </metadata>
+      <caption>sa9</caption>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>th1.jpg</filename>
+      <name>th1</name>
       <metadata>
         <width>1898</width>
         <height>1080</height>
       </metadata>
+      <caption>th1</caption>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>th2.jpg</filename>
+      <name>th2</name>
       <metadata>
         <width>1626</width>
         <height>1080</height>
       </metadata>
+      <caption>th2</caption>
       <tags>
         <tag>main</tag>
       </tags>
     </photo>
     <photo>
       <filename>us1.jpg</filename>
+      <name>us1</name>
       <metadata>
         <width>1631</width>
         <height>1080</height>
       </metadata>
+      <caption>us1</caption>
       <tags>
         <tag>main</tag>
       </tags>

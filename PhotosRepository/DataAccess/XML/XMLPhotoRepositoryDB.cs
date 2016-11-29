@@ -7,6 +7,8 @@ using System.Xml.Linq;
 using log4net;
 using PhotosRepository;
 using PhotosRepository.DataAccess;
+using System.Xml.Serialization;
+using System.IO;
 
 namespace PhotosRepository.DataAcess.XML
 {
@@ -88,24 +90,30 @@ namespace PhotosRepository.DataAcess.XML
             Photo currentPhoto;
             foreach (var photo in photos)
             {
-                var captions = photo.Descendants().Where(tag => tag.Name == "caption");
-                var fileName = photo.Descendants().Where(tag => tag.Name == "filename").FirstOrDefault().Value;
-                string fullPhotoPath = _serverRunningPath + _photosLocalLocation;
+                string caption = photo.Element("caption").Value;
+                string name = photo.Element("name").Value;
+                string fileName = photo.Element("filename").Value;
                 string width = photo.Element("metadata").Element("width").Value;
                 string height = photo.Element("metadata").Element("height").Value;
+                string fullPhotoPath = _serverRunningPath + _photosLocalLocation;
 
-                currentPhoto = new Photo(fullPhotoPath, fileName) 
+                currentPhoto = new Photo(fullPhotoPath, fileName)
                 {
-                    Caption = (captions.Count() > 0 ? captions.FirstOrDefault().Value : fileName)
+                    Caption = (String.IsNullOrEmpty(caption) ? Path.GetFileNameWithoutExtension(fileName) : caption),
+                    Name = (String.IsNullOrEmpty(name) ? Path.GetFileNameWithoutExtension(fileName): name)
                 };
-                if (String.IsNullOrEmpty(width) == true || String.IsNullOrEmpty(height) == true)
+
+                if (String.IsNullOrEmpty(width) == true || 
+                    String.IsNullOrEmpty(height) == true || 
+                    String.IsNullOrEmpty(name) == true || 
+                    String.IsNullOrEmpty(caption) == true)
                 {
-                    currentPhoto.Init(fullPhotoPath); 
-                    UpdateDBPhotoInfo(currentPhoto); 
-                }  
-                else 
+                    currentPhoto.Init(fullPhotoPath);
+                    UpdateDBPhotoInfo(currentPhoto);
+                }
+                else
                 {
-                    currentPhoto.Init(fullPhotoPath, width, height); 
+                    currentPhoto.Init(fullPhotoPath, width, height);
                 }
 
                 var tags = photo.Element("tags").Descendants();
@@ -175,6 +183,8 @@ namespace PhotosRepository.DataAcess.XML
 
             dbPhotoEntry.Element("metadata").Element("width").Value = Convert.ToString(photo.Metadata.Width);
             dbPhotoEntry.Element("metadata").Element("height").Value = Convert.ToString(photo.Metadata.Height);
+            dbPhotoEntry.Element("name").Value = Convert.ToString(photo.Name);
+            dbPhotoEntry.Element("caption").Value = Convert.ToString(photo.Caption);
             _db.Save(_serverRunningPath + "/galleries.xml");
 
             _log.DebugFormat("Photo: {0} was updated with new metadata: {1}", photo.FileName, photo.Metadata.GetMetadataAsString());

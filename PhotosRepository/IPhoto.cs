@@ -8,7 +8,7 @@ namespace PhotosRepository
     public interface IPhoto
     {
         string FileName { get; set; }
-        //string FilePath { get; set; }
+        string Name {get; set;}
         string Caption { get; set; }
         IPhotoMetadata Metadata { get; set; }
         List<string> Tags { get; set; }
