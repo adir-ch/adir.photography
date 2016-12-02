@@ -62,9 +62,16 @@ namespace adir.photography.Controllers
         [HttpPost]
         public ActionResult About(ContactFormModel contactFormInputData)
         {
-            ViewBag.emailWasSentSuccessfuly = _emailSendingService.SendEmail(contactFormInputData);
+            ViewBag.emailWasSentSuccessfuly = false; 
+            if(ModelState.IsValid)
+            {
+                ViewBag.emailWasSentSuccessfuly = _emailSendingService.SendEmail(contactFormInputData);
+                contactFormInputData.Clear();
+            }
+            
+            ModelState.Clear();
             ViewBag.newContactForm = false;
-            return View();
+            return View(); // TODO: maybe redirect the user to a different page (main gallery?)
         }
 
         public ActionResult Member(string id)

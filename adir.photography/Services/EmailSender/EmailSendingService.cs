@@ -16,11 +16,50 @@ namespace adir.photography.Services.EmailSender
 
         public bool SendEmail(ContactFormModel contactFormInputData)
         {
-            
+            if (ValidateInputData(contactFormInputData) == false)
+            {
+                return false; 
+            }
+
             var message = BuildEmailMessage(contactFormInputData);
             bool status = SMTPSendEmail(message);
             _log.DebugFormat("SMTP send mail: {0}", (status ? "Successful" : "Failed")); 
             return status;
+        }
+
+        private bool ValidateInputData(ContactFormModel contactFormInputData)
+        {
+            if (String.IsNullOrEmpty(contactFormInputData.EmailAddress))
+            {
+                contactFormInputData.EmailAddress = "none@given.com";
+            }
+
+            if (String.IsNullOrEmpty(contactFormInputData.FirstName))
+            {
+                contactFormInputData.FirstName = "n/a";
+            }
+
+            if (String.IsNullOrEmpty(contactFormInputData.LastName))
+            {
+                contactFormInputData.LastName = "n/a";
+            }
+
+            if (String.IsNullOrEmpty(contactFormInputData.City))
+            {
+                contactFormInputData.City = "n/a";
+            }
+
+            if (String.IsNullOrEmpty(contactFormInputData.Country))
+            {
+                contactFormInputData.Country = "n/a";
+            }
+
+            if (String.IsNullOrEmpty(contactFormInputData.Message))
+            {
+                return false; 
+            }
+
+            return true; 
         }
 
         private MailMessage BuildEmailMessage(ContactFormModel contactFormInputData)

@@ -1,9 +1,13 @@
-﻿@{
+﻿@model adir.photography.Models.ContactFormModel 
+@{
     ViewBag.title = "About Me!"; @* TODO: set to user gallery name *@
 }
 @section scripts {
     <script src="~/Scripts/bootstrap.js"></script>
 }
+
+<script src="~/Scripts/jQuery/jquery.validate.min.js"></script>
+<script src="~/Scripts/jQuery/jquery.validate.unobtrusive.min.js"></script>
 
 <div class="container-fluid ap-about-page">
     <div class="row">
@@ -22,18 +26,38 @@
             </div>
             <br><br>
             <div class="row">
-                <div >
-                    <form class="well form-horizontal" action=" " method="post" id="contact_form">
-                        <fieldset>
+                <div>
+                    @using (Html.BeginForm(new {id = "contact_form" }))
+                    {
+                        <fieldset class="well form-horizontal">
+
+                            <!-- Success / Fail message -->
+                            @if (ViewBag.newContactForm != null && ViewBag.newContactForm == false)
+                            {
+                                if (ViewBag.emailWasSentSuccessfuly != null)
+                                {
+                                    if (ViewBag.emailWasSentSuccessfuly == true)
+                                    {
+                                        <div class="alert alert-success" role="alert"><h5>Success <i class="glyphicon glyphicon-thumbs-up"></i> Form submitted successfuly</h5></div>
+                                    }
+                                    else
+                                    {
+                                        <div class="alert alert-warning" role="alert"><h5>Failed! <i class="glyphicon glyphicon-thumbs-down"></i> Form submition failed</h5></div>
+                                    }
+                                }
+                            }
+                            
                             <!-- Form Name -->
                             <legend>Contact Me</legend>
                             <!-- Text input-->
                             <div class="form-group">
                                 <label class="col-md-2 control-label">First Name</label>
+                                @Html.ValidationMessageFor(model => model.FirstName, "Name is required")
                                 <div class="col-md-8 inputGroupContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                        <input  name="FirstName" placeholder="First Name" class="form-control"  type="text">
+                                        @*<input  name="FirstName" placeholder="First Name" class="form-control"  type="text">*@
+                                        @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control", placeholder = "First Name" })
                                     </div>
                                 </div>
                             </div>
@@ -63,7 +87,7 @@
                                 <div class="col-md-8 inputGroupContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                                        <input name="PhoneNumber" placeholder="(845)555-1212" class="form-control" type="text">
+                                        <input name="PhoneNumber" placeholder="(555)555-3333" class="form-control" type="text">
                                     </div>
                                 </div>
                             </div>
@@ -332,30 +356,16 @@
 
                             <!-- Text area -->
                             <div class="form-group">
-                                <label class="col-md-2 control-label">Message</label>
+                                <label class="col-md-2 control-label">*Message</label>
+                                @Html.ValidationMessageFor(model => model.Message, "Message is required")
                                 <div class="col-md-8 inputGroupContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                                        <textarea class="form-control" name="Message" placeholder="Write me something"></textarea>
+                                        @Html.TextAreaFor(model => model.Message, new { rows = 10, columns = 40, @class = "form-control", placeholder = "Your message..." })
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Success / Fail message -->
-                            @if (ViewBag.newContactForm != null && ViewBag.newContactForm == false)
-                            {
-                                if (ViewBag.emailWasSentSuccessfuly != null)
-                                {
-                                    if (ViewBag.emailWasSentSuccessfuly == true)
-                                    {
-                                        <div class="alert alert-success" role="alert">Success <i class="glyphicon glyphicon-thumbs-up"></i> Form submitted successfuly</div>
-                                    }
-                                    else
-                                    {
-                                        <div class="alert alert-warning" role="alert">Failed! <i class="glyphicon glyphicon-thumbs-down"></i> Form submition failed</div>
-                                    }
-                                }
-                            }
 
                             <!-- Button -->
                             <div class="form-group">
@@ -366,7 +376,7 @@
                                     </div>
                                 </div>
                         </fieldset>
-                    </form>
+                    } @*</form>*@
                 </div>
                 <!--<div class="col-md-4">
                 </div>-->
