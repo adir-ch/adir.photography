@@ -150,8 +150,12 @@ namespace PhotosRepository.DataAcess.XML
         {
             string openingPhotoName = GetGalleryOpeningPhoto(galleryName);
             string galleryIdentifyingTag = GetGalleryEntry(galleryName).Element("tag").Value;
-            return _photos.Where(p => p.Tags.Where(t => t.Equals(galleryIdentifyingTag, StringComparison.OrdinalIgnoreCase)).Any());// &&
-                                        //!String.Equals(p.FileName, openingPhotoName, StringComparison.CurrentCultureIgnoreCase)).ToList<IPhoto>();
+            if (galleryIdentifyingTag == "*")
+            {
+                return _photos.ToList(); 
+            }
+
+            return _photos.Where(p => p.Tags.Where(t => t.Equals(galleryIdentifyingTag, StringComparison.OrdinalIgnoreCase)).Any());
         }
 
         public GalleryConfig GetGalleryConfig(string galleryName)

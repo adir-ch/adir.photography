@@ -7,7 +7,7 @@
       </config>
       <name>Main</name>
       <openingPhoto>girona.jpg</openingPhoto>
-      <tag>Main</tag>
+      <tag>*</tag>
     </gallery>
     <gallery>
       <config>
@@ -28,7 +28,7 @@
       </metadata>
       <caption>br1</caption>
       <tags>
-        <tag>main</tag>
+        <tag>test1</tag>
       </tags>
     </photo>
     <photo>
