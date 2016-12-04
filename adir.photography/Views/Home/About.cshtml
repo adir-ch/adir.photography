@@ -51,9 +51,9 @@
                             <legend>Contact Me</legend>
                             <!-- Text input-->
                             <div class="form-group">
-                                <label class="col-md-2 control-label">First Name</label>
+                                <!--<label class="col-md-2 control-label">First Name</label>-->
                                 @Html.ValidationMessageFor(model => model.FirstName, "Name is required")
-                                <div class="col-md-8 inputGroupContainer">
+                                <div class="col-md-12 inputGroupContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                         @*<input  name="FirstName" placeholder="First Name" class="form-control"  type="text">*@
@@ -63,8 +63,8 @@
                             </div>
                             <!-- Text input-->
                             <div class="form-group">
-                                <label class="col-md-2 control-label" >Last Name</label>
-                                <div class="col-md-8 inputGroupContainer">
+                                <!--<label class="col-md-2 control-label" >Last Name</label>-->
+                                <div class="col-md-12 inputGroupContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                         <input name="LastName" placeholder="Last Name" class="form-control"  type="text">
@@ -73,8 +73,8 @@
                             </div>
                             <!-- Text input-->
                             <div class="form-group">
-                                <label class="col-md-2 control-label">E-Mail</label>
-                                <div class="col-md-8 inputGroupContainer">
+                                <!--<label class="col-md-2 control-label">E-Mail</label>-->
+                                <div class="col-md-12 inputGroupContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
                                         <input name="EmailAddress" placeholder="E-Mail Address" class="form-control"  type="text">
@@ -83,8 +83,8 @@
                             </div>
                             <!-- Text input-->
                             <div class="form-group">
-                                <label class="col-md-2 control-label">Phone #</label>
-                                <div class="col-md-8 inputGroupContainer">
+                                <!--<label class="col-md-2 control-label">Phone #</label>-->
+                                <div class="col-md-12 inputGroupContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
                                         <input name="PhoneNumber" placeholder="(555)555-3333" class="form-control" type="text">
@@ -93,8 +93,8 @@
                             </div>
                             <!-- Text input-->
                             <div class="form-group">
-                                <label class="col-md-2 control-label">City</label>
-                                <div class="col-md-8 inputGroupContainer">
+                                <!--<label class="col-md-2 control-label">City</label>-->
+                                <div class="col-md-12 inputGroupContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
                                         <input name="City" placeholder="city" class="form-control"  type="text">
@@ -103,8 +103,8 @@
                             </div>
                             <!-- Select Basic -->
                             <div class="form-group">
-                                <label class="col-md-2 control-label">Country</label>
-                                <div class="col-md-8 selectContainer">
+                                <!--<label class="col-md-2 control-label">Country</label>-->
+                                <div class="col-md-12 selectContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                                         <select name="Country" class="form-control selectpicker" >
@@ -356,9 +356,9 @@
 
                             <!-- Text area -->
                             <div class="form-group">
-                                <label class="col-md-2 control-label">*Message</label>
+                                <!--<label class="col-md-2 control-label">*Message</label>-->
                                 @Html.ValidationMessageFor(model => model.Message, "Message is required")
-                                <div class="col-md-8 inputGroupContainer">
+                                <div class="col-md-12 inputGroupContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
                                         @Html.TextAreaFor(model => model.Message, new { rows = 10, columns = 40, @class = "form-control", placeholder = "Your message..." })
@@ -371,7 +371,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label"></label>
                                 <div class="col-md-2"></div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-12">
                                         <button type="submit" class="btn btn-block btn-default" >Send <span class="glyphicon glyphicon-send"></span></button>
                                     </div>
                                 </div>
