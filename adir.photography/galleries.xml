@@ -1,316 +1,621 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <galleries>
+    <!-- main gallery -->
     <gallery>
       <config>
         <PhotoCycle AutoCycle="true" Timeout="50" />
       </config>
       <name>Main</name>
-      <openingPhoto>girona.jpg</openingPhoto>
+      <openingPhoto>patagonia.jpg</openingPhoto>
       <tag>*</tag>
     </gallery>
+    <!-- Landscapes -->
     <gallery>
       <config>
         <PhotoCycle AutoCycle="true" Timeout="50" />
       </config>
-      <name>Album1</name>
-      <openingPhoto>fe2.jpg</openingPhoto>
-      <tag>Album1</tag>
+      <name>Landscapes</name>
+      <openingPhoto>patagonia.jpg</openingPhoto>
+      <tag>landscapes</tag>
+    </gallery>
+    <!-- Wildlife -->
+    <gallery>
+      <config>
+        <PhotoCycle AutoCycle="true" Timeout="50" />
+      </config>
+      <name>Wildlife</name>
+      <openingPhoto>didnt-see.jpg</openingPhoto>
+      <tag>wildlife</tag>
+    </gallery>
+    <!-- Travel -->
+    <gallery>
+      <config>
+        <PhotoCycle AutoCycle="true" Timeout="50" />
+      </config>
+      <name>Travel</name>
+      <openingPhoto>rush-hour.jpg</openingPhoto>
+      <tag>travel</tag>
+    </gallery>
+    <!-- people -->
+    <gallery>
+      <config>
+        <PhotoCycle AutoCycle="true" Timeout="50" />
+      </config>
+      <name>People</name>
+      <openingPhoto>sadu.jpg</openingPhoto>
+      <tag>people</tag>
     </gallery>
   </galleries>
   <photos>
     <photo>
-      <filename>br1.jpg</filename>
-      <name>br1</name>
+      <filename>afternoon-tea.jpg</filename>
+      <name>afternoon-tea</name>
       <metadata>
         <width>1626</width>
         <height>1080</height>
       </metadata>
-      <caption>br1</caption>
+      <caption>afternoon-tea</caption>
       <tags>
-        <tag>test1</tag>
+        <tag>travel</tag>
       </tags>
     </photo>
     <photo>
-      <filename>fe1.jpg</filename>
-      <name>fe1</name>
+      <filename>arch.jpg</filename>
+      <name>arch</name>
+      <metadata>
+        <width>1080</width>
+        <height>1441</height>
+      </metadata>
+      <caption>arch</caption>
+      <tags>
+        <tag>travel</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>back-from-school.jpg</filename>
+      <name>back-from-school</name>
+      <metadata>
+        <width>1080</width>
+        <height>1626</height>
+      </metadata>
+      <caption>back-from-school</caption>
+      <tags>
+        <tag>people</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>backyard.jpg</filename>
+      <name>backyard</name>
       <metadata>
         <width>1920</width>
-        <height>940</height>
+        <height>739</height>
       </metadata>
-      <caption>fe1</caption>
+      <caption>backyard</caption>
       <tags>
-        <tag>main</tag>
+        <tag>travel</tag>
       </tags>
     </photo>
     <photo>
-      <filename>fe2.jpg</filename>
-      <name>fe2</name>
+      <filename>big-apple.jpg</filename>
+      <name>big-apple</name>
       <metadata>
-        <width>1437</width>
+        <width>1626</width>
         <height>1080</height>
       </metadata>
-      <caption>fe2</caption>
+      <caption>big-apple</caption>
       <tags>
-        <tag>main</tag>
-        <tag>album1</tag>
+        <tag>travel</tag>
       </tags>
     </photo>
     <photo>
-      <filename>fe3.jpg</filename>
-      <name>fe3</name>
+      <filename>big-sister.jpg</filename>
+      <name>big-sister</name>
       <metadata>
-        <width>1459</width>
+        <width>1080</width>
+        <height>1510</height>
+      </metadata>
+      <caption>big-sister</caption>
+      <tags>
+        <tag>people</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>brazil.jpg</filename>
+      <name>brazil</name>
+      <metadata>
+        <width>1845</width>
         <height>1080</height>
       </metadata>
-      <caption>fe3</caption>
+      <caption>brazil</caption>
       <tags>
-        <tag>main</tag>
+        <tag>travel</tag>
+        <tag>landscapes</tag>
       </tags>
     </photo>
     <photo>
-      <filename>fe4.jpg</filename>
-      <name>fe4</name>
+      <filename>buddhas.jpg</filename>
+      <name>buddhas</name>
       <metadata>
         <width>1440</width>
         <height>1080</height>
       </metadata>
-      <caption>fe4</caption>
+      <caption>buddhas</caption>
       <tags>
-        <tag>main</tag>
+        <tag>travel</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>chill-cafe.jpg</filename>
+      <name>chill-cafe</name>
+      <metadata>
+        <width>1720</width>
+        <height>1080</height>
+      </metadata>
+      <caption>chill-cafe</caption>
+      <tags>
+        <tag>travel</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>city-scape.jpg</filename>
+      <name>city-scape</name>
+      <metadata>
+        <width>1626</width>
+        <height>1080</height>
+      </metadata>
+      <caption>city-scape</caption>
+      <tags>
+        <tag>travel</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>didnt-see.jpg</filename>
+      <name>didnt-see</name>
+      <metadata>
+        <width>1920</width>
+        <height>881</height>
+      </metadata>
+      <caption>didnt-see</caption>
+      <tags>
+        <tag>wildlife</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>dim-sam.jpg</filename>
+      <name>dim-sam</name>
+      <metadata>
+        <width>797</width>
+        <height>1200</height>
+      </metadata>
+      <caption>dim-sam</caption>
+      <tags>
+        <tag>people</tag>
+        <tag>travel</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>first-time-out.jpg</filename>
+      <name>first-time-out</name>
+      <metadata>
+        <width>1080</width>
+        <height>1466</height>
+      </metadata>
+      <caption>first-time-out</caption>
+      <tags>
+        <tag>wildlife</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>flowers-boat.jpg</filename>
+      <name>flowers-boat</name>
+      <metadata>
+        <width>1440</width>
+        <height>1080</height>
+      </metadata>
+      <caption>flowers-boat</caption>
+      <tags>
+        <tag>travel</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>gazing.jpg</filename>
+      <name>gazing</name>
+      <metadata>
+        <width>1626</width>
+        <height>1080</height>
+      </metadata>
+      <caption>gazing</caption>
+      <tags>
+        <tag>wildlife</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>getting-there.jpg</filename>
+      <name>getting-there</name>
+      <metadata>
+        <width>1626</width>
+        <height>1080</height>
+      </metadata>
+      <caption>getting-there</caption>
+      <tags>
+        <tag>wildlife</tag>
       </tags>
     </photo>
     <photo>
       <filename>girona.jpg</filename>
       <name>girona</name>
       <metadata>
-        <width>1440</width>
-        <height>1080</height>
+        <width>1920</width>
+        <height>795</height>
       </metadata>
       <caption>girona</caption>
       <tags>
-        <tag>main</tag>
+        <tag>travel</tag>
       </tags>
     </photo>
     <photo>
-      <filename>il1.jpg</filename>
-      <name>il1</name>
+      <filename>greek-serenity.jpg</filename>
+      <name>greek-serenity</name>
       <metadata>
         <width>1626</width>
         <height>1080</height>
       </metadata>
-      <caption>il1</caption>
+      <caption>greek-serenity</caption>
       <tags>
-        <tag>main</tag>
-        <tag>album1</tag>
+        <tag>landscapes</tag>
+        <tag>travel</tag>
       </tags>
     </photo>
     <photo>
-      <filename>ml1.jpg</filename>
-      <name>ml1</name>
-      <metadata>
-        <width>1626</width>
-        <height>1080</height>
-      </metadata>
-      <caption>ml1</caption>
-      <tags>
-        <tag>main</tag>
-      </tags>
-    </photo>
-    <photo>
-      <filename>ph1.jpg</filename>
-      <name>ph1</name>
-      <metadata>
-        <width>1626</width>
-        <height>1080</height>
-      </metadata>
-      <caption>ph1</caption>
-      <tags>
-        <tag>main</tag>
-        <tag>album1</tag>
-      </tags>
-    </photo>
-    <photo>
-      <filename>prag1.jpg</filename>
-      <name>prag1</name>
-      <metadata>
-        <width>1626</width>
-        <height>1080</height>
-      </metadata>
-      <caption>prag1</caption>
-      <tags>
-        <tag>main</tag>
-      </tags>
-    </photo>
-    <photo>
-      <filename>sa1.jpg</filename>
-      <name>sa1</name>
+      <filename>hidden-vally.jpg</filename>
+      <name>hidden-vally</name>
       <metadata>
         <width>1920</width>
         <height>985</height>
       </metadata>
-      <caption>sa1</caption>
+      <caption>hidden-vally</caption>
       <tags>
-        <tag>main</tag>
+        <tag>landscapes</tag>
+        <tag>travel</tag>
       </tags>
     </photo>
     <photo>
-      <filename>sa10.jpg</filename>
-      <name>sa10</name>
+      <filename>hidden.jpg</filename>
+      <name>hidden</name>
       <metadata>
-        <width>1626</width>
-        <height>1080</height>
+        <width>1600</width>
+        <height>1009</height>
       </metadata>
-      <caption>sa10</caption>
+      <caption>hidden</caption>
       <tags>
-        <tag>main</tag>
+        <tag />
       </tags>
     </photo>
     <photo>
-      <filename>sa11.jpg</filename>
-      <name>sa11</name>
-      <metadata>
-        <width>1733</width>
-        <height>1080</height>
-      </metadata>
-      <caption>sa11</caption>
-      <tags>
-        <tag>main</tag>
-        <tag>album1</tag>
-      </tags>
-    </photo>
-    <photo>
-      <filename>sa2.jpg</filename>
-      <name>sa2</name>
+      <filename>ice.jpg</filename>
+      <name>ice</name>
       <metadata>
         <width>1920</width>
-        <height>881</height>
+        <height>773</height>
       </metadata>
-      <caption>sa2</caption>
+      <caption>ice</caption>
       <tags>
-        <tag>main</tag>
+        <tag>landscapes</tag>
       </tags>
     </photo>
     <photo>
-      <filename>sa3.jpg</filename>
-      <name>sa3</name>
+      <filename>iguazo.jpg</filename>
+      <name>iguazo</name>
+      <metadata>
+        <width>1626</width>
+        <height>1080</height>
+      </metadata>
+      <caption>iguazo</caption>
+      <tags>
+        <tag>landscapes</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>jungle-town.jpg</filename>
+      <name>jungle-town</name>
+      <metadata>
+        <width>1626</width>
+        <height>1080</height>
+      </metadata>
+      <caption>jungle-town</caption>
+      <tags>
+        <tag>travel</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>last-rays.jpg</filename>
+      <name>last-rays</name>
+      <metadata>
+        <width>1626</width>
+        <height>1080</height>
+      </metadata>
+      <caption>last-rays</caption>
+      <tags>
+        <tag>landscapes</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>meditation.jpg</filename>
+      <name>meditation</name>
+      <metadata>
+        <width>1440</width>
+        <height>1080</height>
+      </metadata>
+      <caption>meditation</caption>
+      <tags>
+        <tag>people</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>moreno.jpg</filename>
+      <name>moreno</name>
       <metadata>
         <width>1920</width>
-        <height>990</height>
+        <height>693</height>
       </metadata>
-      <caption>sa3</caption>
+      <caption>moreno</caption>
       <tags>
-        <tag>main</tag>
+        <tag>landscapes</tag>
       </tags>
     </photo>
     <photo>
-      <filename>sa4.jpg</filename>
-      <name>sa4</name>
+      <filename>morning-catch.jpg</filename>
+      <name>morning-catch</name>
       <metadata>
         <width>1626</width>
         <height>1080</height>
       </metadata>
-      <caption>sa4</caption>
+      <caption>morning-catch</caption>
       <tags>
-        <tag>main</tag>
-        <tag>album1</tag>
+        <tag>landscapes</tag>
+        <tag>travel</tag>
       </tags>
     </photo>
     <photo>
-      <filename>sa5.jpg</filename>
-      <name>sa5</name>
+      <filename>napping.jpg</filename>
+      <name>napping</name>
       <metadata>
-        <width>1626</width>
+        <width>1873</width>
         <height>1080</height>
       </metadata>
-      <caption>sa5</caption>
+      <caption>napping</caption>
       <tags>
-        <tag>main</tag>
+        <tag>travel</tag>
+        <tag>wildlife</tag>
       </tags>
     </photo>
     <photo>
-      <filename>sa6.jpg</filename>
-      <name>sa6</name>
+      <filename>night-market.jpg</filename>
+      <name>night-market</name>
+      <metadata>
+        <width>1600</width>
+        <height>1063</height>
+      </metadata>
+      <caption>night-market</caption>
+      <tags>
+        <tag>travel</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>old-and-new.jpg</filename>
+      <name>old-and-new</name>
       <metadata>
         <width>1920</width>
-        <height>666</height>
+        <height>792</height>
       </metadata>
-      <caption>sa6</caption>
+      <caption>old-and-new</caption>
       <tags>
-        <tag>main</tag>
+        <tag>travel</tag>
       </tags>
     </photo>
     <photo>
-      <filename>sa7.jpg</filename>
-      <name>sa7</name>
-      <metadata>
-        <width>1626</width>
-        <height>1080</height>
-      </metadata>
-      <caption>sa7</caption>
-      <tags>
-        <tag>main</tag>
-      </tags>
-    </photo>
-    <photo>
-      <filename>sa8.jpg</filename>
-      <name>sa8</name>
+      <filename>old-temple.jpg</filename>
+      <name>old-temple</name>
       <metadata>
         <width>1920</width>
-        <height>962</height>
+        <height>904</height>
       </metadata>
-      <caption>sa8</caption>
+      <caption>old-temple</caption>
       <tags>
-        <tag>main</tag>
-        <tag>album1</tag>
+        <tag>landsacpes</tag>
       </tags>
     </photo>
     <photo>
-      <filename>sa9.jpg</filename>
-      <name>sa9</name>
+      <filename>pano-rio.jpg</filename>
+      <name>pano-rio</name>
+      <metadata>
+        <width>1920</width>
+        <height>806</height>
+      </metadata>
+      <caption>pano-rio</caption>
+      <tags>
+        <tag>travel</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>pano-zu.jpg</filename>
+      <name>pano-zu</name>
+      <metadata>
+        <width>1627</width>
+        <height>1080</height>
+      </metadata>
+      <caption>pano-zu</caption>
+      <tags>
+        <tag>landscapes</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>patagonia.jpg</filename>
+      <name>patagonia</name>
+      <metadata>
+        <width>1843</width>
+        <height>1080</height>
+      </metadata>
+      <caption>patagonia</caption>
+      <tags>
+        <tag>landscapes</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>phi-phi.jpg</filename>
+      <name>phi-phi</name>
+      <metadata>
+        <width>1920</width>
+        <height>730</height>
+      </metadata>
+      <caption>phi-phi</caption>
+      <tags>
+        <tag>travel</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>released.jpg</filename>
+      <name>released</name>
       <metadata>
         <width>1626</width>
         <height>1080</height>
       </metadata>
-      <caption>sa9</caption>
+      <caption>released</caption>
       <tags>
-        <tag>main</tag>
+        <tag>wildlife</tag>
       </tags>
     </photo>
     <photo>
-      <filename>th1.jpg</filename>
-      <name>th1</name>
+      <filename>rush-hour.jpg</filename>
+      <name>rush-hour</name>
       <metadata>
-        <width>1898</width>
+        <width>1242</width>
         <height>1080</height>
       </metadata>
-      <caption>th1</caption>
+      <caption>rush-hour</caption>
       <tags>
-        <tag>main</tag>
+        <tag>travel</tag>
       </tags>
     </photo>
     <photo>
-      <filename>th2.jpg</filename>
-      <name>th2</name>
+      <filename>sadu.jpg</filename>
+      <name>sadu</name>
+      <metadata>
+        <width>1440</width>
+        <height>1080</height>
+      </metadata>
+      <caption>sadu</caption>
+      <tags>
+        <tag>people</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>seascape.jpg</filename>
+      <name>seascape</name>
+      <metadata>
+        <width>1920</width>
+        <height>946</height>
+      </metadata>
+      <caption>seascape</caption>
+      <tags>
+        <tag>landscapes</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>side-dishes.jpg</filename>
+      <name>side-dishes</name>
       <metadata>
         <width>1626</width>
         <height>1080</height>
       </metadata>
-      <caption>th2</caption>
+      <caption>side-dishes</caption>
       <tags>
-        <tag>main</tag>
+        <tag>travel</tag>
       </tags>
     </photo>
     <photo>
-      <filename>us1.jpg</filename>
-      <name>us1</name>
+      <filename>skylake.jpg</filename>
+      <name>skylake</name>
       <metadata>
-        <width>1631</width>
+        <width>1440</width>
         <height>1080</height>
       </metadata>
-      <caption>us1</caption>
+      <caption>skylake</caption>
       <tags>
-        <tag>main</tag>
+        <tag>landscapes</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>small-man.jpg</filename>
+      <name>small-man</name>
+      <metadata>
+        <width>1626</width>
+        <height>1080</height>
+      </metadata>
+      <caption>small-man</caption>
+      <tags>
+        <tag>landscapes</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>snack.jpg</filename>
+      <name>snack</name>
+      <metadata>
+        <width>1626</width>
+        <height>1080</height>
+      </metadata>
+      <caption>snack</caption>
+      <tags>
+        <tag>travel</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>street-food.jpg</filename>
+      <name>street-food</name>
+      <metadata>
+        <width>1600</width>
+        <height>1063</height>
+      </metadata>
+      <caption>street-food</caption>
+      <tags>
+        <tag>travel</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>taking-off.jpg</filename>
+      <name>taking-off</name>
+      <metadata>
+        <width>1787</width>
+        <height>1080</height>
+      </metadata>
+      <caption>taking-off</caption>
+      <tags>
+        <tag>wildlife</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>tea.jpg</filename>
+      <name>tea</name>
+      <metadata>
+        <width>1626</width>
+        <height>1080</height>
+      </metadata>
+      <caption>tea</caption>
+      <tags>
+        <tag>travel</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>travel-cafe.jpg</filename>
+      <name>travel-cafe</name>
+      <metadata>
+        <width>1626</width>
+        <height>1080</height>
+      </metadata>
+      <caption>travel-cafe</caption>
+      <tags>
+        <tag>travel</tag>
       </tags>
     </photo>
   </photos>

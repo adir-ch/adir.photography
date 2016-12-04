@@ -1,0 +1,1 @@
+ls -1 | while read line ;  do     echo "<photo><filename>$line</filename><name></name><metadata><width></width><height></height></metadata><caption></caption><tags><tag></tag></tags></photo>" ; done 
