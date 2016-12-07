@@ -68,15 +68,10 @@ namespace PhotosRepository.DataAcess.XML
                 _db = root; 
             }
 
-            ParseXMLData();
+            ParsePhotosData();
         }
 
-        private void ParseXMLData()
-        {
-            ParsePhotoData();
-        }
-
-        private void ParsePhotoData()
+        private void ParsePhotosData()
         {
             _photos = new List<IPhoto>();
             var photos = _db.Element("photos").Descendants().Where(tag => tag.Name == "photo");
@@ -91,35 +86,46 @@ namespace PhotosRepository.DataAcess.XML
             foreach (var photo in photos)
             {
                 string caption = photo.Element("caption").Value;
-                string name = photo.Element("name").Value;
+                string title = photo.Element("title").Value;
                 string fileName = photo.Element("filename").Value;
                 string width = photo.Element("metadata").Element("width").Value;
                 string height = photo.Element("metadata").Element("height").Value;
                 string fullPhotoPath = _serverRunningPath + _photosLocalLocation;
+                bool isDbUpdateNeeded = false;
 
-                currentPhoto = new Photo(fullPhotoPath, fileName)
+                currentPhoto = new Photo(fileName)
                 {
                     Caption = (String.IsNullOrEmpty(caption) ? Path.GetFileNameWithoutExtension(fileName) : caption),
-                    Name = (String.IsNullOrEmpty(name) ? Path.GetFileNameWithoutExtension(fileName): name)
+                    Title = (String.IsNullOrEmpty(title) ? Path.GetFileNameWithoutExtension(fileName): title),
                 };
 
                 if (String.IsNullOrEmpty(width) == true || 
                     String.IsNullOrEmpty(height) == true || 
-                    String.IsNullOrEmpty(name) == true || 
+                    String.IsNullOrEmpty(title) == true || 
                     String.IsNullOrEmpty(caption) == true)
                 {
-                    currentPhoto.Init(fullPhotoPath);
-                    UpdateDBPhotoInfo(currentPhoto);
+                    if (currentPhoto.Init(fullPhotoPath) == false) // don't add the photo is init failed!
+                    {
+                        _log.ErrorFormat("Unable to init photo {0}, removing from list");
+                        continue; 
+                    }
+                
+                    isDbUpdateNeeded = true; 
                 }
                 else
                 {
-                    currentPhoto.Init(fullPhotoPath, width, height);
+                    currentPhoto.Init(width, height); 
                 }
 
                 var tags = photo.Element("tags").Descendants();
                 foreach (var tag in tags)
                     currentPhoto.AddTag(tag.Value);
 
+                if (isDbUpdateNeeded == true)
+                {
+                    UpdateDBPhotoInfo(currentPhoto); // do it in a thread!
+                }
+                
                 _photos.Add(currentPhoto);
             }
         }
@@ -187,10 +193,24 @@ namespace PhotosRepository.DataAcess.XML
 
             dbPhotoEntry.Element("metadata").Element("width").Value = Convert.ToString(photo.Metadata.Width);
             dbPhotoEntry.Element("metadata").Element("height").Value = Convert.ToString(photo.Metadata.Height);
-            dbPhotoEntry.Element("name").Value = Convert.ToString(photo.Name);
+            dbPhotoEntry.Element("title").Value = Convert.ToString(photo.Title);
             dbPhotoEntry.Element("caption").Value = Convert.ToString(photo.Caption);
+
+            var tags = dbPhotoEntry.Element("tags");
+            var existingTags = tags.Descendants();
+            
+            foreach (var tag in photo.Tags)
+            {
+                if (existingTags.Where(t => t.Value == tag).Count() == 0)
+                {
+                    tags.Add(new XElement("tag", tag));
+                }
+            }
+                
+            
             _db.Save(_serverRunningPath + "/galleries.xml");
 
+            // add the tags as well 
             _log.DebugFormat("Photo: {0} was updated with new metadata: {1}", photo.FileName, photo.Metadata.GetMetadataAsString());
             return status; 
         } 

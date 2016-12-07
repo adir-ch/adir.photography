@@ -20,48 +20,37 @@ namespace PhotosRepository
             Height = 0;
         }
 
-        public bool TryParseMetadataFromImage(string path, string fileName)
+        public bool InitMetadata(int width, int height)
         {
-            bool status = false; 
-            Bitmap image;
-
-            try 
-	        {	        
-                image = new Bitmap(path + fileName, true);
-                Width = image.Width;
-                Height = image.Height;
-                //_log.DebugFormat("Photo metadata retrieved successfully: {0}", GetMetadataAsString());
-                status = true; 
-	        }
-	        catch (Exception e)
-	        {
-                _log.ErrorFormat("Photo metadata parse failed with  {0}", e);
-	        }
-            return status; 
+            Width = width;
+            Height = height;
+            return true;
         }
-        public bool TryParseMetadataFromData(string width, string height)
+
+        public bool InitMetadata(string width, string height)
         {
-            int parsedWidth = 0, parsedHeight = 0; 
             bool status = false; 
-            try 
+            int parsedWidth = 0, parsedHeight = 0;
+
+            try
             {
-                status = Int32.TryParse(width, out parsedWidth); 
+                status = Int32.TryParse(width, out parsedWidth);
                 status = status & Int32.TryParse(height, out parsedHeight);
             }
-            catch(Exception e) 
+            catch (Exception e)
             {
                 _log.ErrorFormat("Exception while trying to parse the photo metadata from DB: {0}", e);
             }
-            if(status == true) 
+            if (status == true)
             {
-                Width = parsedWidth; 
-                Height = parsedHeight; 
-                _log.DebugFormat("Photo already has metadata in DB: {0}", GetMetadataAsString()); 
-            } 
-            else 
+                Width = parsedWidth;
+                Height = parsedHeight;
+                _log.DebugFormat("Photo already has metadata in DB: {0}", GetMetadataAsString());
+            }
+            else
             {
                 _log.Error("Unable to parse the photo metadata from DB");
-	        }
+            }
 
             return status; 
         }
