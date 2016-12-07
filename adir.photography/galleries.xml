@@ -50,19 +50,20 @@
   <photos>
     <photo>
       <filename>afternoon-tea.jpg</filename>
-      <name>afternoon-tea</name>
+      <title>afternoon-tea</title>
       <metadata>
         <width>1626</width>
         <height>1080</height>
       </metadata>
-      <caption>afternoon-tea</caption>
+      <caption>tea-comment</caption>
       <tags>
         <tag>travel</tag>
+        <tag>adir-t1</tag>
       </tags>
     </photo>
     <photo>
       <filename>arch.jpg</filename>
-      <name>arch</name>
+      <title>arch</title>
       <metadata>
         <width>1080</width>
         <height>1441</height>
@@ -74,7 +75,7 @@
     </photo>
     <photo>
       <filename>back-from-school.jpg</filename>
-      <name>back-from-school</name>
+      <title>back-from-school</title>
       <metadata>
         <width>1080</width>
         <height>1626</height>
@@ -86,7 +87,7 @@
     </photo>
     <photo>
       <filename>backyard.jpg</filename>
-      <name>backyard</name>
+      <title>backyard</title>
       <metadata>
         <width>1920</width>
         <height>739</height>
@@ -98,7 +99,7 @@
     </photo>
     <photo>
       <filename>big-apple.jpg</filename>
-      <name>big-apple</name>
+      <title>big-apple</title>
       <metadata>
         <width>1626</width>
         <height>1080</height>
@@ -110,7 +111,7 @@
     </photo>
     <photo>
       <filename>big-sister.jpg</filename>
-      <name>big-sister</name>
+      <title>big-sister</title>
       <metadata>
         <width>1080</width>
         <height>1510</height>
@@ -122,7 +123,7 @@
     </photo>
     <photo>
       <filename>brazil.jpg</filename>
-      <name>brazil</name>
+      <title>brazil</title>
       <metadata>
         <width>1845</width>
         <height>1080</height>
@@ -135,7 +136,7 @@
     </photo>
     <photo>
       <filename>buddhas.jpg</filename>
-      <name>buddhas</name>
+      <title>buddhas</title>
       <metadata>
         <width>1440</width>
         <height>1080</height>
@@ -147,7 +148,7 @@
     </photo>
     <photo>
       <filename>chill-cafe.jpg</filename>
-      <name>chill-cafe</name>
+      <title>chill-cafe</title>
       <metadata>
         <width>1720</width>
         <height>1080</height>
@@ -159,7 +160,7 @@
     </photo>
     <photo>
       <filename>city-scape.jpg</filename>
-      <name>city-scape</name>
+      <title>city-scape</title>
       <metadata>
         <width>1626</width>
         <height>1080</height>
@@ -171,7 +172,7 @@
     </photo>
     <photo>
       <filename>didnt-see.jpg</filename>
-      <name>didnt-see</name>
+      <title>didnt-see</title>
       <metadata>
         <width>1920</width>
         <height>881</height>
@@ -183,7 +184,7 @@
     </photo>
     <photo>
       <filename>dim-sam.jpg</filename>
-      <name>dim-sam</name>
+      <title>dim-sam</title>
       <metadata>
         <width>797</width>
         <height>1200</height>
@@ -196,7 +197,7 @@
     </photo>
     <photo>
       <filename>first-time-out.jpg</filename>
-      <name>first-time-out</name>
+      <title>first-time-out</title>
       <metadata>
         <width>1080</width>
         <height>1466</height>
@@ -208,7 +209,7 @@
     </photo>
     <photo>
       <filename>flowers-boat.jpg</filename>
-      <name>flowers-boat</name>
+      <title>flowers-boat</title>
       <metadata>
         <width>1440</width>
         <height>1080</height>
@@ -220,7 +221,7 @@
     </photo>
     <photo>
       <filename>gazing.jpg</filename>
-      <name>gazing</name>
+      <title>gazing</title>
       <metadata>
         <width>1626</width>
         <height>1080</height>
@@ -232,7 +233,7 @@
     </photo>
     <photo>
       <filename>getting-there.jpg</filename>
-      <name>getting-there</name>
+      <title>getting-there</title>
       <metadata>
         <width>1626</width>
         <height>1080</height>
@@ -244,7 +245,7 @@
     </photo>
     <photo>
       <filename>girona.jpg</filename>
-      <name>girona</name>
+      <title>girona</title>
       <metadata>
         <width>1920</width>
         <height>795</height>
@@ -256,7 +257,7 @@
     </photo>
     <photo>
       <filename>greek-serenity.jpg</filename>
-      <name>greek-serenity</name>
+      <title>greek-serenity</title>
       <metadata>
         <width>1626</width>
         <height>1080</height>
@@ -269,7 +270,7 @@
     </photo>
     <photo>
       <filename>hidden-vally.jpg</filename>
-      <name>hidden-vally</name>
+      <title>hidden-vally</title>
       <metadata>
         <width>1920</width>
         <height>985</height>
@@ -282,7 +283,7 @@
     </photo>
     <photo>
       <filename>hidden.jpg</filename>
-      <name>hidden</name>
+      <title>hidden</title>
       <metadata>
         <width>1600</width>
         <height>1009</height>
@@ -294,7 +295,7 @@
     </photo>
     <photo>
       <filename>ice.jpg</filename>
-      <name>ice</name>
+      <title>ice</title>
       <metadata>
         <width>1920</width>
         <height>773</height>
@@ -306,7 +307,7 @@
     </photo>
     <photo>
       <filename>iguazo.jpg</filename>
-      <name>iguazo</name>
+      <title>iguazo</title>
       <metadata>
         <width>1626</width>
         <height>1080</height>
@@ -318,7 +319,7 @@
     </photo>
     <photo>
       <filename>jungle-town.jpg</filename>
-      <name>jungle-town</name>
+      <title>jungle-town</title>
       <metadata>
         <width>1626</width>
         <height>1080</height>
@@ -330,7 +331,7 @@
     </photo>
     <photo>
       <filename>last-rays.jpg</filename>
-      <name>last-rays</name>
+      <title>last-rays</title>
       <metadata>
         <width>1626</width>
         <height>1080</height>
@@ -342,7 +343,7 @@
     </photo>
     <photo>
       <filename>meditation.jpg</filename>
-      <name>meditation</name>
+      <title>meditation</title>
       <metadata>
         <width>1440</width>
         <height>1080</height>
@@ -354,7 +355,7 @@
     </photo>
     <photo>
       <filename>moreno.jpg</filename>
-      <name>moreno</name>
+      <title>moreno</title>
       <metadata>
         <width>1920</width>
         <height>693</height>
@@ -366,7 +367,7 @@
     </photo>
     <photo>
       <filename>morning-catch.jpg</filename>
-      <name>morning-catch</name>
+      <title>morning-catch</title>
       <metadata>
         <width>1626</width>
         <height>1080</height>
@@ -379,7 +380,7 @@
     </photo>
     <photo>
       <filename>napping.jpg</filename>
-      <name>napping</name>
+      <title>napping</title>
       <metadata>
         <width>1873</width>
         <height>1080</height>
@@ -392,7 +393,7 @@
     </photo>
     <photo>
       <filename>night-market.jpg</filename>
-      <name>night-market</name>
+      <title>night-market</title>
       <metadata>
         <width>1600</width>
         <height>1063</height>
@@ -404,7 +405,7 @@
     </photo>
     <photo>
       <filename>old-and-new.jpg</filename>
-      <name>old-and-new</name>
+      <title>old-and-new</title>
       <metadata>
         <width>1920</width>
         <height>792</height>
@@ -416,7 +417,7 @@
     </photo>
     <photo>
       <filename>old-temple.jpg</filename>
-      <name>old-temple</name>
+      <title>old-temple</title>
       <metadata>
         <width>1920</width>
         <height>904</height>
@@ -428,7 +429,7 @@
     </photo>
     <photo>
       <filename>pano-rio.jpg</filename>
-      <name>pano-rio</name>
+      <title>pano-rio</title>
       <metadata>
         <width>1920</width>
         <height>806</height>
@@ -440,7 +441,7 @@
     </photo>
     <photo>
       <filename>pano-zu.jpg</filename>
-      <name>pano-zu</name>
+      <title>pano-zu</title>
       <metadata>
         <width>1627</width>
         <height>1080</height>
@@ -452,7 +453,7 @@
     </photo>
     <photo>
       <filename>patagonia.jpg</filename>
-      <name>patagonia</name>
+      <title>patagonia</title>
       <metadata>
         <width>1843</width>
         <height>1080</height>
@@ -464,7 +465,7 @@
     </photo>
     <photo>
       <filename>phi-phi.jpg</filename>
-      <name>phi-phi</name>
+      <title>phi-phi</title>
       <metadata>
         <width>1920</width>
         <height>730</height>
@@ -476,7 +477,7 @@
     </photo>
     <photo>
       <filename>released.jpg</filename>
-      <name>released</name>
+      <title>released</title>
       <metadata>
         <width>1626</width>
         <height>1080</height>
@@ -488,7 +489,7 @@
     </photo>
     <photo>
       <filename>rush-hour.jpg</filename>
-      <name>rush-hour</name>
+      <title>rush-hour</title>
       <metadata>
         <width>1242</width>
         <height>1080</height>
@@ -500,7 +501,7 @@
     </photo>
     <photo>
       <filename>sadu.jpg</filename>
-      <name>sadu</name>
+      <title>sadu</title>
       <metadata>
         <width>1440</width>
         <height>1080</height>
@@ -512,7 +513,7 @@
     </photo>
     <photo>
       <filename>seascape.jpg</filename>
-      <name>seascape</name>
+      <title>seascape</title>
       <metadata>
         <width>1920</width>
         <height>946</height>
@@ -524,7 +525,7 @@
     </photo>
     <photo>
       <filename>side-dishes.jpg</filename>
-      <name>side-dishes</name>
+      <title>side-dishes</title>
       <metadata>
         <width>1626</width>
         <height>1080</height>
@@ -536,7 +537,7 @@
     </photo>
     <photo>
       <filename>skylake.jpg</filename>
-      <name>skylake</name>
+      <title>skylake</title>
       <metadata>
         <width>1440</width>
         <height>1080</height>
@@ -548,7 +549,7 @@
     </photo>
     <photo>
       <filename>small-man.jpg</filename>
-      <name>small-man</name>
+      <title>small-man</title>
       <metadata>
         <width>1626</width>
         <height>1080</height>
@@ -560,7 +561,7 @@
     </photo>
     <photo>
       <filename>snack.jpg</filename>
-      <name>snack</name>
+      <title>snack</title>
       <metadata>
         <width>1626</width>
         <height>1080</height>
@@ -572,7 +573,7 @@
     </photo>
     <photo>
       <filename>street-food.jpg</filename>
-      <name>street-food</name>
+      <title>street-food</title>
       <metadata>
         <width>1600</width>
         <height>1063</height>
@@ -584,7 +585,7 @@
     </photo>
     <photo>
       <filename>taking-off.jpg</filename>
-      <name>taking-off</name>
+      <title>taking-off</title>
       <metadata>
         <width>1787</width>
         <height>1080</height>
@@ -596,7 +597,7 @@
     </photo>
     <photo>
       <filename>tea.jpg</filename>
-      <name>tea</name>
+      <title>tea</title>
       <metadata>
         <width>1626</width>
         <height>1080</height>
@@ -608,7 +609,7 @@
     </photo>
     <photo>
       <filename>travel-cafe.jpg</filename>
-      <name>travel-cafe</name>
+      <title>travel-cafe</title>
       <metadata>
         <width>1626</width>
         <height>1080</height>
