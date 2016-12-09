@@ -2,6 +2,10 @@
 <link href="../../../Scripts/jQuery.maximage/css/screen.css" rel="stylesheet" />
 <link href="../../../Content/maximage-gallery.css" rel="stylesheet" />
 
+<!--<div id="loading-image" ng-if="slideshowReady == false">
+    <img ng-src="{{ galleryData.ImagesLocation}}/{{galleryData.OpeningPhoto}}" />
+</div>-->
+
 <div id="maximage-gallery-content">
     <a href="" class="maximage_arrow" id="arrow_left">
         <img class="arrow-image" id="arrow_left_img" src="../../../Content/Images/arrow_left.png" alt="Slide Left" />
@@ -22,10 +26,14 @@
             <div class="in-slide-content">
                 <p>Welcome</p>
                 <!--<p><a href="#" target="_blank" style="font-weight:bold">More info >></a></p>-->
+
             </div>
+            <img ng-src="{{ galleryData.ImagesLocation}}/{{galleryData.OpeningPhoto}}" />
         </div>
 
-
+        <!--<img ng-src="{{ galleryData.ImagesLocation}}/{{galleryData.OpeningPhoto}}" />-->
+        <!--<div id="maximage-images1">-->
         <img ng-repeat="photo in nonOpeningPhotosArray" ng-src="{{galleryData.ImagesLocation}}/{{photo}}" alt="" />
+        <!--</div>-->
     </div>
 </div>
