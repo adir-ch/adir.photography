@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PhotosRepository
+namespace PhotosRepository.Model
 {
     public interface IPhoto
     {
@@ -13,8 +13,13 @@ namespace PhotosRepository
         IPhotoMetadata Metadata { get; set; }
         List<string> Tags { get; set; }
 
-        bool Init(string fileName);
-        bool Init(string width, string height);
+        bool Init(string filePath, 
+                  string fileName, 
+                  string title, 
+                  string caption, 
+                  IPhotoMetadata metadata, 
+                  List<string> tags);
+
         void AddTag(string iTag);
     }
 }

@@ -33,21 +33,29 @@
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccess\XML\XMLDbContext.cs" />
+    <Compile Include="DataAccess\XML\XMLPhotoDBEntity.cs" />
     <Compile Include="GalleryConfig.cs" />
-    <Compile Include="IPhoto.cs" />
-    <Compile Include="DataAccess\IPhotosRepository.cs" />
-    <Compile Include="IPhotoMetadata.cs" />
+    <Compile Include="Model\IDbContext.cs" />
+    <Compile Include="Model\IDBEntity.cs" />
+    <Compile Include="Model\IPhoto.cs" />
+    <Compile Include="Model\IPhotosRepository.cs" />
+    <Compile Include="Model\IPhotoMetadata.cs" />
+    <Compile Include="Model\IPhotoDBEntity.cs" />
     <Compile Include="Photo.cs" />
     <Compile Include="PhotoMetadata.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

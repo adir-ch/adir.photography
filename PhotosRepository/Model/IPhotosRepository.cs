@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PhotosRepository.DataAccess
+namespace PhotosRepository.Model
 {
     public interface IPhotosRepository
     {
@@ -12,6 +12,7 @@ namespace PhotosRepository.DataAccess
         string GetGalleryOpeningPhoto(string galleryName);
         GalleryConfig GetGalleryConfig(string galleryName);
 
-        void Init(); 
+        bool Init();
+        IEnumerable<IPhoto> InitPhotos(); 
     }
 }

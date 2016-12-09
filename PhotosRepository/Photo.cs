@@ -5,7 +5,10 @@ using System.Text;
 using log4net;
 using System.Runtime.Serialization;
 using System.Drawing;
-using System.Drawing.Imaging; 
+using System.Drawing.Imaging;
+using System.Windows.Media.Imaging;
+using System.IO;
+using PhotosRepository.Model; 
 
 namespace PhotosRepository
 {
@@ -27,12 +30,6 @@ namespace PhotosRepository
         public Photo(string fileName) : this()
         {
             FileName = fileName;
-            //FilePath = filePath; 
-        }
-
-        public bool Init(string width, string height)
-        {
-            return Metadata.InitMetadata(width, height);
         }
 
         public bool Init(string filePath)
@@ -40,7 +37,7 @@ namespace PhotosRepository
             bool status = false;
             try
             {
-                TryGetDataFromImageFile(filePath);
+                ParsePhotoMetadata(filePath);
                 status = true; 
             }
             catch (Exception e)
@@ -51,6 +48,20 @@ namespace PhotosRepository
             return status; 
         }
 
+        public bool Init(string filePath, 
+                         string fileName, 
+                         string title, 
+                         string caption, 
+                         IPhotoMetadata metadata, 
+                         List<string> tags)
+        {
+            Title = title;
+            Caption = caption;
+            Tags = tags;
+            Metadata = metadata; 
+            return true; 
+        }
+
         public void AddTag(string iTag)
         {
             //_log.DebugFormat("Adding tag to {0}: {1}", FileName, iTag); 
@@ -59,50 +70,68 @@ namespace PhotosRepository
                 Tags.Add(iTag); 
         }
 
-        private void TryGetDataFromImageFile(string path)
+        public void ParsePhotoMetadata(string path)
         {
-            var ascii = new System.Text.ASCIIEncoding();
-
-            // Create an Image object. 
-            using (var image = new Bitmap(path + FileName))
+            using (var stream = new System.IO.FileStream((path + FileName), FileMode.Open, FileAccess.Read, FileShare.Read))
             {
-                Metadata.InitMetadata(image.Width, image.Height); // init meta-data (dimensions)
+                BitmapSource bitmapStream = BitmapFrame.Create(stream);
+                Metadata.InitMetadata(bitmapStream.PixelWidth, bitmapStream.PixelHeight);
+                BitmapMetadata meta = (BitmapMetadata)bitmapStream.Metadata;
+                Title = meta.Title;
+                Caption = meta.Comment ?? String.Empty;
+                List<string> keys = new List<string>(meta.Keywords);
 
-                foreach (PropertyItem propertyItem in image.PropertyItems)
+                foreach (var key in keys)
                 {
-                    var propertyData = image.GetPropertyItem(propertyItem.Id);
-
-                    switch (propertyItem.Id) 
-                    {
-                        case 270: // title 
-                            {
-                                Title = ascii.GetString(propertyData.Value).Replace("\0", string.Empty);
-                                break; 
-                            }
-                        case 40094: // tags 
-                            {
-                                var keywords = Encoding.Unicode.GetString(propertyData.Value).Replace("\0", string.Empty);
-                                List<string> keys = new List<string>(keywords.Split(';').ToList());
-                                foreach (var key in keys)
-                                {
-                                    AddTag(key); 
-                                }
-
-                                break; 
-                            }
-                        case 40092: // caption 
-                            {
-                                Caption = Encoding.Unicode.GetString(propertyData.Value).Replace("\0", string.Empty);
-                                break; 
-                            }
-                    }
+                    AddTag(key); 
                 }
-
-                //if (imageProperties.Where(i => i.Id == 270).Count() > 0) // can also be done with this
-                //{
-                //    Title = ascii.GetString(image.GetPropertyItem(270).Value);
-                //}
             }
         }
+
+        //private void TryGetDataFromImageFile(string path) // not used anymore 
+        //{
+        //    var ascii = new System.Text.ASCIIEncoding();
+
+        //    // Create an Image object. 
+        //    using (var image = new Bitmap(path + FileName))
+        //    {
+        //        Metadata.InitMetadata(image.Width, image.Height); // init meta-data (dimensions)
+
+        //        foreach (PropertyItem propertyItem in image.PropertyItems)
+        //        {
+        //            var propertyData = image.GetPropertyItem(propertyItem.Id);
+
+        //            switch (propertyItem.Id) 
+        //            {
+        //                case 270: // title 
+        //                    {
+        //                        Title = ascii.GetString(propertyData.Value).Replace("\0", string.Empty);
+        //                        break; 
+        //                    }
+        //                case 40094: // tags 
+        //                    {
+        //                        var keywords = Encoding.Unicode.GetString(propertyData.Value).Replace("\0", string.Empty);
+        //                        List<string> keys = new List<string>(keywords.Split(';').ToList());
+        //                        foreach (var key in keys)
+        //                        {
+        //                            AddTag(key); 
+        //                        }
+
+        //                        break; 
+        //                    }
+        //                case 40092: // caption 
+        //                    {
+        //                        Caption = Encoding.Unicode.GetString(propertyData.Value).Replace("\0", string.Empty);
+        //                        break; 
+        //                    }
+        //            }
+        //        }
+
+        //        //if (imageProperties.Where(i => i.Id == 270).Count() > 0) // can also be done with this
+        //        //{
+        //        //    Title = ascii.GetString(image.GetPropertyItem(270).Value);
+        //        //}
+        //    }
+        //}
     }
 }

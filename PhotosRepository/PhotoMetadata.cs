@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 using log4net;
-using System.Runtime.Serialization; 
+using System.Runtime.Serialization;
+using PhotosRepository.Model; 
 
 namespace PhotosRepository
 {
