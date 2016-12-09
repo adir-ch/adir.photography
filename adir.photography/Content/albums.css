@@ -65,16 +65,24 @@ body {
     overflow: hidden;
 }
 
-
 /* If have the image layer */
-
 .rig-img {
     display: block;
-    width: 100%;
-    height: auto;
     border: none;
     transform: scale(1);
     transition: all 1s;
+}
+
+.rig-img-landscape {
+    width: 100%;
+    height: auto;
+}
+
+.rig-img-portrait {
+    max-width: 50%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #rig li:hover .rig-img {

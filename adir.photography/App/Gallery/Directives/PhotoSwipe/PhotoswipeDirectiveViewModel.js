@@ -14,7 +14,7 @@
             bindToController: true,
 
             scope: {
-                userName : '=',
+                userName: '=',
                 galleryName: '=',
                 galleryData: '='
             }
@@ -28,7 +28,8 @@
     function PhotoswipeController($scope) {
         var vm = this;
         vm.photoSwipeArray = [];
-
+        vm.setCellStyle = setCellStyleFunction;
+        
         //console.log("--------- Starting photoswipe directive ----------");
         //console.log("Album: " + vm.galleryName);
         buildPhotoSwipeArray(vm.galleryData, vm.photoSwipeArray);
@@ -37,10 +38,20 @@
             //console.log("Photo clicked: " + vm.galleryData.GalleryPhotos[arrayIndex].FileName);
             initPhotoswipe(vm.photoSwipeArray, arrayIndex);
         }
+
+        
     }
 
     function linkFunc($scope, element, attrs) {
 
+    }
+
+    function setCellStyleFunction(photo) {
+        if (photo.Metadata.Width > photo.Metadata.Height) {
+            return "rig-img-landscape";
+        } else {
+            return "rig-img-portrait";
+        }
     }
 
     function buildPhotoSwipeArray(dataArray, photoSwipeArray) {
