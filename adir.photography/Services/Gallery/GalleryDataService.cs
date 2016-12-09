@@ -5,6 +5,7 @@ using adir.photography.Services.WebSiteConfig;
 using adir.photography.Models;
 using PhotosRepository.DataAccess;
 using PhotosRepository.DataAcess.XML;
+using PhotosRepository.Model;
 
 namespace adir.photography.Services.Gallery
 {
@@ -53,6 +54,11 @@ namespace adir.photography.Services.Gallery
             }
 
             return allGalleries; 
+        }
+
+        public IEnumerable<IPhoto> InitPhotos()
+        {
+            return _repo.InitPhotos(); 
         }
 
         private IEnumerable<IPhoto> GetGalleryPhotos(string galleryName)

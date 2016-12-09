@@ -89,6 +89,23 @@ namespace adir.photography.Controllers
 
         }
 
+        // GET api/galleryapi/initphotos - changed to WebApi 2 style 
+        [Route("initphotos")]
+        [HttpGet]
+        public IHttpActionResult InitAllPhotos()
+        {
+            try
+            {
+                var model = _galleryDataService.InitPhotos();
+                return Ok(model);
+            }
+            catch (Exception e)
+            {
+                return InternalServerError(e);
+            }
+
+        }
+
         // POST api/galleryapi
         public void Post([FromBody]string value)
         {

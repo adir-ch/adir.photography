@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using PhotosRepository;
-using System.Runtime.Serialization; 
+using System.Runtime.Serialization;
+using PhotosRepository.Model; 
 
 namespace adir.photography.Models
 {
