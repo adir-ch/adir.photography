@@ -163,7 +163,7 @@ namespace PhotosRepository.DataAccess.XML
                     String.IsNullOrEmpty(_caption.Value) ||
                     String.IsNullOrEmpty(_width.Value) ||
                     String.IsNullOrEmpty(_height.Value) || 
-                    _tags.Count() == 0); 
+                    (_tags != null && _tags.Count() == 0)); 
         }
     }
 }

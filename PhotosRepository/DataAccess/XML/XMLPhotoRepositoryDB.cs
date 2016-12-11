@@ -175,6 +175,11 @@ namespace PhotosRepository.DataAcess.XML
                 throw;
             }
 
+            if (galleryEntry == null)
+            {
+                throw (new Exception(String.Format("Unable to locate {0}", galleryName))); 
+            }
+
             return galleryEntry.Parent;
         }
     }
