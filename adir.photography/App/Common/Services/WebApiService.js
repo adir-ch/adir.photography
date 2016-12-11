@@ -23,7 +23,7 @@
             //console.log("Error while requesting data from server: ", response);
             if (response.data.ExceptionMessage) {
                 //console.log("stack trace: ", response.data.StackTrace);
-                _result = response.data.ExceptionMessage;
+                _result = "Error on server request"; //  response.data.ExceptionMessage;
             } else if (response.data.Message) {
                 _result = response.data.Message;
             } else {
