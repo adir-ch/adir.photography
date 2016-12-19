@@ -141,6 +141,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\GalleryApiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\RegisterApiController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -160,6 +161,8 @@
     <Compile Include="Services\WebSiteConfig\WebSiteFileConfigService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="404.html" />
+    <Content Include="500.html" />
     <Content Include="App\AppMain.js" />
     <Content Include="App\AppMainViewModel.js" />
     <Content Include="App\Common\Directives\AppCommonDirectives.js" />
@@ -167,26 +170,34 @@
     <Content Include="App\Common\Directives\LoginDialog\LoginDialogDirectiveViewModel.js" />
     <Content Include="App\Common\Directives\MfbButtonMenu\ButtonMenuDirectiveView.html" />
     <Content Include="App\Common\Directives\MfbButtonMenu\ButtonMenuDirectiveViewModel.js" />
+    <Content Include="App\Common\Directives\MfbButtonMenu\MfbButtonMenuViewModel.js" />
     <Content Include="App\Common\Services\AppCommonServices.js" />
+    <Content Include="App\Common\Services\GlobalConfigurationService.js" />
     <Content Include="App\Common\Services\WebApiService.js" />
+    <Content Include="App\Gallery\Directives\AlbumsDisplay\AlbumsDisplayDirectiveView.html" />
+    <Content Include="App\Gallery\Directives\AlbumsDisplay\AlbumsDisplayDirectiveViewModel.js" />
     <Content Include="App\Gallery\Directives\PhotoSwipe\PhotoswipeDirectiveView.html" />
     <Content Include="App\Gallery\Directives\PhotoSwipe\PhotoswipeDirectiveViewModel.js" />
     <Content Include="App\Gallery\GalleryApp.js" />
     <Content Include="App\Gallery\Services\GalleryServices.js" />
     <Content Include="App\Gallery\ViewModels\AlbumsViewModel.js" />
+    <Content Include="App\Gallery\ViewModels\AlbumViewModel.js" />
     <Content Include="App\Gallery\ViewModels\GalleryViewModel.js" />
     <Content Include="App\Gallery\Directives\MaxImage\MaxImageDirectiveViewModel.js" />
     <Content Include="App\Gallery\Views\AlbumsView.html" />
+    <Content Include="App\Gallery\Views\AlbumView.html" />
     <Content Include="App\Gallery\Views\GalleryView.html" />
     <Content Include="App\Gallery\Directives\MaxImage\MaxImageDirectiveView.html" />
     <Content Include="App\Member\MemberApp.js" />
     <Content Include="App\Member\Services\MemberServices.js" />
     <Content Include="App\Member\ViewModels\ProfileViewModel.js" />
     <Content Include="App\Member\Views\ProfileView.html" />
+    <Content Include="Content\albums.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\about-bg.jpg" />
     <Content Include="Content\Images\ajax-loader.gif" />
     <Content Include="Content\ionicons.css" />
     <Content Include="Content\Images\arrow-left-big.png" />
@@ -217,6 +228,7 @@
     <Content Include="Content\ionicons\_ionicons-variables.less" />
     <Content Include="Content\ionicons\_ionicons-icons.less" />
     <Content Include="Content\ionicons\_ionicons-font.less" />
+    <None Include="Properties\PublishProfiles\ap-publish.pubxml" />
     <None Include="Properties\PublishProfiles\Dev publish.pubxml" />
     <Content Include="LoggerConfig.xml" />
     <Content Include="Scripts\Angular\angular-animate.js" />
@@ -320,7 +332,9 @@
     <Content Include="Scripts\Photoswipe\photoswipe.css" />
     <Content Include="Scripts\Photoswipe\photoswipe.js" />
     <Content Include="Scripts\Photoswipe\photoswipe.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -335,6 +349,8 @@
     <Content Include="Views\Home\Gallery.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Member.cshtml" />
+    <Content Include="Views\Shared\NotFound.cshtml" />
+    <Content Include="Views\Shared\ServerException.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App\Management\" />
