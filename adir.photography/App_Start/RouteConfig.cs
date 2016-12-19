@@ -32,6 +32,12 @@ namespace adir.photography
             );
 
             routes.MapRoute(
+                name: "Error",
+                url: "Error/{action}/{path}",
+                defaults: new { controller = "Error", action = "Index", path="" }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
