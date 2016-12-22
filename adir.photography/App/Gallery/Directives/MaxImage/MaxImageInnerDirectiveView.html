@@ -1,0 +1,8 @@
+<div class="first-item">
+    <!--<div class="in-slide-content">
+        <p>Welcome</p>
+    </div>-->
+    <img ng-src="{{ galleryData.ImagesLocation}}/{{galleryData.OpeningPhoto}}" />
+</div>
+
+<img ng-repeat="photo in nonOpeningPhotosArray" ng-src="{{galleryData.ImagesLocation}}/{{photo}}" alt="" />
