@@ -22,7 +22,7 @@
     }
 
     function MaxImageDirectiveLinkFunc(scope, el, attr, ctrl) {
-        console.log("--------- Starting maximage directive link func----------");
+        //console.log("--------- Starting maximage directive link func----------");
         //InitMaxImage(scope.galleryData.Timeout);
         // el.ready(function() {
         //     InitMaxImage(scope.galleryData.Timeout);
@@ -36,7 +36,7 @@
     MaxImageDirectiveViewModel.$inject = ['$rootScope', '$scope', '$timeout'];
 
     function MaxImageDirectiveViewModel($rootScope, $scope, $timeout) {
-        console.log("--------- Starting maximage directive ----------");
+        //console.log("--------- Starting maximage directive ----------");
         // //console.debug("Gallery data: ", $scope.galleryData);
         // $scope.slideshowReady = false;
         $scope.nonOpeningPhotosArray = [];
@@ -48,7 +48,7 @@
 
         timer.then(
             function() {
-                console.log("timer resolved calling MaxImageFunction");
+                //console.log("timer resolved calling MaxImageFunction");
                 InitMaxImage($scope.galleryData.Timeout);
             },
             function() {
@@ -68,7 +68,7 @@
     }
 
     function InitMaxImage(slideChangeDelay) {
-        console.log("maximage start");
+        //console.log("maximage start");
         jQuery('#maximage').maximage({
             cssBackgroundSize: false,
             backgroundSize: maximageBackground,
