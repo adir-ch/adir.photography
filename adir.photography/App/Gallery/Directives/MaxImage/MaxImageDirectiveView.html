@@ -16,20 +16,19 @@
         <img class="arrow-image" id="arrow_left_img" src="../../../Content/Images/arrow_right.png" alt="Slide Left" />
     </a>
 
-    <img id="cycle-loader" src="../../../Content/Images/ajax-loader.gif" />
+    <!--<img id="cycle-loader" src="../../../Content/Images/ajax-loader.gif" />-->
 
     <div id="maximage">
 
         <!--<ap-max-image-inner gallery-data="galleryData"></ap-max-image-inner>-->
 
         <div class="first-item">
-            <img ng-src="{{ galleryData.ImagesLocation}}/{{galleryData.OpeningPhoto}}" />
             <!--<div class="in-slide-content">
                 <p>Welcome</p>
             </div>-->
             <img ng-src="{{ galleryData.ImagesLocation}}/{{galleryData.OpeningPhoto}}" />
         </div>
 
-        <img ng-repeat="photo in nonOpeningPhotosArray" ng-src="{{galleryData.ImagesLocation}}/{{photo}}" alt="" />
+        <img ng-repeat="photo in nonOpeningPhotosArray" ng-src="{{galleryData.ImagesLocation}}/{{photo}}" style="display: none;" alt="" />
     </div>
 </div>
