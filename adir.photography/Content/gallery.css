@@ -2,7 +2,7 @@ body {
     font-size: .85em;
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
     color: #232323;
-    background-color: #fff;
+    background-color: black;
     overflow: hidden;
 }
 
@@ -34,21 +34,32 @@ body {
     opacity: 0.7;
 }
 
+#ap-gallery-loading-text {
+    color: white;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 150%;
+    position: absolute;
+    z-index: 1000;
+}
+
 #gallery-welcome-photo {
-    position: relative;
+    position: fixed;
+    top: 50%;
+    left: 50%;
     width: 100%;
+    transform: translate(-50%, -50%);
 }
 
 @media (max-width: 900px) {
-   #ap-gallery-welcome-text {
-       font-size: 900%;
-   }
+    #ap-gallery-welcome-text {
+        font-size: 900%;
+    }
 }
 
 @media (max-width: 700px) {
-   #ap-gallery-welcome-text {
-       font-size: 700%;
-   }
+    #ap-gallery-welcome-text {
+        font-size: 700%;
+    }
 }
 
 @media (max-width: 550px) {

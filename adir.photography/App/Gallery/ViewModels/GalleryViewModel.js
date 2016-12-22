@@ -11,8 +11,6 @@
         //$scope.isMobile = false;
         $scope.isMobileView = false;
         $scope.isLandscapeView = false;
-        $scope.GalleryDirectiveStyle = "{'display':'none'}";
-        $scope.WelcomeImageStyle = "{'display':'block'}";
         $scope.ShowWelcomeImage = true;
 
         $scope.galleryData = function() {
@@ -46,9 +44,9 @@
                         //console.log("Gallery data ready");
                         $scope.galleryDataReady = status;
                         $timeout(function() {
-                            console.log("Count finished - showing gallery");
-                            $scope.ShowWelcomeImage = false; 
-                        }, 5000, true);
+                            //console.log("Count finished - showing gallery");
+                            $scope.ShowWelcomeImage = false;
+                        }, 10000, true);
                     },
                     function(reason) { // error
                         $scope.serverError = true;
