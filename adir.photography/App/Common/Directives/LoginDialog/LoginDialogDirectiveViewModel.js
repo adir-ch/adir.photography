@@ -109,7 +109,7 @@
 	var LoginDialogDirectiveFunction = function () {
 	    return {
 	        restrict: 'E',
-	        templateUrl: '/App/Common/Directives/LoginDialog/LoginDialogDirectiveView.html',
+	        templateUrl: 'App/Common/Directives/LoginDialog/LoginDialogDirectiveView.html',
 	        controller: 'LoginDialogDirectiveViewModel',
 	        // controllerAs: 'vm'
 	        // bindToController: true // if the scope is isolated
