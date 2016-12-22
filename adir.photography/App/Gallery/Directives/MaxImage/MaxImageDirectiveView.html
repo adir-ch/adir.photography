@@ -1,6 +1,8 @@
 <link href="../../../Scripts/jQuery.maximage/css/jquery.maximage.css" rel="stylesheet" />
 <link href="../../../Scripts/jQuery.maximage/css/screen.css" rel="stylesheet" />
 <link href="../../../Content/maximage-gallery.css" rel="stylesheet" />
+<script src="../../../../Scripts/jQuery.maximage/js/jquery.maximage.js"></script>
+<script src="../../../../Scripts/jQuery.maximage/js/jquery.cycle.all.js"></script>
 
 <!--<div id="loading-image" ng-if="slideshowReady == false">
     <img ng-src="{{ galleryData.ImagesLocation}}/{{galleryData.OpeningPhoto}}" />
@@ -17,23 +19,17 @@
     <img id="cycle-loader" src="../../../Content/Images/ajax-loader.gif" />
 
     <div id="maximage">
-        <!--<div class="in-slide-content" style="display:none;">
-            <p>Remember, you are not limited to image elements. You can display other HTML too.</p>
-        </div>-->
+
+        <!--<ap-max-image-inner gallery-data="galleryData"></ap-max-image-inner>-->
 
         <div class="first-item">
             <img ng-src="{{ galleryData.ImagesLocation}}/{{galleryData.OpeningPhoto}}" />
-            <div class="in-slide-content">
+            <!--<div class="in-slide-content">
                 <p>Welcome</p>
-                <!--<p><a href="#" target="_blank" style="font-weight:bold">More info >></a></p>-->
-
-            </div>
+            </div>-->
             <img ng-src="{{ galleryData.ImagesLocation}}/{{galleryData.OpeningPhoto}}" />
         </div>
 
-        <!--<img ng-src="{{ galleryData.ImagesLocation}}/{{galleryData.OpeningPhoto}}" />-->
-        <!--<div id="maximage-images1">-->
         <img ng-repeat="photo in nonOpeningPhotosArray" ng-src="{{galleryData.ImagesLocation}}/{{photo}}" alt="" />
-        <!--</div>-->
     </div>
 </div>

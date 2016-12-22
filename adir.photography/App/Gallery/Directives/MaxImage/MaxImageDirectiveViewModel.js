@@ -22,15 +22,23 @@
     }
 
     function MaxImageDirectiveLinkFunc(scope, el, attr, ctrl) {
+        console.log("--------- Starting maximage directive link func----------");
         //InitMaxImage(scope.galleryData.Timeout);
+        // el.ready(function() {
+        //     InitMaxImage(scope.galleryData.Timeout);
+        //     // $scope.$apply(function(){
+        //     //     var func = $parse(attr.apMaxImage);
+        //     //     func($scope);
+        //     // })
+        // });
     }
 
-    MaxImageDirectiveViewModel.$inject = ['$scope', '$timeout'];
+    MaxImageDirectiveViewModel.$inject = ['$rootScope', '$scope', '$timeout'];
 
-    function MaxImageDirectiveViewModel($scope, $timeout) {
-        //console.log("--------- Starting maximage directive ----------");
-        //console.debug("Gallery data: ", $scope.galleryData);
-        $scope.slideshowReady = false;
+    function MaxImageDirectiveViewModel($rootScope, $scope, $timeout) {
+        console.log("--------- Starting maximage directive ----------");
+        // //console.debug("Gallery data: ", $scope.galleryData);
+        // $scope.slideshowReady = false;
         $scope.nonOpeningPhotosArray = [];
         buildMaxImageGalleryPhotos($scope);
 
@@ -41,7 +49,6 @@
         timer.then(
             function() {
                 console.log("timer resolved calling MaxImageFunction");
-                $scope.slideshowReady = true;
                 InitMaxImage($scope.galleryData.Timeout);
             },
             function() {
@@ -52,6 +59,12 @@
         $scope.$on("$destroy", function(event) {
             $timeout.cancel(timer);
         });
+
+        // $scope.$on("MaxImageReadyEvent", function(event) {
+        //     $timeout(function() {
+        //         InitMaxImage($scope.galleryData.Timeout);
+        //     }, 10000, true);
+        // });
     }
 
     function InitMaxImage(slideChangeDelay) {

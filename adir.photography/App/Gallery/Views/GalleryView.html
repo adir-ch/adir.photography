@@ -1,6 +1,14 @@
-<link rel=stylesheet href="../../../Content/albums.css">
+<link rel=stylesheet href="/Content/gallery.css">
 
-<div ng-if="galleryDataReady">
+<div id="welcome-gallery-content">
+    <div id="gallery-welcome-photo" ng-show="ShowWelcomeImage" class="fade">
+        <img class="ap-responsive-image" src="/Content/Photos/welcome.jpg">
+        <h1 id="ap-gallery-welcome-text">Welcome</h1>
+    </div>
+
+</div>
+
+<div ng-if="galleryDataReady" id="gallery-directive-content" ng-hide="ShowWelcomeImage">
     <ap-max-image gallery-data="galleryData()" gallery-name="galleryName" user-name="userName"></ap-max-image>
 </div>
 <div ng-if="serverError">

@@ -1,5 +1,5 @@
 ﻿(function() {
-    angular.module('gallery').controller("GalleryViewModel", ['$scope', '$routeParams', '$window', '$location', 'GalleryResources', function($scope, $routeParams, $window, $location, GalleryResources) {
+    angular.module('gallery').controller("GalleryViewModel", ['$scope', '$routeParams', '$window', '$location', '$timeout', 'GalleryResources', function($scope, $routeParams, $window, $location, $timeout, GalleryResources) {
 
         //console.log("Gallery ViewModel");
 
@@ -11,6 +11,9 @@
         //$scope.isMobile = false;
         $scope.isMobileView = false;
         $scope.isLandscapeView = false;
+        $scope.GalleryDirectiveStyle = "{'display':'none'}";
+        $scope.WelcomeImageStyle = "{'display':'block'}";
+        $scope.ShowWelcomeImage = true;
 
         $scope.galleryData = function() {
             //console.log("read gallery data");
@@ -42,6 +45,10 @@
                     function(status) { // success
                         //console.log("Gallery data ready");
                         $scope.galleryDataReady = status;
+                        $timeout(function() {
+                            console.log("Count finished - showing gallery");
+                            $scope.ShowWelcomeImage = false; 
+                        }, 5000, true);
                     },
                     function(reason) { // error
                         $scope.serverError = true;

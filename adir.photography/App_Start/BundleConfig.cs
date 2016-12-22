@@ -26,7 +26,8 @@ namespace adir.photography
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                         "~/Scripts/Angular/angular.js",
-                        "~/Scripts/Angular/angular-route.js"));
+                        "~/Scripts/Angular/angular-route.js",
+                        "~/Scripts/Angular/angular-animate.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/maximage").Include(
                         "~/Scripts/jQuery.cycle/jquery.cycle.all.js",
@@ -58,6 +59,7 @@ namespace adir.photography
                         "~/App/Gallery/ViewModels/AlbumViewModel.js",
                         "~/App/Gallery/Directives/AlbumsDisplay/AlbumsDisplayDirectiveViewModel.js",
                         "~/App/Gallery/Directives/MaxImage/MaxImageDirectiveViewModel.js",
+                        "~/App/Gallery/Directives/MaxImage/MaxImageInnerDirectiveViewModel.js",
                         "~/App/Gallery/Directives/PhotoSwipe/PhotoswipeDirectiveViewModel.js",
                         "~/App/Gallery/Services/GalleryServices.js"));
 
