@@ -1,0 +1,58 @@
+body {
+    font-size: .85em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+#gallery-welcome-photo::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* ng-hide / ng-show animation */
+
+.fade {
+    transition: all linear 500ms;
+    opacity: 1;
+}
+
+.fade.ng-hide {
+    opacity: 0;
+}
+
+#ap-gallery-welcome-text {
+    text-transform: uppercase;
+    color: white;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 1300%;
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    z-index: 1000;
+    opacity: 0.7;
+}
+
+#gallery-welcome-photo {
+    position: relative;
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+   #ap-gallery-welcome-text {
+       font-size: 900%;
+   }
+}
+
+@media (max-width: 700px) {
+   #ap-gallery-welcome-text {
+       font-size: 700%;
+   }
+}
+
+@media (max-width: 550px) {
+    #ap-gallery-welcome-text {
+        font-size: 300%;
+    }
+}
