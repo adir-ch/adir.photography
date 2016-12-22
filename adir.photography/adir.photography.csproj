@@ -43,14 +43,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
     </Reference>
@@ -74,7 +66,6 @@
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Web.Extensions" />
@@ -176,6 +167,8 @@
     <Content Include="App\Common\Services\WebApiService.js" />
     <Content Include="App\Gallery\Directives\AlbumsDisplay\AlbumsDisplayDirectiveView.html" />
     <Content Include="App\Gallery\Directives\AlbumsDisplay\AlbumsDisplayDirectiveViewModel.js" />
+    <Content Include="App\Gallery\Directives\MaxImage\MaxImageInnerDirectiveView.html" />
+    <Content Include="App\Gallery\Directives\MaxImage\MaxImageInnerDirectiveViewModel.js" />
     <Content Include="App\Gallery\Directives\PhotoSwipe\PhotoswipeDirectiveView.html" />
     <Content Include="App\Gallery\Directives\PhotoSwipe\PhotoswipeDirectiveViewModel.js" />
     <Content Include="App\Gallery\GalleryApp.js" />
@@ -228,7 +221,10 @@
     <Content Include="Content\ionicons\_ionicons-variables.less" />
     <Content Include="Content\ionicons\_ionicons-icons.less" />
     <Content Include="Content\ionicons\_ionicons-font.less" />
-    <None Include="Properties\PublishProfiles\ap-publish.pubxml" />
+    <None Include="Properties\PublishProfiles\ap-debug.pubxml" />
+    <None Include="Properties\PublishProfiles\ap-local-iis-test.pubxml" />
+    <None Include="Properties\PublishProfiles\ap-prod.pubxml" />
+    <None Include="Properties\PublishProfiles\ap-release.pubxml" />
     <None Include="Properties\PublishProfiles\Dev publish.pubxml" />
     <Content Include="LoggerConfig.xml" />
     <Content Include="Scripts\Angular\angular-animate.js" />
