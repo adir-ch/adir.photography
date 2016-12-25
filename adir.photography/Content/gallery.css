@@ -4,50 +4,65 @@ body {
     color: #232323;
     background-color: black;
     overflow: hidden;
+    /*background: url(/Content/Photos/welcome.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;*/
 }
 
-#gallery-welcome-photo::-webkit-scrollbar {
-    display: none;
-}
-
-
-/* ng-hide / ng-show animation */
-
-.fade {
-    transition: all linear 500ms;
+.fade.ng-enter {
+    transition-property: all;
+    transition-duration: 500ms;
+    transition-timing-function: linear;
+    transition-delay: 500ms;
     opacity: 1;
 }
 
 .fade.ng-hide {
     opacity: 0;
+    transition-duration: 500ms;
+    transition-delay: 10ms;
 }
 
-#ap-gallery-welcome-text {
+#ap-welcome-elements {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    z-index: 1000;
+}
+
+#ap-welcome-text {
     text-transform: uppercase;
     color: white;
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
     font-size: 1300%;
-    position: absolute;
-    top: 30%;
+    position: relative;
+    top: 20%;
     left: 10%;
     z-index: 1000;
     opacity: 0.7;
 }
 
-#ap-gallery-loading-text {
-    color: white;
-    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
-    font-size: 150%;
-    position: absolute;
-    z-index: 1000;
+#ap-loading-elements {
+    margin-top: 20px;
+    position: relative;
+    display: flex;
+    left: 70%;
 }
 
-#gallery-welcome-photo {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    transform: translate(-50%, -50%);
+#ap-welcome-loading-text {
+    color: white;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 300%;
+    position: relative;
+    opacity: 0.7;
+    float: left;
+}
+
+#ap-welcome-cycle-loader {
+    float: right;
+    margin-right: 10px;
 }
 
 @media (max-width: 900px) {
