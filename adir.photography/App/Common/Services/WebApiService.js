@@ -34,7 +34,7 @@
         var _apiGet = function(uri) {
 
             // TODO: Implement HTTP GET Cache
-            return $http.get(uri)
+            return $http.get(uri, { cache: true })
                 .then(function(response) {
                     _onGetSuccess(response);
                     return response.data; // resolve the promise of whever called me with the data
