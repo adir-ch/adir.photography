@@ -235,21 +235,6 @@
       </tags>
     </photo>
     <photo>
-      <filename>cityscape.jpg</filename>
-      <title>cityscape</title>
-      <metadata>
-        <width>1626</width>
-        <height>1080</height>
-      </metadata>
-      <caption>A.C(C)</caption>
-      <tags>
-        <tag />
-        <tag>Portfolio-2</tag>
-        <tag>ap-travel</tag>
-        <tag>ap-website</tag>
-      </tags>
-    </photo>
-    <photo>
       <filename>colony.jpg</filename>
       <title>colony</title>
       <metadata>
@@ -1011,6 +996,20 @@ Ev: 14.62</caption>
       <caption>A.C(C)</caption>
       <tags>
         <tag />
+        <tag>ap-main</tag>
+        <tag>ap-website</tag>
+        <tag>ap-wildlife</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>down-climbe.jpg</filename>
+      <title>Down climbing</title>
+      <metadata>
+        <width>1704</width>
+        <height>1080</height>
+      </metadata>
+      <caption>A.C(C)</caption>
+      <tags>
         <tag>ap-main</tag>
         <tag>ap-website</tag>
         <tag>ap-wildlife</tag>

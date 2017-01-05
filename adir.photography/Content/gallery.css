@@ -4,11 +4,6 @@ body {
     color: #232323;
     background-color: black;
     overflow: hidden;
-    /*background: url(/Content/Photos/welcome.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;*/
 }
 
 .fade.ng-enter {
@@ -33,7 +28,7 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    position: absolute;
+    position: fixed;
 }
 
 #ap-welcome-elements {
@@ -83,19 +78,31 @@ body {
 }
 
 @media (max-width: 900px) {
-    #ap-gallery-welcome-text {
-        font-size: 900%;
+    #ap-welcome-text {
+        font-size: 700%;
+    }
+
+    #ap-welcome-loading-text {
+        font-size: 280%;
     }
 }
 
 @media (max-width: 700px) {
-    #ap-gallery-welcome-text {
-        font-size: 700%;
+    #ap-welcome-text {
+        font-size: 500%;
+    }
+
+    #ap-welcome-loading-text {
+        font-size: 250%;
     }
 }
 
 @media (max-width: 550px) {
-    #ap-gallery-welcome-text {
+    #ap-welcome-text {
         font-size: 300%;
+    }
+
+    #ap-welcome-loading-text {
+        font-size: 200%;
     }
 }
