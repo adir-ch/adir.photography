@@ -82,7 +82,7 @@ function Ctrl($scope, defaultValues, $window) {
         icon: 'ion-ios-home',
         href: '/gallery'
     }, {
-        label: 'Albums',
+        label: 'Portfolio',
         icon: 'ion-images',
         href: '/gallery/albums'
     }, {
