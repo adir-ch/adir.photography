@@ -31,7 +31,8 @@ namespace adir.photography
 
             bundles.Add(new ScriptBundle("~/bundles/maximage").Include(
                         "~/Scripts/jQuery.cycle/jquery.cycle.all.js",
-                        "~/Scripts/jQuery.maximage/js/jquery.maximage.js"));
+                        "~/Scripts/jQuery.maximage/js/jquery.maximage.js",
+                        "~/Scripts/ngprogress.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/photoswipe").Include(
                         "~/Scripts/Photoswipe/photoswipe.js",

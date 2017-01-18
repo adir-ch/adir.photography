@@ -1,7 +1,7 @@
 ﻿(function() {
     'use strict';
 
-    angular.module('gallery', ['ngRoute', 'ngAnimate', 'AppCommonServices'])
+    angular.module('gallery', ['ngRoute', 'ngAnimate', 'ngProgress', 'AppCommonServices'])
 
     .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
         $routeProvider.when('/', {

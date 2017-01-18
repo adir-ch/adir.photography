@@ -1,63 +1,70 @@
 ﻿(function() {
-    angular.module('gallery').controller("GalleryViewModel", ['$scope', '$routeParams', '$window', '$location', '$timeout', 'GalleryResources', function($scope, $routeParams, $window, $location, $timeout, GalleryResources) {
+    angular.module('gallery').controller("GalleryViewModel", ['$scope', '$routeParams', '$window', '$location', '$timeout', 'ngProgressFactory', 'GalleryResources',
 
-        //console.log("Gallery ViewModel");
+        function($scope, $routeParams, $window, $location, $timeout, ngProgressFactory, GalleryResources) {
 
-        $scope.galleryDataReady = false;
-        $scope.galleryName = "Main";
-        $scope.userName = "default";
-        $scope.serverError = false;
-        $scope.serverErrorMessage = "";
-        //$scope.isMobile = false;
-        $scope.isMobileView = false;
-        $scope.isLandscapeView = false;
-        $scope.ShowWelcomeImage = true;
+            //console.log("Gallery ViewModel");
 
-        $scope.galleryData = function() {
-            //console.log("read gallery data");
-            return GalleryResources.galleryData();
-        };
+            $scope.galleryDataReady = false;
+            $scope.galleryName = "Main";
+            $scope.userName = "default";
+            $scope.serverError = false;
+            $scope.serverErrorMessage = "";
+            //$scope.isMobile = false;
+            $scope.isMobileView = false;
+            $scope.isLandscapeView = false;
+            $scope.ShowWelcomeImage = true;
 
-        if ($routeParams.galleryId) {
-            //console.log("setting gallery name from route to: " + $routeParams.galleryId);
-            $scope.galleryName = $routeParams.galleryId;
+            $scope.progressbar = ngProgressFactory.createInstance();
+
+            $scope.galleryData = function() {
+                //console.log("read gallery data");
+                return GalleryResources.galleryData();
+            };
+
+            if ($routeParams.galleryId) {
+                //console.log("setting gallery name from route to: " + $routeParams.galleryId);
+                $scope.galleryName = $routeParams.galleryId;
+            }
+
+            // function subscribeToWindowResizeEvent() {
+            //     angular.element($window).bind('resize', function() {
+            //         console.log("windows size changed: " + $window.innerWidth);
+            //     })
+            // }
+
+            Initialize = function() {
+
+                //subscribeToWindowResizeEvent();
+
+                // get all the images + opening image.
+                //console.log("calling Gallery API");
+                //console.log("Asking for gallery: " + $scope.galleryName);
+                //console.log("service: ", GalleryResources);
+                //GalleryResources.getGalleryData($scope.galleryName, callback);
+                $scope.progressbar.start();
+                GalleryResources.getGalleryData($scope.galleryName)
+                    .then(
+                        function(status) { // success
+                            //console.log("Gallery data ready");
+                            $scope.galleryDataReady = status;
+                            $timeout(function() {
+                                //console.log("Count finished - showing gallery");
+                                $scope.progressbar.complete();
+                                $scope.ShowWelcomeImage = false;
+                            }, 10000, true);
+                        },
+                        function(reason) { // error
+                            $scope.serverError = true;
+                            console.error("Error while talking to server: ", reason);
+                            $scope.serverErrorMessage = reason;
+                        }
+                    ).catch(function(exception) {
+                        console.error("Exception while asking for gallery data: ", exception);
+                    });
+            }
+
+            Initialize();
         }
-
-        // function subscribeToWindowResizeEvent() {
-        //     angular.element($window).bind('resize', function() {
-        //         console.log("windows size changed: " + $window.innerWidth);
-        //     })
-        // }
-
-        Initialize = function() {
-
-            //subscribeToWindowResizeEvent();
-
-            // get all the images + opening image.
-            //console.log("calling Gallery API");
-            //console.log("Asking for gallery: " + $scope.galleryName);
-            //console.log("service: ", GalleryResources);
-            //GalleryResources.getGalleryData($scope.galleryName, callback);
-            GalleryResources.getGalleryData($scope.galleryName)
-                .then(
-                    function(status) { // success
-                        //console.log("Gallery data ready");
-                        $scope.galleryDataReady = status;
-                        $timeout(function() {
-                            //console.log("Count finished - showing gallery");
-                            $scope.ShowWelcomeImage = false;
-                        }, 10000, true);
-                    },
-                    function(reason) { // error
-                        $scope.serverError = true;
-                        console.error("Error while talking to server: ", reason);
-                        $scope.serverErrorMessage = reason;
-                    }
-                ).catch(function(exception) {
-                    console.error("Exception while asking for gallery data: ", exception);
-                });
-        }
-
-        Initialize();
-    }]);
+    ]);
 }());
