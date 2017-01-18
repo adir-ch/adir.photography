@@ -177,18 +177,6 @@
       </tags>
     </photo>
     <photo>
-      <filename>build-photos-xml.sh</filename>
-      <title>build-photos-xml</title>
-      <metadata>
-        <width>0</width>
-        <height>0</height>
-      </metadata>
-      <caption>build-photos-xml</caption>
-      <tags>
-        <tag />
-      </tags>
-    </photo>
-    <photo>
       <filename>business-man.jpg</filename>
       <title>business-man</title>
       <metadata>
@@ -766,18 +754,6 @@ Ev: 14.62</caption>
         <tag>Portfolio-2</tag>
         <tag>ap-travel</tag>
         <tag>ap-website</tag>
-      </tags>
-    </photo>
-    <photo>
-      <filename>photos.xml</filename>
-      <title>photos</title>
-      <metadata>
-        <width>0</width>
-        <height>0</height>
-      </metadata>
-      <caption>photos</caption>
-      <tags>
-        <tag />
       </tags>
     </photo>
     <photo>
