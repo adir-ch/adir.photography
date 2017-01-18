@@ -318,6 +318,8 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\ngDialog.js" />
     <Content Include="Scripts\ngDialog.min.js" />
+    <Content Include="Scripts\ngprogress.js" />
+    <Content Include="Scripts\ngprogress.min.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\Angular\_references.js" />
     <Content Include="Scripts\Photoswipe\default-skin\default-skin.css" />
