@@ -1,6 +1,6 @@
 body {
-    font-size: .85em;
-    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    /*font-size: .85em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;*/
     color: #232323;
     background-color: black;
     overflow: hidden;
@@ -23,7 +23,7 @@ body {
 #ap-gallery-welcome {
     width: 100%;
     height: 100%;
-    background: url(/Content/Photos/welcome.jpg) no-repeat center center fixed;
+    background: url(/Content/Photos/Welcome.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -42,7 +42,7 @@ body {
     text-transform: uppercase;
     color: white;
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
-    font-size: 1300%;
+    font-size: 150px;
     position: relative;
     top: 20%;
     left: 10%;
@@ -81,7 +81,6 @@ body {
     #ap-welcome-text {
         font-size: 700%;
     }
-
     #ap-welcome-loading-text {
         font-size: 280%;
     }
@@ -91,7 +90,6 @@ body {
     #ap-welcome-text {
         font-size: 500%;
     }
-
     #ap-welcome-loading-text {
         font-size: 250%;
     }
@@ -101,8 +99,26 @@ body {
     #ap-welcome-text {
         font-size: 300%;
     }
-
     #ap-welcome-loading-text {
         font-size: 200%;
     }
+}
+
+.fadein.ng-hide-remove,
+.fadeout.ng-hide-add {
+    -webkit-transition: 400ms ease-in-out all;
+    -moz-transition: 400ms ease-in-out all;
+    -o-transition: 400ms ease-in-out all;
+    transition: 400ms ease-in-out all;
+    display: block !important;
+}
+
+.fadein.ng-hide-remove,
+.fadeout.ng-hide-add.ng-hide-add-active {
+    opacity: 0;
+}
+
+.fadeout.ng-hide-add,
+.fadein.ng-hide-remove.ng-hide-remove-active {
+    opacity: 1;
 }

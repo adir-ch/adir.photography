@@ -2,31 +2,32 @@
 <link rel="stylesheet" href="/Content/ngProgress.css">
 
 <div ng-hide="serverError" ng-cloak>
-    <div id="welcome-gallery-content">
-        <div id="ap-gallery-welcome" ng-show="ShowWelcomeImage" class="fade ng-enter">
-            <div id="ap-welcome-elements">
+    <div ng-show="ShowWelcomeImage" class="fade ng-enter">
+        <div id="ap-gallery-welcome">
+            <div id="ap-welcome-elements" ng-show="ShowWelcomeElements" class="fade ng-enter">
                 <h1 id="ap-welcome-text">Welcome</h1>
                 <div id="ap-loading-elements">
                     <!--<img id="ap-welcome-cycle-loader" src="/Content/Images/ajax-loader.gif" />-->
                     <h2 id="ap-welcome-loading-text">Loading, please wait...</h2>
                 </div>
             </div>
-            <!--<img id="ap-welcome-image" src="/Content/Photos/welcome.jpg">-->
         </div>
-
-        <div ng-if="galleryDataReady" id="gallery-directive-content" ng-hide="ShowWelcomeImage">
+    </div>
+    <div ng-hide="ShowWelcomeImage">
+        <div ng-if="StarSlideShowtDirective" id="gallery-directive-content">
             <ap-max-image gallery-data="galleryData()" gallery-name="galleryName" user-name="userName"></ap-max-image>
         </div>
     </div>
+</div>
 
-    <div ng-if="serverError">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="alert alert-danger ap-gallery-error-message" role="alert">Gallery error: {{serverErrorMessage}}
-                        <span aria-hidden="true" class="glyphicon glyphicon glyphicon-info-sign"></span></div>
-                </div>
+<div ng-if="serverError">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="alert alert-danger ap-gallery-error-message" role="alert">Gallery error: {{serverErrorMessage}}
+                    <span aria-hidden="true" class="glyphicon glyphicon glyphicon-info-sign"></span></div>
             </div>
         </div>
     </div>
+</div>
 </div>

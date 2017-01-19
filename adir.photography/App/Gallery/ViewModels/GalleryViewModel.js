@@ -5,16 +5,18 @@
 
             //console.log("Gallery ViewModel");
 
+            var timeout = 10000;
+
             $scope.galleryDataReady = false;
+            $scope.StarSlideShowtDirective = false;
             $scope.galleryName = "Main";
             $scope.userName = "default";
             $scope.serverError = false;
             $scope.serverErrorMessage = "";
-            //$scope.isMobile = false;
             $scope.isMobileView = false;
             $scope.isLandscapeView = false;
             $scope.ShowWelcomeImage = true;
-
+            $scope.ShowWelcomeElements = true;
             $scope.progressbar = ngProgressFactory.createInstance();
 
             $scope.galleryData = function() {
@@ -48,11 +50,20 @@
                         function(status) { // success
                             //console.log("Gallery data ready");
                             $scope.galleryDataReady = status;
+
+                            // fade welcome text 1 sec erlier 
+                            $timeout(function() {
+                                $scope.ShowWelcomeElements = false;
+                            }, (timeout - 1000), true);
+
                             $timeout(function() {
                                 //console.log("Count finished - showing gallery");
                                 $scope.progressbar.complete();
                                 $scope.ShowWelcomeImage = false;
-                            }, 10000, true);
+
+                                // to prevent directive CSS from being loaded. 
+                                $scope.StarSlideShowtDirective = $scope.galleryDataReady;
+                            }, timeout, true);
                         },
                         function(reason) { // error
                             $scope.serverError = true;
