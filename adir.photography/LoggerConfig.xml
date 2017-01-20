@@ -10,14 +10,14 @@
 
     <!-- Set root logger level to DEBUG and its only appender to Console -->
     <root>
-      <level value="WARN" />
+      <level value="INFO" />
       <appender-ref ref="RollingFileAppender" />
       <!--<appender-ref ref="Console" />-->
     </root>
 
     <!--Photo repository log-->
-    <logger name="PhotoReprository" additivity="false">
-      <level value="WARN" />
+    <logger name="PhotoReprository" additivity="true">
+      <level value="INFO" />
       <appender-ref ref="RollingFileAppender"/>
     </logger>
 

@@ -48,7 +48,7 @@ namespace adir.photography.Controllers
             
             try 
             {
-                int status = _registerDataService.AddNewInfoSubscriber(value.Email);
+                bool status = _registerDataService.AddNewInfoSubscriber(value.Email);
                 return Ok();
             }
             catch (Exception e)

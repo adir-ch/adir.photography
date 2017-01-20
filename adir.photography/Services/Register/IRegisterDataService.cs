@@ -6,7 +6,7 @@ namespace adir.photography.Services.Register
 {
     public interface IRegisterDataService
     {
-        int AddNewInfoSubscriber(string emailAddress);
-        int AddNewNewsLetterSubscriber(RegisterInfoModel subscriberInfo);
+        bool AddNewInfoSubscriber(string emailAddress);
+        bool AddNewNewsLetterSubscriber(RegisterInfoModel subscriberInfo);
     }
 }
