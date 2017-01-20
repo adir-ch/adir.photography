@@ -19,6 +19,11 @@
             controller: 'AlbumsViewModel'
         });
 
+        $routeProvider.when('/gallery/albums/welcome', {
+            templateUrl: 'App/Gallery/Views/AlbumsWelcomeView.html',
+            controller: 'AlbumsWelcomeViewModel'
+        });
+
         $routeProvider.when('/gallery/album/:albumId', {
             templateUrl: 'App/Gallery/Views/AlbumView.html',
             controller: 'AlbumViewModel'
@@ -51,12 +56,17 @@
         }
 
         function isMainPageRoute(route) {
-            return (route.indexOf("/gallery/album/:albumId") === -1);
+            //return (route.indexOf("/gallery/album/:albumId") === -1);
+            if (route === "/" || route === "/gallery/") {
+                return true;
+            }
+
+            return false;
         }
 
         // supported events: $routeChangeError, $routeChangeSuccess
         $rootScope.$on('$routeChangeStart', function(event, current, previous) {
-            //$log.debug("route change start: ", $location.path(), " current: ", current.originalPath);
+            $log.debug("route change start: ", $location.path(), " current: ", current.originalPath);
 
             var route = $location.path();
             if (current.originalPath !== undefined) {
@@ -64,11 +74,11 @@
             }
 
             if (isMainPageRoute(route) == true) { // not going to album page  
-                //$log.debug("going to main page");
+                //$log.debug("going to main page, route:", route);
                 adjustGalleryViewSettings();
                 if (portrait == true) { // portrait - show albums
                     //console.log("portrait");
-                    $location.path("/gallery/albums");
+                    $location.path("/gallery/albums/welcome");
                 }
             }
         });

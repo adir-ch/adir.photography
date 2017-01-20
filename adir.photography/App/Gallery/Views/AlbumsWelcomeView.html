@@ -1,0 +1,28 @@
+﻿<link rel="stylesheet" href="/Content/albums.css">
+<link rel="stylesheet" href="/Content/ngProgress.css">
+
+<div ng-show="ShowWelcomeImage" class="fade ng-enter">
+    <div id="ap-gallery-welcome">
+        <div id="ap-welcome-elements" ng-show="ShowWelcomeElements" class="fade ng-enter">
+            <h1 id="ap-welcome-text">Welcome</h1>
+            <div id="ap-loading-elements">
+                <!--<img id="ap-welcome-cycle-loader" src="/Content/Images/ajax-loader.gif" />-->
+                <h2 id="ap-welcome-loading-text">Loading, please wait...</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-if="serverError">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="alert alert-danger ap-gallery-error-message" role="alert">
+                    Albums page error: {{serverErrorMessage}}
+                    <span class="glyphicon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
