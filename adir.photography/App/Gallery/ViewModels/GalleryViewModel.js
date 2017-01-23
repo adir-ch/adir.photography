@@ -1,81 +1,123 @@
 ﻿(function() {
-    angular.module('gallery').controller("GalleryViewModel", ['$scope', '$routeParams', '$window', '$location', '$timeout', 'ngProgressFactory', 'GalleryResources',
 
-        function($scope, $routeParams, $window, $location, $timeout, ngProgressFactory, GalleryResources) {
+    'use strict';
 
-            //console.log("Gallery ViewModel");
+    angular
+        .module('gallery')
+        .controller('GalleryViewModel', GalleryViewModel);
 
-            var timeout = 10000;
+    GalleryViewModel.$inject = [
+        '$routeParams',
+        '$window',
+        '$location',
+        '$timeout',
+        'ngProgressFactory',
+        'ImageLoader',
+        'GalleryResources'
+    ];
 
-            $scope.galleryDataReady = false;
-            $scope.StarSlideShowtDirective = false;
-            $scope.galleryName = "Main";
-            $scope.userName = "default";
-            $scope.serverError = false;
-            $scope.serverErrorMessage = "";
-            $scope.isMobileView = false;
-            $scope.isLandscapeView = false;
-            $scope.ShowWelcomeImage = true;
-            $scope.ShowWelcomeElements = true;
-            $scope.progressbar = ngProgressFactory.createInstance();
+    function GalleryViewModel(
+        $routeParams,
+        $window,
+        $location,
+        $timeout,
+        ngProgressFactory,
+        ImageLoader,
+        GalleryResources) {
 
-            $scope.galleryData = function() {
-                //console.log("read gallery data");
-                return GalleryResources.galleryData();
-            };
+        //console.log("Starting gallery controller");
+        var vm = this;
 
-            if ($routeParams.galleryId) {
-                //console.log("setting gallery name from route to: " + $routeParams.galleryId);
-                $scope.galleryName = $routeParams.galleryId;
-            }
+        vm.galleryDataReady = false;
+        vm.progressbar = ngProgressFactory.createInstance();
+        vm.galleryData = GetGalleryData;
+        vm.galleryName = "Main";
+        vm.userName = "default";
+        vm.serverError = false;
+        vm.serverErrorMessage = "";
+        vm.progressbarStep = 0;
+        vm.ShowWelcomeElements = true;
+        vm.StarSlideShowtDirective = false;
+        vm.ShowWelcomeImage = true;
+        var timeout = 3000;
 
-            // function subscribeToWindowResizeEvent() {
-            //     angular.element($window).bind('resize', function() {
-            //         console.log("windows size changed: " + $window.innerWidth);
-            //     })
-            // }
-
-            Initialize = function() {
-
-                //subscribeToWindowResizeEvent();
-
-                // get all the images + opening image.
-                //console.log("calling Gallery API");
-                //console.log("Asking for gallery: " + $scope.galleryName);
-                //console.log("service: ", GalleryResources);
-                //GalleryResources.getGalleryData($scope.galleryName, callback);
-                $scope.progressbar.start();
-                GalleryResources.getGalleryData($scope.galleryName)
-                    .then(
-                        function(status) { // success
-                            //console.log("Gallery data ready");
-                            $scope.galleryDataReady = status;
-
-                            // fade welcome text 1 sec erlier 
-                            $timeout(function() {
-                                $scope.ShowWelcomeElements = false;
-                            }, (timeout - 1000), true);
-
-                            $timeout(function() {
-                                //console.log("Count finished - showing gallery");
-                                $scope.progressbar.complete();
-                                $scope.ShowWelcomeImage = false;
-
-                                // to prevent directive CSS from being loaded. 
-                                $scope.StarSlideShowtDirective = $scope.galleryDataReady;
-                            }, timeout, true);
-                        },
-                        function(reason) { // error
-                            $scope.serverError = true;
-                            console.error("Error while talking to server: ", reason);
-                            $scope.serverErrorMessage = reason;
-                        }
-                    ).catch(function(exception) {
-                        console.error("Exception while asking for gallery data: ", exception);
-                    });
-            }
-
-            Initialize();
+        if ($routeParams.galleryId) {
+            //console.log("setting gallery name from route to: " + $routeParams.galleryId);
+            vm.galleryName = $routeParams.galleryId;
         }
-    ]);
+
+        activate();
+
+        function activate() {
+            GalleryResources.getGalleryData(vm.galleryName)
+                .then(
+                    function(status) { // success
+                        vm.galleryDataReady = status;
+                        HandleGalleryDataReady();
+                    },
+                    function(reason) { // error
+                        vm.serverError = true;
+                        console.error("Error while talking to server: ", reason);
+                        vm.serverErrorMessage = reason;
+                    }
+                ).catch(function(exception) {
+                    console.error("Exception while asking for gallery data: ", exception);
+                });
+        }
+
+        /////////////// Functions implementation 
+
+        function GetGalleryData() {
+            return GalleryResources.galleryData();
+        }
+
+        function HandleGalleryDataReady() {
+            //console.log("Gallery data ready");
+            vm.progressbarStep = (100 / (vm.galleryData().GalleryPhotos.length + 1));
+            vm.progressbar.set(vm.progressbarStep);
+            //console.log(vm.progressbar.status());
+            PreLoadPhotos();
+        }
+
+        function HandlePhotoPreLoadingFinished() {
+            //console.log("Finished pre-loading all photos");
+            vm.progressbar.complete();
+
+            $timeout(function() {
+                vm.ShowWelcomeElements = false;
+                vm.ShowWelcomeImage = false;
+            }, (timeout - 1000), true);
+
+            $timeout(function() {
+                vm.ShowWelcomeImage = false;
+                vm.StarSlideShowtDirective = true;
+            }, timeout, true);
+        }
+
+        function PreLoadPhotos() {
+            var preLoaderArray = BuildPhotosPreLoaderArray();
+
+            angular.forEach(preLoaderArray, function(photo) {
+                ImageLoader.loadImage(photo).then(function(loadedString) {
+
+                    if (vm.progressbar.status() >= 100) {
+                        HandlePhotoPreLoadingFinished();
+                    }
+
+                    vm.progressbar.set(vm.progressbar.status() + vm.progressbarStep);
+                });
+            });
+        }
+
+        function BuildPhotosPreLoaderArray() {
+            var photos = [];
+            photos.push(vm.galleryData().ImagesLocation + "/" + vm.galleryData().OpeningPhoto);
+
+            angular.forEach(vm.galleryData().GalleryPhotos, function(photo) {
+                this.push(vm.galleryData().ImagesLocation + "/" + photo.FileName);
+            }, photos);
+
+            return photos;
+        }
+    }
 }());

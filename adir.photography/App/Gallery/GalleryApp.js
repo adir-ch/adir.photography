@@ -1,12 +1,13 @@
 ﻿(function() {
     'use strict';
 
-    angular.module('gallery', ['ngRoute', 'ngAnimate', 'ngProgress', 'AppCommonServices'])
+    angular.module('gallery', ['ngRoute', 'ngAnimate', 'ngProgress', 'sap.imageloader', 'AppCommonServices'])
 
     .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
         $routeProvider.when('/', {
             templateUrl: 'App/Gallery/Views/GalleryView.html',
-            controller: 'GalleryViewModel'
+            controller: 'GalleryViewModel',
+            controllerAs: 'vm'
         });
 
         // $routeProvider.when('/gallery/show/:galleryId', {
@@ -66,7 +67,7 @@
 
         // supported events: $routeChangeError, $routeChangeSuccess
         $rootScope.$on('$routeChangeStart', function(event, current, previous) {
-            $log.debug("route change start: ", $location.path(), " current: ", current.originalPath);
+            //$log.debug("route change start: ", $location.path(), " current: ", current.originalPath);
 
             var route = $location.path();
             if (current.originalPath !== undefined) {

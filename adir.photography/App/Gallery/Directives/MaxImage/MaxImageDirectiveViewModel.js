@@ -70,8 +70,8 @@
     function InitMaxImage(slideChangeDelay) {
         //console.log("maximage start");
         jQuery('#maximage').maximage({
-            // cssBackgroundSize: false,
-            // backgroundSize: maximageBackground,
+            cssBackgroundSize: false,
+            backgroundSize: maximageBackground,
             cycleOptions: {
                 fx: 'fade',
                 speed: 1000,

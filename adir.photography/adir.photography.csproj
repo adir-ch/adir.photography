@@ -174,10 +174,12 @@
     <Content Include="App\Gallery\GalleryApp.js" />
     <Content Include="App\Gallery\Services\GalleryServices.js" />
     <Content Include="App\Gallery\ViewModels\AlbumsViewModel.js" />
+    <Content Include="App\Gallery\ViewModels\AlbumsWelcomeViewModel.js" />
     <Content Include="App\Gallery\ViewModels\AlbumViewModel.js" />
     <Content Include="App\Gallery\ViewModels\GalleryViewModel.js" />
     <Content Include="App\Gallery\Directives\MaxImage\MaxImageDirectiveViewModel.js" />
     <Content Include="App\Gallery\Views\AlbumsView.html" />
+    <Content Include="App\Gallery\Views\AlbumsWelcomeView.html" />
     <Content Include="App\Gallery\Views\AlbumView.html" />
     <Content Include="App\Gallery\Views\GalleryView.html" />
     <Content Include="App\Gallery\Directives\MaxImage\MaxImageDirectiveView.html" />
@@ -273,6 +275,8 @@
     <Content Include="Icon.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\image-loader.js" />
+    <Content Include="Scripts\image-loader.min.js" />
     <Content Include="Scripts\jQuery\jquery-1.8.2.js" />
     <Content Include="Scripts\jQuery\jquery-1.8.2.min.js" />
     <None Include="Scripts\jQuery\jquery-2.1.4.intellisense.js" />
