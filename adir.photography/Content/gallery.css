@@ -38,18 +38,6 @@ body {
     z-index: 1000;
 }
 
-#ap-welcome-text {
-    text-transform: uppercase;
-    color: white;
-    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
-    font-size: 150px;
-    position: relative;
-    top: 20%;
-    left: 10%;
-    z-index: 1000;
-    opacity: 0.7;
-}
-
 #ap-loading-elements {
     margin-top: 20px;
     position: relative;
@@ -57,50 +45,51 @@ body {
     left: 70%;
 }
 
+#ap-welcome-text {
+    text-transform: uppercase;
+    color: white;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 115px;
+    position: relative;
+    top: 20%;
+    left: 10%;
+    z-index: 1000;
+    opacity: 0.7;
+}
+
 #ap-welcome-loading-text {
     color: white;
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
-    font-size: 300%;
+    font-size: 220%;
     position: relative;
     opacity: 0.7;
     float: left;
 }
 
-#ap-welcome-image {
-    position: fixed;
-    min-width: 100%;
-    min-height: 100%;
-}
-
-#ap-welcome-cycle-loader {
-    float: right;
-    margin-right: 10px;
-}
-
 @media (max-width: 900px) {
     #ap-welcome-text {
-        font-size: 700%;
+        font-size: 100px;
     }
     #ap-welcome-loading-text {
-        font-size: 280%;
+        font-size: 200%;
     }
 }
 
 @media (max-width: 700px) {
     #ap-welcome-text {
-        font-size: 500%;
+        font-size: 80px;
     }
     #ap-welcome-loading-text {
-        font-size: 250%;
+        font-size: 150%;
     }
 }
 
 @media (max-width: 550px) {
     #ap-welcome-text {
-        font-size: 300%;
+        font-size: 50px;
     }
     #ap-welcome-loading-text {
-        font-size: 200%;
+        font-size: 100%;
     }
 }
 
