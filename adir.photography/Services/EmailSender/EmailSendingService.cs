@@ -2,6 +2,7 @@
 using log4net;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
@@ -11,7 +12,9 @@ namespace adir.photography.Services.EmailSender
 {
     public class EmailSendingService : IEmailSendingService
     {
-        private const string _to = "info@adir.photography"; // TODO: take from DB  
+        private const string _to = "adir.work@gmail.com"; // TODO: take from DB  
+        private const string _from = "info@adir.photography"; // TODO: take from DB  
+        private static bool _asyncEmailSendStatus; 
         private static readonly ILog _log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         public bool SendEmail(ContactFormModel contactFormInputData)
@@ -23,7 +26,8 @@ namespace adir.photography.Services.EmailSender
 
             var message = BuildEmailMessage(contactFormInputData);
             bool status = SMTPSendEmail(message);
-            _log.DebugFormat("SMTP send mail: {0}", (status ? "Successful" : "Failed")); 
+            _log.DebugFormat("SMTP send mail: {0}", (status ? "Successful" : "Failed"));
+            message.Dispose();
             return status;
         }
 
@@ -75,9 +79,9 @@ namespace adir.photography.Services.EmailSender
                                             contactFormInputData.Country,
                                             contactFormInputData.Message);
 
-            MailMessage mailMessage = new MailMessage(contactFormInputData.EmailAddress, _to);
+            MailMessage mailMessage = new MailMessage(_from, _to);
             mailMessage.BodyEncoding = Encoding.UTF8; 
-            mailMessage.Sender = new MailAddress(contactFormInputData.EmailAddress);
+            //mailMessage.Sender = new MailAddress(contactFormInputData.EmailAddress);
             mailMessage.Subject = messageSubject;
             mailMessage.Body = messageBody;
             mailMessage.IsBodyHtml = true;
@@ -87,25 +91,45 @@ namespace adir.photography.Services.EmailSender
 
         private bool SMTPSendEmail(MailMessage message)
         {
-            bool status = false; 
-            SmtpClient smtp = new SmtpClient();
-            smtp.Host = "smtp.gmail.com";
-            smtp.Credentials = new System.Net.NetworkCredential("adir.work@gmail.com", "mombasa!");
-            smtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
-            smtp.EnableSsl = true;
-            
-            try 
+            bool status = false;
+
+            using (var smtp = new SmtpClient())
             {
-                smtp.Send(message);
-                _log.DebugFormat("email sent successfuly"); 
-                status = true; 
+                // settings are taken from web.config
+                //smtp.Host = "smtp.gmail.com";
+                //smtp.Credentials = new System.Net.NetworkCredential("adir.work@gmail.com", "****");
+                //smtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+                //smtp.SendCompleted += new SendCompletedEventHandler(SendCompletedCallback);
+                smtp.EnableSsl = false;
+
+                try
+                {
+                    smtp.Send(message); // not doing async for now
+                    _log.DebugFormat("email sent successfuly");
+                    status = true;
+                }
+                catch (Exception e)
+                {
+                    _log.ErrorFormat("Error sending email: {0}", e.ToString());
+                }
             }
-            catch(Exception e) 
-            {
-                _log.ErrorFormat("Error sending email: {0}", e.ToString()); 
-            }
-            
             return status;
+        }
+
+        private static void SendCompletedCallback(object sender, AsyncCompletedEventArgs e)
+        {
+            // Get the unique identifier for this asynchronous operation.
+            String token = (string)e.UserState;
+
+            if (e.Error != null)
+            {
+                _log.ErrorFormat("Error sending email: {0}", e.Error.ToString());
+            }
+            else
+            {
+                _log.DebugFormat("email sent successfuly (id: {0})", token);
+            }
+            _asyncEmailSendStatus = true;
         }
     }
 }
