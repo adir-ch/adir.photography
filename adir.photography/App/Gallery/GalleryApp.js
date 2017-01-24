@@ -22,7 +22,8 @@
 
         $routeProvider.when('/gallery/albums/welcome', {
             templateUrl: 'App/Gallery/Views/AlbumsWelcomeView.html',
-            controller: 'AlbumsWelcomeViewModel'
+            controller: 'AlbumsWelcomeViewModel',
+            controllerAs: 'vm'
         });
 
         $routeProvider.when('/gallery/album/:albumId', {

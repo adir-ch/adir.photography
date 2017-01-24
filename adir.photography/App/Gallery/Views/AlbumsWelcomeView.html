@@ -1,18 +1,26 @@
 ﻿<link rel="stylesheet" href="/Content/albums.css">
 <link rel="stylesheet" href="/Content/ngProgress.css">
 
-<div ng-show="ShowWelcomeImage" class="fade ng-enter">
-    <div id="ap-gallery-welcome">
-        <div id="ap-welcome-elements" ng-show="ShowWelcomeElements" class="fade ng-enter">
-            <h1 id="ap-welcome-text">Welcome</h1>
-            <div id="ap-loading-elements">
-                <!--<img id="ap-welcome-cycle-loader" src="/Content/Images/ajax-loader.gif" />-->
-                <h2 id="ap-welcome-loading-text">Loading, please wait...</h2>
+<div ng-hide="vm.serverError" ng-cloak>
+    <div ng-show="vm.ShowWelcomeImage" class="fade ng-enter">
+        <div id="ap-gallery-welcome">
+            <div id="ap-welcome-elements" ng-show="vm.ShowWelcomeElements" class="fade ng-enter">
+                <h1 id="ap-welcome-text">Welcome</h1>
+                <div id="ap-loading-elements">
+                    <!--<img id="ap-welcome-cycle-loader" src="/Content/Images/ajax-loader.gif" />-->
+                    <h2 id="ap-welcome-loading-text">Loading, please wait...</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-hide="vm.ShowWelcomeImage">
+        <div ng-if="vm.StarAlbumsDisplayDirective">
+            <div class="fade ng-enter">
+                <ap-albums-display data="vm.albumsData()"></ap-albums-display>
             </div>
         </div>
     </div>
 </div>
-
 <div ng-if="serverError">
     <div class="container-fluid">
         <div class="row">
