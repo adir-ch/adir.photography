@@ -73,6 +73,8 @@
 
         function HandleGalleryDataReady() {
             //console.log("Gallery data ready");
+
+            // +1 = added welcome image
             vm.progressbarStep = (100 / (vm.galleryData().GalleryPhotos.length + 1));
             vm.progressbar.set(vm.progressbarStep);
             //console.log(vm.progressbar.status());
@@ -99,7 +101,7 @@
 
             angular.forEach(preLoaderArray, function(photo) {
                 ImageLoader.loadImage(photo).then(function(loadedString) {
-
+                    //console.log("loaded photo: " + photo + " percent=" + vm.progressbar.status());
                     if (vm.progressbar.status() >= 100) {
                         HandlePhotoPreLoadingFinished();
                     }
@@ -111,7 +113,8 @@
 
         function BuildPhotosPreLoaderArray() {
             var photos = [];
-            photos.push(vm.galleryData().ImagesLocation + "/" + vm.galleryData().OpeningPhoto);
+            photos.push(vm.galleryData().ImagesLocation + "/welcome.jpg");
+            //photos.push(vm.galleryData().ImagesLocation + "/" + vm.galleryData().OpeningPhoto);
 
             angular.forEach(vm.galleryData().GalleryPhotos, function(photo) {
                 this.push(vm.galleryData().ImagesLocation + "/" + photo.FileName);
