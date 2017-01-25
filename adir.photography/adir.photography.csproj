@@ -130,6 +130,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ClientLoggingController.cs" />
     <Compile Include="Controllers\GalleryApiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
@@ -163,6 +164,7 @@
     <Content Include="App\Common\Directives\MfbButtonMenu\ButtonMenuDirectiveViewModel.js" />
     <Content Include="App\Common\Directives\MfbButtonMenu\MfbButtonMenuViewModel.js" />
     <Content Include="App\Common\Services\AppCommonServices.js" />
+    <Content Include="App\Common\Services\ExceptionHandlerExt.js" />
     <Content Include="App\Common\Services\GlobalConfigurationService.js" />
     <Content Include="App\Common\Services\WebApiService.js" />
     <Content Include="App\Gallery\Directives\AlbumsDisplay\AlbumsDisplayDirectiveView.html" />

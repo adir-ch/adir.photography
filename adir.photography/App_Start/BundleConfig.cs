@@ -53,6 +53,7 @@ namespace adir.photography
                         "~/App/AppMainViewModel.js",
                         "~/App/Common/Services/AppCommonServices.js",
                         "~/App/Common/Services/WebApiService.js",
+                        "~/App/Common/Services/ExceptionHandlerExt.js",
                         "~/App/Common/Services/GlobalConfigurationService.js",
                         "~/App/Common/Directives/AppCommonDirectives.js",
                         "~/App/Common/Directives/LoginDialog/LoginDialogDirectiveViewModel.js",

@@ -21,6 +21,11 @@
       <appender-ref ref="RollingFileAppender"/>
     </logger>
 
+    <!--Client exceptions log-->
+    <logger name="ClientLogger" additivity="false">
+      <level value="INFO" />
+      <appender-ref ref="ClientRollingFileAppender"/>
+    </logger>
 
     <!--Appenders-->
     <appender name="EventLogAppender" type="log4net.Appender.EventLogAppender">
@@ -55,6 +60,20 @@
       </layout>
     </appender>
 
+    <appender name="ClientRollingFileAppender" type="log4net.Appender.RollingFileAppender">
+      <file value="Log/client-log.txt" />
+      <appendToFile value="true" />
+      <rollingStyle value="Size" />
+      <maxSizeRollBackups value="10" />
+      <maximumFileSize value="1MB" />
+      <staticLogFileName value="true" />
+      <layout type="log4net.Layout.PatternLayout">
+        <!--<conversionPattern value="%date [%thread] %-5level %logger [ %property{UserId} ] - %message%newline" />-->
+        <conversionPattern value="%date [%thread] %-5level %logger [ %property{SessionId} ] - %message%newline" />
+        <!--<conversionPattern value="%date [%thread] %-5level %logger [%aspnet-request{ASP.NET_SessionId}] [%property{NDC}] - %message%newline" />-->
+      </layout>
+    </appender>
+    
   </log4net>
 
 </configuration>
