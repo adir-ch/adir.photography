@@ -64,6 +64,22 @@
       </tags>
     </photo>
     <photo>
+      <filename>antique-market.jpg</filename>
+      <title>antique-market</title>
+      <metadata>
+        <width>1626</width>
+        <height>1080</height>
+      </metadata>
+      <caption>A.C(C)</caption>
+      <tags>
+        <tag />
+        <tag>Portfolio-1</tag>
+        <tag>Portfolio-2</tag>
+        <tag>ap-travel</tag>
+        <tag>ap-website</tag>
+      </tags>
+    </photo>
+    <photo>
       <filename>arch.jpg</filename>
       <title>arch</title>
       <metadata>
@@ -208,8 +224,8 @@
       </tags>
     </photo>
     <photo>
-      <filename>city-scape.jpg</filename>
-      <title>city-scape</title>
+      <filename>cityscape.jpg</filename>
+      <title>cityscape</title>
       <metadata>
         <width>1626</width>
         <height>1080</height>
@@ -285,6 +301,39 @@
       </tags>
     </photo>
     <photo>
+      <filename>down-climbe.jpg</filename>
+      <title>down-climbe</title>
+      <metadata>
+        <width>1704</width>
+        <height>1080</height>
+      </metadata>
+      <caption>A.C(C)</caption>
+      <tags>
+        <tag />
+        <tag>Portfolio-1</tag>
+        <tag>Portfolio-2</tag>
+        <tag>ap-website</tag>
+        <tag>ap-wildlife</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>favela-2.jpg</filename>
+      <title>favela</title>
+      <metadata>
+        <width>1626</width>
+        <height>1080</height>
+      </metadata>
+      <caption>A.C(C)</caption>
+      <tags>
+        <tag />
+        <tag>Portfolio-1</tag>
+        <tag>Portfolio-2</tag>
+        <tag>Wedding album</tag>
+        <tag>ap-travel</tag>
+        <tag>ap-website</tag>
+      </tags>
+    </photo>
+    <photo>
       <filename>favela.jpg</filename>
       <title>favela</title>
       <metadata>
@@ -331,6 +380,21 @@
         <tag>Portfolio-2</tag>
         <tag>ap-travel</tag>
         <tag>ap-website</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>gathering.jpg</filename>
+      <title>gathering</title>
+      <metadata>
+        <width>1920</width>
+        <height>739</height>
+      </metadata>
+      <caption>A.C(C)</caption>
+      <tags>
+        <tag />
+        <tag>Portfolio-2</tag>
+        <tag>ap-website</tag>
+        <tag>ap-wildlife</tag>
       </tags>
     </photo>
     <photo>
@@ -495,7 +559,7 @@
       <filename>jungle-town.jpg</filename>
       <title>jungle-town</title>
       <metadata>
-        <width>1626</width>
+        <width>1497</width>
         <height>1080</height>
       </metadata>
       <caption>A.C(C)</caption>
@@ -669,6 +733,7 @@
         <tag>FE-Collection</tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
+        <tag>ap-landscapes</tag>
         <tag>ap-website</tag>
       </tags>
     </photo>
@@ -773,6 +838,22 @@ Ev: 14.62</caption>
       </tags>
     </photo>
     <photo>
+      <filename>resting.jpg</filename>
+      <title>resting</title>
+      <metadata>
+        <width>1433</width>
+        <height>1080</height>
+      </metadata>
+      <caption>A.C(C)</caption>
+      <tags>
+        <tag />
+        <tag>Portfolio-1</tag>
+        <tag>Portfolio-2</tag>
+        <tag>ap-website</tag>
+        <tag>ap-wildlife</tag>
+      </tags>
+    </photo>
+    <photo>
       <filename>rush-hour.jpg</filename>
       <title>rush-hour</title>
       <metadata>
@@ -840,6 +921,36 @@ Ev: 14.62</caption>
       </tags>
     </photo>
     <photo>
+      <filename>signes.jpg</filename>
+      <title>signes</title>
+      <metadata>
+        <width>1626</width>
+        <height>1080</height>
+      </metadata>
+      <caption>A.C(C)</caption>
+      <tags>
+        <tag />
+        <tag>ap-travel</tag>
+        <tag>ap-website</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>sipping.jpg</filename>
+      <title>sipping</title>
+      <metadata>
+        <width>1734</width>
+        <height>1080</height>
+      </metadata>
+      <caption>A.C(C)</caption>
+      <tags>
+        <tag />
+        <tag>Portfolio-1</tag>
+        <tag>Portfolio-2</tag>
+        <tag>ap-website</tag>
+        <tag>ap-wildlife</tag>
+      </tags>
+    </photo>
+    <photo>
       <filename>skylake.jpg</filename>
       <title>skylake</title>
       <metadata>
@@ -881,6 +992,21 @@ Ev: 14.62</caption>
       <caption>A.C(C)</caption>
       <tags>
         <tag />
+        <tag>ap-travel</tag>
+        <tag>ap-website</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>street-cooking.jpg</filename>
+      <title>street-cooking</title>
+      <metadata>
+        <width>1080</width>
+        <height>1626</height>
+      </metadata>
+      <caption>A.C(C)</caption>
+      <tags>
+        <tag />
+        <tag>ap-people</tag>
         <tag>ap-travel</tag>
         <tag>ap-website</tag>
       </tags>
@@ -978,17 +1104,33 @@ Ev: 14.62</caption>
       </tags>
     </photo>
     <photo>
-      <filename>down-climbe.jpg</filename>
-      <title>Down climbing</title>
+      <filename>welcome-p.jpg</filename>
+      <title>back-from-school</title>
       <metadata>
-        <width>1704</width>
-        <height>1080</height>
+        <width>972</width>
+        <height>1463</height>
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag>ap-main</tag>
+        <tag />
+        <tag>Portfolio-1</tag>
+        <tag>Portfolio-2</tag>
+        <tag>ap-people</tag>
         <tag>ap-website</tag>
-        <tag>ap-wildlife</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>welcome.jpg</filename>
+      <title>welcome</title>
+      <metadata>
+        <width>1920</width>
+        <height>962</height>
+      </metadata>
+      <caption>A.C(C)</caption>
+      <tags>
+        <tag />
+        <tag>Portfolio-2</tag>
+        <tag>ap-website</tag>
       </tags>
     </photo>
   </photos>
