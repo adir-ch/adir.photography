@@ -18,14 +18,14 @@ namespace adir.photography.Controllers
         public ViewResult NotFound(string aspxerrorpath)
         {
             Response.StatusCode = 404; 
-            ViewBag.Message = String.Format("The page was not found: {0}", aspxerrorpath);
+            ViewBag.Message = String.Format("Oops, could not find the page you requested");
             return View();
         }
 
         public ViewResult ServerException(string aspxerrorpath)
         {
             Response.StatusCode = 500; 
-            ViewBag.Message = String.Format("Server exception message when accessing: {0}", aspxerrorpath);
+            ViewBag.Message = String.Format("Server exception :(");
             return View();
         }
     }
