@@ -3,10 +3,13 @@
 
     var GlobalSettings = {
         /* local debug */
-        // ServerPath: "http://localhost:61001"
+        //ServerPath: "http://localhost:61001"
 
         /* release */
-        ServerPath: "http://adir.photography"
+        //ServerPath: "http://adir.photography"
+
+        /* Azure */
+        ServerPath: ""
     };
 
     angular
@@ -23,12 +26,13 @@
     function GlobalConfigurationService(GlobalSettings) {
 
         var _WebApiUrls = {
-            gallery: "/api/galleryapi/",
-            galleries: "/api/galleryapi/all",
-            member: "/api/member",
+            gallery: "api/galleryapi/",
+            galleries: "api/galleryapi/all",
+            member: "api/member",
             idmLogin: "/api/idm/login",
-            idmAuthenticate: "/api/idm/login",
-            addNewInfoSubscriber: "api/registerapi/updates"
+            idmAuthenticate: "api/idm/login",
+            addNewInfoSubscriber: "api/registerapi/updates",
+            clientLogging: "api/clientlogging"
         };
 
         return {
