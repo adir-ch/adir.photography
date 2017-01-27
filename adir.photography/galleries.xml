@@ -1103,35 +1103,5 @@ Ev: 14.62</caption>
         <tag>ap-wildlife</tag>
       </tags>
     </photo>
-    <photo>
-      <filename>welcome-p.jpg</filename>
-      <title>back-from-school</title>
-      <metadata>
-        <width>972</width>
-        <height>1463</height>
-      </metadata>
-      <caption>A.C(C)</caption>
-      <tags>
-        <tag />
-        <tag>Portfolio-1</tag>
-        <tag>Portfolio-2</tag>
-        <tag>ap-people</tag>
-        <tag>ap-website</tag>
-      </tags>
-    </photo>
-    <photo>
-      <filename>welcome.jpg</filename>
-      <title>welcome</title>
-      <metadata>
-        <width>1920</width>
-        <height>962</height>
-      </metadata>
-      <caption>A.C(C)</caption>
-      <tags>
-        <tag />
-        <tag>Portfolio-2</tag>
-        <tag>ap-website</tag>
-      </tags>
-    </photo>
   </photos>
 </root>
