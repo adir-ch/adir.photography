@@ -97,6 +97,18 @@
         }
 
         function PreLoadPhotos() {
+            PreLoadWelcomePhoto(); // make sure welcome photo is loaded before all the rest! 
+        }
+
+        function PreLoadWelcomePhoto() {
+            var welcomePhoto = vm.galleryData().ImagesLocation + "/welcome.jpg";
+            ImageLoader.loadImage(welcomePhoto).then(function(loadedString) {
+                vm.progressbar.set(vm.progressbar.status() + vm.progressbarStep);
+                PreLoadGalleryPhotos();
+            });
+        }
+
+        function PreLoadGalleryPhotos() {
             var preLoaderArray = BuildPhotosPreLoaderArray();
 
             angular.forEach(preLoaderArray, function(photo) {
@@ -113,7 +125,7 @@
 
         function BuildPhotosPreLoaderArray() {
             var photos = [];
-            photos.push(vm.galleryData().ImagesLocation + "/welcome.jpg");
+            //photos.push(vm.galleryData().ImagesLocation + "/welcome.jpg");
             //photos.push(vm.galleryData().ImagesLocation + "/" + vm.galleryData().OpeningPhoto);
 
             angular.forEach(vm.galleryData().GalleryPhotos, function(photo) {

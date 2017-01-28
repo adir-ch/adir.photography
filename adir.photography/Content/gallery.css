@@ -23,7 +23,7 @@ body {
 #ap-gallery-welcome {
     width: 100%;
     height: 100%;
-    background: url(/Content/Photos/Welcome.jpg) no-repeat center center fixed;
+    background: url(/Content/Photos/welcome.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
