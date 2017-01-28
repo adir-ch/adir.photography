@@ -227,6 +227,7 @@
     <Content Include="Content\ionicons\_ionicons-variables.less" />
     <Content Include="Content\ionicons\_ionicons-icons.less" />
     <Content Include="Content\ionicons\_ionicons-font.less" />
+    <None Include="Properties\PublishProfiles\adir__adirapftp.pubxml" />
     <None Include="Properties\PublishProfiles\ap-debug.pubxml" />
     <None Include="Properties\PublishProfiles\ap-local-iis-test.pubxml" />
     <None Include="Properties\PublishProfiles\ap-prod.pubxml" />
