@@ -173,8 +173,8 @@ img.ap-responsive-image:hover {
 @media (max-width: 550px) {
     .ap-album-name {
         font-size: 180%;
-        top: 0%;
-        left: 0%;
+        top: 25%;
+        left: 15%;
     }
     #rig li {
         width: 50%;
