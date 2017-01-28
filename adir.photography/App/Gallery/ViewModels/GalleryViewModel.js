@@ -125,8 +125,6 @@
 
         function BuildPhotosPreLoaderArray() {
             var photos = [];
-            //photos.push(vm.galleryData().ImagesLocation + "/welcome.jpg");
-            //photos.push(vm.galleryData().ImagesLocation + "/" + vm.galleryData().OpeningPhoto);
 
             angular.forEach(vm.galleryData().GalleryPhotos, function(photo) {
                 this.push(vm.galleryData().ImagesLocation + "/" + photo.FileName);
