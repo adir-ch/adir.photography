@@ -65,7 +65,7 @@
                 });
         }
 
-        /////////////// Functions implementation 
+        /////////////// Functions implementation
 
         function GetGalleryData() {
             return GalleryResources.galleryData();
@@ -97,7 +97,7 @@
         }
 
         function PreLoadPhotos() {
-            PreLoadWelcomePhoto(); // make sure welcome photo is loaded before all the rest! 
+            PreLoadWelcomePhoto(); // make sure welcome photo is loaded before all the rest!
         }
 
         function PreLoadWelcomePhoto() {
@@ -113,8 +113,8 @@
 
             angular.forEach(preLoaderArray, function(photo) {
                 ImageLoader.loadImage(photo).then(function(loadedString) {
-                    //console.log("loaded photo: " + photo + " percent=" + vm.progressbar.status());
-                    if (vm.progressbar.status() >= 100) {
+                    console.log("loaded photo: " + photo + " percent=" + vm.progressbar.status());
+                    if (vm.progressbar.status() >= 99.5) {
                         HandlePhotoPreLoadingFinished();
                     }
 
