@@ -10,10 +10,11 @@
             controllerAs: 'vm'
         });
 
-        // $routeProvider.when('/gallery/show/:galleryId', {
-        //     templateUrl: '/App/Gallery/Views/GalleryView.html',
-        //     controller: 'GalleryViewModel'
-        // });
+        $routeProvider.when('/gallery/show/:galleryId', {
+            templateUrl: '/App/Gallery/Views/GalleryView.html',
+            controller: 'GalleryViewModel',
+            controllerAs: 'vm'
+        });
 
         $routeProvider.when('/gallery/albums', {
             templateUrl: 'App/Gallery/Views/AlbumsView.html',
