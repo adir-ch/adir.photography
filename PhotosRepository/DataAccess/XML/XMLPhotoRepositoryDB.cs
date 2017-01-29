@@ -172,7 +172,7 @@ namespace PhotosRepository.DataAcess.XML
             }
             catch (Exception)
             {
-                throw;
+                throw new Exception(String.Format("Could not fetch gallery / album with the name {0}", galleryName));
             }
 
             if (galleryEntry == null)

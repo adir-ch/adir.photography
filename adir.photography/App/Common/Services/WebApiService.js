@@ -41,10 +41,6 @@
                 }, function(response) {
                     _onFailure(response);
                     throw _result;
-                })
-                .catch(function(response) {
-                    console.error("Server exception ", response);
-                    throw response;
                 });
         }
 
@@ -56,10 +52,6 @@
                 }, function(response) {
                     _onFailure(response);
                     throw _result;
-                })
-                .catch(function(response) {
-                    console.error("Server exception: ", response);
-                    throw response;
                 });
         }
 

@@ -14,7 +14,7 @@ namespace adir.photography.Services.EmailSender
     {
         private const string _to = "adir.work@gmail.com"; // TODO: take from DB  
         private const string _from = "info@adir.photography"; // TODO: take from DB  
-        private static bool _asyncEmailSendStatus; 
+        //private static bool _asyncEmailSendStatus; 
         private static readonly ILog _log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         public bool SendEmail(ContactFormModel contactFormInputData)

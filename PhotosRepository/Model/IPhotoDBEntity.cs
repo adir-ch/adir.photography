@@ -12,7 +12,7 @@ namespace PhotosRepository.Model
         //string GetCaption();
         //List<string> GetTags();
         //IPhotoMetadata GetMetadata();
-        bool IsDBUpdateNeeded(); 
+        //bool IsDBUpdateNeeded(); 
 
         IPhoto GetPhoto(string filePath, bool forceUpdateFromImageFile = false); 
     }

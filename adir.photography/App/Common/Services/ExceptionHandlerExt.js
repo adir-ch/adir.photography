@@ -18,9 +18,11 @@
             $delegate(exception, cause);
             console.log("excp delegate: ", exception);
 
-            var WebApiService = $injector.get('WebApiService');
+            //var WebApiService = $injector.get('WebApiService');
+            var $http = $injector.get('$http');
             var GlobalConfigurationService = $injector.get('GlobalConfigurationService');
-            WebApiService.apiPost(GlobalConfigurationService.url("clientLogging"), "\"" + exception.message + "\"");
+            //WebApiService.apiPost(GlobalConfigurationService.url("clientLogging"), "\"" + exception.message + "\"");
+            $http.post("/api/clientLogging", "\"" + exception + "\"");
         }
     }
 }());
