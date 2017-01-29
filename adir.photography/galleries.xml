@@ -757,20 +757,6 @@ Ev: 14.62</caption>
       </tags>
     </photo>
     <photo>
-      <filename>pano-zu.jpg</filename>
-      <title>pano-zu</title>
-      <metadata>
-        <width>1627</width>
-        <height>1080</height>
-      </metadata>
-      <caption>A</caption>
-      <tags>
-        <tag />
-        <tag>ap-landscapes</tag>
-        <tag>ap-website</tag>
-      </tags>
-    </photo>
-    <photo>
       <filename>panoramic.jpg</filename>
       <title>panoramic</title>
       <metadata>
@@ -1103,5 +1089,51 @@ Ev: 14.62</caption>
         <tag>ap-wildlife</tag>
       </tags>
     </photo>
+
+    <photo>
+      <filename>patagonia-drive.jpg</filename>
+      <title>patagonia-drive</title>
+      <metadata>
+        <width>1920</width>
+        <height>768</height>
+      </metadata>
+      <caption>A.C(C)</caption>
+      <tags>
+        <tag />
+        <tag>ap-website</tag>
+        <tag>ap-landscapes</tag>
+      </tags>
+    </photo>
+
+    <photo>
+      <filename>torres.jpg</filename>
+      <title>torres</title>
+      <metadata>
+        <width>1920</width>
+        <height>665</height>
+      </metadata>
+      <caption>A.C(C)</caption>
+      <tags>
+        <tag />
+        <tag>ap-website</tag>
+        <tag>ap-landscapes</tag>
+      </tags>
+    </photo>
+
+    <photo>
+      <filename>farm-house.jpg</filename>
+      <title>farm-house</title>
+      <metadata>
+        <width>1626</width>
+        <height>1080</height>
+      </metadata>
+      <caption>A.C(C)</caption>
+      <tags>
+        <tag />
+        <tag>ap-website</tag>
+        <tag>ap-travel</tag>
+      </tags>
+    </photo>
+
   </photos>
 </root>
