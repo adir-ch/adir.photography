@@ -20,11 +20,11 @@
     </div>
 </div>
 
-<div ng-if="serverError">
+<div ng-if="vm.serverError">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12">
-                <div class="alert alert-danger ap-gallery-error-message" role="alert">Gallery error: {{serverErrorMessage}}
+                <div class="alert alert-danger ap-gallery-error-message" role="alert">Gallery error: {{vm.serverErrorMessage}}
                     <span aria-hidden="true" class="glyphicon glyphicon glyphicon-info-sign"></span></div>
             </div>
         </div>

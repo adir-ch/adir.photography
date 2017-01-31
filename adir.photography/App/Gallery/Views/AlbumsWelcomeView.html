@@ -16,17 +16,18 @@
     <div ng-hide="vm.ShowWelcomeImage">
         <div ng-if="vm.StarAlbumsDisplayDirective">
             <div class="fade ng-enter">
-                <ap-albums-display data="vm.albumsData()"></ap-albums-display>
+                <!--<ap-albums-display data="vm.albumsData()"></ap-albums-display>-->
+                <ap-max-image gallery-data="vm.galleryData()" gallery-name="vm.galleryName" user-name="vm.userName"></ap-max-image>
             </div>
         </div>
     </div>
 </div>
-<div ng-if="serverError">
+<div ng-if="vm.serverError">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12">
                 <div class="alert alert-danger ap-gallery-error-message" role="alert">
-                    Albums page error: {{serverErrorMessage}}
+                    Albums page error: {{vm.serverErrorMessage}}
                     <span class="glyphicon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
                 </div>
             </div>
