@@ -20,7 +20,7 @@ body {
     transition-delay: 10ms;
 }
 
-#ap-gallery-welcome {
+#ap-gallery-welcome-landscape {
     width: 100%;
     height: 100%;
     background: url(/Content/Photos/welcome.jpg) no-repeat center center fixed;
@@ -31,10 +31,21 @@ body {
     position: fixed;
 }
 
+#ap-gallery-welcome-portrait {
+    width: 100%;
+    height: 100%;
+    background: url(/Content/Photos/welcome-p.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: fixed;
+}
+
 #ap-welcome-elements {
     position: absolute;
     top: 20%;
-    left: 10%;
+    left: 5%;
     z-index: 1000;
 }
 
@@ -89,7 +100,7 @@ body {
         font-size: 50px;
     }
     #ap-welcome-loading-text {
-        font-size: 100%;
+        font-size: 70%;
     }
 }
 

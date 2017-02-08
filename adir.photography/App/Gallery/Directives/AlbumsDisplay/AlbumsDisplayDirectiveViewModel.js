@@ -30,15 +30,9 @@
 
     function AlbumsDisplayController($attrs) {
         var vm = this;
-        //console.debug(vm.albumsData);
-
-        // $scope.SetAlbumPhoto = function(album) { // not used!!!
-        // 	var css = {
-        // 				'background-image': 'url(\'' + GenerateCssBackgroundImage(album) + '\')',
-        // 			};
-        // 	//console.log(css);
-        // 	return css;
-        // }
+        vm.albums = []; 
+        
+        RemoveMainPortraitAlbum(); 
 
         vm.SetAlbumPhotoStyle = function(album) {
             var css = {
@@ -60,6 +54,14 @@
         vm.GenerateAlbumBackgroundImage = function(album) {
             //console.log(album.ImagesLocation + "/" + album.OpeningPhoto);
             return album.ImagesLocation + "/" + album.OpeningPhoto;
+        }
+
+        function  RemoveMainPortraitAlbum() {
+            angular.forEach(vm.albumsData, function(album) {
+                if (album.Name != "Main-Portrait") {
+                    this.push(album);
+                }
+            }, vm.albums);
         }
     }
 }());

@@ -27,6 +27,8 @@
 
         //console.log("Starting gallery controller");
         var vm = this;
+        var timeout = 3000;
+        var isLandscapeView = true; 
 
         vm.galleryDataReady = false;
         vm.progressbar = ngProgressFactory.createInstance();
@@ -39,16 +41,13 @@
         vm.ShowWelcomeElements = true;
         vm.StarSlideShowtDirective = false;
         vm.ShowWelcomeImage = true;
-        var timeout = 3000;
-
-        if ($routeParams.galleryId) {
-            //console.log("setting gallery name from route to: " + $routeParams.galleryId);
-            vm.galleryName = $routeParams.galleryId;
-        }
-
+        vm.galleryWelcomeId = "ap-gallery-welcome-landscape";
+        
         activate();
 
         function activate() {
+            AdjustGalleryViewSettings();
+            SetGalleryName(); 
             GalleryResources.getGalleryData(vm.galleryName)
                 .then(
                     function(status) { // success
@@ -66,6 +65,19 @@
         }
 
         /////////////// Functions implementation
+
+        function SetGalleryName() {
+            if ($routeParams.galleryId) {
+                //console.log("setting gallery name from route to: " + $routeParams.galleryId);
+                vm.galleryName = $routeParams.galleryId;
+            } else {
+                if (isLandscapeView == true) {
+                    vm.galleryName = "Main"; 
+                } else {
+                    vm.galleryName = "Main-Portrait";
+                }
+            }
+        }
 
         function GetGalleryData() {
             return GalleryResources.galleryData();
@@ -102,6 +114,11 @@
 
         function PreLoadWelcomePhoto() {
             var welcomePhoto = vm.galleryData().ImagesLocation + "/welcome.jpg";
+
+            if (isLandscapeView == false) {
+                welcomePhoto = vm.galleryData().ImagesLocation + "/welcome-p.jpg";
+            }
+
             ImageLoader.loadImage(welcomePhoto).then(function(loadedString) {
                 vm.progressbar.set(vm.progressbar.status() + vm.progressbarStep);
                 PreLoadGalleryPhotos();
@@ -131,6 +148,22 @@
             }, photos);
 
             return photos;
+        }
+
+        function AdjustGalleryViewSettings() {
+            if ($window.innerWidth < $window.innerHeight) { // portrait
+                isLandscapeView = false;
+                vm.galleryWelcomeId = "ap-gallery-welcome-portrait";
+                if ($window.innerWidth < 961) {
+                    //mobile = true;
+                }
+            } else { // landscape 
+                isLandscapeView = true;
+                vm.galleryWelcomeId = "ap-gallery-welcome-landscape";
+                if ($window.innerHeight < 961) {
+                    //mobile = true;
+                }
+            }
         }
     }
 }());

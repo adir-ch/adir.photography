@@ -81,7 +81,7 @@
                 adjustGalleryViewSettings();
                 if (portrait == true) { // portrait - show albums
                     //console.log("portrait");
-                    $location.path("/gallery/albums/welcome");
+                    //$location.path("/gallery/albums/welcome");
                 }
             }
         });

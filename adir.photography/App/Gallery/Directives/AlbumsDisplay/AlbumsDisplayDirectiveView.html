@@ -1,7 +1,7 @@
 <link rel=stylesheet href="/Content/albums.css">
 
 <div id="album-main">
-    <div ng-repeat="album in vm.albumsData">
+    <div ng-repeat="album in vm.albums">
         <div class="ap-album-image">
             <!-- <a ng-href="{{GenerateAlbumLink(gallery.Name)}}"><img class="responsive-image" ng-style="SetAlbumPhoto(gallery)" src="../../../Content/images/ratio-conserver.png"></a> -->
             <a ng-href="{{vm.GenerateAlbumLink(album.Name)}}"><img class="ap-responsive-image" ng-style="vm.SetAlbumPhotoStyle(album)" ng-src="{{vm.GenerateAlbumBackgroundImage(album)}}">

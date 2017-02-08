@@ -10,6 +10,14 @@
       <openingPhoto>patagonia.jpg</openingPhoto>
       <tag>ap-main</tag>
     </gallery>
+    <gallery>
+      <config>
+        <PhotoCycle AutoCycle="true" Timeout="50" />
+      </config>
+      <name>Main-Portrait</name>
+      <openingPhoto>back-from-school.jpg</openingPhoto>
+      <tag>ap-main-p</tag>
+    </gallery>
     <!-- Landscapes -->
     <gallery>
       <config>
@@ -50,6 +58,67 @@
   <!--Photos DB-->
   <photos>
     <photo>
+      <filename>Ally-bike.jpg</filename>
+      <title>Ally-bike</title>
+      <metadata>
+        <width>1440</width>
+        <height>1080</height>
+      </metadata>
+      <caption>Ally-bike</caption>
+      <tags>
+        <tag></tag>
+        <tag>ap-travel</tag>
+        <tag>ap-website</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>Antique-market-p.jpg</filename>
+      <title>Antique-market-p</title>
+      <metadata>
+        <width>1080</width>
+        <height>1626</height>
+      </metadata>
+      <caption>A.C(C)</caption>
+      <tags>
+        <tag></tag>
+        <tag>Portfolio-1</tag>
+        <tag>ap-main-p</tag>
+        <tag>ap-website</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>Flying-Low.jpg</filename>
+      <title>Flying-Low</title>
+      <metadata>
+        <width>1920</width>
+        <height>981</height>
+      </metadata>
+      <caption>A.C(C)</caption>
+      <tags>
+        <tag></tag>
+        <tag>Portfolio-1</tag>
+        <tag>Portfolio-2</tag>
+        <tag>ap-website</tag>
+        <tag>ap-wildlife</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>Getting-there-p.jpg</filename>
+      <title>Getting-there-p</title>
+      <metadata>
+        <width>1080</width>
+        <height>1626</height>
+      </metadata>
+      <caption>A.C(C)</caption>
+      <tags>
+        <tag></tag>
+        <tag>Portfolio-1</tag>
+        <tag>Portfolio-2</tag>
+        <tag>ap-main-p</tag>
+        <tag>ap-website</tag>
+      </tags>
+    </photo>
+    <photo>
       <filename>afternoon-tea.jpg</filename>
       <title>afternoon-tea</title>
       <metadata>
@@ -58,7 +127,7 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>ap-travel</tag>
         <tag>ap-website</tag>
       </tags>
@@ -72,7 +141,7 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-travel</tag>
@@ -88,7 +157,7 @@
       </metadata>
       <caption>arch</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>FE-Collection</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-travel</tag>
@@ -104,7 +173,7 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-people</tag>
@@ -120,7 +189,7 @@
       </metadata>
       <caption>backyard</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Panoramic</tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
@@ -137,7 +206,7 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>ap-travel</tag>
         <tag>ap-website</tag>
       </tags>
@@ -151,7 +220,7 @@
       </metadata>
       <caption>big-sister</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>FE-Collection</tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
@@ -168,7 +237,7 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-travel</tag>
@@ -184,7 +253,7 @@
       </metadata>
       <caption>buddhas</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>FE-Collection</tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
@@ -201,7 +270,7 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-website</tag>
@@ -217,7 +286,7 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-2</tag>
         <tag>ap-travel</tag>
         <tag>ap-website</tag>
@@ -232,8 +301,23 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-2</tag>
+        <tag>ap-travel</tag>
+        <tag>ap-website</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>clean-path.jpg</filename>
+      <title>clean-path</title>
+      <metadata>
+        <width>1080</width>
+        <height>1626</height>
+      </metadata>
+      <caption>A.C(C)</caption>
+      <tags>
+        <tag></tag>
+        <tag>ap-main-p</tag>
         <tag>ap-travel</tag>
         <tag>ap-website</tag>
       </tags>
@@ -247,7 +331,7 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-2</tag>
         <tag>ap-website</tag>
         <tag>ap-wildlife</tag>
@@ -262,7 +346,7 @@
       </metadata>
       <caption>conversation</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>FE-Collection</tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
@@ -279,7 +363,7 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-website</tag>
@@ -295,7 +379,7 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>ap-people</tag>
         <tag>ap-website</tag>
       </tags>
@@ -309,11 +393,27 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-website</tag>
         <tag>ap-wildlife</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>farm-house.jpg</filename>
+      <title>farm-house</title>
+      <metadata>
+        <width>1626</width>
+        <height>1080</height>
+      </metadata>
+      <caption>A.C(C)</caption>
+      <tags>
+        <tag></tag>
+        <tag>Portfolio-1</tag>
+        <tag>Portfolio-2</tag>
+        <tag>ap-travel</tag>
+        <tag>ap-website</tag>
       </tags>
     </photo>
     <photo>
@@ -325,11 +425,25 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>Wedding album</tag>
         <tag>ap-travel</tag>
+        <tag>ap-website</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>favela-p.jpg</filename>
+      <title>favela-p</title>
+      <metadata>
+        <width>1080</width>
+        <height>1626</height>
+      </metadata>
+      <caption>A.C(C)</caption>
+      <tags>
+        <tag></tag>
+        <tag>ap-main-p</tag>
         <tag>ap-website</tag>
       </tags>
     </photo>
@@ -342,7 +456,7 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-people</tag>
@@ -358,7 +472,7 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-website</tag>
@@ -374,7 +488,7 @@
       </metadata>
       <caption>flowers-boat</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>FE-Collection</tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
@@ -391,7 +505,7 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-2</tag>
         <tag>ap-website</tag>
         <tag>ap-wildlife</tag>
@@ -406,7 +520,7 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-2</tag>
         <tag>ap-website</tag>
         <tag>ap-wildlife</tag>
@@ -421,7 +535,7 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-website</tag>
@@ -437,7 +551,7 @@
       </metadata>
       <caption>girona</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-2</tag>
         <tag>ap-main</tag>
         <tag>ap-travel</tag>
@@ -453,12 +567,27 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Panoramic</tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-landscapes</tag>
         <tag>ap-main</tag>
+        <tag>ap-website</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>greek-serenity-p.jpg</filename>
+      <title>greek-serenity-p</title>
+      <metadata>
+        <width>1080</width>
+        <height>1626</height>
+      </metadata>
+      <caption>A.C(C)</caption>
+      <tags>
+        <tag></tag>
+        <tag>Portfolio-1</tag>
+        <tag>ap-main-p</tag>
         <tag>ap-website</tag>
       </tags>
     </photo>
@@ -471,7 +600,7 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-landscapes</tag>
@@ -488,7 +617,7 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>ap-website</tag>
         <tag>ap-wildlife</tag>
       </tags>
@@ -502,7 +631,7 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-landscapes</tag>
@@ -518,7 +647,7 @@
       </metadata>
       <caption>hidden</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>ap-website</tag>
         <tag>ap-wildlife</tag>
       </tags>
@@ -532,7 +661,7 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-landscapes</tag>
@@ -548,7 +677,7 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-landscapes</tag>
@@ -564,7 +693,7 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-2</tag>
         <tag>ap-travel</tag>
         <tag>ap-website</tag>
@@ -579,7 +708,7 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-landscapes</tag>
@@ -596,7 +725,7 @@
       </metadata>
       <caption>meditation</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>FE-Collection</tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
@@ -613,7 +742,7 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Panoramic</tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
@@ -631,7 +760,7 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-2</tag>
         <tag>ap-landscapes</tag>
         <tag>ap-main</tag>
@@ -647,7 +776,7 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-2</tag>
         <tag>ap-website</tag>
         <tag>ap-wildlife</tag>
@@ -662,7 +791,7 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-main</tag>
@@ -679,7 +808,7 @@
       </metadata>
       <caption>net-fix</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>FE-Collection</tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
@@ -697,7 +826,7 @@
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-2</tag>
         <tag>ap-travel</tag>
         <tag>ap-website</tag>
@@ -712,7 +841,7 @@
       </metadata>
       <caption>old-and-new</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Panoramic</tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
@@ -729,7 +858,7 @@
       </metadata>
       <caption>old-temple</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>FE-Collection</tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
@@ -749,10 +878,24 @@ Projection: Cylindrical (1)
 FOV: 112 x 55
 Ev: 14.62</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-travel</tag>
+        <tag>ap-website</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>pano-zu.jpg</filename>
+      <title>pano-zu</title>
+      <metadata>
+        <width>1627</width>
+        <height>1080</height>
+      </metadata>
+      <caption>A</caption>
+      <tags>
+        <tag></tag>
+        <tag>ap-landscapes</tag>
         <tag>ap-website</tag>
       </tags>
     </photo>
@@ -765,12 +908,28 @@ Ev: 14.62</caption>
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Panoramic</tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-landscapes</tag>
         <tag>ap-main</tag>
+        <tag>ap-website</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>patagonia-drive.jpg</filename>
+      <title>patagonia-drive</title>
+      <metadata>
+        <width>1920</width>
+        <height>768</height>
+      </metadata>
+      <caption>A.C(C)</caption>
+      <tags>
+        <tag></tag>
+        <tag>Portfolio-1</tag>
+        <tag>Portfolio-2</tag>
+        <tag>ap-landscapes</tag>
         <tag>ap-website</tag>
       </tags>
     </photo>
@@ -783,7 +942,7 @@ Ev: 14.62</caption>
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-landscapes</tag>
@@ -800,7 +959,7 @@ Ev: 14.62</caption>
       </metadata>
       <caption>phi-phi</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Panoramic</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-travel</tag>
@@ -816,7 +975,7 @@ Ev: 14.62</caption>
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-website</tag>
@@ -832,7 +991,7 @@ Ev: 14.62</caption>
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-website</tag>
@@ -848,7 +1007,7 @@ Ev: 14.62</caption>
       </metadata>
       <caption>rush-hour</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>Wedding album</tag>
@@ -866,12 +1025,29 @@ Ev: 14.62</caption>
       </metadata>
       <caption>sadu</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>FE-Collection</tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-people</tag>
         <tag>ap-website</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>sea-family.jpg</filename>
+      <title>sea-family</title>
+      <metadata>
+        <width>1080</width>
+        <height>1626</height>
+      </metadata>
+      <caption>A.C(C)</caption>
+      <tags>
+        <tag></tag>
+        <tag>Portfolio-1</tag>
+        <tag>Portfolio-2</tag>
+        <tag>ap-main-p</tag>
+        <tag>ap-website</tag>
+        <tag>ap-wildlife</tag>
       </tags>
     </photo>
     <photo>
@@ -883,7 +1059,7 @@ Ev: 14.62</caption>
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-landscapes</tag>
@@ -900,7 +1076,7 @@ Ev: 14.62</caption>
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-2</tag>
         <tag>ap-travel</tag>
         <tag>ap-website</tag>
@@ -915,8 +1091,24 @@ Ev: 14.62</caption>
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>ap-travel</tag>
+        <tag>ap-website</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>sipping-p.jpg</filename>
+      <title>sipping-p</title>
+      <metadata>
+        <width>1080</width>
+        <height>1626</height>
+      </metadata>
+      <caption>A.C(C)</caption>
+      <tags>
+        <tag></tag>
+        <tag>Portfolio-1</tag>
+        <tag>Portfolio-2</tag>
+        <tag>ap-main-p</tag>
         <tag>ap-website</tag>
       </tags>
     </photo>
@@ -929,7 +1121,7 @@ Ev: 14.62</caption>
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-website</tag>
@@ -945,7 +1137,7 @@ Ev: 14.62</caption>
       </metadata>
       <caption>skylake</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>FE-Collection</tag>
         <tag>ap-landscapes</tag>
         <tag>ap-main</tag>
@@ -961,7 +1153,7 @@ Ev: 14.62</caption>
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-landscapes</tag>
@@ -977,7 +1169,7 @@ Ev: 14.62</caption>
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>ap-travel</tag>
         <tag>ap-website</tag>
       </tags>
@@ -991,7 +1183,7 @@ Ev: 14.62</caption>
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>ap-people</tag>
         <tag>ap-travel</tag>
         <tag>ap-website</tag>
@@ -1006,7 +1198,7 @@ Ev: 14.62</caption>
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>ap-travel</tag>
         <tag>ap-website</tag>
       </tags>
@@ -1020,7 +1212,7 @@ Ev: 14.62</caption>
       </metadata>
       <caption>stupas</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>FE-Collection</tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
@@ -1037,7 +1229,7 @@ Ev: 14.62</caption>
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-website</tag>
@@ -1053,10 +1245,27 @@ Ev: 14.62</caption>
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-travel</tag>
+        <tag>ap-website</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>torres.jpg</filename>
+      <title>torres</title>
+      <metadata>
+        <width>1920</width>
+        <height>665</height>
+      </metadata>
+      <caption>A.C(C)</caption>
+      <tags>
+        <tag></tag>
+        <tag>Panoramic</tag>
+        <tag>Portfolio-1</tag>
+        <tag>Portfolio-2</tag>
+        <tag>ap-landscapes</tag>
         <tag>ap-website</tag>
       </tags>
     </photo>
@@ -1069,7 +1278,7 @@ Ev: 14.62</caption>
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>ap-travel</tag>
         <tag>ap-website</tag>
       </tags>
@@ -1083,57 +1292,11 @@ Ev: 14.62</caption>
       </metadata>
       <caption>A.C(C)</caption>
       <tags>
-        <tag />
+        <tag></tag>
         <tag>ap-main</tag>
         <tag>ap-website</tag>
         <tag>ap-wildlife</tag>
       </tags>
     </photo>
-
-    <photo>
-      <filename>patagonia-drive.jpg</filename>
-      <title>patagonia-drive</title>
-      <metadata>
-        <width>1920</width>
-        <height>768</height>
-      </metadata>
-      <caption>A.C(C)</caption>
-      <tags>
-        <tag />
-        <tag>ap-website</tag>
-        <tag>ap-landscapes</tag>
-      </tags>
-    </photo>
-
-    <photo>
-      <filename>torres.jpg</filename>
-      <title>torres</title>
-      <metadata>
-        <width>1920</width>
-        <height>665</height>
-      </metadata>
-      <caption>A.C(C)</caption>
-      <tags>
-        <tag />
-        <tag>ap-website</tag>
-        <tag>ap-landscapes</tag>
-      </tags>
-    </photo>
-
-    <photo>
-      <filename>farm-house.jpg</filename>
-      <title>farm-house</title>
-      <metadata>
-        <width>1626</width>
-        <height>1080</height>
-      </metadata>
-      <caption>A.C(C)</caption>
-      <tags>
-        <tag />
-        <tag>ap-website</tag>
-        <tag>ap-travel</tag>
-      </tags>
-    </photo>
-
   </photos>
 </root>
