@@ -1,7 +1,11 @@
 ﻿
 (function () {
 
-	var ButtonMenuFunction = function () {
+	angular
+		.module('AppCommonDirectives')
+		.directive('apButtonMenu', ButtonMenuFunction);
+
+	function ButtonMenuFunction() {
 
 	    //console.log("starting button menu directive");
 	    return {
@@ -11,6 +15,4 @@
 	        controllerAs: 'ctrl'
 	    };
 	};
-
-    angular.module('AppCommonDirectives').directive('apButtonMenu', ButtonMenuFunction);
 }());
