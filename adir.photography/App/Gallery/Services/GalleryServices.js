@@ -60,7 +60,7 @@
             galleryData: function() { return _galleryData; },
             galleriesData: function() { return _galleriesData; },
             errorMessage: function() { return _errorMessage; },
-            dataReadyStatus: function() { return _galleryDataReady; },
+            dataReadyStatus: function() { return _serverDataReady; },
             getGalleryData: _getGalleryData,
             getGalleriesData: _getGalleriesData,
         };

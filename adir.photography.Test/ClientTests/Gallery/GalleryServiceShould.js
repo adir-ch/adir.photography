@@ -2,8 +2,12 @@
 /// <reference path="../../../adir.photography/scripts/angular/angular.js" />
 /// <reference path="../../../adir.photography/scripts/angular/angular-route.js" />
 /// <reference path="../../../adir.photography/scripts/angular/angular-mocks.js" />
+/// <reference path="../../../adir.photography/scripts/angular/angular-animate.js" />
+/// <reference path="../../../adir.photography/scripts/ngprogress.js" />
+/// <reference path="../../../adir.photography/scripts/image-loader.js" />
 /// <reference path="../../../adir.photography/app/common/services/appcommonservices.js" />
 /// <reference path="../../../adir.photography/app/common/services/webapiservice.js" />
+/// <reference path="../../../adir.photography/app/common/services/GlobalConfigurationService.js" />
 /// <reference path="../../../adir.photography/app/gallery/galleryapp.js" />
 /// <reference path="../../../adir.photography/app/gallery/services/galleryservices.js" />
 
@@ -12,12 +16,20 @@ describe("GalleryResourcesServiceShould->", function () {
     beforeEach(function () {
         module("gallery");
         module("AppCommonServices");
+        module('ngRoute');
+        module('ngAnimate');
+        module('ngProgress');
+        module('sap.imageloader');
     });
 
     var $httpBackend;
     var $rootScope;
     var $q;
     var deferred;
+
+    beforeEach(module('ng', function ($exceptionHandlerProvider) {
+        $exceptionHandlerProvider.mode('log');
+    }));
 
     beforeEach(inject(function (_$q_, _$rootScope_, $injector, WebApiService) {
 
@@ -34,7 +46,7 @@ describe("GalleryResourcesServiceShould->", function () {
 
     }));
 
-    it("Load data", inject(function(GalleryResources) {
+    it("Load data", inject(function (GalleryResources) {
 
         expect(GalleryResources.galleryData()).toEqual([]);
 
@@ -43,8 +55,8 @@ describe("GalleryResourcesServiceShould->", function () {
 
         // Mock server reply, with the following data
         deferred.resolve([{ // resolve the promise with mocked server data
-                            // will invoke WebApi service then, and Gallery service then
-                            // and will set the data in the Gallery service
+            // will invoke WebApi service then, and Gallery service then
+            // and will set the data in the Gallery service
 
             HomeGalleryModel: {
                 AutoCycle: "true",
@@ -56,8 +68,8 @@ describe("GalleryResourcesServiceShould->", function () {
         }]);
 
         $rootScope.$apply(); // add the resolved promise to the queue, and eventually
-                            // will call to the function that the GalleryResources set
-                            // as a callback when the promise then was called.
+        // will call to the function that the GalleryResources set
+        // as a callback when the promise then was called.
 
         expect(GalleryResources.galleryData().length).toBeGreaterThan(0);
         expect(GalleryResources.galleryData().length).toEqual(1);
@@ -68,16 +80,17 @@ describe("GalleryResourcesServiceShould->", function () {
     }));
 
     it("Return error if gallry not found", inject(function (GalleryResources) {
-        GalleryResources.getGalleryData("Main");
 
-        deferred.reject({
-            data: {
-                ExceptionMessage: "Gallery not found"
-            }
+        var state = "OK";
+        var promise = GalleryResources.getGalleryData("Main");
+
+        promise.catch(function (response) {
+            state = response;
         });
 
-        $rootScope.$apply();
-        expect(GalleryResources.errorMessage()).toEqual("Gallery not found");
-    }));
+        deferred.reject("Gallery not found");
 
+        $rootScope.$apply();
+        expect(state).toEqual("Gallery not found");
+    }));
 });

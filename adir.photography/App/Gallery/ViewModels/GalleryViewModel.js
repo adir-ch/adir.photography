@@ -9,7 +9,6 @@
     GalleryViewModel.$inject = [
         '$routeParams',
         '$window',
-        '$location',
         '$timeout',
         'ngProgressFactory',
         'ImageLoader',
@@ -19,7 +18,6 @@
     function GalleryViewModel(
         $routeParams,
         $window,
-        $location,
         $timeout,
         ngProgressFactory,
         ImageLoader,

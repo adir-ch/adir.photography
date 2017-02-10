@@ -116,20 +116,20 @@ namespace adir.photography.Services.EmailSender
             return status;
         }
 
-        private static void SendCompletedCallback(object sender, AsyncCompletedEventArgs e)
-        {
-            // Get the unique identifier for this asynchronous operation.
-            String token = (string)e.UserState;
+        //private static void SendCompletedCallback(object sender, AsyncCompletedEventArgs e)
+        //{
+        //    // Get the unique identifier for this asynchronous operation.
+        //    String token = (string)e.UserState;
 
-            if (e.Error != null)
-            {
-                _log.ErrorFormat("Error sending email: {0}", e.Error.ToString());
-            }
-            else
-            {
-                _log.DebugFormat("email sent successfuly (id: {0})", token);
-            }
-            _asyncEmailSendStatus = true;
-        }
+        //    if (e.Error != null)
+        //    {
+        //        _log.ErrorFormat("Error sending email: {0}", e.Error.ToString());
+        //    }
+        //    else
+        //    {
+        //        _log.DebugFormat("email sent successfuly (id: {0})", token);
+        //    }
+        //    _asyncEmailSendStatus = true;
+        //}
     }
 }

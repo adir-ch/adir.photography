@@ -6,6 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PhotosRepository;
 using System.Xml.Linq;
 using PhotosRepository.DataAcess.XML;
+using PhotosRepository.Model;
 
 namespace PhotoRepository.Test
 {
@@ -65,39 +66,75 @@ namespace PhotoRepository.Test
                           </config>
                           <name>Main</name>
                           <openingPhoto>girona.jpg</openingPhoto>
-                          <tag>Main</tag>
+                          <tag>ap-main</tag>
                         </gallery>
                       </galleries>
                       <photos>
                         <photo>
                           <filename>girona.jpg</filename>
+                          <title>girona</title>
+                          <metadata>
+                            <width>1440</width>
+                            <height>1080</height>
+                          </metadata>
+                          <caption>Ally-bike</caption>
                           <tags>
-                            <tag>main</tag>
+                            <tag></tag>
+                            <tag>ap-main</tag>
+                            <tag>ap-website</tag>
                           </tags>
                         </photo>
                         <photo>
                           <filename>br1.jpg</filename>
+                          <title>br1</title>
+                          <metadata>
+                            <width>1080</width>
+                            <height>1626</height>
+                          </metadata>
+                          <caption>A.C(C)</caption>
                           <tags>
-                            <tag>main</tag>
+                            <tag></tag>
+                            <tag>Portfolio-1</tag>
+                            <tag>ap-main</tag>
+                            <tag>ap-website</tag>
                           </tags>
                         </photo>
                         <photo>
                           <filename>fe1.jpg</filename>
+                          <title>fe1</title>
+                          <metadata>
+                            <width>1920</width>
+                            <height>981</height>
+                          </metadata>
+                          <caption>A.C(C)</caption>
                           <tags>
-                            <tag>main</tag>
+                            <tag></tag>
+                            <tag>Portfolio-1</tag>
+                            <tag>Portfolio-2</tag>
+                            <tag>ap-main</tag>
+                            <tag>ap-wildlife</tag>
                           </tags>
                         </photo>
                         <photo>
                           <filename>fe2.jpg</filename>
+                          <title>fe2</title>
+                          <metadata>
+                            <width>1080</width>
+                            <height>1626</height>
+                          </metadata>
+                          <caption>A.C(C)</caption>
                           <tags>
-                            <tag>XmainX</tag>
+                            <tag></tag>
+                            <tag>Portfolio-1</tag>
+                            <tag>Portfolio-2</tag>
+                            <tag>ap-website</tag>
                           </tags>
                         </photo>
                       </photos>
                     </root>";
 
             _repo = XMLPhotoRepositoryDB.GetInstance(); 
-            _repo.InitXmlRepository(XDocument.Parse(repoData).Element("root")); 
+            _repo.Init(XDocument.Parse(repoData).Element("root")); 
         }
         
         // Use TestCleanup to run code after each test has run

@@ -12,7 +12,8 @@ using System.Web.Http;
 using adir.photography.Models;
 using System.Web.Http.Results;
 using System.Net.Http;
-using System.Linq; 
+using System.Linq;
+using PhotosRepository.Model; 
 
 namespace adir.photography.Test
 {
@@ -58,8 +59,8 @@ namespace adir.photography.Test
         private IEnumerable<IPhoto> SetFakePhotos()
         {
             List<Photo> photos = new List<Photo>();
-            photos.Add(new Photo(".", "p1.jpg"));
-            photos.Add(new Photo(".", "p2.jpg"));
+            photos.Add(new Photo("p1.jpg"));
+            photos.Add(new Photo("p2.jpg"));
 
             return photos;
         }

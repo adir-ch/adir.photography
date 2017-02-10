@@ -42,6 +42,11 @@ namespace PhotosRepository.DataAcess.XML
             return InitXmlRepository(); 
         }
 
+        public bool Init(XElement xElement)
+        {
+            return InitXmlRepository(xElement); 
+        }
+
         public IEnumerable<IPhoto> InitPhotos()
         {
             // force reading photos data from files
