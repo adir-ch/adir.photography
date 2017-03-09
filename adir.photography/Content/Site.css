@@ -109,3 +109,17 @@ div>.ap-about-page {
     min-width: 100%;
     margin: 2px auto;
 }
+
+.ion-ios-home::before,
+.ion-images::before,
+.ion-android-mail::before,
+.ion-person::before {
+    padding-top: 12px;
+    font-size: 32px;
+}
+
+.ion-aperture::before,
+.ion-ios-camera::before {
+    padding-top: 4px;
+    font-size: 48px;
+}
