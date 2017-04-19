@@ -66,6 +66,7 @@ namespace adir.photography
                         "~/App/Gallery/ViewModels/AlbumsViewModel.js",
                         "~/App/Gallery/ViewModels/AlbumsWelcomeViewModel.js",
                         "~/App/Gallery/ViewModels/AlbumViewModel.js",
+                        "~/App/Gallery/Directives/FloatingSideMenu/FloatingSideMenuDirectiveViewModel.js",
                         "~/App/Gallery/Directives/AlbumsDisplay/AlbumsDisplayDirectiveViewModel.js",
                         "~/App/Gallery/Directives/MaxImage/MaxImageDirectiveViewModel.js",
                         "~/App/Gallery/Directives/MaxImage/MaxImageInnerDirectiveViewModel.js",

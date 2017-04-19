@@ -40,6 +40,7 @@
         vm.StarSlideShowtDirective = false;
         vm.ShowWelcomeImage = true;
         vm.galleryWelcomeId = "ap-gallery-welcome-landscape";
+        vm.loadedPhotos = 0; 
         
         activate();
 
@@ -118,6 +119,7 @@
             }
 
             ImageLoader.loadImage(welcomePhoto).then(function(loadedString) {
+                vm.loadedPhotos = 1; 
                 vm.progressbar.set(vm.progressbar.status() + vm.progressbarStep);
                 PreLoadGalleryPhotos();
             });
@@ -129,6 +131,7 @@
             angular.forEach(preLoaderArray, function(photo) {
                 ImageLoader.loadImage(photo).then(function(loadedString) {
                     //console.log("loaded photo: " + photo + " percent=" + vm.progressbar.status());
+                    vm.loadedPhotos += 1; 
                     if (vm.progressbar.status() >= 99.5) {
                         HandlePhotoPreLoadingFinished();
                     }

@@ -1,0 +1,14 @@
+.ap-floating-menu {
+    font-family: sans-serif;
+    padding-right: 2%;
+    z-index: 1000;
+    position: fixed;
+    top: 20px;
+    right: 0px;
+    font-size: 25px;
+    text-align: right;
+}
+
+.ap-floating-menu a {
+    color: white; 
+}

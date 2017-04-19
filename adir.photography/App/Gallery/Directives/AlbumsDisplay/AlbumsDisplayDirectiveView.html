@@ -1,9 +1,10 @@
 <link rel=stylesheet href="/Content/albums.css">
 
 <div id="album-main">
+    <ap-floating-side-menu data=vm.albums></ap-floating-side-menu>
     <div ng-repeat="album in vm.albums">
-        <div class="ap-album-image">
-            <!-- <a ng-href="{{GenerateAlbumLink(gallery.Name)}}"><img class="responsive-image" ng-style="SetAlbumPhoto(gallery)" src="../../../Content/images/ratio-conserver.png"></a> -->
+        <div id="{{ album.Name }}" class="ap-album-image">
+             <a href="#{{ album.Name }}"></a>
             <a ng-href="{{vm.GenerateAlbumLink(album.Name)}}"><img class="ap-responsive-image" ng-style="vm.SetAlbumPhotoStyle(album)" ng-src="{{vm.GenerateAlbumBackgroundImage(album)}}">
                 <h1 class="ap-album-name">{{ album.Name }}</h1>
             </a>
