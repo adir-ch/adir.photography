@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "adir.photography", "adir.photography\adir.photography.csproj", "{398F6888-A9E5-4CC3-93EC-8CB898998F36}"
 EndProject
@@ -17,6 +17,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0D5F3D
 	ProjectSection(SolutionItems) = preProject
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{417A6DFF-557E-486D-8F85-1C4614CC6C9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotosDataExtractor", "PhotosDataExtractor\PhotosDataExtractor.csproj", "{7E16F95A-7FE2-4017-BAA0-CBEE3C1CE2DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,6 +44,10 @@ Global
 		{7C6679FE-C2FC-4992-8490-D0B5FE06D2FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C6679FE-C2FC-4992-8490-D0B5FE06D2FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C6679FE-C2FC-4992-8490-D0B5FE06D2FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E16F95A-7FE2-4017-BAA0-CBEE3C1CE2DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E16F95A-7FE2-4017-BAA0-CBEE3C1CE2DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E16F95A-7FE2-4017-BAA0-CBEE3C1CE2DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E16F95A-7FE2-4017-BAA0-CBEE3C1CE2DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,5 +55,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E80FAF15-CC1A-49F4-9340-99080582BB6B} = {B5631139-71A8-401C-B41B-2EABFFD0D373}
 		{7C6679FE-C2FC-4992-8490-D0B5FE06D2FA} = {B5631139-71A8-401C-B41B-2EABFFD0D373}
+		{7E16F95A-7FE2-4017-BAA0-CBEE3C1CE2DF} = {417A6DFF-557E-486D-8F85-1C4614CC6C9F}
 	EndGlobalSection
 EndGlobal
