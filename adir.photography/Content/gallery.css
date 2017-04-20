@@ -49,12 +49,12 @@ body {
     z-index: 1000;
 }
 
-#ap-loading-elements {
+/*#ap-loading-elements {
     margin-top: 20px;
     position: relative;
     display: flex;
     left: 70%;
-}
+}*/
 
 #ap-welcome-text {
     text-transform: uppercase;
@@ -74,7 +74,8 @@ body {
     font-size: 220%;
     position: relative;
     opacity: 0.7;
-    float: left;
+    left: 50%;
+
 }
 
 @media (max-width: 900px) {
