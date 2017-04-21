@@ -48,7 +48,7 @@
 
             $timeout(function() {
                 UpdateMenuItemsStyle(); 
-            }, 0, true);
+            }, 100, true);
             
         }
 
@@ -97,14 +97,17 @@
 
         function SetMenuLinkStyle(albumName) {
             var textColor = "white"; 
+            var zoom = "100%";
             if (isElementOutViewport(albumName) == false) {
                 //console.log("Album " + albumName + " is visable");
-                textColor = "#bef51c"; 
+                textColor = "#bef51c";
+                var zoom = "110%";
             } 
 
             return {
                 "text-decoration": "none", 
-                "color" : textColor
+                "color" : textColor,
+                "zoom" : zoom,
             };
         }
     }
