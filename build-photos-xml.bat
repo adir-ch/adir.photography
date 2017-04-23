@@ -1,1 +1,1 @@
-PhotosDataExtractor\bin\Debug\PhotosDataExtractor.exe adir.photography\Content\Photos\
+PhotosDataExtractor\bin\Debug\PhotosDataExtractor.exe adir.photography\Content\Photos\ > photos.xml

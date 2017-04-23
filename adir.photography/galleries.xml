@@ -71,9 +71,22 @@
       </tags>
     </photo>
     <photo>
+      <filename>Ally-bike-p.jpg</filename>
+      <title>Ally-bike-p</title>
+      <caption />
+      <metadata>
+        <width>1080</width>
+        <height>1440</height>
+      </metadata>
+      <tags>
+        <tag>ap-main-p</tag>
+        <tag>ap-website</tag>
+      </tags>
+    </photo>
+    <photo>
       <filename>Ally-bike.jpg</filename>
       <title>Ally-bike</title>
-      <caption>Ally-bike</caption>
+      <caption />
       <metadata>
         <width>1440</width>
         <height>1080</height>
@@ -87,7 +100,7 @@
     <photo>
       <filename>Annapurna.jpg</filename>
       <title>Annapurna</title>
-      <caption>Annapurna</caption>
+      <caption />
       <metadata>
         <width>1920</width>
         <height>940</height>
@@ -132,7 +145,7 @@
     <photo>
       <filename>arch.jpg</filename>
       <title>arch</title>
-      <caption>arch</caption>
+      <caption />
       <metadata>
         <width>1080</width>
         <height>1441</height>
@@ -177,7 +190,7 @@
     <photo>
       <filename>backyard.jpg</filename>
       <title>backyard</title>
-      <caption>backyard</caption>
+      <caption />
       <metadata>
         <width>1920</width>
         <height>739</height>
@@ -206,7 +219,7 @@
     <photo>
       <filename>big-sister.jpg</filename>
       <title>big-sister</title>
-      <caption>big-sister</caption>
+      <caption />
       <metadata>
         <width>1080</width>
         <height>1510</height>
@@ -237,7 +250,7 @@
     <photo>
       <filename>buddhas.jpg</filename>
       <title>buddhas</title>
-      <caption>buddhas</caption>
+      <caption />
       <metadata>
         <width>1440</width>
         <height>1080</height>
@@ -324,7 +337,7 @@
     <photo>
       <filename>conversation.jpg</filename>
       <title>conversation</title>
-      <caption>conversation</caption>
+      <caption />
       <metadata>
         <width>1466</width>
         <height>1080</height>
@@ -383,7 +396,7 @@
     <photo>
       <filename>Early morning.jpg</filename>
       <title>Early morning</title>
-      <caption>Early morning</caption>
+      <caption />
       <metadata>
         <width>1849</width>
         <height>1080</height>
@@ -473,7 +486,7 @@
     <photo>
       <filename>flowers-boat.jpg</filename>
       <title>flowers-boat</title>
-      <caption>flowers-boat</caption>
+      <caption />
       <metadata>
         <width>1440</width>
         <height>1080</height>
@@ -562,7 +575,7 @@
     <photo>
       <filename>girona.jpg</filename>
       <title>girona</title>
-      <caption>girona</caption>
+      <caption />
       <metadata>
         <width>1920</width>
         <height>795</height>
@@ -652,7 +665,7 @@
     <photo>
       <filename>hidden.jpg</filename>
       <title>hidden</title>
-      <caption>hidden</caption>
+      <caption />
       <metadata>
         <width>1600</width>
         <height>1009</height>
@@ -725,7 +738,7 @@
     <photo>
       <filename>meditation.jpg</filename>
       <title>meditation</title>
-      <caption>meditation</caption>
+      <caption />
       <metadata>
         <width>1440</width>
         <height>1080</height>
@@ -803,7 +816,7 @@
     <photo>
       <filename>net-fix.jpg</filename>
       <title>net-fix</title>
-      <caption>net-fix</caption>
+      <caption />
       <metadata>
         <width>1440</width>
         <height>1080</height>
@@ -834,7 +847,7 @@
     <photo>
       <filename>old-and-new.jpg</filename>
       <title>old-and-new</title>
-      <caption>old-and-new</caption>
+      <caption />
       <metadata>
         <width>1920</width>
         <height>792</height>
@@ -850,7 +863,7 @@
     <photo>
       <filename>old-temple.jpg</filename>
       <title>old-temple</title>
-      <caption>old-temple</caption>
+      <caption />
       <metadata>
         <width>1920</width>
         <height>904</height>
@@ -867,9 +880,9 @@
       <filename>pano-rio.jpg</filename>
       <title>pano-rio</title>
       <caption>A.C(C)
-Projection: Cylindrical (1)
-FOV: 112 x 55
-Ev: 14.62</caption>
+  Projection: Cylindrical (1)
+  FOV: 112 x 55
+  Ev: 14.62</caption>
       <metadata>
         <width>1920</width>
         <height>806</height>
@@ -878,6 +891,19 @@ Ev: 14.62</caption>
         <tag>Portfolio-1</tag>
         <tag>Portfolio-2</tag>
         <tag>ap-travel</tag>
+        <tag>ap-website</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>pano-zu.jpg</filename>
+      <title>pano-zu</title>
+      <caption>A</caption>
+      <metadata>
+        <width>1627</width>
+        <height>1080</height>
+      </metadata>
+      <tags>
+        <tag>ap-landscapes</tag>
         <tag>ap-website</tag>
       </tags>
     </photo>
@@ -932,7 +958,7 @@ Ev: 14.62</caption>
     <photo>
       <filename>phi-phi.jpg</filename>
       <title>phi-phi</title>
-      <caption>phi-phi</caption>
+      <caption />
       <metadata>
         <width>1920</width>
         <height>730</height>
@@ -977,7 +1003,7 @@ Ev: 14.62</caption>
     <photo>
       <filename>rush-hour.jpg</filename>
       <title>rush-hour</title>
-      <caption>rush-hour</caption>
+      <caption />
       <metadata>
         <width>1242</width>
         <height>1080</height>
@@ -994,7 +1020,7 @@ Ev: 14.62</caption>
     <photo>
       <filename>sadu.jpg</filename>
       <title>sadu</title>
-      <caption>sadu</caption>
+      <caption />
       <metadata>
         <width>1440</width>
         <height>1080</height>
@@ -1099,7 +1125,7 @@ Ev: 14.62</caption>
     <photo>
       <filename>skylake.jpg</filename>
       <title>skylake</title>
-      <caption>skylake</caption>
+      <caption />
       <metadata>
         <width>1440</width>
         <height>1080</height>
@@ -1182,7 +1208,7 @@ Ev: 14.62</caption>
     <photo>
       <filename>stupas.jpg</filename>
       <title>stupas</title>
-      <caption>stupas</caption>
+      <caption />
       <metadata>
         <width>1607</width>
         <height>1080</height>
@@ -1252,6 +1278,92 @@ Ev: 14.62</caption>
       <tags>
         <tag>ap-travel</tag>
         <tag>ap-website</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>Tree.jpg</filename>
+      <title>Tree</title>
+      <caption>A.C(C)</caption>
+      <metadata>
+        <width>1080</width>
+        <height>1626</height>
+      </metadata>
+      <tags>
+        <tag>ap-main-p</tag>
+        <tag>ap-website</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>Valdez.jpg</filename>
+      <title>Valdez</title>
+      <caption>A.C(C)</caption>
+      <metadata>
+        <width>1626</width>
+        <height>1080</height>
+      </metadata>
+      <tags>
+        <tag>Portfolio-1</tag>
+        <tag>ap-website</tag>
+        <tag>ap-wildlife</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>Varanasi.jpg</filename>
+      <title>Varanasi</title>
+      <caption />
+      <metadata>
+        <width>1459</width>
+        <height>1080</height>
+      </metadata>
+      <tags>
+        <tag>FE-Collection</tag>
+        <tag>Portfolio-1</tag>
+        <tag>Portfolio-2</tag>
+        <tag>ap-travel</tag>
+        <tag>ap-website</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>view-watch.jpg</filename>
+      <title>view-watch</title>
+      <caption>A.C(C)</caption>
+      <metadata>
+        <width>1920</width>
+        <height>921</height>
+      </metadata>
+      <tags>
+        <tag>ap-main</tag>
+        <tag>ap-website</tag>
+        <tag>ap-wildlife</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>welcome-p.jpg</filename>
+      <title>back-from-school</title>
+      <caption>A.C(C)</caption>
+      <metadata>
+        <width>1080</width>
+        <height>1626</height>
+      </metadata>
+      <tags>
+        <tag>Portfolio-1</tag>
+        <tag>Portfolio-2</tag>
+        <tag>ap-people</tag>
+        <tag>ap-website</tag>
+      </tags>
+    </photo>
+    <photo>
+      <filename>welcome.jpg</filename>
+      <title>welcome</title>
+      <caption>A.C(C)</caption>
+      <metadata>
+        <width>1920</width>
+        <height>962</height>
+      </metadata>
+      <tags>
+        <tag>Portfolio-2</tag>
+        <tag>ap-website</tag>
+        <tag>ap-welcome</tag>
       </tags>
     </photo>
   </photos>

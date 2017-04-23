@@ -1,6 +1,4 @@
-
-N:\Dropbox\Development\Projects\adir.photography\Source\AspAngularIntegration_main>PhotosDataExtractor\bin\Debug\PhotosDataExtractor.exe adir.photography\Content\Photos\ 
-Photos found: 87
+Photos found: 88
 Generated XML Data 
 =====================
 <photos>
@@ -14,6 +12,19 @@ Generated XML Data
     </metadata>
     <tags>
       <tag>ap-travel</tag>
+      <tag>ap-website</tag>
+    </tags>
+  </photo>
+  <photo>
+    <filename>Ally-bike-p.jpg</filename>
+    <title>Ally-bike-p</title>
+    <caption />
+    <metadata>
+      <width>1080</width>
+      <height>1440</height>
+    </metadata>
+    <tags>
+      <tag>ap-main-p</tag>
       <tag>ap-website</tag>
     </tags>
   </photo>
