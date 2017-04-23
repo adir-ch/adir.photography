@@ -1,0 +1,1 @@
+PhotosDataExtractor\bin\Debug\PhotosDataExtractor.exe adir.photography\Content\Photos\
