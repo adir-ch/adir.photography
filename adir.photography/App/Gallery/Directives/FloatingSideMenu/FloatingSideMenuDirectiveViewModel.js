@@ -21,7 +21,7 @@
         return directive;
 
         function linkFunc(scope, element, attrs) {
-           angular.element($window).bind("scroll", function() {
+            angular.element($window).bind("scroll", function() {
                 //console.log("scroll");
                 
                 scope.$apply(function() {
@@ -107,7 +107,7 @@
             return {
                 "text-decoration": "none", 
                 "color" : textColor,
-                "zoom" : zoom,
+                //"zoom" : zoom,
             };
         }
     }
