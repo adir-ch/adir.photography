@@ -64,6 +64,7 @@ namespace PhotosDataExtractor
         {
             //Console.WriteLine("Photo: name: {0}, title: {1}, {2}x{3}, tags: {4}", fileName, title, width, height, tags.Count());
             XElement photoElement = new XElement("photo");
+            photoElement.Add(new XElement("filename", fileName));
             photoElement.Add(new XElement("title", title));
             photoElement.Add(new XElement("caption", caption));
             XElement metadata = new XElement("metadata");
