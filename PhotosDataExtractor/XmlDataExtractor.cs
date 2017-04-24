@@ -38,7 +38,7 @@ namespace PhotosDataExtractor
             _root = new XElement("photos");
         }
 
-        public void BuildPhotosXml(IEnumerable<FileInfo> photos)
+        public XElement BuildPhotosXml(IEnumerable<FileInfo> photos, bool outputResult = false)
         {
             foreach(var photo in photos) 
             {
@@ -46,7 +46,12 @@ namespace PhotosDataExtractor
                 ParsePhotoMetadata(photo.Directory.ToString(), photo.Name); 
             }
 
-            Console.WriteLine(_root.ToString());
+            if (outputResult == true)
+            {
+                Console.WriteLine(_root.ToString());
+            }
+
+            return _root; 
         }
 
         private void ParsePhotoMetadata(string path, string fileName)
@@ -84,19 +89,41 @@ namespace PhotosDataExtractor
 
         static void Main(string[] args)
         {
-            if(args.Length == 1)
+            if(args.Length > 1)
             {
                 DirectoryInfo directoryInfo = new DirectoryInfo(args[0]);
                 IEnumerable<FileInfo> files = directoryInfo.EnumerateFiles("*.jpg");
                 Console.WriteLine("Photos found: {0}", files.Count());
                 Console.WriteLine("Generated XML Data {0}=====================", System.Environment.NewLine);
                 XmlDataExtractor extractor = new XmlDataExtractor();
-                extractor.BuildPhotosXml(files);
+                
+
+                if(args[1] != null) // change galleries xml file as well 
+                {
+                    var photos = extractor.BuildPhotosXml(files, false);
+                    ReplacePhotosData(args[1], photos);
+                }
+                else
+                {
+                    extractor.BuildPhotosXml(files, true);
+                }
             } 
             else
             {
-                Console.WriteLine("Usage: PhotoDataExtractor <photos location>");
+                Console.WriteLine("Usage: PhotoDataExtractor <photos location> [galleries xml]");
             }
+        }
+
+        private static void ReplacePhotosData(string galleriesXmlFile, XElement photos)
+        {
+            XElement galleries = XDocument.Load(galleriesXmlFile).Element("root");
+            var photosElement = galleries.Element("photos"); 
+            if(photosElement != null)
+            {
+                photosElement.ReplaceWith(photos);
+                galleries.Save(galleriesXmlFile);
+            }
+
         }
     }
 }
