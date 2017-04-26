@@ -100,7 +100,7 @@
             var zoom = "100%";
             if (isElementOutViewport(albumName) == false) {
                 //console.log("Album " + albumName + " is visable");
-                textColor = "#bef51c";
+                textColor = "#213765";
                 var zoom = "110%";
             } 
 
