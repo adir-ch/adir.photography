@@ -22,6 +22,6 @@
 
 @media (max-width: 550px) {
     .ap-floating-menu { 
-        display: none;
+        font-size: 15px;
     }
 }
