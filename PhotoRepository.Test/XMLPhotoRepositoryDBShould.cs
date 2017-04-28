@@ -1,12 +1,9 @@
-﻿using System;
-using System.Linq;
-using System.Text;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PhotosRepository;
-using System.Xml.Linq;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PhotosRepository.DataAcess.XML;
 using PhotosRepository.Model;
+using System.Collections.Generic;
+using System.Linq;
+using System.Xml.Linq;
 
 namespace PhotoRepository.Test
 {

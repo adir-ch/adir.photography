@@ -1,19 +1,16 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using adir.photography;
-using adir.photography.Controllers;
+﻿using adir.photography.Controllers;
+using adir.photography.Models;
 using adir.photography.Services.Gallery;
-using adir.photography.Services.WebSiteConfig; 
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using PhotosRepository;
-using System.Web.Http;
-using adir.photography.Models;
-using System.Web.Http.Results;
-using System.Net.Http;
+using PhotosRepository.Model;
+using System;
+using System.Collections.Generic;
 using System.Linq;
-using PhotosRepository.Model; 
+using System.Net.Http;
+using System.Web.Http;
+using System.Web.Http.Results; 
 
 namespace adir.photography.Test
 {

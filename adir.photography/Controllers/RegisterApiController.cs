@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-
-using adir.photography.Models;
-using adir.photography.Services.WebSiteConfig;
+﻿using adir.photography.Models;
 using adir.photography.Services.Register;
 using log4net;
-using System.Threading.Tasks; 
+using System;
+using System.Web.Http;
 
 namespace adir.photography.Controllers
 {

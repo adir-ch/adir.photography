@@ -1,12 +1,8 @@
 ﻿using adir.photography.Models;
 using log4net;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
 using System.Net.Mail;
 using System.Text;
-using System.Web;
 
 namespace adir.photography.Services.EmailSender
 {

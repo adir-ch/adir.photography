@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using PhotosRepository;
+﻿using adir.photography.Models;
 using adir.photography.Services.WebSiteConfig;
-using adir.photography.Models;
-using PhotosRepository.DataAccess;
+using PhotosRepository;
 using PhotosRepository.DataAcess.XML;
 using PhotosRepository.Model;
+using System.Collections.Generic;
 
 namespace adir.photography.Services.Gallery
 {

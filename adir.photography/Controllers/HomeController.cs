@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Net; 
-using System.Web.Mvc;
-using adir.photography.Models;
-using log4net;
+﻿using adir.photography.Models;
 using adir.photography.Services.EmailSender;
+using log4net;
+using System;
+using System.Web.Mvc;
 
 namespace adir.photography.Controllers
 {

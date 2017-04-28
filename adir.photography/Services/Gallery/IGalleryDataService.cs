@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PhotosRepository;
-using adir.photography.Models;
+﻿using adir.photography.Models;
 using PhotosRepository.Model;
+using System.Collections.Generic;
 
 namespace adir.photography.Services.Gallery
 {

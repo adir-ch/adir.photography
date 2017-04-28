@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using log4net;
 using System.Web.Http;
-using log4net;
 
 namespace adir.photography.Controllers
 {

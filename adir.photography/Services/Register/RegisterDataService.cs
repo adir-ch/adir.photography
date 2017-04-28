@@ -1,8 +1,7 @@
 
-using System; 
 using adir.photography.Models;
-using System.Threading.Tasks;
-using adir.photography.Services.EmailSender; 
+using adir.photography.Services.EmailSender;
+using System; 
 
 namespace adir.photography.Services.Register 
 {

@@ -1,4 +1,3 @@
-using System; 
 
 namespace adir.photography.Models 
 {

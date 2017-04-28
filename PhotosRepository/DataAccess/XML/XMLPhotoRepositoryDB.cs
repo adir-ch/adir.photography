@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml;
-using System.Xml.Linq;
-using log4net;
-using PhotosRepository;
-using PhotosRepository.DataAccess;
-using System.Xml.Serialization;
-using System.IO;
+﻿using log4net;
 using PhotosRepository.DataAccess.XML;
 using PhotosRepository.Model;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Xml.Linq;
 
 namespace PhotosRepository.DataAcess.XML
 {

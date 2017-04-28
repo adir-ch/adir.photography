@@ -1,14 +1,9 @@
-﻿using System;
+﻿using log4net;
+using PhotosRepository.Model;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using log4net;
-using System.Runtime.Serialization;
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.Windows.Media.Imaging;
 using System.IO;
-using PhotosRepository.Model; 
+using System.Windows.Media.Imaging; 
 
 namespace PhotosRepository
 {

@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Drawing;
-using log4net;
-using System.Runtime.Serialization;
-using PhotosRepository.Model; 
+﻿using log4net;
+using PhotosRepository.Model;
+using System;
+using System.Text; 
 
 namespace PhotosRepository
 {

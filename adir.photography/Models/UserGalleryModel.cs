@@ -1,10 +1,7 @@
-﻿using System;
+﻿using PhotosRepository;
+using PhotosRepository.Model;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using PhotosRepository;
-using System.Runtime.Serialization;
-using PhotosRepository.Model; 
+using System.Runtime.Serialization; 
 
 namespace adir.photography.Models
 {
