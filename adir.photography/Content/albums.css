@@ -9,23 +9,31 @@ body {
 
 .ap-album-image {
     position: relative;
-    filter: grayscale(100%);
 }
 
 img.ap-responsive-image:hover {
-    transform: scale(1.05);
-    transition: all 1s;
-    filter: saturate(1);
+    -webkit-filter: grayscale(0%);
+    -webkit-transition: .5s ease-in-out;
+    -moz-filter: grayscale(0%);
+    -moz-transition: .5s ease-in-out;
+    -o-filter: grayscale(0%);
+    -o-transition: .5s ease-in-out;
+    filter: grayscale(0%);
 }
 
-.ap-responsive-image {
+img.ap-responsive-image {
     width: 100%;
     min-height: 100%;
     min-width: 100%;
     margin: 2px auto;
-    filter: opacity(80%) brightness(80%);
-    /*background-repeat: no-repeat;
-    background-size: 100% 100%;*/
+
+    -webkit-filter: grayscale(100%);
+    -webkit-transition: .5s ease-in-out;
+    -moz-filter: grayscale(100%); 
+    -moz-transition: .5s ease-in-out;
+    -o-filter: grayscale(100%); 
+    -o-transition: .5s ease-in-out;
+    filter: grayscale(100%);
 }
 
 .ap-album-name {
