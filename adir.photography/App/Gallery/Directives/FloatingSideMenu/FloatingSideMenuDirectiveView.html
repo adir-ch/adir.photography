@@ -1,8 +1,10 @@
 <!--<link rel=stylesheet href="/Content/floating-menu.css">-->
 
 <div class="ap-floating-menu">
-    <div ng-repeat="album in vm.albums" id="menu-{{album}}">
-        <!--<a href="{{ album }}" ng-click="MenuLinkClicked(album)">{{ album }}</a>-->
-        <a ng-href="#" ng-style="vm.SetMenuLinkStyle(album)" ng-click="vm.MenuLinkClicked('menu-' + album)">{{ album }}</a>
-    </div>
+    <span class="label label-default ap-floating-menu-label">
+        <div ng-repeat="album in vm.albums" id="menu-{{album}}">
+            <!--<a href="{{ album }}" ng-click="MenuLinkClicked(album)">{{ album }}</a>-->
+            <a ng-href="#" ng-style="vm.SetMenuLinkStyle(album)" ng-click="vm.MenuLinkClicked('menu-' + album)">{{ album  | lowercase }}</a>
+        </div>
+    </span>
 </div>

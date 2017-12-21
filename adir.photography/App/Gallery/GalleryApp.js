@@ -5,13 +5,13 @@
 
     .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
         $routeProvider.when('/', {
-            templateUrl: 'App/Gallery/Views/GalleryView.html',
+            templateUrl: 'App/Gallery/Views/GalleryViewV2.html',
             controller: 'GalleryViewModel',
             controllerAs: 'vm'
         });
 
         $routeProvider.when('/gallery/show/:galleryId', {
-            templateUrl: '/App/Gallery/Views/GalleryView.html',
+            templateUrl: '/App/Gallery/Views/GalleryViewV2.html',
             controller: 'GalleryViewModel',
             controllerAs: 'vm'
         });
